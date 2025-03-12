@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DN Webpage</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            background-color: black;
+            color: white;
+            text-align: center;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        .container {
+            position: relative;
+            width: 90vw;
+            max-width: 400px;
+            height: 90vh;
+            max-height: 400px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+        .center-image {
+            position: relative;
+            width: 100%;
+            height: auto;
+        }
+        .dn-image {
+            width: 100%;
+            height: auto;
+        }
+        .logos {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+        .logo img {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            transition: 0.3s;
+        }
+        .logo img:hover {
+            box-shadow: 0 0 15px yellow;
+        }
+        /* Positioning the logos around the 7th roots of unity */
+        #logo1 { position: absolute; top: 5%; left: 45%; transform: translate(-50%, -50%); }
+        #logo2 { position: absolute; top: 18%; left: 80%; transform: translate(-50%, -50%); }
+        #logo3 { position: absolute; top: 82%; left: 68%; transform: translate(-50%, -50%); }
+        #logo4 { position: absolute; top: 95%; left: 50%; transform: translate(-50%, -50%); }
+        #logo5 { position: absolute; top: 61%; left: 19%; transform: translate(-50%, -50%); }
+        #logo6 { position: absolute; top: 25%; left: 15%; transform: translate(-50%, -50%); }
+        #logo7 { position: absolute; top: 45%; left: 85%; transform: translate(-50%, -50%); }
+        .bottom-text {
+            position: absolute;
+            bottom: 5%;
+            width: 80%;
+            max-width: 300px;
+        }
+        .text-image {
+            width: 100%;
+            height: auto;
+        }
+        @media (max-width: 600px) {
+            .logo img {
+                width: 14vw;
+                height: 14vw;
+            }
+            .bottom-text {
+                bottom: 2%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="center-image">
+            <img src="assets/dn_circle2.jpg" class="dn-image" alt="DN Symbol Circle">
+            <div class="logos">
+                <a href="https://www.instagram.com/academiaclandestina/?igsh=dWtxa21nd3hxbXA%3D#" class="logo" id="logo1"><img src="assets/AC.jpg" alt="Logo 1"></a>
+                <a href="#" class="logo" id="logo2"></a>
+                <a href="https://flairysky.github.io/startup-blender/" class="logo" id="logo3"><img src="assets/startupblender.png" alt="Logo 3"></a>
+                <a href="https://zuccmap.ethz.ch/" class="logo" id="logo5"><img src="assets/Zuccmap.png" alt="Logo 4"></a>
+                <a href="#" class="logo" id="logo4"></a>
+                <a href="#" class="logo" id="logo6"></a>
+                <a href="https://readingbooknotes.notion.site/Book-notes-1aea6422f32a80ef910ec687c5ae7a15" class="logo" id="logo7"><img src="assets/readingnotes.jpg" alt="Logo 2"></a>
+            </div>
+        </div>
+        <div class="bottom-text">
+            <img src="assets/text.jpg" class="text-image" alt="Seek, for you will find light.">
+        </div>
+    </div>
+</body>
+</html>
