@@ -247,3 +247,37 @@ footer {
   top: 0;
   z-index: 1000;
 }
+.content ul {
+  padding-left: 40px; /* pushes list away from edge */
+  margin: 1.5em auto;
+  max-width: 800px;
+  text-align: left;
+}
+
+.content li {
+  margin-bottom: 1em;
+}
+/* === General unordered list === */
+ul {
+  padding-left: 40px;
+  margin: 1.5em auto;
+  max-width: 800px;
+  list-style-type: disc;
+  color: white;
+}
+
+li {
+  margin-bottom: 1em;
+  line-height: 1.6;
+}
+
+/* === Style for links inside lists === */
+ul li a {
+  color: #a3d7ff;
+  text-decoration: none;
+  font-style: bold;
+}
+
+ul li a:hover {
+  text-decoration: underline;
+}
