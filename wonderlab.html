@@ -78,11 +78,55 @@
         font-size: 16px;
       }
     }
+    nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1000px;
+  margin: 0 auto 30px;
+  padding: 10px 20px;
+}
+
+.logo-wrapper img.logo {
+  height: 60px;
+}
+
+.nav-links {
+  display: flex;
+  gap: 1.2em;
+  flex-wrap: wrap;
+}
+
+.nav-links a {
+  color: white;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 1em;
+}
+
+.nav-links a:hover {
+  text-decoration: underline;
+}
+
+footer {
+  text-align: center;
+  margin-top: 3em;
+  padding: 2em 1em;
+  font-family: 'Bitter', serif;
+}
+
+.footer-text p {
+  font-size: 1em;
+  color: white;
+}
+
   </style>
+  <link href="https://fonts.googleapis.com/css2?family=Bitter:wght@400;700&display=swap" rel="stylesheet">
+</head>
         <body>
           <nav>
             <div class="logo-wrapper">
-              <a href="observatory.html">
+              <a href="index.html">
                 <img class="logo" src="assets/logocr.png" alt="Secrets Observatory Logo" style="height: 60px;">
               </a>
             </div>
