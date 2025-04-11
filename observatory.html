@@ -5,128 +5,16 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>The Secrets Observatory</title>
   <link rel="icon" type="image/jpg" href="logocr.png" />
-  <style>
-    html, body {
-      margin: 0;
-      padding: 0;
-      height: 100%;
-    }
-
-    /* ✅ Background container */
-    .background {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      z-index: -1;
-      overflow: hidden;
-    }
-
-    .background img {
-      min-width: 100%;
-      min-height: 100%;
-      object-fit: cover;
-    }
-
-    body {
-      font-family: Arial, sans-serif;
-      color: white;
-      background-color: black;
-      padding: 20px;
-    }
-
-    .bio-block {
-      background-color: rgba(0, 0, 0, 0.85);
-      padding: 30px;
-      border-radius: 12px;
-      max-width: 700px;
-      margin: 0 auto;
-      box-shadow: 0 0 20px rgba(255, 255, 255, 0.05);
-      line-height: 1.6;
-    }
-
-    .bio-block p {
-      margin-bottom: 1.5em;
-      text-align: justify;
-    }
-
-    .dn-image-container {
-      margin-top: 2em;
-      text-align: left;
-    }
-
-    .dn-image-container img {
-      width: 180px;
-      height: auto;
-      opacity: 0.9;
-    }
-
-    .image-large {
-      width: 100%;
-      height: auto;
-      display: block;
-      margin: 2em auto;
-      opacity: 1;
-      border-radius: 10px;
-    }
-
-    @media (max-width: 600px) {
-      .bio-block {
-        padding: 20px;
-        font-size: 16px;
-      }
-    }
-    nav {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  max-width: 1000px;
-  margin: 0 auto 30px;
-  padding: 10px 20px;
-}
-
-.logo-wrapper img.logo {
-  height: 60px;
-}
-
-.nav-links {
-  display: flex;
-  gap: 1.2em;
-  flex-wrap: wrap;
-}
-
-.nav-links a {
-  color: white;
-  text-decoration: none;
-  font-weight: 600;
-  font-size: 1em;
-}
-
-.nav-links a:hover {
-  text-decoration: underline;
-}
-
-footer {
-  text-align: center;
-  margin-top: 3em;
-  padding: 2em 1em;
-  font-family: 'Bitter', serif;
-}
-
-.footer-text p {
-  font-size: 1em;
-  color: white;
-}
-
-  </style>
-<link href="https://fonts.googleapis.com/css2?family=Bitter:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Bitter:wght@400;700&display=swap" rel="stylesheet">
 </head>
 <body>
+<!-- Navigation -->
+<div class="nav-container">
   <nav>
     <div class="logo-wrapper">
       <a href="index.html">
-        <img class="logo" src="assets/logocr.png" alt="Secrets Observatory Logo" style="height: 60px;">
+        <img class="logo" src="assets/logocr.png" alt="Secrets Observatory Logo">
       </a>
     </div>
     <div class="nav-links">
@@ -137,6 +25,8 @@ footer {
       <a href="visitorsprogram.html">Visitors Program</a>
     </div>
   </nav>
+</div>
+
   <!-- ✅ Animated GIF background -->
   <div class="background">
     <img src="assets/starsloop.gif" alt="Animated background" />

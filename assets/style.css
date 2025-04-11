@@ -1,165 +1,249 @@
 /* === Reset & Global === */
 html, body {
-    margin: 0;
-    padding: 0;
-    height: 100%;
-    background-color: #040402;
-    color: white;
-    font-family: 'Bitter', serif;
-    box-sizing: border-box;
-  }
-  
-  /* === Paragraphs === */
-  p {
-    max-width: 800px;
-    margin: 1.5em auto;
-    padding: 0 20px;
-    line-height: 1.6;
-    text-align: justify;
-    font-size: 18px;
-  }
-  
-  /* === Navigation === */
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  background-color: #040402;
+  color: white;
+  font-family: 'Bitter', serif;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+}
+
+body {
+  flex: 1;
+}
+
+/* === Paragraphs === */
+p {
+  max-width: 800px;
+  margin: 1.5em auto;
+  padding: 0 20px;
+  line-height: 1.6;
+  text-align: justify;
+  font-size: 18px;
+}
+
+/* === Navigation === */
+nav {
+  position: sticky;
+  top: 0;
+  background-color: #040402 !important;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 20px;
+  max-width: 1000px;
+  margin: 0 auto 30px;
+  z-index: 1000;
+  flex-wrap: wrap;
+}
+
+.logo-wrapper {
+  flex-shrink: 0;
+}
+
+.logo-wrapper img.logo {
+  height: 160px;
+  object-fit: contain;
+  filter: none;
+  transition: filter 0.3s ease;
+  display: block;
+  margin: 0 auto;
+}
+
+.logo-wrapper img.logo:hover {
+  filter: drop-shadow(0 0 10px white);
+}
+
+.nav-links {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  flex: 1;
+  gap: 1.2em;
+}
+
+.nav-links a {
+  color: white;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 1em;
+}
+
+.nav-links a:hover {
+  text-decoration: underline;
+}
+
+/* === Header === */
+.header-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  padding: 20px;
+  background-color: #040402;
+}
+
+/* === Main Content === */
+.content {
+  padding: 40px 20px;
+  background-color: #040402;
+  text-align: center;
+}
+
+.hero-image,
+.image-large {
+  width: 100%;
+  max-width: 1000px;
+  height: auto;
+  display: block;
+  margin: 2em auto;
+  border-radius: 10px;
+}
+
+.bio-block {
+  background-color: rgba(0, 0, 0, 0.85);
+  padding: 30px;
+  border-radius: 12px;
+  max-width: 700px;
+  margin: 0 auto;
+  box-shadow: 0 0 20px rgba(255, 255, 255, 0.05);
+  line-height: 1.6;
+}
+
+.bio-block p {
+  margin-bottom: 1.5em;
+  text-align: justify;
+}
+
+/* === Toggle Section === */
+.toggle-section {
+  margin-top: 2em;
+}
+
+.toggle-button {
+  display: block;
+  width: 100%;
+  text-align: left;
+  padding: 0.75em 1em;
+  margin-top: 1em;
+  font-size: 1.2em;
+  background-color: rgba(255, 255, 255, 0.05);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background-color 0.2s ease;
+}
+
+.toggle-button:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+.toggle-list {
+  display: none;
+  margin-top: 0.5em;
+  margin-bottom: 1em;
+  padding-left: 1.5em;
+  list-style-type: disc;
+}
+
+.toggle-list li {
+  margin-bottom: 0.5em;
+}
+
+.toggle-list a {
+  color: #a3d7ff;
+  text-decoration: none;
+}
+
+.toggle-list a:hover {
+  text-decoration: underline;
+}
+
+/* === Background === */
+.background {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  overflow: hidden;
+}
+
+.background img {
+  min-width: 100%;
+  min-height: 100%;
+  object-fit: cover;
+}
+
+/* === Footer === */
+footer {
+  margin-top: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 2em 1em;
+  background-color: #040402;
+  color: white;
+  font-family: 'Bitter', serif;
+}
+
+.footer-text p {
+  margin: 0;
+  font-size: 1em;
+  color: white;
+}
+
+/* === Responsive === */
+@media (max-width: 600px) {
   nav {
-    position: sticky;
-    top: 0;
-    background-color: #040402 !important;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 0 30px;
-    z-index: 1000;
-    height: auto;
-    flex-wrap: wrap;
+    flex-direction: column;
+    padding: 20px 10px;
   }
-  
-  .logo-wrapper {
-    flex-shrink: 0;
-  }
-  
+
   .logo-wrapper img.logo {
-    height: 160px;
-    object-fit: contain;
-    filter: none;
-    transition: filter 0.3s ease;
-    display: block;
-    margin: 0 auto;
+    height: 120px;
+    margin-bottom: 10px;
   }
-  
-  .logo-wrapper img.logo:hover {
-    filter: drop-shadow(0 0 10px white);
-  }
-  
+
   .nav-links {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: flex-end;
-    flex: 1;
-    gap: 10px;
-  }
-  
-  .nav-links a {
-    color: white;
-    text-decoration: none;
-    margin: 10px 10px;
-    font-size: 1.1em;
-    font-weight: bold;
-  }
-  
-  /* === Header === */
-  .header-container {
-    display: flex;
+    flex-direction: column;
     align-items: center;
-    justify-content: center;
-    flex-wrap: wrap;
-    padding: 20px;
-    background-color: #040402;
+    gap: 8px;
+    flex: unset;
+    width: 100%;
   }
-  
-  /* === Main Content === */
-  .content {
-    padding: 40px 20px;
-    background-color: #040402;
-    text-align: center;
+
+  .nav-links a {
+    margin: 6px 0;
   }
-  
+
   .hero-image,
   .image-large {
-    width: 100%;
-    max-width: 1000px;
-    height: auto;
-    display: block;
-    margin: 2em auto;
-    border-radius: 10px;
+    max-width: 95%;
   }
-  
-  /* === Footer === */
-  footer {
-    display: flex;
-    justify-content: center; /* centered for desktop */
-    align-items: center;
-    text-align: center;
+
+  .bio-block {
     padding: 20px;
-    background-color: #040402;
+    font-size: 16px;
   }
-  
-  .footer-text p {
-    margin: 0;
-    color: white;
+
+  footer {
+    flex-direction: column;
   }
-  
-  /* === Background (optional) === */
-  .background {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    z-index: -1;
-    overflow: hidden;
-  }
-  
-  .background img {
-    min-width: 100%;
-    min-height: 100%;
-    object-fit: cover;
-  }
-  
-  /* === Responsive === */
-  @media (max-width: 600px) {
-    nav {
-      flex-direction: column;
-      padding: 20px 10px;
-    }
-  
-    .logo-wrapper img.logo {
-      height: 120px;
-      margin-bottom: 10px;
-    }
-  
-    .nav-links {
-      flex-direction: column;
-      align-items: center;
-      gap: 8px;
-      flex: unset;
-      width: 100%;
-    }
-  
-    .nav-links a {
-      margin: 6px 0;
-    }
-  
-    .hero-image,
-    .image-large {
-      max-width: 95%;
-    }
-  
-    p {
-      font-size: 16px;
-    }
-  
-    footer {
-      flex-direction: column;
-    }
-  }
-  
+}
+.nav-container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  background-color: #040402;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
