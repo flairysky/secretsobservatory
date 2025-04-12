@@ -104,13 +104,13 @@ nav {
 }
 
 .bio-block {
-  background-color: rgba(0, 0, 0, 0.85);
+  background-color: transparent; /* Removed background color */
   padding: 30px;
-  border-radius: 12px;
   max-width: 700px;
   margin: 0 auto;
-  box-shadow: 0 0 20px rgba(255, 255, 255, 0.05);
   line-height: 1.6;
+  border-radius: 0; /* Remove rounded corners */
+  box-shadow: none; /* Remove any glow or shadow */
 }
 
 .bio-block p {
