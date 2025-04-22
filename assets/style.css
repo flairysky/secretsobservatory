@@ -281,3 +281,13 @@ ul li a {
 ul li a:hover {
   text-decoration: underline;
 }
+
+p a {
+  color: #a3d7ff;
+  text-decoration: none;
+  font-style: bold;
+}
+
+p a:hover {
+  text-decoration: underline;
+}
