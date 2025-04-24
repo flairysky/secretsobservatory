@@ -168,16 +168,26 @@
     }
 
     function playZoomAnimation(type, callback) {
-      zoomEffect.src = type === 'in'
-        ? 'assets/zoommap/zoom-in-1.gif'
-        : 'assets/zoommap/zoom-out.gif';
-      zoomEffect.style.display = 'block';
+  let gifName = '';
 
-      setTimeout(() => {
-        zoomEffect.style.display = 'none';
-        callback();
-      }, 4000); // adjust based on GIF duration
-    }
+  if (type === 'in') {
+    if (currentLevel === 0) gifName = 'zoom-in-1.gif';
+    else if (currentLevel === 1) gifName = 'zoom-in-2.gif';
+    else if (currentLevel === 2) gifName = 'zoom-in-3.gif';
+  } else {
+    if (currentLevel === 1) gifName = 'zoom-out-1.gif';
+    else if (currentLevel === 2) gifName = 'zoom-out-2.gif';
+    else if (currentLevel === 3) gifName = 'zoom-out-3.gif';
+  }
+
+  zoomEffect.src = `assets/zoommap/${gifName}`;
+  zoomEffect.style.display = 'block';
+
+  setTimeout(() => {
+    zoomEffect.style.display = 'none';
+    callback();
+  }, 4000); // Adjust to match gif duration
+}
 
     zoomInBtn.addEventListener('click', () => {
       if (currentLevel < imageLayers.length - 1) {
