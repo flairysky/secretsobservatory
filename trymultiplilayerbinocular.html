@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Binocular Zoom Effect</title>
+  <style>
+    body, html {
+      margin: 0;
+      padding: 0;
+      overflow: hidden;
+      cursor: none;
+      font-family: sans-serif;
+      background: #000;
+    }
+
+    .container {
+      position: relative;
+      width: 100vw;
+      height: 100vh;
+    }
+
+    .layer {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      top: 0;
+      left: 0;
+    }
+
+    .reveal-area {
+      position: absolute;
+      width: 120px;
+      height: 120px;
+      border-radius: 50%;
+      overflow: hidden;
+      pointer-events: none;
+      z-index: 10;
+      box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
+    }
+
+    .reveal-area img {
+      position: absolute;
+      width: 100vw;
+      height: 100vh;
+      object-fit: cover;
+    }
+
+    .controls {
+      position: absolute;
+      bottom: 20px;
+      right: 20px;
+      z-index: 20;
+      display: flex;
+      gap: 10px;
+    }
+
+    button {
+      padding: 10px 20px;
+      font-size: 16px;
+      background: rgba(255,255,255,0.1);
+      color: white;
+      border: 1px solid white;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    button:disabled {
+      opacity: 0.3;
+      cursor: not-allowed;
+    }
+  </style>
+</head>
+<body>
+  <div class="container" id="container">
+    <!-- Image layers are inserted here -->
+    
+    <!-- Two circular "binocular" reveal windows -->
+    <div class="reveal-area" id="leftLens"><img /></div>
+    <div class="reveal-area" id="rightLens"><img /></div>
+
+    <div class="controls">
+      <button id="zoomOut">Zoom Out</button>
+      <button id="zoomIn">Zoom In</button>
+    </div>
+  </div>
+
+  <script>
+    const imageLayers = [
+      'assets/zoommap/layer1.PNG',
+      'assets/zoommap/layer2.PNG',
+      'assets/zoommap/layer3.PNG',
+      'assets/zoommap/layer4.PNG'
+    ];
+
+
+    const container = document.getElementById('container');
+    const leftLens = document.getElementById('leftLens');
+    const rightLens = document.getElementById('rightLens');
+    const leftImg = leftLens.querySelector('img');
+    const rightImg = rightLens.querySelector('img');
+    const zoomInBtn = document.getElementById('zoomIn');
+    const zoomOutBtn = document.getElementById('zoomOut');
+
+    let currentLevel = 0;
+    let layers = [];
+
+    const lensSpacing = 140; // horizontal space between the two circles
+
+    function updateZoomButtons() {
+      zoomInBtn.disabled = currentLevel >= imageLayers.length - 1;
+      zoomOutBtn.disabled = currentLevel <= 0;
+    }
+
+    function renderLayers() {
+      layers.forEach(layer => layer.remove());
+      layers = [];
+
+      for (let i = 0; i <= currentLevel; i++) {
+        const img = document.createElement('img');
+        img.src = imageLayers[i];
+        img.className = 'layer';
+        img.style.zIndex = i;
+        container.insertBefore(img, leftLens);
+        layers.push(img);
+      }
+
+      if (currentLevel < imageLayers.length - 1) {
+        const nextLayer = imageLayers[currentLevel + 1];
+        leftImg.src = nextLayer;
+        rightImg.src = nextLayer;
+        leftLens.style.display = 'block';
+        rightLens.style.display = 'block';
+        document.body.style.cursor = 'none';
+      } else {
+        leftLens.style.display = 'none';
+        rightLens.style.display = 'none';
+        document.body.style.cursor = 'auto';
+      }
+
+      updateZoomButtons();
+    }
+
+    container.addEventListener('mousemove', (e) => {
+      if (currentLevel >= imageLayers.length - 1) return;
+
+      const x = e.clientX;
+      const y = e.clientY;
+      const r = leftLens.offsetWidth / 2;
+
+      const leftX = x - lensSpacing / 2 - r;
+      const rightX = x + lensSpacing / 2 - r;
+      const topY = y - r;
+
+      leftLens.style.left = `${leftX}px`;
+      leftLens.style.top = `${topY}px`;
+      rightLens.style.left = `${rightX}px`;
+      rightLens.style.top = `${topY}px`;
+
+      leftImg.style.left = `-${leftX}px`;
+      leftImg.style.top = `-${topY}px`;
+      rightImg.style.left = `-${rightX}px`;
+      rightImg.style.top = `-${topY}px`;
+    });
+
+    zoomInBtn.addEventListener('click', () => {
+      if (currentLevel < imageLayers.length - 1) {
+        currentLevel++;
+        renderLayers();
+      }
+    });
+
+    zoomOutBtn.addEventListener('click', () => {
+      if (currentLevel > 0) {
+        currentLevel--;
+        renderLayers();
+      }
+    });
+
+    container.addEventListener('mouseleave', () => {
+      leftLens.style.display = 'none';
+      rightLens.style.display = 'none';
+    });
+
+    container.addEventListener('mouseenter', () => {
+      if (currentLevel < imageLayers.length - 1) {
+        leftLens.style.display = 'block';
+        rightLens.style.display = 'block';
+      }
+    });
+
+    container.addEventListener('wheel', (e) => {
+      if (e.deltaY < 0) {
+        zoomInBtn.click();
+      } else {
+        zoomOutBtn.click();
+      }
+    });
+
+    renderLayers();
+  </script>
+</body>
+</html>

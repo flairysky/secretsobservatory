@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Reveal Under Image</title>
+  <style>
+    body, html {
+      margin: 0;
+      padding: 0;
+      overflow: hidden;
+    }
+
+    .container {
+      position: relative;
+      width: 100vw;
+      height: 100vh;
+    }
+
+    .bottom-image,
+    .top-image {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      top: 0;
+      left: 0;
+    }
+
+    .reveal-area {
+      position: absolute;
+      width: 150px;
+      height: 150px;
+      border-radius: 50%;
+      overflow: hidden;
+      pointer-events: none;
+      z-index: 10;
+      box-shadow: 0 0 20px rgba(0, 0, 0, 0.4);
+    }
+
+    .reveal-area img {
+      position: absolute;
+      width: 100vw;
+      height: 100vh;
+      object-fit: cover;
+    }
+  </style>
+</head>
+<body>
+  <div class="container" id="container">
+    <img src="assets/zoommap/layer2.PNG" class="bottom-image" alt="Bottom Layer" />
+    <img src="assets/zoommap/layer1.PNG" class="top-image" alt="Top Layer" />
+
+    <div class="reveal-area" id="revealArea">
+      <img src="assets/zoommap/layer2.PNG" alt="Revealed Area" />
+    </div>
+  </div>
+
+  <script>
+    const revealArea = document.getElementById('revealArea');
+    const container = document.getElementById('container');
+    const revealImage = revealArea.querySelector('img');
+
+    container.addEventListener('mousemove', (e) => {
+      const offsetX = e.clientX - revealArea.offsetWidth / 2;
+      const offsetY = e.clientY - revealArea.offsetHeight / 2;
+
+      revealArea.style.left = `${offsetX}px`;
+      revealArea.style.top = `${offsetY}px`;
+
+      revealImage.style.left = `-${offsetX}px`;
+      revealImage.style.top = `-${offsetY}px`;
+    });
+
+    container.addEventListener('mouseleave', () => {
+      revealArea.style.display = 'none';
+    });
+
+    container.addEventListener('mouseenter', () => {
+      revealArea.style.display = 'block';
+    });
+  </script>
+</body>
+</html>

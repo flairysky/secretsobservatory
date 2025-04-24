@@ -2,53 +2,63 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Binocular Zoom Layers</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Binocular Zoom Effect</title>
   <style>
     body {
       margin: 0;
       background: #111;
-      overflow: hidden;
       font-family: sans-serif;
+      cursor: none;
     }
+
     .container {
       position: relative;
       width: 100vw;
       height: 100vh;
+      background-image: url('assets/zoommap/layer1.PNG');
+      background-size: cover;
+      background-position: center;
       overflow: hidden;
-      cursor: none;
     }
-    .layer, .transition {
+
+    .binocular-mask {
+      position: absolute;
+      width: 250px;
+      height: 100px;
+      overflow: hidden;
+      pointer-events: none;
+      -webkit-mask-image: url('assets/zoommap/binoculars.png');
+      -webkit-mask-repeat: no-repeat;
+      -webkit-mask-size: 100% 100%;
+      mask-image: url('assets/zoommap/binoculars.png');
+      mask-repeat: no-repeat;
+      mask-size: 100% 100%;
+      display: none;
+    }
+
+    .binocular-view {
       position: absolute;
       top: 0;
       left: 0;
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      transition: opacity 0.8s ease;
-      z-index: 1;
-    }
-    .layer.hidden, .transition.hidden {
-      opacity: 0;
-      pointer-events: none;
-    }
-    .binocular-overlay {
-      position: absolute;
-      width: 500px;
-      height: 300px;
-      pointer-events: none;
-      z-index: 15;
-      background: url('binoculars.png') no-repeat center center;
-      background-size: contain;
-    }
-    .binocular-view {
-      position: absolute;
       width: 100vw;
       height: 100vh;
-      pointer-events: none;
-      object-fit: cover;
-      z-index: 14;
+      background-image: url('assets/zoommap/layer2.PNG');
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: center;
     }
+
+    .binocular-overlay {
+      position: absolute;
+      width: 250px;
+      height: 100px;
+      background: url('assets/zoommap/binoculars.png') no-repeat center center;
+      background-size: contain;
+      pointer-events: none;
+      display: none;
+    }
+
     .zoom-button {
       position: absolute;
       bottom: 20px;
@@ -61,145 +71,73 @@
       cursor: pointer;
       z-index: 20;
     }
-    .hotspot {
-      position: absolute;
-      width: 40px;
-      height: 40px;
-      z-index: 5;
-      pointer-events: none;
-    }
-    .hotspot-icon {
-      width: 100%;
-      height: 100%;
-      display: none;
-      pointer-events: auto;
-      cursor: pointer;
-    }
-    .hotspot-icon.visible {
-      display: block;
-    }
-    #transitionLayer {
-      z-index: 25;
-      opacity: 0;
-      pointer-events: none;
-    }
   </style>
 </head>
 <body>
-  <div class="container">
-    <img src="layer1.gif" class="layer" id="layer1" />
-    <img src="layer2.gif" class="layer hidden" id="layer2" />
-    <img src="layer3.gif" class="layer hidden" id="layer3" />
-    <img src="layer4.gif" class="layer hidden" id="layer4" />
-
-    <img src="" class="transition hidden" id="transitionLayer" />
-
-    <img src="layer2.gif" class="binocular-view" id="binocularView" />
-    <div class="binocular-overlay" id="binocularOverlay"></div>
-
-    <div class="hotspot" id="hotspot1" style="top: 100px; left: 150px;">
-      <a href="https://example.com">
-        <img src="icon.png" class="hotspot-icon" id="icon1" />
-      </a>
+  <div class="container" id="container">
+    <div class="binocular-mask" id="binocularMask">
+      <div class="binocular-view" id="binocularView"></div>
     </div>
-
+    <div class="binocular-overlay" id="binocularOverlay"></div>
     <button class="zoom-button" id="zoomBtn">Zoom In</button>
   </div>
 
   <script>
-    const layers = [
-      document.getElementById('layer1'),
-      document.getElementById('layer2'),
-      document.getElementById('layer3'),
-      document.getElementById('layer4'),
-    ];
+    const container = document.getElementById('container');
+    const binocularMask = document.getElementById('binocularMask');
     const binocularView = document.getElementById('binocularView');
     const binocularOverlay = document.getElementById('binocularOverlay');
-    const transitionLayer = document.getElementById('transitionLayer');
     const zoomBtn = document.getElementById('zoomBtn');
-    const hotspot = document.getElementById('hotspot1');
-    const icon = document.getElementById('icon1');
+
+    const layers = [
+      'assets/zoommap/layer1.PNG',
+      'assets/zoommap/layer2.PNG',
+      'assets/zoommap/layer3.PNG',
+      'assets/zoommap/layer4.PNG'
+    ];
 
     let zoomLevel = 0;
-    let isTransitioning = false;
 
-    document.addEventListener('mousemove', (e) => {
-      if (zoomLevel >= layers.length - 1 || isTransitioning) return;
-      const x = e.clientX - binocularOverlay.offsetWidth / 2;
-      const y = e.clientY - binocularOverlay.offsetHeight / 2;
-      binocularOverlay.style.left = `${x}px`;
-      binocularOverlay.style.top = `${y}px`;
-      binocularView.style.left = `-${x}px`;
-      binocularView.style.top = `-${y}px`;
+    container.addEventListener('mousemove', (e) => {
+      const maskWidth = binocularMask.offsetWidth;
+      const maskHeight = binocularMask.offsetHeight;
+      const mouseX = e.clientX;
+      const mouseY = e.clientY;
 
-      const rect = hotspot.getBoundingClientRect();
-      if (
-        e.clientX > rect.left &&
-        e.clientX < rect.right &&
-        e.clientY > rect.top &&
-        e.clientY < rect.bottom
-      ) {
-        icon.classList.add('visible');
-      } else {
-        icon.classList.remove('visible');
-      }
+      const left = mouseX - maskWidth / 2;
+      const top = mouseY - maskHeight / 2;
+
+      binocularMask.style.left = `${left}px`;
+      binocularMask.style.top = `${top}px`;
+      binocularOverlay.style.left = `${left}px`;
+      binocularOverlay.style.top = `${top}px`;
+
+      // Move background to simulate zoom
+      const zoomedX = -((mouseX / window.innerWidth) * window.innerWidth - maskWidth / 2);
+      const zoomedY = -((mouseY / window.innerHeight) * window.innerHeight - maskHeight / 2);
+      binocularView.style.backgroundPosition = `${zoomedX}px ${zoomedY}px`;
     });
 
-    function playTransition(from, to, direction) {
-      return new Promise((resolve) => {
-        isTransitioning = true;
-        const filename = `transition-${from + 1}-${to + 1}-${direction}.gif`;
-        transitionLayer.src = filename;
-        transitionLayer.classList.remove('hidden');
-        transitionLayer.style.opacity = '1';
+    function updateView() {
+      container.style.backgroundImage = `url('${layers[zoomLevel]}')`;
 
-        setTimeout(() => {
-          transitionLayer.style.opacity = '0';
-          transitionLayer.classList.add('hidden');
-          isTransitioning = false;
-          resolve();
-        }, 2000);
-      });
-    }
-
-    async function zoom(direction) {
-      if (isTransitioning) return;
-      const newLevel = zoomLevel + direction;
-      if (newLevel < 0 || newLevel >= layers.length) return;
-
-      await playTransition(zoomLevel, newLevel, direction > 0 ? 'in' : 'out');
-
-      layers[zoomLevel].classList.add('hidden');
-      zoomLevel = newLevel;
-      layers[zoomLevel].classList.remove('hidden');
-
-      if (zoomLevel === layers.length - 1) {
-        binocularOverlay.style.display = 'none';
-        binocularView.style.display = 'none';
-        zoomBtn.textContent = 'Zoom Out';
-      } else {
+      const nextLayer = zoomLevel + 1;
+      if (nextLayer < layers.length) {
+        binocularView.style.backgroundImage = `url('${layers[nextLayer]}')`;
+        binocularMask.style.display = 'block';
         binocularOverlay.style.display = 'block';
-        binocularView.style.display = 'block';
-        binocularView.src = `layer${zoomLevel + 2}.gif`;
-        zoomBtn.textContent = 'Zoom In';
+      } else {
+        binocularMask.style.display = 'none';
+        binocularOverlay.style.display = 'none';
       }
     }
 
     zoomBtn.addEventListener('click', () => {
-      if (zoomLevel < layers.length - 1) {
-        zoom(1);
-      } else {
-        zoom(-1 * zoomLevel);
-      }
+      zoomLevel = (zoomLevel + 1) % layers.length;
+      updateView();
     });
 
-    document.addEventListener('wheel', (e) => {
-      if (e.deltaY > 0) {
-        zoom(1);
-      } else {
-        zoom(-1);
-      }
-    });
+    updateView();
   </script>
 </body>
 </html>
