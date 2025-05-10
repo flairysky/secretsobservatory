@@ -29,22 +29,17 @@ p {
 nav {
   position: sticky;
   top: 0;
-  background-color: transparent !important; /* Make it transparent */
+  background-color: transparent !important;
   display: flex;
   align-items: center;
   justify-content: space-between;
   padding: 10px 20px;
   max-width: 1000px;
-  margin: 0 auto 30px;
+  margin: 0 auto; /* Removed the bottom margin */
   z-index: 1000;
   flex-wrap: wrap;
-  backdrop-filter: blur(0px); /* Optional: Adds a slight blur for better text visibility */
+  backdrop-filter: blur(0px);
 }
-
-.header-container {
-  background-color: transparent; /* Also transparent if you use this section */
-}
-
 
 .logo-wrapper {
   flex-shrink: 0;
@@ -94,7 +89,7 @@ nav {
 
 /* === Main Content === */
 .content {
-  padding: 40px 20px;
+  padding: 0px 20px;
   background-color: #040402;
   text-align: center;
 }
