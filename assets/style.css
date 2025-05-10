@@ -14,7 +14,12 @@ html, body {
 body {
   flex: 1;
 }
-
+/* === ACTIVE MENU LINK === */
+.nav-links a.active {
+  color: #a3d7ff; /* Gold/Yellow color for active link */
+  text-decoration: underline; /* Underline to highlight */
+  font-weight: bold; /* Optional: make it bold */
+}
 /* === Paragraphs === */
 p {
   max-width: 800px;
@@ -74,7 +79,7 @@ nav {
 }
 
 .nav-links a:hover {
-  text-decoration: underline;
+  color:#a3d7ff;
 }
 
 /* === Header === */
