@@ -1,4 +1,4 @@
-/* === Reset & Global === */
+
 html, body {
   margin: 0;
   padding: 0;
@@ -29,7 +29,7 @@ p {
 nav {
   position: sticky;
   top: 0;
-  background-color: #040402 !important;
+  background-color: transparent !important; /* Make it transparent */
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -38,7 +38,13 @@ nav {
   margin: 0 auto 30px;
   z-index: 1000;
   flex-wrap: wrap;
+  backdrop-filter: blur(0px); /* Optional: Adds a slight blur for better text visibility */
 }
+
+.header-container {
+  background-color: transparent; /* Also transparent if you use this section */
+}
+
 
 .logo-wrapper {
   flex-shrink: 0;
