@@ -38,7 +38,46 @@
             <span style="color: #ffea00;">light</span> and 
             <span style="color: #a3d7ff;">fluids</span>.
           </p>
-        </div>
+          <p>
+            In particular, we focus on understading these two natural phenomena better by <it>as precisely as possible</it> describing and visualising their behaviour.
+            By doing this, we can observe and uncover their characteristics.
+          </p>
+          <p>
+            To achive the above, we model, simulate and animate both <span style="color: #ffea00;">light</span> and 
+            <span style="color: #a3d7ff;">fluids</span>. We use mainly two approaches:<br>
+            <ul>
+              <li>Starting from a mathematical description of nature to derive the desired natural phenomenon.</li>
+              <li>Observing natural behaviour and subsequently aiming at mathematically describing it.</li>
+            </ul>
+          </p>
+          <p>
+            Finaly, we present all our outcomes (including code) transparent on the webpage,
+            so that anybody can investigate them further.
+            Moreover, in our presentation we try to use ordinary language so that as many people can understand it and explore it for themselves.<br>
+            This is also one of the reasons we write up the <a href="protocols.html">protocols</a>, where anybody can learn how to set up a virtual environment on their computer to try for themselves to model nature :) .
+          </p>
+        
+
+        <div class="toggle-section">
+      <button class="toggle-button" onclick="toggleList('light experiments')">Experiments with <span style="color: #ffea00;">light</span></button>
+      <ul id="light experiments" class="toggle-list">
+        <p>Here, you can find our experiments aiming at describing <span style="color: #ffea00;">light</span>.</p>
+      </ul>
+      
+      <button class="toggle-button" onclick="toggleList('fluids experiements')">Experiements with <span style="color: #a3d7ff;">fluids</span></button>
+      <ul id="fluids experiements" class="toggle-list">
+        <p>Here, you can find our experiments aiming at describing <span style="color: #a3d7ff;">fluids</span>.</p>
+      </ul>
+    </div>
+  </div>
+</div>
+  <script>
+    function toggleList(id) {
+      const list = document.getElementById(id);
+      list.style.display = list.style.display === 'block' ? 'none' : 'block';
+    }
+  </script>
+
         <footer>
           <div class="footer-text">
             <p>&copy; 2025 Secrets Observatory</p>
