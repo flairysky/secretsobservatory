@@ -35,10 +35,10 @@ function setDifficulty(level) {
     maxButterflies = 6;
     maxBlowDuration = 1500;
   } else if (level === 'bubble-novice') {
-    maxButterflies = 3;
+    maxButterflies = 4;
     maxBlowDuration = 700;
   } else if (level === 'tiny-puffer') {
-    maxButterflies = 1;
+    maxButterflies = 3;
     maxBlowDuration = 200;
   }
   updateButtonStyles();
