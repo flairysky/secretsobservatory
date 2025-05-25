@@ -147,7 +147,7 @@ function draw() {
   textSize(20);
   textAlign(CENTER, TOP);
   textFont('Bitter');
-  text("Score: " + score, width / 2, 30);
+  text("Bubbled Butterflies: " + score, width / 2, 30);
 
   if (millis() - lastSpawnTime > 1000) {
     while (butterflies.length < maxButterflies) {
