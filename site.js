@@ -818,7 +818,7 @@ function formatDate(dateString) {
 }
 
 function parseFrontMatter(markdown) {
-  const lines = markdown.split('\n');
+  const lines = markdown.split('\n').map(line => line.trim());
   
   if (lines[0] !== '---') {
     return { frontMatter: {}, content: markdown };
@@ -852,7 +852,8 @@ function parseFrontMatter(markdown) {
           .map(s => s.trim().replace(/^["']|["']$/g, ''))
           .filter(s => s.length > 0);
       } else {
-        frontMatter[key] = value.replace(/^["']|["']$/g, '');
+        // Remove quotes and clean the value
+        frontMatter[key] = value.trim().replace(/^["']|["']$/g, '');
       }
     }
   });
@@ -1028,7 +1029,7 @@ async function initPostPage() {
     ).join(' ');
     
     document.getElementById('postMeta').innerHTML = 
-      `${formatDate(frontMatter.date)} • ${categories}`;
+      `${formatDate(frontMatter.date || '')} • ${categories}`;
     
     // Render markdown content
     const postBody = document.getElementById('postBody');
@@ -1222,44 +1223,4 @@ function formatDate(dateString) {
     month: 'long', 
     day: 'numeric' 
   });
-}
-
-function parseFrontMatter(markdown) {
-  const lines = markdown.split('\n');
-  
-  if (lines[0] !== '---') {
-    return { frontMatter: {}, content: markdown };
-  }
-  
-  let endIndex = -1;
-  for (let i = 1; i < lines.length; i++) {
-    if (lines[i] === '---') {
-      endIndex = i;
-      break;
-    }
-  }
-  
-  if (endIndex === -1) {
-    return { frontMatter: {}, content: markdown };
-  }
-  
-  const frontMatterLines = lines.slice(1, endIndex);
-  const content = lines.slice(endIndex + 1).join('\n');
-  
-  const frontMatter = {};
-  frontMatterLines.forEach(line => {
-    const match = line.match(/^(\w+):\s*(.+)$/);
-    if (match) {
-      const [, key, value] = match;
-      
-      // Parse arrays
-      if (value.startsWith('[') && value.endsWith(']')) {
-        frontMatter[key] = value.slice(1, -1).split(',').map(s => s.trim().replace(/"/g, ''));
-      } else {
-        frontMatter[key] = value.replace(/"/g, '');
-      }
-    }
-  });
-  
-  return { frontMatter, content };
 }

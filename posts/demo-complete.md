@@ -6,8 +6,6 @@ excerpt: "A comprehensive demonstration of all blog features including LaTeX ren
 cover_image: "assets/covers/demo.svg"
 ---
 
-# A Complete Demo: Math, Images, and Formatting
-
 This post demonstrates all the features of the Secrets Observatory blog, including mathematical typesetting, image handling, code blocks, and various formatting options.
 
 ## Mathematical Content
