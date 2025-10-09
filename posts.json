@@ -1,0 +1,42 @@
+{
+  "site": {
+    "title": "Secrets Observatory",
+    "tagline": "Math, ethics, and notes in progress.",
+    "author": "Daniel Nádraský",
+    "baseUrl": "https://secretsobservatory.com"
+  },
+  "posts": [
+    {
+      "slug": "demo-complete",
+      "title": "A Complete Demo: Math, Images, and Formatting",
+      "date": "2025-10-09",
+      "categories": ["Demo", "Mathematics", "Tutorial"],
+      "excerpt": "A comprehensive demonstration of all blog features including LaTeX rendering, images, code blocks, and various formatting options.",
+      "cover_image": "assets/covers/demo.svg"
+    },
+    {
+      "slug": "sample-algebra",
+      "title": "Notes on Ideals and Modules",
+      "date": "2025-10-09",
+      "categories": ["Algebra","Ring Theory"],
+      "excerpt": "Why ideals are R-modules and when modules matter.",
+      "cover_image": "assets/covers/algebra.jpg"
+    },
+    {
+      "slug": "sample-ethics",
+      "title": "Technocracy and Unintended Consequences",
+      "date": "2025-10-05",
+      "categories": ["Ethics","STS"],
+      "excerpt": "Brief notes on Jasanoff's themes.",
+      "cover_image": ""
+    },
+    {
+      "slug": "sample-notes",
+      "title": "Linear Algebra: Mean as Projection",
+      "date": "2025-09-28",
+      "categories": ["Linear Algebra","Statistics"],
+      "excerpt": "Viewing the mean via projections and kernels.",
+      "cover_image": ""
+    }
+  ]
+}

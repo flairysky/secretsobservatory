@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>Secrets Observatory</title>
+  <subtitle>Math, ethics, and notes in progress.</subtitle>
+  <link href="https://secretsobservatory.com/feed.xml" rel="self"/>
+  <link href="https://secretsobservatory.com/"/>
+  <id>https://secretsobservatory.com/</id>
+  <author>
+    <name>Daniel Nádraský</name>
+  </author>
+  <updated>2025-10-09T00:00:00Z</updated>
+
+  <entry>
+    <title>A Complete Demo: Math, Images, and Formatting</title>
+    <link href="https://secretsobservatory.com/post.html?slug=demo-complete"/>
+    <id>demo-complete</id>
+    <published>2025-10-09T00:00:00Z</published>
+    <updated>2025-10-09T00:00:00Z</updated>
+    <summary>A comprehensive demonstration of all blog features including LaTeX rendering, images, code blocks, and various formatting options.</summary>
+    <category term="Demo"/>
+    <category term="Mathematics"/>
+    <category term="Tutorial"/>
+  </entry>
+
+  <entry>
+    <title>Notes on Ideals and Modules</title>
+    <link href="https://secretsobservatory.com/post.html?slug=sample-algebra"/>
+    <id>sample-algebra</id>
+    <published>2025-10-09T00:00:00Z</published>
+    <updated>2025-10-09T00:00:00Z</updated>
+    <summary>Why ideals are R-modules and when modules matter.</summary>
+    <category term="Algebra"/>
+    <category term="Ring Theory"/>
+  </entry>
+
+  <entry>
+    <title>Technocracy and Unintended Consequences</title>
+    <link href="https://secretsobservatory.com/post.html?slug=sample-ethics"/>
+    <id>sample-ethics</id>
+    <published>2025-10-05T00:00:00Z</published>
+    <updated>2025-10-05T00:00:00Z</updated>
+    <summary>Brief notes on Jasanoff's themes.</summary>
+    <category term="Ethics"/>
+    <category term="STS"/>
+  </entry>
+
+  <entry>
+    <title>Linear Algebra: Mean as Projection</title>
+    <link href="https://secretsobservatory.com/post.html?slug=sample-notes"/>
+    <id>sample-notes</id>
+    <published>2025-09-28T00:00:00Z</published>
+    <updated>2025-09-28T00:00:00Z</updated>
+    <summary>Viewing the mean via projections and kernels.</summary>
+    <category term="Linear Algebra"/>
+    <category term="Statistics"/>
+  </entry>
+
+</feed>

@@ -1,0 +1,383 @@
+/* Custom styles to complement Tailwind */
+
+/* Better typography */
+body {
+  font-feature-settings: "kern" 1, "liga" 1, "calt" 1;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Improve article prose */
+.prose {
+  line-height: 1.7;
+  color: #374151;
+}
+
+.dark .prose {
+  color: #d1d5db;
+}
+
+.prose h1, .prose h2, .prose h3, .prose h4 {
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+  font-weight: 600;
+  line-height: 1.3;
+}
+
+.prose h1 {
+  font-size: 1.875rem;
+  margin-top: 0;
+}
+
+.prose h2 {
+  font-size: 1.5rem;
+}
+
+.prose h3 {
+  font-size: 1.25rem;
+}
+
+.prose p {
+  margin-bottom: 1.25rem;
+}
+
+.prose ul, .prose ol {
+  margin-bottom: 1.25rem;
+  padding-left: 1.5rem;
+}
+
+.prose li {
+  margin-bottom: 0.5rem;
+}
+
+.prose blockquote {
+  border-left: 4px solid #e5e7eb;
+  padding-left: 1rem;
+  margin: 1.5rem 0;
+  font-style: italic;
+  color: #6b7280;
+}
+
+.dark .prose blockquote {
+  border-left-color: #4b5563;
+  color: #9ca3af;
+}
+
+.prose img { 
+  max-width: 100%; 
+  height: auto; 
+  border-radius: 0.5rem;
+  margin: 1.5rem 0;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+}
+
+.dark .prose img {
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.3);
+}
+
+.prose pre { 
+  overflow-x: auto;
+  background-color: #f8fafc;
+  border: 1px solid #e2e8f0;
+  border-radius: 0.5rem;
+  padding: 1.25rem;
+  margin: 1.5rem 0;
+  font-size: 0.875rem;
+}
+
+.dark .prose pre {
+  background-color: #1e293b;
+  border-color: #475569;
+}
+
+.prose code {
+  background-color: #f1f5f9;
+  color: #1e293b;
+  padding: 0.125rem 0.375rem;
+  border-radius: 0.25rem;
+  font-size: 0.875em;
+  font-weight: 500;
+}
+
+.dark .prose code {
+  background-color: #334155;
+  color: #e2e8f0;
+}
+
+.prose pre code {
+  background-color: transparent;
+  padding: 0;
+  border-radius: 0;
+  color: inherit;
+}
+
+/* Links */
+.prose a {
+  color: #2563eb;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.prose a:hover {
+  text-decoration: underline;
+}
+
+.dark .prose a {
+  color: #60a5fa;
+}
+
+/* Chip style for categories */
+.chip { 
+  @apply inline-flex items-center px-3 py-1 rounded-full text-xs font-medium border border-slate-200 dark:border-slate-700 cursor-pointer hover:bg-slate-50 dark:hover:bg-slate-800 transition-all duration-200;
+  background-color: #f8fafc;
+}
+
+.dark .chip {
+  background-color: #1e293b;
+}
+
+.chip.active {
+  @apply bg-slate-900 text-white dark:bg-slate-100 dark:text-slate-900 border-slate-900 dark:border-slate-100;
+}
+
+/* Card style for posts */
+.card { 
+  @apply border border-slate-200 dark:border-slate-800 rounded-lg p-6 hover:shadow-lg transition-all duration-200;
+  background-color: #ffffff;
+}
+
+.dark .card {
+  background-color: #0f172a;
+}
+
+.card:hover {
+  transform: translateY(-2px);
+}
+
+/* Cover image styles */
+.cover-image {
+  @apply w-full h-40 object-cover rounded-lg mb-4;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+}
+
+.dark .cover-image {
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.3);
+}
+
+/* Archive styles */
+.archive-year {
+  @apply text-xl font-bold text-slate-900 dark:text-slate-100 mb-4 pb-2 border-b border-slate-200 dark:border-slate-800;
+}
+
+.archive-month {
+  @apply text-lg font-semibold text-slate-700 dark:text-slate-300 mb-3;
+}
+
+.archive-post {
+  @apply text-sm text-slate-600 dark:text-slate-400 mb-2 flex items-center gap-3 py-1;
+}
+
+.archive-post a {
+  @apply hover:text-slate-900 dark:hover:text-slate-100 hover:underline font-medium;
+}
+
+/* Navigation improvements */
+nav {
+  backdrop-filter: blur(10px);
+  background-color: rgba(255, 255, 255, 0.9);
+}
+
+.dark nav {
+  background-color: rgba(15, 23, 42, 0.9);
+}
+
+/* Navigation dropdown */
+#catMenu {
+  backdrop-filter: blur(10px);
+  box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+}
+
+.dark #catMenu {
+  box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.3), 0 10px 10px -5px rgba(0, 0, 0, 0.2);
+}
+
+#catMenu a {
+  @apply block px-3 py-2 hover:bg-slate-100 dark:hover:bg-slate-700 rounded-md transition-colors;
+}
+
+/* Form styles */
+form input, form select, form textarea {
+  @apply focus:outline-none focus:ring-2 focus:ring-blue-500 dark:focus:ring-blue-400 focus:border-transparent transition-all;
+}
+
+form input:focus, form select:focus, form textarea:focus {
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+}
+
+/* Button styles */
+button {
+  @apply transition-all duration-200;
+}
+
+button:hover {
+  transform: translateY(-1px);
+}
+
+/* Success/error messages */
+.message-success {
+  @apply p-4 bg-green-50 dark:bg-green-900/20 border border-green-200 dark:border-green-800 text-green-800 dark:text-green-300 rounded-lg;
+}
+
+.message-error {
+  @apply p-4 bg-red-50 dark:bg-red-900/20 border border-red-200 dark:border-red-800 text-red-800 dark:text-red-300 rounded-lg;
+}
+
+/* MathJax styling improvements */
+.MathJax {
+  font-size: 1.1em !important;
+}
+
+mjx-container[jax="SVG"] {
+  direction: ltr;
+}
+
+mjx-container[jax="SVG"] > svg {
+  overflow: visible;
+  min-height: 1px;
+  min-width: 1px;
+}
+
+/* Loading states */
+.loading {
+  opacity: 0.6;
+  pointer-events: none;
+}
+
+/* Smooth scrolling */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Focus styles for accessibility */
+*:focus-visible {
+  outline: 2px solid #2563eb;
+  outline-offset: 2px;
+}
+
+/* Responsive improvements */
+@media (max-width: 640px) {
+  .prose {
+    font-size: 0.9rem;
+  }
+  
+  .prose h1 {
+    font-size: 1.5rem;
+  }
+  
+  .prose h2 {
+    font-size: 1.25rem;
+  }
+  
+  nav .flex {
+    flex-wrap: wrap;
+    gap: 0.75rem;
+  }
+  
+  #categoryChips {
+    flex-direction: column;
+    align-items: flex-start;
+    width: 100%;
+    margin-top: 0.75rem;
+  }
+  
+  .card {
+    padding: 1rem;
+  }
+  
+  .cover-image {
+    height: 8rem;
+  }
+}
+
+/* Print styles */
+@media print {
+  nav, footer, #categoryChips, #searchInput {
+    display: none;
+  }
+  
+  .prose {
+    color: black !important;
+  }
+  
+  .prose a {
+    color: black !important;
+    text-decoration: underline !important;
+  }
+}
+
+/* Citation styles */
+.citation-item {
+  margin-bottom: 1rem;
+}
+
+.citation-box {
+  position: relative;
+  background-color: #f8fafc;
+  border: 1px solid #e2e8f0;
+  border-radius: 0.5rem;
+  padding: 1rem;
+  padding-right: 4rem;
+}
+
+.dark .citation-box {
+  background-color: #1e293b;
+  border-color: #475569;
+}
+
+.citation-box.bibtex {
+  background-color: #f1f5f9;
+}
+
+.dark .citation-box.bibtex {
+  background-color: #0f172a;
+}
+
+.citation-box pre {
+  margin: 0;
+  background: none;
+  border: none;
+  padding: 0;
+  font-family: 'Courier New', monospace;
+  font-size: 0.875rem;
+  white-space: pre-wrap;
+  word-wrap: break-word;
+}
+
+.copy-btn {
+  position: absolute;
+  top: 0.5rem;
+  right: 0.5rem;
+  background-color: #3b82f6;
+  color: white;
+  border: none;
+  padding: 0.375rem 0.75rem;
+  border-radius: 0.375rem;
+  font-size: 0.75rem;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.copy-btn:hover {
+  background-color: #2563eb;
+  transform: translateY(-1px);
+}
+
+.dark .copy-btn {
+  background-color: #60a5fa;
+  color: #1e293b;
+}
+
+.dark .copy-btn:hover {
+  background-color: #3b82f6;
+}

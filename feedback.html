@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="en" class="h-full">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Feedback • Secrets Observatory</title>
+  <script>(function(){const t=localStorage.getItem('theme');const s=matchMedia('(prefers-color-scheme: dark)').matches;if(t==='dark'||(!t&&s))document.documentElement.classList.add('dark');})();</script>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>tailwind.config={darkMode:'class'};</script>
+  <link rel="stylesheet" href="assets/css/styles.css">
+</head>
+<body class="min-h-screen bg-white text-slate-900 dark:bg-slate-900 dark:text-slate-100">
+  <header class="border-b border-slate-200 dark:border-slate-800">
+    <nav class="mx-auto max-w-3xl px-4 py-4 flex items-center justify-between">
+      <a href="index.html" class="font-semibold tracking-tight">Secrets Observatory</a>
+      <div class="flex items-center gap-4 text-sm">
+        <a href="index.html" class="hover:underline">Home</a>
+        <a href="about.html" class="hover:underline">About</a>
+        <div class="relative">
+          <button id="catBtn" class="hover:underline">Categories ▾</button>
+          <div id="catMenu" class="hidden absolute right-0 mt-2 w-40 rounded-md border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-800 shadow p-2 text-sm"></div>
+        </div>
+        <a href="archive.html" class="hover:underline">Archive</a>
+        <a href="feedback.html" class="hover:underline">Feedback</a>
+        <button id="themeToggle" class="px-2 py-1 border rounded-md border-slate-200 dark:border-slate-700 text-xs">Dark</button>
+      </div>
+    </nav>
+  </header>
+
+  <main class="mx-auto max-w-3xl px-4 py-8">
+    <div class="max-w-lg">
+      <h1 class="text-2xl font-semibold mb-6">Feedback</h1>
+      
+      <p class="text-slate-600 dark:text-slate-300 mb-6">
+        Have thoughts about a post or general feedback? Send a private message below.
+      </p>
+      
+      <form id="feedbackForm" class="space-y-4">
+        <div>
+          <label for="name" class="block text-sm font-medium mb-1">Name</label>
+          <input type="text" id="name" name="name" required 
+                 class="w-full px-3 py-2 rounded-md border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800">
+        </div>
+        
+        <div>
+          <label for="email" class="block text-sm font-medium mb-1">Email</label>
+          <input type="email" id="email" name="email" required 
+                 class="w-full px-3 py-2 rounded-md border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800">
+        </div>
+        
+        <div>
+          <label for="post" class="block text-sm font-medium mb-1">Related Post (optional)</label>
+          <select id="post" name="post" 
+                  class="w-full px-3 py-2 rounded-md border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800">
+            <option value="">-- Select a post --</option>
+          </select>
+        </div>
+        
+        <div>
+          <label for="message" class="block text-sm font-medium mb-1">Message</label>
+          <textarea id="message" name="message" rows="6" required 
+                    class="w-full px-3 py-2 rounded-md border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800"></textarea>
+        </div>
+        
+        <button type="submit" 
+                class="w-full px-4 py-2 bg-slate-900 dark:bg-slate-100 text-white dark:text-slate-900 rounded-md hover:bg-slate-800 dark:hover:bg-slate-200">
+          Send Feedback
+        </button>
+      </form>
+      
+      <div id="feedbackMessage" class="mt-4 hidden"></div>
+    </div>
+  </main>
+
+  <footer class="mt-12 border-t border-slate-200 dark:border-slate-800">
+    <div class="mx-auto max-w-3xl px-4 py-6 text-sm text-slate-500 dark:text-slate-400">
+      © <span id="year"></span> Daniel Nádraský • Content under CC BY-NC-ND 4.0
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+  <script src="site.js"></script>
+</body>
+</html>

@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="en" class="h-full">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>About • Secrets Observatory</title>
+  <meta name="description" content="About Secrets Observatory - a blog exploring mathematical ideas, ethical questions, and academic reflections">
+  <meta name="author" content="Daniel Nádraský">
+  <meta name="robots" content="index, follow">
+  
+  <!-- Feeds -->
+  <link rel="alternate" type="application/atom+xml" title="Secrets Observatory Feed" href="feed.xml">
+  
+  <script>(function(){const t=localStorage.getItem('theme');const s=matchMedia('(prefers-color-scheme: dark)').matches;if(t==='dark'||(!t&&s))document.documentElement.classList.add('dark');})();</script>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>tailwind.config={darkMode:'class'};</script>
+  <link rel="stylesheet" href="assets/css/styles.css">
+</head>
+<body class="min-h-screen bg-white text-slate-900 dark:bg-slate-900 dark:text-slate-100">
+  <header class="border-b border-slate-200 dark:border-slate-800">
+    <nav class="mx-auto max-w-3xl px-4 py-4 flex items-center justify-between">
+      <a href="index.html" class="font-semibold tracking-tight">Secrets Observatory</a>
+      <div class="flex items-center gap-4 text-sm">
+        <a href="index.html" class="hover:underline">Home</a>
+        <a href="about.html" class="hover:underline">About</a>
+        <div class="relative">
+          <button id="catBtn" class="hover:underline">Categories ▾</button>
+          <div id="catMenu" class="hidden absolute right-0 mt-2 w-40 rounded-md border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-800 shadow p-2 text-sm"></div>
+        </div>
+        <a href="archive.html" class="hover:underline">Archive</a>
+        <a href="feedback.html" class="hover:underline">Feedback</a>
+        <button id="themeToggle" class="px-2 py-1 border rounded-md border-slate-200 dark:border-slate-700 text-xs">Dark</button>
+      </div>
+    </nav>
+  </header>
+
+  <main class="mx-auto max-w-3xl px-4 py-8">
+    <article class="prose dark:prose-invert max-w-none">
+      <h1>About</h1>
+      
+      <p>Welcome to Secrets Observatory — a place for exploring mathematical ideas, ethical questions, and notes in progress.</p>
+      
+      <p>This blog covers topics ranging from abstract algebra and linear algebra to science and technology studies, with a focus on clear exposition and rigorous thinking.</p>
+      
+      <h2>What you'll find here</h2>
+      
+      <ul>
+        <li><strong>Mathematics:</strong> Notes on algebra, analysis, and related fields</li>
+        <li><strong>Ethics:</strong> Reflections on technology, society, and moral reasoning</li>
+        <li><strong>Work in progress:</strong> Ideas being developed and refined</li>
+      </ul>
+      
+      <p>All mathematical content is rendered with MathJax for proper display of equations and symbols.</p>
+      
+      <h2>About the author</h2>
+      
+      <p>Daniel Nádraský is interested in the intersection of mathematics, technology, and ethics.</p>
+      
+      <h2>License</h2>
+      
+      <p>Content is shared under <a href="https://creativecommons.org/licenses/by-nc-nd/4.0/" class="text-blue-600 dark:text-blue-400 hover:underline">CC BY-NC-ND 4.0</a> unless otherwise noted.</p>
+    </article>
+  </main>
+
+  <footer class="mt-12 border-t border-slate-200 dark:border-slate-800">
+    <div class="mx-auto max-w-3xl px-4 py-6 text-sm text-slate-500 dark:text-slate-400">
+      © <span id="year"></span> Daniel Nádraský • Content under CC BY-NC-ND 4.0
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+  <script src="site.js"></script>
+</body>
+</html>

@@ -1,0 +1,9 @@
+User-agent: *
+Allow: /
+
+# Sitemap
+Sitemap: https://secretsobservatory.com/sitemap.xml
+
+# Optional: Block access to certain files
+Disallow: /assets/
+Allow: /assets/covers/

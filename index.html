@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="en" class="h-full">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Secrets Observatory</title>
+  <meta name="description" content="Math, ethics, and notes in progress. A blog exploring mathematical ideas, ethical questions, and academic reflections.">
+  <meta name="author" content="Daniel Nádraský">
+  <meta name="robots" content="index, follow">
+  
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="">
+  <meta property="og:title" content="Secrets Observatory">
+  <meta property="og:description" content="Math, ethics, and notes in progress">
+  
+  <!-- Twitter -->
+  <meta property="twitter:card" content="summary">
+  <meta property="twitter:title" content="Secrets Observatory">
+  <meta property="twitter:description" content="Math, ethics, and notes in progress">
+  
+  <!-- Feeds -->
+  <link rel="alternate" type="application/atom+xml" title="Secrets Observatory Feed" href="feed.xml">
+  
+  <!-- Theme pre-set + Tailwind (with dark mode class) -->
+  <script>(function(){const t=localStorage.getItem('theme');const s=matchMedia('(prefers-color-scheme: dark)').matches;if(t==='dark'||(!t&&s))document.documentElement.classList.add('dark');})();</script>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>tailwind.config={darkMode:'class'};</script>
+  <link rel="stylesheet" href="assets/css/styles.css">
+</head>
+<body class="min-h-screen bg-white text-slate-900 dark:bg-slate-900 dark:text-slate-100">
+  <header class="border-b border-slate-200 dark:border-slate-800">
+    <nav class="mx-auto max-w-3xl px-4 py-4 flex items-center justify-between">
+      <a href="index.html" class="font-semibold tracking-tight">Secrets Observatory</a>
+      <div class="flex items-center gap-4 text-sm">
+        <a href="index.html" class="hover:underline">Home</a>
+        <a href="about.html" class="hover:underline">About</a>
+        <div class="relative">
+          <button id="catBtn" class="hover:underline">Categories ▾</button>
+          <div id="catMenu" class="hidden absolute right-0 mt-2 w-40 rounded-md border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-800 shadow p-2 text-sm"></div>
+        </div>
+        <a href="archive.html" class="hover:underline">Archive</a>
+        <a href="feedback.html" class="hover:underline">Feedback</a>
+        <button id="themeToggle" class="px-2 py-1 border rounded-md border-slate-200 dark:border-slate-700 text-xs">Dark</button>
+      </div>
+    </nav>
+  </header>
+
+  <main class="mx-auto max-w-3xl px-4 py-8">
+    <section class="mb-6">
+      <p class="text-slate-600 dark:text-slate-300">Math, ethics, and notes in progress.</p>
+    </section>
+
+    <section class="mb-6 flex items-center gap-3">
+      <input id="searchInput" class="w-full md:w-1/2 px-3 py-2 rounded-md border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800" placeholder="Search posts..." />
+      <div id="categoryChips" class="flex flex-wrap gap-2"></div>
+    </section>
+
+    <section id="postList" class="space-y-6"></section>
+  </main>
+
+  <footer class="mt-12 border-t border-slate-200 dark:border-slate-800">
+    <div class="mx-auto max-w-3xl px-4 py-6 text-sm text-slate-500 dark:text-slate-400">
+      © <span id="year"></span> Daniel Nádraský • Content under CC BY-NC-ND 4.0
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+  <script src="site.js"></script>
+</body>
+</html>
