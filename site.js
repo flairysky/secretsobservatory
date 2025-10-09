@@ -691,59 +691,30 @@ function initFeedbackPage() {
 
 // Handle feedback form submission
 async function handleFeedbackSubmit(event) {
-  event.preventDefault();
-  
+  // Let Formspree handle the submission - just do basic validation
   const formData = new FormData(event.target);
-  const messageDiv = document.getElementById('feedbackMessage');
-  const submitBtn = event.target.querySelector('button[type="submit"]');
   
-  // Validate form
+  // Validate form before submission
   const name = formData.get('name')?.trim();
   const email = formData.get('email')?.trim();
   const message = formData.get('message')?.trim();
   
   if (!name || !email || !message) {
+    event.preventDefault();
     showFeedbackMessage('Please fill in all required fields.', 'error');
     return;
   }
   
   if (!isValidEmail(email)) {
+    event.preventDefault();
     showFeedbackMessage('Please enter a valid email address.', 'error');
     return;
   }
   
-  try {
-    // Disable submit button
-    submitBtn.disabled = true;
-    submitBtn.textContent = 'Sending...';
-    
-    // TODO: Replace with actual Formspree endpoint
-    // const response = await fetch('https://formspree.io/f/your-id', {
-    //   method: 'POST',
-    //   body: formData,
-    //   headers: {
-    //     'Accept': 'application/json'
-    //   }
-    // });
-    
-    // if (!response.ok) {
-    //   throw new Error('Network response was not ok');
-    // }
-    
-    // Simulate successful submission for now
-    await new Promise(resolve => setTimeout(resolve, 1500));
-    
-    showFeedbackMessage('Thank you for your feedback! Your message has been sent.', 'success');
-    event.target.reset();
-    
-  } catch (error) {
-    console.error('Feedback submission error:', error);
-    showFeedbackMessage('Sorry, there was an error sending your message. Please try again later.', 'error');
-  } finally {
-    // Re-enable submit button
-    submitBtn.disabled = false;
-    submitBtn.textContent = 'Send Feedback';
-  }
+  // If validation passes, let the form submit naturally to Formspree
+  const submitBtn = event.target.querySelector('button[type="submit"]');
+  submitBtn.disabled = true;
+  submitBtn.textContent = 'Sending...';
 }
 
 function showFeedbackMessage(message, type) {
@@ -1183,36 +1154,6 @@ function initFeedbackPage() {
   const feedbackForm = document.getElementById('feedbackForm');
   if (feedbackForm) {
     feedbackForm.addEventListener('submit', handleFeedbackSubmit);
-  }
-}
-
-// Handle feedback form submission
-async function handleFeedbackSubmit(event) {
-  event.preventDefault();
-  
-  const formData = new FormData(event.target);
-  const messageDiv = document.getElementById('feedbackMessage');
-  
-  try {
-    // TODO: Replace with actual Formspree endpoint
-    // const response = await fetch('https://formspree.io/f/your-id', {
-    //   method: 'POST',
-    //   body: formData
-    // });
-    
-    // Simulate successful submission for now
-    await new Promise(resolve => setTimeout(resolve, 1000));
-    
-    messageDiv.className = 'message-success';
-    messageDiv.textContent = 'Thank you for your feedback! Your message has been sent.';
-    messageDiv.classList.remove('hidden');
-    
-    event.target.reset();
-    
-  } catch (error) {
-    messageDiv.className = 'message-error';
-    messageDiv.textContent = 'Sorry, there was an error sending your message. Please try again.';
-    messageDiv.classList.remove('hidden');
   }
 }
 
