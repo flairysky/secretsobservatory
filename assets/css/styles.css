@@ -277,15 +277,29 @@ input, select, textarea {
   color: #f1f5f9 !important;
 }
 
-/* Button styling fixes for dark mode */
-.dark button {
+/* Button styling fixes for dark mode - exclude navigation buttons */
+.dark button:not(#catBtn):not(#themeToggle) {
   background-color: #f1f5f9;
   color: #1e293b;
   border-color: #f1f5f9;
 }
 
-.dark button:hover {
+.dark button:not(#catBtn):not(#themeToggle):hover {
   background-color: #e2e8f0;
+}
+
+/* Keep navigation buttons styled like links */
+#catBtn {
+  background: none !important;
+  border: none !important;
+  color: inherit !important;
+  padding: 0 !important;
+}
+
+#catBtn:hover {
+  background: none !important;
+  text-decoration: underline;
+  transform: none !important;
 }
 
 /* Button styles */
@@ -359,9 +373,13 @@ html {
   
   #categoryChips {
     flex-direction: column;
-    align-items: flex-start;
+    align-items: center;
     width: 100%;
     margin-top: 0.75rem;
+  }
+  
+  #searchInput {
+    max-width: 100% !important;
   }
   
   .card {
