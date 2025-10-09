@@ -1063,25 +1063,12 @@ async function initPostPage() {
     
     postBody.innerHTML = htmlContent;
     
-    // Debug: Check the actual HTML content
-    console.log('Raw content sample:', content.substring(0, 200));
-    console.log('HTML content sample:', htmlContent.substring(0, 400));
-    console.log('MathJax available:', !!window.MathJax);
-    console.log('Content contains math:', content.includes('\\('));
-    console.log('HTML contains math delimiters:', htmlContent.includes('\\('));
-    
     // Render math if MathJax is available
     if (window.MathJax) {
-      console.log('Attempting to render math...');
       // Wait for MathJax to be ready, then render
       window.MathJax.startup.promise.then(() => {
-        console.log('MathJax ready, typesetting...');
         return MathJax.typesetPromise([postBody]);
-      }).then(() => {
-        console.log('MathJax typesetting complete!');
       }).catch(err => console.error('MathJax error:', err));
-    } else {
-      console.warn('MathJax not loaded');
     }
     
     // Setup navigation
