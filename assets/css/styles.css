@@ -1,5 +1,24 @@
 /* Custom styles to complement Tailwind */
 
+/* Ensure proper theme backgrounds */
+html {
+  background-color: white;
+}
+
+html.dark {
+  background-color: #0f172a;
+}
+
+body {
+  background-color: white;
+  color: #1e293b;
+}
+
+.dark body {
+  background-color: #0f172a;
+  color: #f1f5f9;
+}
+
 /* Better typography */
 body {
   font-feature-settings: "kern" 1, "liga" 1, "calt" 1;
