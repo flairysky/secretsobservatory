@@ -1023,7 +1023,7 @@ async function initPostPage() {
     // Set post title and meta
     document.getElementById('postTitle').textContent = frontMatter.title;
     
-    const categories = frontMatter.categories.map(cat => 
+    const categories = (frontMatter.categories || []).map(cat => 
       `<span class="chip">${cat}</span>`
     ).join(' ');
     
