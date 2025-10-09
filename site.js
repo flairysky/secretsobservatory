@@ -1031,13 +1031,57 @@ async function initPostPage() {
     document.getElementById('postMeta').innerHTML = 
       `${formatDate(frontMatter.date || '')} • ${categories}`;
     
+    // Pre-process content to protect math expressions
+    let processedContent = content;
+    const mathPlaceholders = [];
+    let placeholderIndex = 0;
+    
+    // Protect inline math \( ... \)
+    processedContent = processedContent.replace(/\\\((.*?)\\\)/g, (match, mathContent) => {
+      const placeholder = `MATHPLACEHOLDER${placeholderIndex}`;
+      mathPlaceholders[placeholderIndex] = `\\(${mathContent}\\)`;
+      placeholderIndex++;
+      return placeholder;
+    });
+    
+    // Protect display math \[ ... \]
+    processedContent = processedContent.replace(/\\\[(.*?)\\\]/gs, (match, mathContent) => {
+      const placeholder = `MATHPLACEHOLDER${placeholderIndex}`;
+      mathPlaceholders[placeholderIndex] = `\\[${mathContent}\\]`;
+      placeholderIndex++;
+      return placeholder;
+    });
+    
     // Render markdown content
     const postBody = document.getElementById('postBody');
-    postBody.innerHTML = marked.parse(content);
+    let htmlContent = marked.parse(processedContent);
+    
+    // Restore math expressions
+    for (let i = 0; i < mathPlaceholders.length; i++) {
+      htmlContent = htmlContent.replace(`MATHPLACEHOLDER${i}`, mathPlaceholders[i]);
+    }
+    
+    postBody.innerHTML = htmlContent;
+    
+    // Debug: Check the actual HTML content
+    console.log('Raw content sample:', content.substring(0, 200));
+    console.log('HTML content sample:', htmlContent.substring(0, 400));
+    console.log('MathJax available:', !!window.MathJax);
+    console.log('Content contains math:', content.includes('\\('));
+    console.log('HTML contains math delimiters:', htmlContent.includes('\\('));
     
     // Render math if MathJax is available
     if (window.MathJax) {
-      MathJax.typesetPromise([postBody]).catch(err => console.error('MathJax error:', err));
+      console.log('Attempting to render math...');
+      // Wait for MathJax to be ready, then render
+      window.MathJax.startup.promise.then(() => {
+        console.log('MathJax ready, typesetting...');
+        return MathJax.typesetPromise([postBody]);
+      }).then(() => {
+        console.log('MathJax typesetting complete!');
+      }).catch(err => console.error('MathJax error:', err));
+    } else {
+      console.warn('MathJax not loaded');
     }
     
     // Setup navigation
