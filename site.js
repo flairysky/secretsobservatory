@@ -360,6 +360,11 @@ async function initPostPage() {
       `;
     }
     
+    // Initialize share and cite functionality after metadata is loaded
+    console.log('About to call initShareAndCite...');
+    initShareAndCite();
+    console.log('initShareAndCite call completed');
+    
     // Render markdown content
     const postBody = document.getElementById('postBody');
     if (postBody) {
@@ -1035,15 +1040,19 @@ async function initPostPage() {
     postBody.innerHTML = htmlContent;
     
     // Render math if MathJax is available
-    if (window.MathJax) {
-      // Wait for MathJax to be ready, then render
-      window.MathJax.startup.promise.then(() => {
-        return MathJax.typesetPromise([postBody]);
-      }).catch(err => console.error('MathJax error:', err));
+    if (window.MathJax && window.MathJax.typesetPromise) {
+      try {
+        MathJax.typesetPromise([postBody]);
+      } catch (err) {
+        console.error('MathJax error:', err);
+      }
     }
     
     // Setup navigation
     setupPostNavigation(slug);
+    
+    // Initialize share and cite functionality
+    initShareAndCite();
     
   } catch (error) {
     console.error('Failed to load post:', error);
@@ -1195,4 +1204,197 @@ function formatDate(dateString) {
     month: 'long', 
     day: 'numeric' 
   });
+}
+
+// Share and Cite functionality
+function initShareAndCite() {
+  console.log('=== initShareAndCite function called ===');
+  
+  const shareBtn = document.getElementById('shareBtn');
+  const citeBtn = document.getElementById('citeBtn');
+  
+  console.log('shareBtn element:', shareBtn);
+  console.log('citeBtn element:', citeBtn);
+  
+  const shareModal = document.getElementById('shareModal');
+  const citeModal = document.getElementById('citeModal');
+  
+  console.log('shareModal element:', shareModal);
+  console.log('citeModal element:', citeModal);
+  
+  const closeShareModal = document.getElementById('closeShareModal');
+  const closeCiteModal = document.getElementById('closeCiteModal');
+  
+  const copyLinkBtn = document.getElementById('copyLinkBtn');
+  const copyCitationBtn = document.getElementById('copyCitationBtn');
+  
+  const shareUrl = document.getElementById('shareUrl');
+  const citationText = document.getElementById('citationText');
+  
+  if (!shareBtn || !citeBtn) {
+    console.log('Share/Cite buttons not found on this page');
+    return; // Not on post page
+  }
+  
+  console.log('Share and Cite buttons found, proceeding with setup...');
+  
+  // Get current post info
+  const urlParams = new URLSearchParams(window.location.search);
+  const slug = urlParams.get('slug');
+  
+  if (!slug) {
+    console.error('No slug found for share/cite functionality');
+    return;
+  }
+  
+  if (!postsData || !postsData.posts) {
+    console.error('Posts data not available for share/cite functionality');
+    return;
+  }
+  
+  const postInfo = postsData.posts.find(post => post.slug === slug);
+  
+  if (!postInfo) {
+    console.error('Post info not found for slug:', slug);
+    return;
+  }
+  
+  console.log('Initializing share/cite for post:', postInfo.title);
+  
+  // Set share URL
+  const currentUrl = window.location.href;
+  if (shareUrl) {
+    shareUrl.value = currentUrl;
+  }
+  
+  // Generate citations
+  const year = new Date(postInfo.date).getFullYear();
+  const currentDate = new Date().toISOString().split('T')[0];
+  
+  const citations = {
+    bibtex: `@misc{secretsobservatory${year}${slug.replace(/[^a-zA-Z0-9]/g, '')},
+  title = {${postInfo.title}},
+  author = {Secrets Observatory},
+  year = {${year}},
+  url = {${currentUrl}},
+  howpublished = {Secrets Observatory},
+  note = {URL:${currentUrl} (version: ${postInfo.date})},
+  eprint = {${currentUrl}},
+  url = {${currentUrl}}
+}`,
+    amsrefs: `\\bib{secretsobservatory${year}${slug.replace(/[^a-zA-Z0-9]/g, '')}}{misc}{
+  author={Secrets Observatory},
+  title={${postInfo.title}},
+  year={${year}},
+  eprint={${currentUrl}},
+  note={Available at \\url{${currentUrl}}}
+}`
+  };
+  
+  // Set initial citation
+  if (citationText) {
+    citationText.value = citations.bibtex;
+  }
+  
+  // Event listeners
+  shareBtn.addEventListener('click', (e) => {
+    console.log('Share button clicked');
+    e.preventDefault();
+    if (shareModal) {
+      shareModal.classList.remove('hidden');
+    }
+  });
+  
+  citeBtn.addEventListener('click', (e) => {
+    console.log('Cite button clicked');
+    e.preventDefault();
+    if (citeModal) {
+      citeModal.classList.remove('hidden');
+    }
+  });
+  
+  if (closeShareModal) {
+    closeShareModal.addEventListener('click', () => {
+      shareModal.classList.add('hidden');
+    });
+  }
+  
+  if (closeCiteModal) {
+    closeCiteModal.addEventListener('click', () => {
+      citeModal.classList.add('hidden');
+    });
+  }
+  
+  // Close modals when clicking outside
+  if (shareModal) {
+    shareModal.addEventListener('click', (e) => {
+      if (e.target === shareModal) {
+        shareModal.classList.add('hidden');
+      }
+    });
+  }
+  
+  if (citeModal) {
+    citeModal.addEventListener('click', (e) => {
+      if (e.target === citeModal) {
+        citeModal.classList.add('hidden');
+      }
+    });
+  }
+  
+  // Copy link functionality
+  if (copyLinkBtn && shareUrl) {
+    copyLinkBtn.addEventListener('click', async () => {
+      try {
+        await navigator.clipboard.writeText(shareUrl.value);
+        copyLinkBtn.textContent = 'Copied!';
+        setTimeout(() => {
+          copyLinkBtn.textContent = 'Copy link';
+        }, 2000);
+      } catch (err) {
+        console.error('Failed to copy:', err);
+        // Fallback for older browsers
+        shareUrl.select();
+        document.execCommand('copy');
+        copyLinkBtn.textContent = 'Copied!';
+        setTimeout(() => {
+          copyLinkBtn.textContent = 'Copy link';
+        }, 2000);
+      }
+    });
+  }
+  
+  // Copy citation functionality
+  if (copyCitationBtn && citationText) {
+    copyCitationBtn.addEventListener('click', async () => {
+      try {
+        await navigator.clipboard.writeText(citationText.value);
+        copyCitationBtn.textContent = 'Copied!';
+        setTimeout(() => {
+          copyCitationBtn.textContent = 'Copy citation';
+        }, 2000);
+      } catch (err) {
+        console.error('Failed to copy:', err);
+        // Fallback for older browsers
+        citationText.select();
+        document.execCommand('copy');
+        copyCitationBtn.textContent = 'Copied!';
+        setTimeout(() => {
+          copyCitationBtn.textContent = 'Copy citation';
+        }, 2000);
+      }
+    });
+  }
+  
+  // Citation type switching
+  const citationTypeRadios = document.querySelectorAll('input[name="citationType"]');
+  citationTypeRadios.forEach(radio => {
+    radio.addEventListener('change', () => {
+      if (citationText) {
+        citationText.value = citations[radio.value];
+      }
+    });
+  });
+  
+  console.log('Share/Cite functionality initialized successfully');
 }
