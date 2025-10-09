@@ -5,5 +5,14 @@
     "author": "Secrets Observatory",
     "baseUrl": "https://secretsobservatory.com"
   },
-  "posts": []
+  "posts": [
+    {
+      "slug": "first-post",
+      "title": "First Post",
+      "date": "2025-10-09",
+      "categories": ["Mathematics", "Ethics", "Notes"],
+      "excerpt": "A brief description that will appear on the home page",
+      "cover_image": "assets/covers/your-image.jpg"
+    }
+  ]
 }
