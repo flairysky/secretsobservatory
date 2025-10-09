@@ -8,11 +8,11 @@
   "posts": [
     {
       "slug": "first-post",
-      "title": "First Post",
+      "title": "Welcome to the Secrets observatory",
       "date": "2025-10-09",
       "categories": ["Mathematics", "Ethics", "Physics", "Law"],
-      "excerpt": "A brief description that will appear on the home page",
-      "cover_image": "assets/covers/your-image.jpg"
+      "excerpt": "This is an introduction page to this blog.",
+      "cover_image": "assets/covers/demo.svg"
     }
   ]
 }
