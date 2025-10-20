@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Deployment Test</title>
+</head>
+<body>
+    <h1>Deployment Test - Success!</h1>
+    <p>If you can see this, the deployment is working.</p>
+    <p>Timestamp: 2025-10-20 16:35 UTC</p>
+    <script>
+        // Test if we can fetch posts
+        fetch('posts/first-post.md')
+            .then(response => {
+                document.body.innerHTML += `<p>Fetch status: ${response.status} ${response.statusText}</p>`;
+                if (response.ok) {
+                    return response.text();
+                }
+                throw new Error('Failed to fetch');
+            })
+            .then(text => {
+                document.body.innerHTML += `<p>✅ Successfully loaded first-post.md (${text.length} bytes)</p>`;
+            })
+            .catch(error => {
+                document.body.innerHTML += `<p>❌ Failed to load first-post.md: ${error.message}</p>`;
+            });
+    </script>
+</body>
+</html>
