@@ -67,11 +67,11 @@ class ReferenceManager {
       formatted += `${title}. `;
     }
     
-    // Journal/Conference/Book
+    // Journal/Conference/Book - keep on same line with non-breaking spaces
     if (journal) {
       formatted += `<em>${journal}</em>`;
-      if (volume) formatted += `, ${volume}`;
-      if (pages) formatted += `, ${pages}`;
+      if (volume) formatted += `,&nbsp;${volume}`;
+      if (pages) formatted += `,&nbsp;${pages}`;
       formatted += '. ';
     } else if (booktitle) {
       formatted += `In <em>${booktitle}</em>. `;
@@ -82,9 +82,9 @@ class ReferenceManager {
     
     // DOI or URL
     if (doi) {
-      formatted += `<a href="https://doi.org/${doi}" target="_blank" rel="noopener" class="text-blue-600 dark:text-blue-400 hover:underline">https://doi.org/${doi}</a>`;
+      formatted += `<a href="https://doi.org/${doi}" target="_blank" rel="noopener" class="text-blue-600 dark:text-blue-400 hover:underline break-all">https://doi.org/${doi}</a>`;
     } else if (url) {
-      formatted += `<a href="${url}" target="_blank" rel="noopener" class="text-blue-600 dark:text-blue-400 hover:underline">${url}</a>`;
+      formatted += `<a href="${url}" target="_blank" rel="noopener" class="text-blue-600 dark:text-blue-400 hover:underline break-all">${url}</a>`;
     }
     
     return formatted;
@@ -248,7 +248,8 @@ class ReferenceManager {
       const citationKey = this.generateCitationKey(ref);
       html += `
         <div id="ref-${key}" class="reference-item text-sm leading-relaxed">
-          <span class="citation-key font-medium">${citationKey}</span> ${this.formatReference(ref)}
+          <span class="citation-key font-medium">${citationKey}</span>
+          <div class="reference-content">${this.formatReference(ref)}</div>
         </div>
       `;
     });

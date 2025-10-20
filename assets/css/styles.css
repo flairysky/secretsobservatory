@@ -691,6 +691,7 @@ html {
   line-height: 1.6;
   display: flex;
   gap: 0.5rem;
+  align-items: baseline;
 }
 
 .dark .reference-item {
@@ -708,6 +709,11 @@ html {
 
 .dark .citation-key {
   color: #60a5fa;
+}
+
+.reference-content {
+  flex: 1;
+  min-width: 0;
 }
 
 .reference-item em {
