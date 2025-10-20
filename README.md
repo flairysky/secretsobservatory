@@ -7,6 +7,8 @@ A minimal static blog for mathematical notes, ethical reflections, and work in p
 - **Clean, minimal design** with excellent typography and readability
 - **Dark mode toggle** with persistent localStorage preferences and system detection
 - **LaTeX/MathJax v3 support** for mathematical equations and expressions
+- **ScienceDirect-style references** with interactive popups and BibTeX support
+- **Footnote system** with clickable superscript numbers and popup display
 - **Markdown posts** with YAML front matter for easy content management
 - **Category filtering** and real-time text search on the home page
 - **Responsive design** that works perfectly on mobile devices
@@ -63,6 +65,37 @@ Display equations work beautifully:
 $$E = mc^2$$
 
 Inline math like \( \alpha + \beta = \gamma \) renders perfectly.
+
+### Adding References and Footnotes
+
+**Quick method** - inline in markdown:
+```markdown
+<!-- REFERENCES
+@article{smith2023,
+  author = {Smith, J.},
+  title = {Important Paper},
+  journal = {Nature},
+  year = {2023}
+}
+-->
+
+This finding[ref:smith2023] is significant.
+```
+
+**Better method** - separate BibTeX file at `posts/references/{slug}.bib`:
+```bibtex
+@article{smith2023,
+  author = {Smith, J.},
+  title = {Important Paper},
+  journal = {Nature},
+  year = {2023},
+  doi = {10.1038/nature12345}
+}
+```
+
+Then cite: `[ref:smith2023]` or add footnotes: `[#1]`
+
+**See:** `REFERENCES-GUIDE.md` for complete documentation
 ```
 
 Then add an entry to `posts.json` to include it in the site navigation and feeds.

@@ -365,12 +365,49 @@ async function initPostPage() {
     initShareAndCite();
     console.log('initShareAndCite call completed');
     
+    // Process references and footnotes
+    let processedContent = content;
+    if (window.refManager) {
+      console.log('Processing references and footnotes...');
+      
+      // Try to load external references file
+      await window.refManager.loadReferences(slug);
+      
+      // Parse inline references and footnotes
+      processedContent = window.refManager.parseInlineReferences(processedContent);
+      processedContent = window.refManager.parseInlineFootnotes(processedContent);
+      
+      console.log('References loaded:', window.refManager.references.size);
+      console.log('Footnotes loaded:', window.refManager.footnotes.size);
+    }
+    
     // Render markdown content
     const postBody = document.getElementById('postBody');
     if (postBody) {
       console.log('Rendering markdown with marked...');
-      postBody.innerHTML = marked.parse(content);
+      let htmlContent = marked.parse(processedContent);
+      
+      // Process reference syntax [ref:key] and footnote syntax [#1]
+      if (window.refManager) {
+        htmlContent = window.refManager.processReferenceSyntax(htmlContent);
+      }
+      
+      postBody.innerHTML = htmlContent;
       console.log('Markdown rendered successfully');
+      
+      // Add references and footnotes sections
+      if (window.refManager) {
+        const referencesHtml = window.refManager.generateReferencesSection();
+        const footnotesHtml = window.refManager.generateFootnotesSection();
+        
+        if (referencesHtml || footnotesHtml) {
+          postBody.insertAdjacentHTML('beforeend', footnotesHtml);
+          postBody.insertAdjacentHTML('beforeend', referencesHtml);
+        }
+        
+        // Initialize event listeners for popup
+        window.refManager.initializeEventListeners();
+      }
       
       // Add citation section
       addCitationSection(frontMatter, slug);
@@ -865,200 +902,7 @@ if ('serviceWorker' in navigator) {
   });
 }
 
-// Initialize index page
-function initIndexPage() {
-  filteredPosts = [...postsData.posts];
-  
-  // Setup search
-  const searchInput = document.getElementById('searchInput');
-  if (searchInput) {
-    searchInput.addEventListener('input', filterPosts);
-  }
-  
-  // Setup category chips
-  setupCategoryChips();
-  
-  // Render posts
-  renderPosts();
-}
-
-// Setup category filter chips
-function setupCategoryChips() {
-  const categoryChips = document.getElementById('categoryChips');
-  if (!categoryChips) return;
-  
-  // Get all unique categories
-  const categories = new Set();
-  postsData.posts.forEach(post => {
-    post.categories.forEach(cat => categories.add(cat));
-  });
-  
-  // Create chips
-  categoryChips.innerHTML = '';
-  categories.forEach(category => {
-    const chip = document.createElement('span');
-    chip.className = 'chip';
-    chip.textContent = category;
-    chip.addEventListener('click', () => toggleCategory(category, chip));
-    categoryChips.appendChild(chip);
-  });
-}
-
-// Toggle category filter
-function toggleCategory(category, chipElement) {
-  if (activeCategories.has(category)) {
-    activeCategories.delete(category);
-    chipElement.classList.remove('active');
-  } else {
-    activeCategories.add(category);
-    chipElement.classList.add('active');
-  }
-  
-  filterPosts();
-}
-
-// Filter posts based on search and categories
-function filterPosts() {
-  const searchInput = document.getElementById('searchInput');
-  const searchTerm = searchInput ? searchInput.value.toLowerCase() : '';
-  
-  filteredPosts = postsData.posts.filter(post => {
-    // Text search
-    const matchesSearch = !searchTerm || 
-      post.title.toLowerCase().includes(searchTerm) ||
-      post.excerpt.toLowerCase().includes(searchTerm);
-    
-    // Category filter
-    const matchesCategory = activeCategories.size === 0 ||
-      post.categories.some(cat => activeCategories.has(cat));
-    
-    return matchesSearch && matchesCategory;
-  });
-  
-  renderPosts();
-}
-
-// Render posts list
-function renderPosts() {
-  const postList = document.getElementById('postList');
-  if (!postList) return;
-  
-  if (filteredPosts.length === 0) {
-    postList.innerHTML = '<p class="text-slate-500 dark:text-slate-400">No posts found.</p>';
-    return;
-  }
-  
-  // Sort by date descending
-  const sortedPosts = filteredPosts.sort((a, b) => new Date(b.date) - new Date(a.date));
-  
-  postList.innerHTML = sortedPosts.map(post => {
-    const coverImage = post.cover_image ? 
-      `<img src="${post.cover_image}" alt="${post.title}" class="cover-image" onerror="this.style.display='none'">` : '';
-    
-    const categories = post.categories.map(cat => 
-      `<span class="chip">${cat}</span>`
-    ).join(' ');
-    
-    return `
-      <article class="card">
-        ${coverImage}
-        <h2 class="text-lg font-semibold mb-2">
-          <a href="post.html?slug=${post.slug}" class="hover:underline">${post.title}</a>
-        </h2>
-        <div class="text-sm text-slate-500 dark:text-slate-400 mb-2">
-          ${formatDate(post.date)} • ${categories}
-        </div>
-        <p class="text-slate-600 dark:text-slate-300 mb-3">${post.excerpt}</p>
-        <a href="post.html?slug=${post.slug}" class="text-sm text-slate-700 dark:text-slate-300 hover:underline">
-          Read more →
-        </a>
-      </article>
-    `;
-  }).join('');
-}
-
-// Initialize post page
-async function initPostPage() {
-  const urlParams = new URLSearchParams(window.location.search);
-  const slug = urlParams.get('slug');
-  
-  if (!slug) {
-    document.getElementById('postBody').innerHTML = '<p>No post specified.</p>';
-    return;
-  }
-  
-  try {
-    const response = await fetch(`posts/${slug}.md`);
-    if (!response.ok) throw new Error('Post not found');
-    
-    const markdown = await response.text();
-    const { frontMatter, content } = parseFrontMatter(markdown);
-    
-    // Update page title
-    document.title = `${frontMatter.title} • Secrets Observatory`;
-    
-    // Set post title and meta
-    document.getElementById('postTitle').textContent = frontMatter.title;
-    
-    const categories = (frontMatter.categories || []).map(cat => 
-      `<span class="chip">${cat}</span>`
-    ).join(' ');
-    
-    document.getElementById('postMeta').innerHTML = 
-      `${formatDate(frontMatter.date || '')} • ${categories}`;
-    
-    // Pre-process content to protect math expressions
-    let processedContent = content;
-    const mathPlaceholders = [];
-    let placeholderIndex = 0;
-    
-    // Protect inline math \( ... \)
-    processedContent = processedContent.replace(/\\\((.*?)\\\)/g, (match, mathContent) => {
-      const placeholder = `MATHPLACEHOLDER${placeholderIndex}`;
-      mathPlaceholders[placeholderIndex] = `\\(${mathContent}\\)`;
-      placeholderIndex++;
-      return placeholder;
-    });
-    
-    // Protect display math \[ ... \]
-    processedContent = processedContent.replace(/\\\[(.*?)\\\]/gs, (match, mathContent) => {
-      const placeholder = `MATHPLACEHOLDER${placeholderIndex}`;
-      mathPlaceholders[placeholderIndex] = `\\[${mathContent}\\]`;
-      placeholderIndex++;
-      return placeholder;
-    });
-    
-    // Render markdown content
-    const postBody = document.getElementById('postBody');
-    let htmlContent = marked.parse(processedContent);
-    
-    // Restore math expressions
-    for (let i = 0; i < mathPlaceholders.length; i++) {
-      htmlContent = htmlContent.replace(`MATHPLACEHOLDER${i}`, mathPlaceholders[i]);
-    }
-    
-    postBody.innerHTML = htmlContent;
-    
-    // Render math if MathJax is available
-    if (window.MathJax && window.MathJax.typesetPromise) {
-      try {
-        MathJax.typesetPromise([postBody]);
-      } catch (err) {
-        console.error('MathJax error:', err);
-      }
-    }
-    
-    // Setup navigation
-    setupPostNavigation(slug);
-    
-    // Initialize share and cite functionality
-    initShareAndCite();
-    
-  } catch (error) {
-    console.error('Failed to load post:', error);
-    document.getElementById('postBody').innerHTML = '<p>Failed to load post.</p>';
-  }
-}
+// Note: Duplicate functions removed - using the reference-enabled initPostPage() at line 259
 
 // Setup previous/next post navigation
 function setupPostNavigation(currentSlug) {

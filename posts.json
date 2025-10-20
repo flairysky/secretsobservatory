@@ -13,6 +13,20 @@
       "categories": ["Mathematics", "Ethics", "Physics", "Law"],
       "excerpt": "This is an introduction page to this blog.",
       "cover_image": "assets/covers/demo.svg"
+    },
+    {
+      "slug": "example-references",
+      "title": "Example Post with References and Footnotes",
+      "date": "2025-10-20",
+      "categories": ["Examples", "Documentation"],
+      "excerpt": "A demonstration of the ScienceDirect-style reference and footnote system"
+    },
+    {
+      "slug": "test-references",
+      "title": "Reference System Test Suite",
+      "date": "2025-10-20",
+      "categories": ["Testing", "Documentation"],
+      "excerpt": "Comprehensive test cases for the reference and footnote system"
     }
   ]
 }
