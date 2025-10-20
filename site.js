@@ -525,14 +525,14 @@ function addCitationSection(frontMatter, slug) {
   
   // Generate citations in different formats
   const citations = {
-    apa: `Nádraský, D. (${new Date(frontMatter.date).getFullYear()}). ${frontMatter.title}. <i>Secrets Observatory</i>. Retrieved ${formatDate(currentDate)}, from ${currentUrl}`,
+    apa: `Secrets Observatory. (${new Date(frontMatter.date).getFullYear()}). ${frontMatter.title}. <i>Secrets Observatory</i>. Retrieved ${formatDate(currentDate)}, from ${currentUrl}`,
     
-    mla: `Nádraský, Daniel. "${frontMatter.title}." <i>Secrets Observatory</i>, ${formatDate(frontMatter.date)}, ${currentUrl}.`,
+    mla: `Secrets Observatory. "${frontMatter.title}." <i>Secrets Observatory</i>, ${formatDate(frontMatter.date)}, ${currentUrl}.`,
     
-    chicago: `Nádraský, Daniel. "${frontMatter.title}." Secrets Observatory. ${formatDate(frontMatter.date)}. ${currentUrl}.`,
+    chicago: `Secrets Observatory. "${frontMatter.title}." Secrets Observatory. ${formatDate(frontMatter.date)}. ${currentUrl}.`,
     
-    bibtex: `@misc{nadrasky${new Date(frontMatter.date).getFullYear()}${slug.replace(/[^a-zA-Z0-9]/g, '')},
-  author = {Daniel Nádraský},
+    bibtex: `@misc{secretsobservatory${new Date(frontMatter.date).getFullYear()}${slug.replace(/[^a-zA-Z0-9]/g, '')},
+  author = {Secrets Observatory},
   title = {${frontMatter.title}},
   year = {${new Date(frontMatter.date).getFullYear()}},
   url = {${currentUrl}},
