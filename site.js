@@ -7,6 +7,7 @@ let activeCategories = new Set();
 // Initialize on page load
 document.addEventListener('DOMContentLoaded', function() {
   initTheme();
+  initMobileMenu();
   setFooterYear();
   detectPage();
   loadPosts();
@@ -15,31 +16,97 @@ document.addEventListener('DOMContentLoaded', function() {
 // Theme management
 function initTheme() {
   const themeToggle = document.getElementById('themeToggle');
-  if (!themeToggle) return;
+  const themeToggleMobile = document.getElementById('themeToggleMobile');
   
   updateThemeButton();
   
-  themeToggle.addEventListener('click', function() {
-    const isDark = document.documentElement.classList.contains('dark');
-    
-    if (isDark) {
-      document.documentElement.classList.remove('dark');
-      localStorage.setItem('theme', 'light');
-    } else {
-      document.documentElement.classList.add('dark');
-      localStorage.setItem('theme', 'dark');
-    }
-    
-    updateThemeButton();
-  });
+  // Desktop theme toggle
+  if (themeToggle) {
+    themeToggle.addEventListener('click', toggleTheme);
+  }
+  
+  // Mobile theme toggle
+  if (themeToggleMobile) {
+    themeToggleMobile.addEventListener('click', toggleTheme);
+  }
+}
+
+function toggleTheme() {
+  const isDark = document.documentElement.classList.contains('dark');
+  
+  if (isDark) {
+    document.documentElement.classList.remove('dark');
+    localStorage.setItem('theme', 'light');
+  } else {
+    document.documentElement.classList.add('dark');
+    localStorage.setItem('theme', 'dark');
+  }
+  
+  updateThemeButton();
 }
 
 function updateThemeButton() {
   const themeToggle = document.getElementById('themeToggle');
-  if (!themeToggle) return;
-  
+  const themeToggleMobile = document.getElementById('themeToggleMobile');
   const isDark = document.documentElement.classList.contains('dark');
-  themeToggle.textContent = isDark ? 'Light' : 'Dark';
+  const text = isDark ? 'Light' : 'Dark';
+  
+  if (themeToggle) themeToggle.textContent = text;
+  if (themeToggleMobile) themeToggleMobile.textContent = text;
+}
+
+// Mobile menu management
+function initMobileMenu() {
+  const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+  const closeMobileMenu = document.getElementById('closeMobileMenu');
+  const mobileMenuOverlay = document.getElementById('mobileMenuOverlay');
+  const mobileMenuPanel = document.getElementById('mobileMenuPanel');
+  const catBtnMobile = document.getElementById('catBtnMobile');
+  const catMenuMobile = document.getElementById('catMenuMobile');
+  
+  if (!mobileMenuBtn) return;
+  
+  // Open mobile menu
+  mobileMenuBtn.addEventListener('click', function() {
+    mobileMenuPanel.classList.remove('translate-x-full');
+    mobileMenuOverlay.classList.remove('hidden');
+    document.body.style.overflow = 'hidden';
+  });
+  
+  // Close mobile menu
+  function closeMobileMenuFunc() {
+    mobileMenuPanel.classList.add('translate-x-full');
+    mobileMenuOverlay.classList.add('hidden');
+    document.body.style.overflow = '';
+  }
+  
+  if (closeMobileMenu) {
+    closeMobileMenu.addEventListener('click', closeMobileMenuFunc);
+  }
+  
+  if (mobileMenuOverlay) {
+    mobileMenuOverlay.addEventListener('click', closeMobileMenuFunc);
+  }
+  
+  // Mobile categories dropdown
+  if (catBtnMobile && catMenuMobile) {
+    catBtnMobile.addEventListener('click', function() {
+      catMenuMobile.classList.toggle('hidden');
+    });
+  }
+  
+  // Close menu on navigation
+  const menuLinks = mobileMenuPanel?.querySelectorAll('a');
+  menuLinks?.forEach(link => {
+    link.addEventListener('click', closeMobileMenuFunc);
+  });
+  
+  // Close menu on ESC key
+  document.addEventListener('keydown', function(e) {
+    if (e.key === 'Escape' && !mobileMenuPanel.classList.contains('translate-x-full')) {
+      closeMobileMenuFunc();
+    }
+  });
 }
 
 // Set current year in footer
@@ -786,20 +853,30 @@ function initCategoriesDropdown() {
     post.categories.forEach(cat => categories.add(cat));
   });
   
-  // Populate dropdown
+  // Populate desktop dropdown
   catMenu.innerHTML = Array.from(categories).sort().map(category => 
     `<a href="index.html" class="block px-3 py-2 hover:bg-slate-100 dark:hover:bg-slate-700 rounded-md transition-colors">
       ${escapeHtml(category)}
     </a>`
   ).join('');
   
-  // Toggle dropdown
+  // Populate mobile dropdown
+  const catMenuMobile = document.getElementById('catMenuMobile');
+  if (catMenuMobile) {
+    catMenuMobile.innerHTML = Array.from(categories).sort().map(category => 
+      `<a href="index.html" class="block py-1 hover:text-blue-600 dark:hover:text-blue-400">
+        ${escapeHtml(category)}
+      </a>`
+    ).join('');
+  }
+  
+  // Toggle desktop dropdown
   catBtn.addEventListener('click', function(e) {
     e.stopPropagation();
     catMenu.classList.toggle('hidden');
   });
   
-  // Close dropdown when clicking outside
+  // Close desktop dropdown when clicking outside
   document.addEventListener('click', function() {
     catMenu.classList.add('hidden');
   });
@@ -1023,18 +1100,26 @@ function initCategoriesDropdown() {
     post.categories.forEach(cat => categories.add(cat));
   });
   
-  // Populate dropdown
+  // Populate desktop dropdown
   catMenu.innerHTML = Array.from(categories).sort().map(category => 
     `<a href="index.html" class="block px-2 py-1 hover:bg-slate-100 dark:hover:bg-slate-700 rounded">${category}</a>`
   ).join('');
   
-  // Toggle dropdown
+  // Populate mobile dropdown
+  const catMenuMobile = document.getElementById('catMenuMobile');
+  if (catMenuMobile) {
+    catMenuMobile.innerHTML = Array.from(categories).sort().map(category => 
+      `<a href="index.html" class="block py-1 hover:text-blue-600 dark:hover:text-blue-400">${category}</a>`
+    ).join('');
+  }
+  
+  // Toggle desktop dropdown
   catBtn.addEventListener('click', function(e) {
     e.stopPropagation();
     catMenu.classList.toggle('hidden');
   });
   
-  // Close dropdown when clicking outside
+  // Close desktop dropdown when clicking outside
   document.addEventListener('click', function() {
     catMenu.classList.add('hidden');
   });
