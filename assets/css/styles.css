@@ -309,6 +309,23 @@ input, select, textarea {
   transform: none !important;
 }
 
+/* Share and Cite buttons should look like text links */
+#shareBtn, #citeBtn {
+  background: none !important;
+  border: none !important;
+  padding: 0 !important;
+  font: inherit !important;
+  cursor: pointer !important;
+  color: #93c5fd !important; /* Light blue for visibility */
+  opacity: 1 !important;
+}
+
+#shareBtn:hover, #citeBtn:hover {
+  background: none !important;
+  transform: none !important;
+  color: #bfdbfe !important; /* Lighter blue on hover */
+}
+
 /* Button styles */
 button {
   @apply transition-all duration-200;
