@@ -16,7 +16,7 @@ This blog now supports **ScienceDirect-style references and footnotes**![#1]
 
 For example, research on PARP enzymes[ref:vyas2014family] shows fascinating results in DNA repair mechanisms. You can also add mathematical content with references[ref:example2023math]:
 
-$$\int_{0}^{\infty} e^{-x^2} dx = \frac{\sqrt{\pi}}{2}$$
+$\int_{0}^{\infty} e^{-x^2} dx = \frac{\sqrt{\pi}}{2}$
 
 Click any reference number to see a popup with the full citation — no need to scroll down!
 

@@ -105,6 +105,69 @@ body {
   color: #9ca3af;
 }
 
+/* Epigraph/Pull Quote Style - for elegant opening quotes */
+.epigraph {
+  text-align: center;
+  font-style: italic;
+  font-size: 1.25rem;
+  line-height: 1.8;
+  margin: 3rem auto;
+  max-width: 700px;
+  padding: 0 2rem;
+  color: #1e293b;
+  border: none;
+}
+
+.dark .epigraph {
+  color: #f1f5f9;
+}
+
+.epigraph-quote {
+  font-size: 1.25rem;
+  margin-bottom: 1rem;
+  quotes: """ """ "'" "'";
+}
+
+.epigraph-quote::before {
+  content: open-quote;
+}
+
+.epigraph-quote::after {
+  content: close-quote;
+}
+
+.epigraph-attribution {
+  font-style: normal;
+  font-size: 1rem;
+  margin-top: 1rem;
+  color: #475569;
+}
+
+.dark .epigraph-attribution {
+  color: #94a3b8;
+}
+
+.epigraph-attribution::before {
+  content: "— ";
+}
+
+/* Responsive epigraph */
+@media (max-width: 640px) {
+  .epigraph {
+    font-size: 1.1rem;
+    padding: 0 1rem;
+    margin: 2rem auto;
+  }
+  
+  .epigraph-quote {
+    font-size: 1.1rem;
+  }
+  
+  .epigraph-attribution {
+    font-size: 0.9rem;
+  }
+}
+
 .prose img { 
   max-width: 100%; 
   height: auto; 

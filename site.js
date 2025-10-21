@@ -452,6 +452,10 @@ async function initPostPage() {
     const postBody = document.getElementById('postBody');
     if (postBody) {
       console.log('Rendering markdown with marked...');
+      
+      // Process epigraph syntax before markdown parsing
+      processedContent = processEpigraphSyntax(processedContent);
+      
       let htmlContent = marked.parse(processedContent);
       
       // Process reference syntax [ref:key] and footnote syntax [#1]
@@ -955,6 +959,25 @@ function escapeHtml(text) {
   const div = document.createElement('div');
   div.textContent = text;
   return div.innerHTML;
+}
+
+// Process epigraph syntax: >>> quote text | Author Name [Ref]
+function processEpigraphSyntax(content) {
+  // Match epigraph pattern: >>> quote | attribution
+  // Can span multiple lines for the quote part
+  const epigraphRegex = /^>>>\s*(.+?)\s*\|\s*(.+?)$/gm;
+  
+  return content.replace(epigraphRegex, (match, quote, attribution) => {
+    // Clean up the quote and attribution
+    quote = quote.trim();
+    attribution = attribution.trim();
+    
+    // Generate HTML for epigraph
+    return `<div class="epigraph">
+  <div class="epigraph-quote">${quote}</div>
+  <div class="epigraph-attribution">${attribution}</div>
+</div>`;
+  });
 }
 
 function isValidEmail(email) {
