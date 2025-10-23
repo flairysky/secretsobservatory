@@ -24,7 +24,7 @@ This is a never-ending ongoing collection of learning tips and tricks.
    - Don’t let things stay isolated. Even if a topic is presented on its own, like a specific function, try to see the big picture.  
    - Learning isolated topics is harder because you need to memorize many different things. But once you compactify them and put them into a general or abstract concept, it becomes easier to associate them with what you already know.  
    - For example, is the function even or odd? Positive or negative?  
-   - Consider \(x^2\) and \(e^x\): both are positive functions—or, more precisely, non-negative functions, since \(x^2\) can be zero.  
+   - Consider $x^2$ and $e^x$: both are positive functions—or, more precisely, non-negative functions, since $x^2$ can be zero.  
    - Are they both convex or concave functions? Are they both continuous on some domain? We know they are both continuous functions.  
    - Now, continuous functions form a vector space. So any function we encounter that is continuous can also be treated as a vector in a vector space.  
    - These are observations you should make because learning like this will make it much easier to remember things.  

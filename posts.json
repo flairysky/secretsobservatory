@@ -19,35 +19,6 @@
       "date": "2025-10-23",
       "categories": ["Learning", "Teaching", "Mathematics"],
       "excerpt": "A collection of some possibly useful tricks and tips on how to learn."
-    },
-    {
-      "slug": "quote-example",
-      "title": "Using Elegant Quotes in Your Posts",
-      "date": "2025-10-21",
-      "categories": ["Writing", "Style"],
-      "excerpt": "A demonstration of different quote styles for academic writing"
-    },
-    {
-      "slug": "first-post",
-      "title": "Welcome to the Secrets observatory",
-      "date": "2025-10-09",
-      "categories": ["Mathematics", "Ethics", "Physics", "Law"],
-      "excerpt": "This is an introduction page to this blog.",
-      "cover_image": "assets/covers/demo.svg"
-    },
-    {
-      "slug": "example-references",
-      "title": "Example Post with References and Footnotes",
-      "date": "2025-10-20",
-      "categories": ["Examples", "Documentation"],
-      "excerpt": "A demonstration of the ScienceDirect-style reference and footnote system"
-    },
-    {
-      "slug": "test-references",
-      "title": "Reference System Test Suite",
-      "date": "2025-10-20",
-      "categories": ["Testing", "Documentation"],
-      "excerpt": "Comprehensive test cases for the reference and footnote system"
     }
   ]
 }
