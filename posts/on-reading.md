@@ -12,8 +12,6 @@ I guess that nobody ever told you to start reading a book from the first page an
 So why are you doing it?  
 If you are not reading in this manner (or at least not always), I am proud of you.
 
-I am not a fan of writings telling people how to do something—here, reading—while not actually showing in particular how to do it, so that one actually sees how satisfactory or useful it is. Here I make an exception, as I find the following information to be of some use despite not seeing it here in action.
-
 One should become aware that one is not forced by anybody to read a book from the first page to the last page in a completely linear fashion. The way one chooses to read a book depends on the reader only. You are free to think!
 
 Hence, we can, for instance, read the book linearly as stated above, or we can start at the last chapter and go backwards; we can start in the middle and go a few pages to the front and a few pages to the back, and so on; or we can start basically at any chapter and then go a few pages forward and look up terms we do not understand in previous chapters. The choice is yours.  
