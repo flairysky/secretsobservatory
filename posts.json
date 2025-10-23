@@ -7,6 +7,20 @@
   },
   "posts": [
     {
+      "slug": "on-reading",
+      "title": "On reading books in general and in particular mathematical texts",
+      "date": "2025-10-23",
+      "categories": ["Learning", "Teaching", "Mathematics"],
+      "excerpt": "A reflection on how to read."
+    },
+    {
+      "slug": "on-learning",
+      "title": "On  learning: tricks and tips of trade",
+      "date": "2025-10-23",
+      "categories": ["Learning", "Teaching", "Mathematics"],
+      "excerpt": "A collection of some possibly useful tricks and tips on how to learn."
+    },
+    {
       "slug": "quote-example",
       "title": "Using Elegant Quotes in Your Posts",
       "date": "2025-10-21",

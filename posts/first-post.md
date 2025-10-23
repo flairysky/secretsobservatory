@@ -1,5 +1,5 @@
 ---
-title: "Welcome to the Secrets observatory"
+title: "On "
 date: "2025-10-09"
 categories: ["Mathematics", "Ethics", "Physics", "Law"]
 excerpt: "This is an introduction page to this blog."
