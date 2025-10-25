@@ -420,14 +420,49 @@ button:hover {
   font-size: 1.1em !important;
 }
 
+/* Force inline math to stay inline with CHTML output */
+mjx-container[jax="CHTML"][display="false"] {
+  display: inline !important;
+  margin: 0 0.15em !important;
+}
+
+mjx-container[jax="CHTML"][display="true"] {
+  display: block !important;
+  text-align: center !important;
+  margin: 1em 0 !important;
+}
+
+/* Legacy SVG support */
 mjx-container[jax="SVG"] {
   direction: ltr;
+  display: inline-block !important;
+  vertical-align: middle;
+}
+
+mjx-container[jax="SVG"][display="true"] {
+  display: block !important;
+  text-align: center;
+  margin: 1em 0;
 }
 
 mjx-container[jax="SVG"] > svg {
   overflow: visible;
   min-height: 1px;
   min-width: 1px;
+  vertical-align: middle;
+}
+
+/* Ensure inline math stays inline */
+.prose mjx-container[jax="SVG"]:not([display="true"]),
+.prose mjx-container[jax="CHTML"]:not([display="true"]) {
+  display: inline !important;
+  margin: 0 0.15em;
+}
+
+/* Ensure paragraphs with inline math don't break unnecessarily */
+.prose p mjx-container {
+  display: inline !important;
+  vertical-align: middle;
 }
 
 /* Loading states */

@@ -17,9 +17,27 @@
   <link rel="stylesheet" href="assets/css/styles.css">
   <!-- MathJax -->
   <script>
-  window.MathJax={tex:{inlineMath:[['\\(','\\)'],['$','$']],displayMath:[['$$','$$'],['\\[','\\]']]},svg:{fontCache:'global'}};
+  window.MathJax = {
+    tex: {
+      inlineMath: [['$', '$'], ['\\(', '\\)']],
+      displayMath: [['$$', '$$'], ['\\[', '\\]']],
+      processEscapes: true,
+      processEnvironments: true
+    },
+    svg: {
+      fontCache: 'global'
+    },
+    startup: {
+      typeset: false  // Don't typeset on load, we'll call it manually
+    },
+    options: {
+      skipHtmlTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+      ignoreHtmlClass: 'tex2jax_ignore',
+      processHtmlClass: 'tex2jax_process'
+    }
+  };
   </script>
-  <script async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"></script>
+  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
 </head>
 <body class="min-h-screen bg-white text-slate-900 dark:bg-slate-900 dark:text-slate-100">
   <header class="border-b border-slate-200 dark:border-slate-800">

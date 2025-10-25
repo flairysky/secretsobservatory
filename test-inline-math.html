@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Inline Math Test</title>
+  <script>
+  window.MathJax = {
+    tex: {
+      inlineMath: [['\\(', '\\)'], ['$', '$']],
+      displayMath: [['$$', '$$'], ['\\[', '\\]']],
+      processEscapes: true,
+      processEnvironments: true
+    },
+    svg: {
+      fontCache: 'global'
+    }
+  };
+  </script>
+  <script async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"></script>
+  <style>
+    body { 
+      max-width: 800px; 
+      margin: 50px auto; 
+      font-family: Georgia, serif; 
+      line-height: 1.6;
+      padding: 20px;
+    }
+    h2 { margin-top: 2em; }
+    .test-case { 
+      margin: 20px 0; 
+      padding: 15px; 
+      background: #f5f5f5; 
+      border-left: 3px solid #333;
+    }
+    mjx-container[jax="SVG"] {
+      display: inline-block !important;
+      vertical-align: middle;
+    }
+    mjx-container[jax="SVG"][display="true"] {
+      display: block !important;
+      text-align: center;
+      margin: 1em 0;
+    }
+  </style>
+</head>
+<body>
+  <h1>Inline Math Rendering Test</h1>
+  
+  <h2>Test 1: Single Dollar Signs (Should be Inline)</h2>
+  <div class="test-case">
+    <p>For example, is the function even or odd? Positive or negative? Consider $x^2$ and $e^x$ : both are positive functions—or, more precisely, non-negative functions, since $x^2$ can be zero.</p>
+  </div>
+  
+  <h2>Test 2: Backslash Parentheses (Should be Inline)</h2>
+  <div class="test-case">
+    <p>For example, is the function even or odd? Positive or negative? Consider \(x^2\) and \(e^x\) : both are positive functions—or, more precisely, non-negative functions, since \(x^2\) can be zero.</p>
+  </div>
+  
+  <h2>Test 3: Display Math (Should be Centered Block)</h2>
+  <div class="test-case">
+    <p>The integral is defined as:</p>
+    $$\mathbb{E}_p[r] = \int \frac{q(x)}{p(x)} p(x) dx = 1$$
+    <p>And thus $r - 1$ has mean zero.</p>
+  </div>
+  
+  <h2>Test 4: Complex Inline Math in Sentence</h2>
+  <div class="test-case">
+    <p>Note also that $\mathbb{E}_p[r] = \int \frac{q(x)}{p(x)} p(x) dx = 1$, and thus $r - 1$ has mean zero.</p>
+  </div>
+  
+  <h2>Test 5: Reference Style from lukasmuenzel.com</h2>
+  <div class="test-case">
+    <p>Defining $r(x)=\frac{q(x)}{p(x)}$, we observe that $D_{KL}(P\|Q)=\int\log\frac{p(x)}{q(x)}p(x)dx=\mathbb{E}_p[\log\frac{1}{r}]=\mathbb{E}_p[-\log r]$, so $-\log r$ is an unbiased estimator of the KL-divergence.</p>
+  </div>
+
+  <h2>Expected Results</h2>
+  <ul>
+    <li>All math in Tests 1, 2, 4, and 5 should appear <strong>inline with the text</strong> (not on separate lines)</li>
+    <li>The equation in Test 3 should be centered and on its own line</li>
+    <li>Text should flow naturally around inline math expressions</li>
+  </ul>
+</body>
+</html>

@@ -456,7 +456,19 @@ async function initPostPage() {
       // Process epigraph syntax before markdown parsing
       processedContent = processEpigraphSyntax(processedContent);
       
+      // CRITICAL: Convert markdown to HTML WITHOUT parsing math
+      // Configure marked to treat $ as a regular character
+      marked.setOptions({
+        breaks: false,
+        gfm: true,
+        headerIds: true,
+        mangle: false,
+        sanitize: false
+      });
+      
       let htmlContent = marked.parse(processedContent);
+      
+      console.log('HTML content sample:', htmlContent.substring(0, 500));
       
       // Process reference syntax [ref:key] and footnote syntax [#1]
       if (window.refManager) {
@@ -484,10 +496,12 @@ async function initPostPage() {
       addCitationSection(frontMatter, slug);
       
       // Render math if MathJax is available
-      if (window.MathJax && window.MathJax.typesetPromise) {
+      if (window.MathJax) {
         try {
           console.log('Rendering math with MathJax...');
-          await MathJax.typesetPromise([postBody]);
+          // Wait for MathJax to be ready, then typeset
+          await window.MathJax.startup.promise;
+          await window.MathJax.typesetPromise([postBody]);
           console.log('MathJax rendering complete');
         } catch (err) {
           console.warn('MathJax rendering failed:', err);
