@@ -7,6 +7,13 @@
   },
   "posts": [
     {
+      "slug": "poem_first_act",
+      "title": "Daniel's Poem: First Act",
+      "date": "2025-10-31",
+      "categories": ["Learning", "Teaching", "Mathematics"],
+      "excerpt": "A poem: first act"
+    },
+    {
       "slug": "poem_preface",
       "title": "Daniel's Poem: preface",
       "date": "2025-10-31",
