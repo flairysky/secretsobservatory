@@ -47,33 +47,35 @@ Also, the word “mathematics” has nothing to do with numbers, as it comes fro
 Finally, as stated above, the poems potray my personal subjective perspective on mathematics, and so before we start, I should also mention that my way of doing mathematics was mainly influenced by Serge Lang, and secondly by the Artin family, in particular Emil Artin (Lang’s PhD supervisor) and Michael Artin (Yes, they are related, Michale is Emil’s son.). 
 Thus, being one of the lucky people I could largly profit from Serge's algebraic mastery  and geotric intuition (probably comming from his physics background), which I hope I was able to at least partially acquire myself.
 
-<figure class="my-6">
-  <img src="assets/imagespoem/SL1.png" alt="Serge Lang in his first natural habitat" class="rounded-lg shadow-md">
-  <figcaption class="text-center text-sm text-gray-600 dark:text-gray-400 mt-2 italic">
-    Serge Lang in his first natural habitat
-  </figcaption>
-</figure>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6 my-8">
+  <figure>
+    <img src="assets/imagespoem/SL1.png" alt="Serge Lang in his first natural habitat" class="w-full h-64 object-cover rounded-lg shadow-md">
+    <figcaption class="text-center text-sm text-gray-600 dark:text-gray-400 mt-2 italic">
+      Serge Lang in his first natural habitat
+    </figcaption>
+  </figure>
 
-<figure class="my-6">
-  <img src="assets/imagespoem/SL2.png" alt="Serge Lang in his second natural habitat" class="rounded-lg shadow-md">
-  <figcaption class="text-center text-sm text-gray-600 dark:text-gray-400 mt-2 italic">
-    Serge Lang in his second natural habitat
-  </figcaption>
-</figure>
+  <figure>
+    <img src="assets/imagespoem/SL2.png" alt="Serge Lang in his second natural habitat" class="w-full h-64 object-cover rounded-lg shadow-md">
+    <figcaption class="text-center text-sm text-gray-600 dark:text-gray-400 mt-2 italic">
+      Serge Lang in his second natural habitat
+    </figcaption>
+  </figure>
 
-<figure class="my-6">
-  <img src="assets/imagespoem/Emil_Artin.png" alt="Emil Artin - PhD advisor of S.L." class="rounded-lg shadow-md">
-  <figcaption class="text-center text-sm text-gray-600 dark:text-gray-400 mt-2 italic">
-    Emil Artin - PhD advisor of S.L.
-  </figcaption>
-</figure>
+  <figure>
+    <img src="assets/imagespoem/Emil_Artin.png" alt="Emil Artin - PhD advisor of S.L." class="w-full h-64 object-cover rounded-lg shadow-md">
+    <figcaption class="text-center text-sm text-gray-600 dark:text-gray-400 mt-2 italic">
+      Emil Artin - PhD advisor of S.L.
+    </figcaption>
+  </figure>
 
-<figure class="my-6">
-  <img src="assets/imagespoem/Michael_Artin.png" alt="Michael Artin - son of E.A." class="rounded-lg shadow-md">
-  <figcaption class="text-center text-sm text-gray-600 dark:text-gray-400 mt-2 italic">
-    Michael Artin - son of E.A.
-  </figcaption>
-</figure>
+  <figure>
+    <img src="assets/imagespoem/Michael_Artin.png" alt="Michael Artin - son of E.A." class="w-full h-64 object-cover rounded-lg shadow-md">
+    <figcaption class="text-center text-sm text-gray-600 dark:text-gray-400 mt-2 italic">
+      Michael Artin - son of E.A.
+    </figcaption>
+  </figure>
+</div>
 
 Hence, I do not take a view of any particular traditional school, such as the french one lead by Bourbaki's abstraction, nor the Russian one treating mathematics as part of experimental sciences, but rather prefer to take the best of both worlds (Yes, I am quoting Miley Cyrus)
 
