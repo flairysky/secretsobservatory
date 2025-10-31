@@ -10,6 +10,7 @@ excerpt: "A poem: first act"
 
 Before we begin, I must mention that all pictures used in this particular session are not rigorous in any sense, but in my experience help stimulate thought and a perception of a certain perspective about mathematics I would like to convey. Thus, one should not take these pictures literally.
 However, it is still better for you to see some pictures than if I had told you to "imagine something," since this is very dangerous, as you and I can imagine two completely different things (citation of Friedrich Schiller, Winter School of Gravity and Light).
+
 <figure>
   <img src="assets/imagespoem/eagle_landscape_left_resized.png" alt="abstract perspective (general)" class="w-full h-64 object-cover rounded-lg shadow-md">
   <figcaption class="text-center text-sm text-gray-600 dark:text-gray-400 mt-2 italic">
@@ -17,13 +18,15 @@ However, it is still better for you to see some pictures than if I had told you 
   </figcaption>
 </figure>
 <figure>
-  <img src="assets/imagespoem//flower_bug_lake_lowres.png" alt="detailed perspective (special)" class="w-full h-64 object-cover rounded-lg shadow-md">
+  <img src="assets/imagespoem/flower_bug_lake_lowres.png" alt="detailed perspective (special)" class="w-full h-64 object-cover rounded-lg shadow-md">
   <figcaption class="text-center text-sm text-gray-600 dark:text-gray-400 mt-2 italic">
     detailed perspective (special)
   </figcaption>
 </figure>
+
 Now, I showed these pictures because, for me, mathematics is the constant interplay between these different perspectives, where each perspective can provide you with different information about the theme you are trying to learn. We can think of us as being the eagle and constantly flying up and down: from above we see the whole picture but cannot really see the beautiful flowers and some nice and often unexpected animals, while flying really near the surface allows us precisely to see those, but we are missing the whole picture.
-Also, another way of understanding abstraction that I found useful is by viewing the list of contents of a book as an abstraction of the book itself.
+
+Also, another way of understanding abstraction that I found useful is by viewing the list of contents of a book as an abstraction of the book itself.<br>
 Since, if we start at a position where we can read almost every word of the book and move with our head towards the book, as we move closer to the book we see more and more words and sharper than before, but as we move further towards the book we are no longer able to move the pages since our head is too close and we start to see less and less words due to our too "narrow" perspective, so that when our head touches the book we cannot read at all and are stuck with one word, if any. On the other hand, if we start again from the start and begin moving away from the book, we start to see the words less sharp until we are no longer able to read any words at all, and as we move between pages we are able to read only the titles of the chapters. But if we keep going further away, at some point we reach a perspective where we are not even able to read the title of the book (we abstracted too much!).
 And we see that while flying constantly up and down we also need to go through the forests, which might not always be particularly interesting, but help us better understand the connections of the whole ecosystem, if you wish.
 But also in the forests there are nice pathways one can take, through which one learns a lot.
