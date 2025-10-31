@@ -42,7 +42,7 @@ Sadly, my experience with lectures or bad books is that they often look like thi
 </figure>
 which we might describe as
 
-quote: "Den Wald vor lauter Bäumen nicht sehen".
+"Den Wald vor lauter Bäumen nicht sehen".
 
 Or, in the best case, like this:
 
