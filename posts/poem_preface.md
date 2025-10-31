@@ -4,7 +4,7 @@ date: "2025-10-31"
 categories: ["Learning", "Teaching", "Mathematics"]
 excerpt: "A poem"
 ---
->>> A life is a tragedy on close up and a comedy in longshot | Charlie Chaplin(quote made famous by Sir Rowan Atkinson)[ref:Wilde1891] 
+>>> A life is a tragedy on close up and a comedy in longshot | Charlie Chaplin (quote made famous by Sir Rowan Atkinson)
 
 As the quote by two of my favorite geniuses shows, life is, for the most part, about our perspective on things — and it’s no different in mathematics.
 
@@ -51,9 +51,9 @@ Thus, being one of the lucky people I could largly profit from Serge's algebraic
 
 ![Serge Lang in his second natural habitat](assets/imagespoem/SL2.png)
 
-![Emil Artin - PhD advisor of S.L.](assets/imagespoem/SL2.png)
+![Emil Artin - PhD advisor of S.L.](assets/imagespoem/Emil_Artin.png)
 
-![Michael Artin - son of E.A.](assets/imagespoem/SL2.png)
+![Michael Artin - son of E.A.](assets/imagespoem/Michael_Artin.png)
 
 Hence, I do not take a view of any particular traditional school, such as the french one lead by Bourbaki's abstraction, nor the Russian one treating mathematics as part of experimental sciences, but rather prefer to take the best of both worlds (Yes, I am quoting Miley Cyrus)
 
@@ -61,14 +61,14 @@ Consequently, althogh my perspective heavily relies on Serge's and Artins' teach
 
 And so one of my hopes from these poems are to a certain degree analogous to what Srge's motivation for his textbooks was
 
-> "I want to stimulate thought, a do away with the general uptight feelings, which people often have about math" (S.L.)\end{quote} 
+> "I want to stimulate thought, a do away with the general uptight feelings, which people often have about math" [ref:Lang1988] 
 
 and that you will see that you can just use your **ordinary language** to express the ideas.
 
 > "the question of the usefulness of poetry arises only in periods of its decline, while in periods of its flowering, no one doubts its total uselessness." 
 > - Boris Pastrnak
 
-##On the structure and types of the poems
+## On the structure and types of the poems
 
 Loosly speaking I differentiate among 3 poem types below, where each poem will take ideally a fomr of one of them, however crossovers are not excluded.
 
