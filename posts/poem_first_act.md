@@ -5,7 +5,8 @@ categories: ["Learning", "Teaching", "Mathematics"]
 excerpt: "A poem: first act"
 ---
 
-> All art is at once surface and symbol.<br> Those who go beneath the surface do so at their peril. <br> Those who read the symbol do so at their peril.<br>
+> All art is at once surface and symbol.<br> Those who go beneath the surface do so at their peril. <br> Those who read the symbol do so at their peril.
+>
 > Oscar Wilde[ref:Wilde1891] 
 
 Before we begin, I must mention that all pictures used in this particular session are not rigorous in any sense, but in my experience help stimulate thought and a perception of a certain perspective about mathematics I would like to convey. Thus, one should not take these pictures literally.
@@ -18,7 +19,7 @@ However, it is still better for you to see some pictures than if I had told you 
   </figcaption>
 </figure>
 <figure>
-  <img src="assets/imagespoem/flower_bug_lake_lowres.png" alt="detailed perspective (special)" class="w-full h-64 object-cover rounded-lg shadow-md">
+  <img src="assets/imagespoem/flower_bug_lake.png" alt="detailed perspective (special)" class="w-full h-64 object-cover rounded-lg shadow-md">
   <figcaption class="text-center text-sm text-gray-600 dark:text-gray-400 mt-2 italic">
     detailed perspective (special)
   </figcaption>
