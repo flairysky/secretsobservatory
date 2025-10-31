@@ -360,3 +360,38 @@ The notion of congruence modulo something was first introduced by Gauss as he in
 In mathematics the word "<strong>formal</strong>" appears a lot and can have two meanings:
 We are used to speaking about "formal" and "informal," but in mathematics it is often the case that when we say something is defined "formally" (in a symbolic manner) in some way, we mean that "it has the specific form" without showing that this form actually has any meaning or substance to it. Usually we then go on and show that it is indeed the case, which is the reason why we defined it in such a formal way first.
 
+---
+
+## Only for those who want to prepare for abstract algebra
+
+Given an association $f:S\to S'$, we can naturally decompose this association using an equivalence relation $\sim$ on $S$ in the following manner:
+
+$$S\stackrel{f_{\text{can}}}{\to}S|_{\sim}\stackrel{\bar{f}}{\to}\text{Im}(f)\stackrel{i}{\hookrightarrow} S' \tag{1}$$
+
+Another pictorial description:
+
+$$
+\begin{array}{ccc}
+S & \stackrel{f}{\longrightarrow} & \text{Im}(f) \stackrel{i}{\hookrightarrow} S' \\
+\downarrow_{f_{\text{can}}} & \searrow_{\bar{f}} & \\
+S|_{\sim} & &
+\end{array}
+$$
+
+where
+
+- $f_{\text{can}}$ associate to each element in the domain the equivalence class in which it lies,<br>
+  hence $f_{\text{can}}$ is clearly.
+
+- $\bar{f}$ is a bijection, try to prove it, and also make sure that you show that this map is well defined, which means it is independent of the choice of representative of the class.<br>
+  Since if the association would associate different elements to the same class, based on different representatives, it would clearly not satisfy the definition of an association!
+
+- $i$ is called **inclusion** and is denoted by the "hook arrow" and $i$ for obvious reason.<br>
+  furthermore an inclusion association must be by definition injective, since it *includes* one set into another set, this time it includes the image into the co-domain of the original association $f$
+
+Try to prove all the above for yourself.
+
+I included this decomposition as it is useful to get used to it on a psychological level already at this point and on a set-theoretic level.<br>
+Once structures on sets are involved, one then needs to only look if the structures are preserved.<br>
+I learned this pedagogical method from Emil Artin, who included this decomposition already in this set-theoretical manner at the first lecture of his algebra lectures (for more discussion on the "proper" way of teaching algebra look up Artin's collected papers [ref:ArtinCollected2013]).
+
