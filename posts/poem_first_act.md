@@ -5,18 +5,19 @@ categories: ["Learning", "Teaching", "Mathematics"]
 excerpt: "A poem: first act"
 ---
 
->>> All art is at once surface and symbol.<br> Those who go beneath the surface do so at their peril. <br> Those who read the symbol do so at their peril.<br>  | - Oscar Wilde[ref:Wilde1891] 
+> All art is at once surface and symbol.<br> Those who go beneath the surface do so at their peril. <br> Those who read the symbol do so at their peril.<br>
+> Oscar Wilde[ref:Wilde1891] 
 
 Before we begin, I must mention that all pictures used in this particular session are not rigorous in any sense, but in my experience help stimulate thought and a perception of a certain perspective about mathematics I would like to convey. Thus, one should not take these pictures literally.
 However, it is still better for you to see some pictures than if I had told you to "imagine something," since this is very dangerous, as you and I can imagine two completely different things (citation of Friedrich Schiller, Winter School of Gravity and Light).
 <figure>
-  <img src="pictures/eagle_landscape_left_resized.png" alt="abstract perspective (general)" class="w-full h-64 object-cover rounded-lg shadow-md">
+  <img src="assets/imagespoem/eagle_landscape_left_resized.png" alt="abstract perspective (general)" class="w-full h-64 object-cover rounded-lg shadow-md">
   <figcaption class="text-center text-sm text-gray-600 dark:text-gray-400 mt-2 italic">
     abstract perspective (general)
   </figcaption>
 </figure>
 <figure>
-  <img src="pictures/flower_bug_lake_lowres.png" alt="detailed perspective (special)" class="w-full h-64 object-cover rounded-lg shadow-md">
+  <img src="assets/imagespoem//flower_bug_lake_lowres.png" alt="detailed perspective (special)" class="w-full h-64 object-cover rounded-lg shadow-md">
   <figcaption class="text-center text-sm text-gray-600 dark:text-gray-400 mt-2 italic">
     detailed perspective (special)
   </figcaption>
@@ -28,7 +29,7 @@ And we see that while flying constantly up and down we also need to go through t
 But also in the forests there are nice pathways one can take, through which one learns a lot.
 Sadly, my experience with lectures or bad books is that they often look like this,
 <figure>
-  <img src="pictures/forest1_resized.png" alt="jungle perspective" class="w-full h-64 object-cover rounded-lg shadow-md">
+  <img src="assets/imagespoem/forest1_resized.png" alt="jungle perspective" class="w-full h-64 object-cover rounded-lg shadow-md">
   <figcaption class="text-center text-sm text-gray-600 dark:text-gray-400 mt-2 italic">
     jungle perspective
   </figcaption>
@@ -39,7 +40,7 @@ quote: "Den Wald vor lauter Bäumen nicht sehen".
 
 Or, in the best case, like this:
 <figure>
-  <img src="pictures/forest2_resized.png" alt="a better jungle perspective" class="w-full h-64 object-cover rounded-lg shadow-md">
+  <img src="assets/imagespoem/forest2_resized.png" alt="a better jungle perspective" class="w-full h-64 object-cover rounded-lg shadow-md">
   <figcaption class="text-center text-sm text-gray-600 dark:text-gray-400 mt-2 italic">
     a better jungle perspective
   </figcaption>
@@ -115,7 +116,7 @@ we assign (hence "association") an element of the new set $S'$,
 which is psychologically an opposite direction to our symbolical description! (This may need a little time to digest.)
 Visually, to remember this fact, one might, e.g., think of the original set $S$ as a set of some points, and of the new set $S'$ as a set of arrows. Thus, to every point we assign an arrow, which may look like this, for example:
 <figure>
-  <img src="pictures/visual_association.png" alt="example of a visual description of an association" class="w-full h-64 object-cover rounded-lg shadow-md">
+  <img src="assets/imagespoem/visual_association.png" alt="example of a visual description of an association" class="w-full h-64 object-cover rounded-lg shadow-md">
   <figcaption class="text-center text-sm text-gray-600 dark:text-gray-400 mt-2 italic">
     example of a visual description of an association
   </figcaption>
@@ -124,7 +125,7 @@ Visually, to remember this fact, one might, e.g., think of the original set $S$ 
 Furthermore, what I want to stress is that for an association to be an association, we must assign a new element to every element of the original set.
 E.g.:
 <figure>
-  <img src="pictures/no_association.png" alt="example of what is not an association" class="w-full h-64 object-cover rounded-lg shadow-md">
+  <img src="assets/imagespoem/no_association.png" alt="example of what is not an association" class="w-full h-64 object-cover rounded-lg shadow-md">
   <figcaption class="text-center text-sm text-gray-600 dark:text-gray-400 mt-2 italic">
     example of what is not an association
   </figcaption>
@@ -136,7 +137,7 @@ then we can do so and call it a "restriction of $f$," denoted by $f|_{A}$.
 Thus, symbolically we started with $f:S \to S'$ and we constructed $f|_{A}:A \to S'$.
 Further, instead of saying all the time the first set or original set and another set, we call the first set the "domain" of an association and the second set the "co-domain" (or "target set") of an association, and we also see that not every element in the co-domain has to be assigned to some element in the domain, and so we call the collection of all the elements in the co-domain which are assigned to some element in the domain the "image" of an association (symbolically Im(f), if we call our association $f$). Hence, we immediately see (take domain and co-domain such that the co-domain contains more elements than the domain) that it is not always true that a co-domain is equal to the image! This fact will be important later below (look up surjection and also what can happen if we take domain and co-domain to be the same set and the association is injective).
 <figure>
-  <img src="pictures/association.png" alt="image vs co-domain" class="w-full h-64 object-cover rounded-lg shadow-md">
+  <img src="assets/imagespoem/association.png" alt="image vs co-domain" class="w-full h-64 object-cover rounded-lg shadow-md">
   <figcaption class="text-center text-sm text-gray-600 dark:text-gray-400 mt-2 italic">
     image vs co-domain
   </figcaption>
@@ -154,7 +155,7 @@ bijective: 1-to-1 correspondence (if and only if both injective and surjective)
 
 
 <figure>
-  <img src="pictures/injective_surjective_bijective.png" alt="injection, surjection and bijection" class="w-full h-64 object-cover rounded-lg shadow-md">
+  <img src="assets/imagespoem/injective_surjective_bijective.png" alt="injection, surjection and bijection" class="w-full h-64 object-cover rounded-lg shadow-md">
   <figcaption class="text-center text-sm text-gray-600 dark:text-gray-400 mt-2 italic">
     injection, surjection and bijection
   </figcaption>
@@ -236,7 +237,7 @@ then such inverse is unique. (And so we can say it is the inverse.)
 
 Proof:
 Given an association $f$, assume $g,h$ are inverses of $f$.
-Then, by the fact that $g$ is an inverse of $f$, we have $f g = I$ (where $I$ is the identity association), and applying $h$ to the left of this equation, we get $h f g = h \circ I$, and again by definition we get $I g = h$, thus $g=h$, as was to be shown. $\qedsymbol$
+Then, by the fact that $g$ is an inverse of $f$, we have $f g = I$ (where $I$ is the identity association), and applying $h$ to the left of this equation, we get $h f g = h \circ I$, and again by definition we get $I g = h$, thus $g=h$, as was to be shown. $\qed$
 Finally, when dealing with associations, there are so many different kinds of them, and for me it was always very confusing to navigate among them. Luckily, S. L.'s rough classification provides, at least for me, a very nice psychological framework for how to orient yourself in the jungle, by distinguishing four kinds of associations depending on the domain and co-domain,
 where we distinguish between "numbers" (real numbers), denoted \mathbf{R}, and space whose elements we will call vectors, denoted $V$ (i.e., some structure on the set, where visually you can think, for instance, of a 2D plane, or if you already encountered vector spaces, then as a vector space).
 And if everything is nice, we can also provide the names "function," "curve," "vector field" in the following way:
