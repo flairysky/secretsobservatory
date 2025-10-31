@@ -7,6 +7,13 @@
   },
   "posts": [
     {
+      "slug": "poem_preface",
+      "title": "Daniel's Poem: preface",
+      "date": "2025-10-31",
+      "categories": ["Learning", "Teaching", "Mathematics"],
+      "excerpt": "A poem"
+    },
+    {
       "slug": "on-reading",
       "title": "On reading books in general and in particular mathematical texts",
       "date": "2025-10-23",
