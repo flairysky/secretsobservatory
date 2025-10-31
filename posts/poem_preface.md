@@ -47,13 +47,33 @@ Also, the word “mathematics” has nothing to do with numbers, as it comes fro
 Finally, as stated above, the poems potray my personal subjective perspective on mathematics, and so before we start, I should also mention that my way of doing mathematics was mainly influenced by Serge Lang, and secondly by the Artin family, in particular Emil Artin (Lang’s PhD supervisor) and Michael Artin (Yes, they are related, Michale is Emil’s son.). 
 Thus, being one of the lucky people I could largly profit from Serge's algebraic mastery  and geotric intuition (probably comming from his physics background), which I hope I was able to at least partially acquire myself.
 
-![Serge Lang in his first natural habitat](assets/imagespoem/SL1.png)
+<figure class="my-6">
+  <img src="assets/imagespoem/SL1.png" alt="Serge Lang in his first natural habitat" class="rounded-lg shadow-md">
+  <figcaption class="text-center text-sm text-gray-600 dark:text-gray-400 mt-2 italic">
+    Serge Lang in his first natural habitat
+  </figcaption>
+</figure>
 
-![Serge Lang in his second natural habitat](assets/imagespoem/SL2.png)
+<figure class="my-6">
+  <img src="assets/imagespoem/SL2.png" alt="Serge Lang in his second natural habitat" class="rounded-lg shadow-md">
+  <figcaption class="text-center text-sm text-gray-600 dark:text-gray-400 mt-2 italic">
+    Serge Lang in his second natural habitat
+  </figcaption>
+</figure>
 
-![Emil Artin - PhD advisor of S.L.](assets/imagespoem/Emil_Artin.png)
+<figure class="my-6">
+  <img src="assets/imagespoem/Emil_Artin.png" alt="Emil Artin - PhD advisor of S.L." class="rounded-lg shadow-md">
+  <figcaption class="text-center text-sm text-gray-600 dark:text-gray-400 mt-2 italic">
+    Emil Artin - PhD advisor of S.L.
+  </figcaption>
+</figure>
 
-![Michael Artin - son of E.A.](assets/imagespoem/Michael_Artin.png)
+<figure class="my-6">
+  <img src="assets/imagespoem/Michael_Artin.png" alt="Michael Artin - son of E.A." class="rounded-lg shadow-md">
+  <figcaption class="text-center text-sm text-gray-600 dark:text-gray-400 mt-2 italic">
+    Michael Artin - son of E.A.
+  </figcaption>
+</figure>
 
 Hence, I do not take a view of any particular traditional school, such as the french one lead by Bourbaki's abstraction, nor the Russian one treating mathematics as part of experimental sciences, but rather prefer to take the best of both worlds (Yes, I am quoting Miley Cyrus)
 
@@ -70,10 +90,10 @@ and that you will see that you can just use your **ordinary language** to expres
 
 ## On the structure and types of the poems
 
-Loosly speaking I differentiate among 3 poem types below, where each poem will take ideally a fomr of one of them, however crossovers are not excluded.
+Loosly speaking I differentiate among 3 poem types below, where each poem will take ideally a fomr of one of them, however crossovers are not excluded:
 
-1. abstract perspective session (providing a big picture understanding)
-2. detailed perspective (providing an understanding of some special topic)
+1. Abstract perspective session (providing a big picture understanding)
+2. Detailed perspective (providing an understanding of some special topic)
 3. Durchblick perspective (going through the different abstraction layers)
 
 As you can see I have included a word Durchblick (from german meaning something like through-view, but there is not exact translation or word in english that would capture this notion in the same way.), which will happen over and over and not only with German language but with any language deemed necessarilly, in order to express ideas as accuratelly as possible. Oftentimes, once one uinderstand where the name comes from, one understands the idea behind the concept and oftentimes the name come from languages other than English.
