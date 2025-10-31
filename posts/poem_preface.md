@@ -35,7 +35,7 @@ whole system of discoveries, all following a main idea and leading to a final re
 harmony and ingenuity, to form an organic entirety, just like a painting. There is also a mathematical
 rhythm or taste, which reads the analysis and then leads the approach and the development accordingly.”
 
-Eisenstein is not alone in this perception of mathematics, since many great mathematicians describe math as an art (one of them being Emil Artin, one of the main protagonists of modern algebra and also a person who will show up again later). But calling these sessions "art sessions" feels too loose to me. Since poetry can be completely logical, as far as I know. Thus, I decided to perceive these notes poems.
+Eisenstein is not alone in this perception of mathematics, since many great mathematicians describe math as an art [#1]. But calling these sessions "art sessions" feels too loose to me. Since poetry can be completely logical, as far as I know. Thus, I decided to perceive these notes poems.
 
 > "Pure mathematics is, in its way, the poetry of logical ideas." 
 > - Einstein
@@ -44,7 +44,7 @@ The reasoning behind the name also intends to take away the negative perception 
 
 Also, the word “mathematics” has nothing to do with numbers, as it comes from the ancient Greek mathema, meaning “that which is learned” or “what one gets to know.”
 
-Finally, as stated above, the poems potray my personal subjective perspective on mathematics, and so before we start, I should also mention that my way of doing mathematics was mainly influenced by Serge Lang, and secondly by the Artin family, in particular Emil Artin (Lang’s PhD supervisor) and Michael Artin (Yes, they are related, Michale is Emil’s son.). 
+Finally, as stated above, the poems potray my personal subjective perspective on mathematics, and so before we start, I should also mention that my way of doing mathematics was mainly influenced by Serge Lang, and secondly by the Artin family, in particular Emil Artin[#2] and Michael Artin[#3]. 
 Thus, being one of the lucky people I could largly profit from Serge's algebraic mastery  and geotric intuition (probably comming from his physics background), which I hope I was able to at least partially acquire myself.
 
 <div class="grid grid-cols-1 md:grid-cols-2 gap-6 my-8">
@@ -77,18 +77,17 @@ Thus, being one of the lucky people I could largly profit from Serge's algebraic
   </figure>
 </div>
 
-Hence, I do not take a view of any particular traditional school, such as the french one lead by Bourbaki's abstraction, nor the Russian one treating mathematics as part of experimental sciences, but rather prefer to take the best of both worlds (Yes, I am quoting Miley Cyrus)
+Hence, I do not take a view of any particular traditional school, such as the french one lead by Bourbaki's abstraction, nor the Russian one treating mathematics as part of experimental sciences, but rather prefer to take the best of both worlds[#4].
 
 Consequently, althogh my perspective heavily relies on Serge's and Artins' teachings, I developed my own views and perceptions of the subject according to my personal taste. But without developing your own understanding - do you even have a soul?
 
 And so one of my hopes from these poems are to a certain degree analogous to what Srge's motivation for his textbooks was
 
-> "I want to stimulate thought, a do away with the general uptight feelings, which people often have about math" [ref:Lang1988] 
+> "I want to stimulate thought, and do away with the general uptight feelings, which people often have about math" [ref:Lang1988] 
 
 and that you will see that you can just use your **ordinary language** to express the ideas.
 
-> "the question of the usefulness of poetry arises only in periods of its decline, while in periods of its flowering, no one doubts its total uselessness." 
-> - Boris Pastrnak
+>>> "the question of the usefulness of poetry arises only in periods of its decline, while in periods of its flowering, no one doubts its total uselessness." | Boris Pastrnak
 
 ## On the structure and types of the poems
 
@@ -99,3 +98,10 @@ Loosly speaking I differentiate among 3 poem types below, where each poem will t
 3. Durchblick perspective (going through the different abstraction layers)
 
 As you can see I have included a word Durchblick (from german meaning something like through-view, but there is not exact translation or word in english that would capture this notion in the same way.), which will happen over and over and not only with German language but with any language deemed necessarilly, in order to express ideas as accuratelly as possible. Oftentimes, once one uinderstand where the name comes from, one understands the idea behind the concept and oftentimes the name come from languages other than English.
+
+<!-- FOOTNOTES
+[1]: One of them being Emil Artin, one of the main protagonists of modern algebra and also a person who will show up again later.
+[2]: Serge Lang’s PhD supervisor.
+[3]: Yes, they are related. Michal is Emil’s son.
+[4]: Yes, I am quoting Hannah Montana.
+-->
