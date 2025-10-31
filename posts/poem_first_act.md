@@ -373,13 +373,7 @@ $$S\stackrel{f_{\text{can}}}{\to}S|_{\sim}\stackrel{\bar{f}}{\to}\text{Im}(f)\st
 
 Another pictorial description:
 
-$$
-\begin{array}{ccc}
-S & \stackrel{f}{\longrightarrow} & \text{Im}(f) \stackrel{i}{\hookrightarrow} S' \\
-& \swarrow_{f_{\text{can}}} & \nearrow_{\bar{f}} \\
-& S|_{\sim} &
-\end{array}
-$$
+$$S \stackrel{f}{\longrightarrow} \text{Im}(f) \stackrel{i}{\hookrightarrow} S' \qquad \swarrow_{f_{\text{can}}} \qquad \nearrow_{\bar{f}} \qquad S|_{\sim}$$
 
 where
 
