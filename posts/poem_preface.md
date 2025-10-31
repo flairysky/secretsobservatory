@@ -99,6 +99,10 @@ Loosly speaking I differentiate among 3 poem types below, where each poem will t
 
 As you can see I have included a word Durchblick (from german meaning something like through-view, but there is not exact translation or word in english that would capture this notion in the same way.), which will happen over and over and not only with German language but with any language deemed necessarilly, in order to express ideas as accuratelly as possible. Oftentimes, once one uinderstand where the name comes from, one understands the idea behind the concept and oftentimes the name come from languages other than English.
 
+---
+
+Continue reading: [First Act](post.html?slug=poem_first_act)
+
 <!-- FOOTNOTES
 [1]: One of them being Emil Artin, one of the main protagonists of modern algebra and also a person who will show up again later.
 [2]: Serge Lang’s PhD supervisor.
