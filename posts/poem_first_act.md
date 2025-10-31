@@ -369,15 +369,15 @@ We are used to speaking about "formal" and "informal," but in mathematics it is 
 
 Given an association $f:S\to S'$, we can naturally decompose this association using an equivalence relation $\sim$ on $S$ in the following manner:
 
-$$S\stackrel{f_{\text{can}}}{\to}S|_{\sim}\stackrel{\bar{f}}{\to}\text{Im}(f)\stackrel{i}{\hookrightarrow} S' \tag{1}$$
+$$S\stackrel{f_{\text{can}}}{\to}S|_{\sim}\stackrel{\bar{f}}{\to}\text{Im}(f)\stackrel{i}{\hookrightarrow} S'$$
 
 Another pictorial description:
 
 $$
 \begin{array}{ccc}
 S & \stackrel{f}{\longrightarrow} & \text{Im}(f) \stackrel{i}{\hookrightarrow} S' \\
-\downarrow_{f_{\text{can}}} & \searrow_{\bar{f}} & \\
-S|_{\sim} & &
+& \swarrow_{f_{\text{can}}} & \nearrow_{\bar{f}} \\
+& S|_{\sim} &
 \end{array}
 $$
 
