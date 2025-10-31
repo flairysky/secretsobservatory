@@ -89,7 +89,7 @@ body {
   padding-left: 1.5rem;
 }
 
-.prose ol {
+.prose ol:not(.footnote-list):not(.reference-list) {
   list-style-type: decimal;
 }
 

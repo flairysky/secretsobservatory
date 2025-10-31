@@ -38,7 +38,7 @@ rhythm or taste, which reads the analysis and then leads the approach and the de
 Eisenstein is not alone in this perception of mathematics, since many great mathematicians describe math as an art [#1]. But calling these sessions "art sessions" feels too loose to me. Since poetry can be completely logical, as far as I know. Thus, I decided to perceive these notes poems.
 
 > "Pure mathematics is, in its way, the poetry of logical ideas." 
-> - Einstein
+> Einstein
 
 The reasoning behind the name also intends to take away the negative perception and as Serge Lang calls them "uptight feelings" of (the word) mathematics and so maybe lure some people to read them who would otherwise immediatelly close the blog when they would see this particular word in the title.
 
@@ -87,7 +87,7 @@ And so one of my hopes from these poems are to a certain degree analogous to wha
 
 and that you will see that you can just use your **ordinary language** to express the ideas.
 
->>> "the question of the usefulness of poetry arises only in periods of its decline, while in periods of its flowering, no one doubts its total uselessness." | Boris Pastrnak
+>>> the question of the usefulness of poetry arises only in periods of its decline, while in periods of its flowering, no one doubts its total uselessness. | Boris Pastrnak
 
 ## On the structure and types of the poems
 
