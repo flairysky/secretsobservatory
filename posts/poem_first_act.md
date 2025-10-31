@@ -333,8 +333,11 @@ Given an arbitrary element $a$ in $S$, since $a$ is equivalent to itself (clear 
 Thus, two equivalence classes are either equal or do not overlap at all, which we can also say in a fancy language by saying that they are either equal or that they are "<strong>disjunct</strong>" (in German) or "<strong>disjoint</strong>" (in English).<br>
 Thus, to recapitulate, we saw that an equivalence relation on a set means that every element of the set is contained in some equivalence class, no equivalence class is empty, and two equivalence classes are either the same equivalence class or have no elements in common.
 Now, we will prove a basic fact about equivalence relations, namely that they are logically equivalent to partitions.<br>
+
 As the name suggests, given a set, a **partition** of such a set decomposes the set into parts, and does it in such a way that each element of the original set is contained in some part of the decomposition, none of the parts are empty, and no element of the original set is contained in more than one part.<br>
+
 **EXAMPLE**: Say we have a set containing three elements, say $S=\{a,b,c\}$. Then, e.g., the collection of the sets $\{a\}$, $\{b\}$, $\{c\}$ is an example of a partition of $S$, but so is also $\{a,b\}$, $\{c\}$; the only difference between the two partitions is that the first one decomposes $S$ into three parts and the second into two.<br>
+
 Now, we show that partitions are logically equivalent to equivalence relations.<br>
 Given a partition on some arbitrary set $S$, meaning we have a decomposition of $S$ into some non-empty and non-overlapping sets, we need to show that it gives rise to an equivalence relation on $S$.<br>
 Let $\sim$ be a relation on $S$ such that $a \sim b$ whenever $a,b$ are contained in the same partition set.<br>
