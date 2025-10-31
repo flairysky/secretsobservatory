@@ -58,7 +58,8 @@ Now, we start with some basic notions, and we continue the train of thought from
 
 So, to describe a collection of objects, we call it a set, and so we constructed our first definition.
 
-> **Definition 1: set**
+> **Definition 1: Set**
+>
 > A set is a collection of objects.
 
 So we observe that we had some idea, i.e., describe a collection of objects, and for simplicity, so that we do not have to always write "collection of objects," we just call it a "set," and this is often the case how definitions emerge: we have something we want to describe or some truth we discovered and we give it a name (hopefully a well-chosen name telling us something about the objects or truths we want to describe), so that we can use it all the time for simplicity.<br>
@@ -77,6 +78,7 @@ We start with a set $S$ given by $\{x,y,z\}$, but now want to deal only with som
 Notice that we just constructed a new definition.
 
 > **Definition 2: Subset**
+>
 > We say that a set $S'$ is a subset of a set $S$<br>
 > if every element of $S'$ is contained in the set $S$.
 
@@ -124,6 +126,7 @@ Well, now we would like to relate two sets with each other, i.e., associate two 
 We start with a definition.
 
 > **Definition 3: Association**
+>
 > Given two sets $S$ and $S'$,<br>
 > we say that an **association** between these two sets<br>
 > associates to every element of the set $S$ some element of the set $S'$.<br>
@@ -134,7 +137,7 @@ We start with a definition.
 **Remark** for the symbolic description of the association.<br>
 We have two lines and we can think of this as a recipe from a doctor,<br>
 where the first line tells us the name "$h$" of the medicament we should take and how long we should take it, i.e., from which week to which week "$S \to S'$,"<br>
-and the second line is called "**prescription**" (in mathematics),<br>
+and the second line is called "<strong>prescription</strong>" (in mathematics),<br>
 which tells us how exactly we should take it, i.e., how many pills a day, if you wish, or whatever works for you :D.<br>
 Also, $x$ is just an arbitrary element of $S$, not some specific one, and we say that $h(x)$ is the **value** of the association $h$ at $x$. Again, it is important to realize that $h(x)$ is just some element in $S'$, but if we would write, for instance, $a \mapsto b$, instead of $x \mapsto h(x)$, we would not know by looking at $b$ to which element in $S$ we assigned it, which is the reason we choose the symbolism $h(x)$.<br>
 For example:<br>
@@ -142,7 +145,7 @@ Let $F:S \to S'$ such that $a \mapsto F(a)$ be our association,<br>
 where $S=\{x,y,z\}$ and $S'=\{A,B\}$ are our sets, and we describe explicitly our association by the following prescription: $x \mapsto A,\ y \mapsto B,\ z \mapsto A$. Then observe that if we would just write, instead of $a \mapsto F(a)$, $a \mapsto b$ in our description of the function, then we would have no idea, given, say, $B \in S'$, to which element it is assigned; but since we kind of rewrote $B$ by $B = F(y)$ in our explicit prescription, we see immediately that it is assigned to $y$ in our original set.<br>
 Now, we need to explain a little more what we mean by that.<br>
 We mean that to every element of our original set $S$,<br>
-we assign (hence "**association**") an element of the new set $S'$,<br>
+we assign (hence "<strong>association</strong>") an element of the new set $S'$,<br>
 which is psychologically an opposite direction to our symbolical description! (This may need a little time to digest.)
 Visually, to remember this fact, one might, e.g., think of the original set $S$ as a set of some points, and of the new set $S'$ as a set of arrows. Thus, to every point we assign an arrow, which may look like this, for example:
 <figure>
@@ -165,7 +168,7 @@ But if we have a set, say $S$, and a set $A$, which is a subset of $S$, i.e., sy
 but we would like to construct an association only from $A$,
 then we can do so and call it a "restriction of $f$," denoted by $f|_{A}$.
 Thus, symbolically we started with $f:S \to S'$ and we constructed $f|_{A}:A \to S'$.
-Further, instead of saying all the time the first set or original set and another set, we call the first set the "**domain**" of an association and the second set the "**co-domain**" (or "**target set**") of an association, and we also see that not every element in the co-domain has to be assigned to some element in the domain, and so we call the collection of all the elements in the co-domain which are assigned to some element in the domain the "**image**" of an association (symbolically $\operatorname{Im}(f)$, if we call our association $f$). Hence, we immediately see (take domain and co-domain such that the co-domain contains more elements than the domain) that it is not always true that a co-domain is equal to the image! This fact will be important later below (look up surjection and also what can happen if we take domain and co-domain to be the same set and the association is injective).
+Further, instead of saying all the time the first set or original set and another set, we call the first set the "<strong>domain</strong>" of an association and the second set the "<strong>co-domain</strong>" (or "<strong>target set</strong>") of an association, and we also see that not every element in the co-domain has to be assigned to some element in the domain, and so we call the collection of all the elements in the co-domain which are assigned to some element in the domain the "<strong>image</strong>" of an association (symbolically $\operatorname{Im}(f)$, if we call our association $f$). Hence, we immediately see (take domain and co-domain such that the co-domain contains more elements than the domain) that it is not always true that a co-domain is equal to the image! This fact will be important later below (look up surjection and also what can happen if we take domain and co-domain to be the same set and the association is injective).
 <figure>
   <img src="assets/imagespoem/association.png" alt="image vs co-domain" class="w-full h-64 object-cover rounded-lg shadow-md">
   <figcaption class="text-center text-sm text-gray-600 dark:text-gray-400 mt-2 italic">
@@ -185,13 +188,13 @@ Further, it is very important to always recognize the following three associatio
     injection, surjection and bijection
   </figcaption>
 </figure>
-Which were all coined by Bourbaki, where "**injective**" can intuitively mean that we inject one set into another, the same way a nurse injects one injection into one vein in our arm and another injection into another vein in our arm. "**Surjective**" comes from French (since Bourbaki is a French group) and means "onto," since every element of the co-domain is assigned to some element in the domain, and finally "**bi**" means two and does not need further explanation.<br>
+Which were all coined by Bourbaki, where "<strong>injective</strong>" can intuitively mean that we inject one set into another, the same way a nurse injects one injection into one vein in our arm and another injection into another vein in our arm. "<strong>Surjective</strong>" comes from French (since Bourbaki is a French group) and means "onto," since every element of the co-domain is assigned to some element in the domain, and finally "<strong>bi</strong>" means two and does not need further explanation.<br>
 **Remark**: observe how important it is to distinguish in English the words "into" and "onto." Further, we observe that "into" does not mean "injective," but just that the arrow goes into some set!<br>
 **Remark on injectivity**:<br>
 Thus, to check whether an association $f$ is injective, we need to check that if $f(a)=f(b)$, then $a=b$, but not vice versa, since if $a=b$, then by the definition of association we must have $f(a)=f(b)$, since an association cannot assign two different elements to the same initial element; or in other words, an association cannot give two different values for the same input value, since then it would not be an association!
 Next, given three sets, say $A,B,C$ and associations $f,g$<br>
 such that $f:A \to B$ and $g:B \to C$,<br>
-then we can form a **composite association**, denoted by the symbol $g \circ f$, where we can, for simplicity, read $\circ$ in our mind as "**after**" (thanks Friedrich Schüller, Winter School on Gravity and Light), since we apply $g$ after $f$, and read it aloud for the fancy audience as "$g$ **composed with** $f$" or "**composition** of $g$ with $f$," since we compose two associations together.<br>
+then we can form a **composite association**, denoted by the symbol $g \circ f$, where we can, for simplicity, read $\circ$ in our mind as "<strong>after</strong>" (thanks Friedrich Schüller, Winter School on Gravity and Light), since we apply $g$ after $f$, and read it aloud for the fancy audience as "$g$ <strong>composed with</strong> $f$" or "<strong>composition</strong> of $g$ with $f$," since we compose two associations together.<br>
 Symbolically, we have also the following picture:<br>
 $A \stackrel{f}{\to} B \stackrel{g}{\to} C$ such that<br>
 $x \mapsto f(x) \mapsto g(f(x))$<br>
@@ -218,9 +221,11 @@ For obvious reasons, we call such association $g$ the **inverse** of $f$ and, sy
 We state this as another definition.
 
 > **Definition 4: Inverse Association**
+>
 > Given associations $f:S \to S'$ and $g:S' \to S$,<br>
 > we say that $g$ is the **inverse** of $f$<br>
 > whenever $f \circ g = \text{identity association} = g \circ f$.
+
 We could equivalently rewrite the definition in the following manner:<br>
 Given associations $f:S \to S'$ and $g:S' \to S$,<br>
 if $f \circ g = \text{identity association} = g \circ f$<br>
@@ -251,21 +256,23 @@ We state this important fact as our first theorem.
 Observe that having an inverse is nothing but considering both sides of the same coin, as we can, for instance, say "Jim bought the house from Serge," which is equivalent to saying "Serge sold the house to Jim."
 
 > **Theorem 1: An association is a bijection iff it has an inverse**
+>
 > Let $f$ be an association.<br>
 > $f$ is a bijection $\iff$ $f$ has an inverse (often denoted by $f^{-1}$).
 
 The way we showed that this theorem is true is called **proof**, and we observe how we proved both directions of the statement $\iff$, i.e., both $\Rightarrow$ and $\Leftarrow$.<br>
-One notices how I used the definite article "**the**" for the inverse instead of the indefinite article "**an**" inverse. This is always done when we want to show that there is only one unique such element, symbolically, we also write "$\exists !$," which means "there exists unique."<br>
+One notices how I used the definite article "<strong>the</strong>" for the inverse instead of the indefinite article "<strong>an</strong>" inverse. This is always done when we want to show that there is only one unique such element, symbolically, we also write "$\exists !$," which means "there exists unique."<br>
 Now, we show that this is actually true, i.e., that there is only one inverse.<br>
 I.e., we prove the following fact:
 
 > **Theorem 2: Inverse association is unique**
+>
 > If an association has an inverse,<br>
 > then such inverse is unique. (And so we can say it is **the** inverse.)
 
 **Proof:**<br>
 Given an association $f$, assume $g,h$ are inverses of $f$.<br>
-Then, by the fact that $g$ is an inverse of $f$, we have $f g = I$ (where $I$ is the identity association), and applying $h$ to the left of this equation, we get $h f g = h \circ I$, and again by definition we get $I g = h$, thus $g=h$, as was to be shown. $\qed$
+Then, by the fact that $g$ is an inverse of $f$, we have $f g = I$ (where $I$ is the identity association), and applying $h$ to the left of this equation, we get $h f g = h \circ I$, and again by definition we get $I g = h$, thus $g=h$, as was to be shown. $\square$
 Finally, when dealing with associations, there are so many different kinds of them, and for me it was always very confusing to navigate among them. Luckily, S. L.'s rough classification provides, at least for me, a very nice psychological framework for how to orient yourself in the jungle, by distinguishing four kinds of associations depending on the domain and co-domain,<br>
 where we distinguish between "numbers" (real numbers), denoted $\mathbb{R}$, and space whose elements we will call vectors, denoted $V$ (i.e., some structure on the set, where visually you can think, for instance, of a 2D plane, or if you already encountered vector spaces, then as a vector space).<br>
 And if everything is nice, we can also provide the names "function," "curve," "vector field" in the following way:
@@ -323,7 +330,7 @@ $[a]$ is a set ($\{\ \}$) that contains all $x$ in $S$ ($x \in S$) such that ($\
 **Question**: Is "being in love with a person" an equivalence relation?
 Let us analyse quickly the equivalence classes.<br>
 Given an arbitrary element $a$ in $S$, since $a$ is equivalent to itself (clear from the postulates of the equivalence relation), it must be contained in some equivalence class, and so no equivalence class can be an empty set. Further, given two equivalence classes, say $[a]$ and $[b]$, with an element in common, we show that they are identical. Since, say, an element $c$ is in both of them, then, given $x$ in $[a]$, we have $x \sim a \sim c \sim b$, thus it follows that $[a] \subset [b]$. But due to the symmetry property of the equivalence relation we can conclude the same argument also in the opposite direction and get $[b] \subset [a]$, hence $[a] = [b]$.<br>
-Thus, two equivalence classes are either equal or do not overlap at all, which we can also say in a fancy language by saying that they are either equal or that they are "**disjunct**" (in German) or "**disjoint**" (in English).<br>
+Thus, two equivalence classes are either equal or do not overlap at all, which we can also say in a fancy language by saying that they are either equal or that they are "<strong>disjunct</strong>" (in German) or "<strong>disjoint</strong>" (in English).<br>
 Thus, to recapitulate, we saw that an equivalence relation on a set means that every element of the set is contained in some equivalence class, no equivalence class is empty, and two equivalence classes are either the same equivalence class or have no elements in common.
 Now, we will prove a basic fact about equivalence relations, namely that they are logically equivalent to partitions.<br>
 As the name suggests, given a set, a **partition** of such a set decomposes the set into parts, and does it in such a way that each element of the original set is contained in some part of the decomposition, none of the parts are empty, and no element of the original set is contained in more than one part.<br>
@@ -350,5 +357,6 @@ One also often calls these inverse images **fibres**.<br>
 The notion of congruence modulo something was first introduced by Gauss as he introduced integers modulo some other integer, but why it is called modulo, fibre, etc., will be shown later; at this stage I just wanted to introduce this notion and make you aware of it.
 
 **Unrelated but useful remark**:<br>
-In mathematics the word "**formal**" appears a lot and can have two meanings:
+In mathematics the word "<strong>formal</strong>" appears a lot and can have two meanings:
 We are used to speaking about "formal" and "informal," but in mathematics it is often the case that when we say something is defined "formally" (in a symbolic manner) in some way, we mean that "it has the specific form" without showing that this form actually has any meaning or substance to it. Usually we then go on and show that it is indeed the case, which is the reason why we defined it in such a formal way first.
+
