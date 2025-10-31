@@ -373,7 +373,12 @@ $$S\stackrel{f_{\text{can}}}{\to}S|_{\sim}\stackrel{\bar{f}}{\to}\text{Im}(f)\st
 
 Another pictorial description:
 
-![Commutative Diagram](../assets/comdiagram.png)
+<figure>
+  <img src="assets/comdiagram.png" alt="Commutative Diagram" class="w-full h-64 object-cover rounded-lg shadow-md">
+  <figcaption class="text-center text-sm text-gray-600 dark:text-gray-400 mt-2 italic">
+    Commutative Diagram
+  </figcaption>
+</figure>
 
 where
 
@@ -397,7 +402,7 @@ To conclude,
 I hope you could start to see how the difficulty with mathematics arises purely artifically and has more to do with psychological perspective rather than with the content matter, cf. Mario below.
 
 <figure>
-  <img src="../assets/marioresized.png" alt="Mario perspective" class="w-full h-64 object-cover rounded-lg shadow-md">
+  <img src="assets/marioresized.png" alt="Mario perspective" class="w-full h-64 object-cover rounded-lg shadow-md">
   <figcaption class="text-center text-sm text-gray-600 dark:text-gray-400 mt-2 italic">
     Mario perspective (taken from some meme on the internet, happy to quote the original author)
   </figcaption>
