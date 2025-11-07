@@ -37,7 +37,7 @@ If $p|ab$ then $p|a$ or $p|b$ (also called Euclid's Lemma)
 
 First, we prove this just from primary school math facts and then via the Bezout identity, since it is important for you to see it in action as often as possible.
 
-**Proof** 
+**Proof:** 
 
 From assumption,
 since $p|ab$, we have $ab=kp$ for some $k\in R$ and from def. of prime $\text{GCD}(p,a)=1$ or $p$.
@@ -78,6 +78,7 @@ Since if $(ab) \subseteq (p)$, then in particular $ab \in (p)$.
 So $ab = kp$ for some $k \in R$.
 
 And take $x\in(a)(b)$ and by def. of a product 
+
 $x = \Sigma^k_{i=1} r_i a s_i  b= \Sigma^k_{i=1} r_i s_i a b= \Sigma^k_{i=1} r_i a s_ikp= p(\Sigma^k_{i=1} r_i a s_ik)\in (p)$
 
 We end with a sneaky question: is the collection of all ideals a ring?
