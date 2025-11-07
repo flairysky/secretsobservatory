@@ -21,7 +21,7 @@ excerpt: "On prime ideals: derivation of the definition of a prime ideal"
 
 **Proof:**
 
-$(\Rightarrow)$ $b = a k$ for some $k \in R$, so $b\in(a), and since $b$ is the generator $(b)\subset (a)$.
+$(\Rightarrow)$ $b = a k$ for some $k \in R$, so $b\in(a)$, and so $(b)\subset (a)$.
 
 $(\Leftarrow)$ Since $(b) \subset (a)$, there is $k \in R$ such that $b = k \cdot a$
 
