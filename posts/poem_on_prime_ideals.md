@@ -79,6 +79,8 @@ So $ab = kp$ for some $k \in R$.
 
 And take $x\in(a)(b)$ and by def. of a product 
 
-$x = \Sigma^k_{i=1} r_i a s_i  b= \Sigma^k_{i=1} r_i s_i a b= \Sigma^k_{i=1} r_i a s_ikp= p(\Sigma^k_{i=1} r_i a s_ik)\in (p)$
+$x = \Sigma^k_{i=1} r_i a s_i  b= \Sigma^k_{i=1} r_i s_i a b= \Sigma^k_{i=1} r_i a s_ikp= p(\Sigma^k_{i=1} r_i a s_ik)\in (p)$. $\square$
 
-We end with a sneaky question: is the collection of all ideals a ring?
+We end with a sneaky question: 
+
+is the collection of all ideals a ring?
