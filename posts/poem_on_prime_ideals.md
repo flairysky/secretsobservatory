@@ -65,7 +65,8 @@ But then by assumption $p|m$ or $p|n$, which gives us $p=m$ or $p=n$, and so $p$
 All we do to define the notion of a prime ideal is that we just rephrase our characterization of prime elements according to our crutial observation at the very beginning of the post, observe:
 
 > We say that $p \in R$ is a prime if $p|ab \Rightarrow p|a$ or $p|b$,
-> which is equivalent to $(ab) \in (p) \Rightarrow (a) \in (p)$ or $(b) \in (p)$.
+>
+> which is equivalent to $(ab) \subset (p) \Rightarrow (a) \subset (p)$ or $(b) \subset (p)$.
 
 And so we accordingly call any such ideal $(p)$ a prime ideal (again, we exclude the cases $(p) \neq (0), (1)$ as we did for a prime element).
 
@@ -83,4 +84,4 @@ $x = \Sigma^k_{i=1} r_i a s_i  b= \Sigma^k_{i=1} r_i s_i a b= \Sigma^k_{i=1} r_i
 
 We end with a sneaky question: 
 
-is the collection of all ideals a ring?
+Is the collection of all ideals a ring?
