@@ -1,5 +1,5 @@
 ---
-title: "Poem: On prime ideals"
+title: "Daniel's Poem: On prime ideals"
 date: "2025-11-07"
 categories: ["Mathematics", "Algebra",]
 excerpt: "On prime ideals: derivation of the definition of a prime ideal"
