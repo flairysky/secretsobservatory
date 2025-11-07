@@ -69,7 +69,7 @@ All we do to define the notion of a prime ideal is that we just rephrase our cha
 
 And so we accordingly call any such ideal $(p)$ a prime ideal (again, we exclude the cases $(p) \neq (0), (1)$ as we did for a prime element).
 
-**Now, we can refine this by obsrrving,**
+**Now, we can refine this by observing,**
 
  $(ab) \subset (p) \Leftrightarrow (a)(b) \subset (p)$
 
