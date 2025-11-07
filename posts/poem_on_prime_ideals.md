@@ -9,7 +9,7 @@ excerpt: "On prime ideals: derivation of the definition of a prime ideal"
 
 **In what follows, you can think of the commutative ring R as of Integers and prime elements as of prime numbers.**
 
-**Goal of the post:** derive the definition of a prime ideal.
+**Goal of the poem:** derive the definition of a prime ideal.
 
 > **Most crutial observation: divisibility of elements in a ring corresponds to ideal containment**
 >
