@@ -1,0 +1,80 @@
+---
+title: "Poem: On prime ideals"
+date: "2025-11-07"
+categories: ["Mathematics", "Algebra",]
+excerpt: "On prime ideals: derivation of the definition of a prime ideal"
+---
+
+## On Prime Ideals
+
+**In what follows, you can think of the commutative ring R as of Integers.**
+
+**Goal of the post:** derive the definition of a prime ideal.
+
+> **Most crutial observation: divisibility of elements in a ring corresponds to ideal containment**
+>
+>### $\forall a,b \in R$
+>
+>$$a|b \Leftrightarrow (b) \subseteq (a)$$
+>
+>(for a commutative > ring $R$ with $1$)
+
+**Proof:**
+
+$(\Rightarrow)$ $a = a \cdot k$ for some $k \in R$
+
+$(\Leftarrow)$ Since $(b) \subset (a)$, there is $k \in R$ such that $b = k \cdot a$
+
+So in particular $b = k \cdot a$, hence $a|b$. $\square$
+
+### On characterization of prime elements
+
+Now we have that if $p \in R$ is prime (we have the classic def.) then $p \neq 0,1 and if $d | p$ then $d = 1$ or $p$ i.e. all divisors of $p$ are $1$ or $p$ itself.
+
+We now show that this is equivalent to the following statement:
+
+If $p|ab$ then $p|a$ or $p|b$ ( also called Euclid's Lemma)
+
+First, we prove this just from primary school math facts.
+
+**Proof without Bezout identity:** 
+From assumption,
+since $p|ab$, we have $ab=kp$ for some $k\in R$ and from def. of prime $\text{GCD}(p,a)=1$ or $p$.
+
+But if $(p,a)=p$, $p|a$ and we are done, so assume $(p,a)=1$.
+
+By Fundamental theorem of arithmetic (i.e. prime factorization) $a = \prod q_i^{a_i}, b = \prod q_j^{b_j}$, where $q_i$'s are primes.
+
+But since, $\prod q_i^{a_i+b_j}=ab=kp$ and $p$ is a prime, we have $p=q_p^{a_p+b_p}$ with $a_p+b_p\ge 1$ and in particular $a_p=0$ since $(p,a)=1$. Thus, $p=q_p^{b_p}$ with $b_p\ge 1$, hence $p$ devides $q$.
+
+Now, since Bezout's identity is **the** important identity we prove it also with that, so that you see it in action in case you did not yet.
+
+Assume again $(p,a) = 1$, but then by Bezout $xp + ya = 1$ for some $x,y \in R$.
+And by multiples with $b$ on both sides we get $b = xpb + yab = p(xb+yk)$, so $p|b$. $\square$
+
+Thus, given a prime element $p$ s.t. $p|ab$ we must have $p|a$ or $p|ab$, and we know show the converse, that if this is true for some arbitrary element $p$ in $R$, then such an element must be prime element. This gives us a second definition of a prime element (or if you want to be fancy, a second characterization of prime elements).
+
+So assume $p|ab \Rightarrow p|a$ or $p|b$, $\forall a,b \in R$ and some $p \in R$.
+
+Further, assume $p = mn$ s.t. $1\le n\le p$ and $1\le m\le p$.
+But then by assumption $p|m$ or $p|n$, which gives us $p=m$ or $p=n$, and so $p$ is prime according to our classical definition of a prime element. Thus, we see that both characterizations of a prime elment are equaivalent.
+
+### Now for Prime Ideals
+
+All we do to define the notion of a prime ideal is that we just rephrase our characterization of prime elements according to our crutial observation at the very beginning of the post, observe:
+
+> We say that $p \in R$ is a prime if $p|ab \Rightarrow p|a$ or $p|b$ which is equivalent to $(ab) \in (p) \Rightarrow (a) \in (p)$ or $(b) \in (p)$.
+
+And so we accordingly call any such ideal $(p)$ a prime ideal (again, we exclude the cases $(p) \neq (0), (1)$ as we did for a prime element).
+
+**Now, we can refine this by obsrrving,**
+
+ $(ab) \subset (p) \Leftrightarrow (a)(b) \subset (p)$
+
+Since if $(ab) \subseteq (p)$, then in particular $ab \in (p)$.
+
+So $ab = kp$ for some $k \in R$.
+
+And take $x\in(a)(b)$ and by def. of a product $x = \Sigma^k_{i=1} r_i a s_i  b= \Sigma^k_{i=1} r_i s_i a b= \Sigma^k_{i=1} r_i a s_ikp= p(\Sigma^k_{i=1} r_i a s_ik)\in (p)$
+
+We end with a sneaky question: is the collection of all ideals a ring?

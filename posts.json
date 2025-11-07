@@ -7,6 +7,13 @@
   },
   "posts": [
     {
+      "slug": "poem_on_prime_ideals",
+      "title": "Poem: On prime ideals",
+      "date": "2025-11-07",
+      "categories": ["Mathematics", "Algebra"],
+      "excerpt": "On prime ideals: finish what follows, can say likewise of R as of subsets of R as ideals. Most crucial observation."
+    },
+    {
       "slug": "poem_first_act",
       "title": "Daniel's Poem: First Act",
       "date": "2025-10-31",
