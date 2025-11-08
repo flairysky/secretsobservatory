@@ -51,13 +51,13 @@ But since, $\prod q_i^{a_i+b_j}=ab=kp$ and $p$ is a prime, we have $p=q_p^{a_p+b
 Now, since Bezout's identity is **the** very important identity we reprove it using it.
 
 Assume again $(p,a) = 1$, but then by Bezout $xp + ya = 1$ for some $x,y \in R$.
-And by multiples with $b$ on both sides we get $b = xpb + yab = p(xb+yk)$, so $p|b$. $\square$
+And by multiplying both sides by $b$ we get $b = xpb + yab = p(xb+yk)$, so $p|b$. $\square$
 
-Thus, given a prime element $p$ s.t. $p|ab$ we must have $p|a$ or $p|ab$, and we know show the converse, that if this is true for some arbitrary element $p$ in $R$, then such an element must be prime element. This gives us a second definition of a prime element (or if you want to be fancy, a second characterization of prime elements).
+Thus, given a prime element $p$ s.t. $p|ab$ we must have $p|a$ or $p|b$, and we now show the converse, that is if this is true for some arbitrary element $p$ in $R$, then such an element must be a prime element. This gives us a second definition of a prime element (or if you want to be fancy, a second characterization of a prime element).
 
 So assume $p|ab \Rightarrow p|a$ or $p|b$, $\forall a,b \in R$ and some $p \in R$.
 
-Further, assume $p = mn$ s.t. $1\le n\le p$ and $1\le m\le p$.
+Further, let $p = mn$ s.t. $1\le n\le p$ and $1\le m\le p$.
 But then by assumption $p|m$ or $p|n$, which gives us $p=m$ or $p=n$, and so $p$ is prime according to our classical definition of a prime element. Thus, we see that both characterizations of a prime elment are equaivalent.
 
 ### Now for Prime Ideals
