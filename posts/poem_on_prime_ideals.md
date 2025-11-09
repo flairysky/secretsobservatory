@@ -35,7 +35,7 @@ We now show that this is equivalent to the following statement:
 
 If $p|ab$ then $p|a$ or $p|b$ (also called Euclid's Lemma)
 
-First, we prove this just from primary school math facts and then via the Bezout identity, since it is important for you to see it in action as often as possible.
+First, we prove this just from primary school math facts and then via the Bezout identity, since it is important for you to see Bezout in action as often as possible and how its application simplifies the proof.
 
 **Proof:** 
 
