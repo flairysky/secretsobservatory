@@ -77,15 +77,15 @@ Thus, being one of the lucky people I could largly profit from Serge's algebraic
   </figure>
 </div>
 
-Hence, I do not take a view of any particular traditional school, such as the french one lead by Bourbaki's abstraction, nor the Russian one treating mathematics as part of experimental sciences, but rather prefer to take the best of both worlds[#4].
+Hence, I do not take a view of any particular traditional school, such as the french one lead by Bourbaki's abstraction, nor the Russian one treating mathematics as part of experimental sciences, but rather prefer to take the best of both worlds[#4]. Also, unlike for instance Bourbaki, which does not provide you with any explenation why hi did the things the way he decided to do[#5], I will try to give explenations why I decided to do things the way I did them when deemed adequate. I find it to be quite dishonest behavior towards the readers to keep from them the motivation behind __why__ I took a particular path when I could have taken another one, since mostly there is a reason (and so some learnings) behind the most choices we make.
 
 Consequently, althogh my perspective heavily relies on Serge's and Artins' teachings, I developed my own views and perceptions of the subject according to my personal taste. But without developing your own understanding - do you even have a soul?
 
-And so one of my hopes from these poems are to a certain degree analogous to what Srge's motivation for his textbooks was
+And so one of my hopes for these poems is to a certain degree analogous to what Serge's motivation for his textbooks was
 
 > "I want to stimulate thought, and do away with the general uptight feelings, which people often have about math" [ref:Lang1988] 
 
-and that you will see that you can just use your **ordinary language** to express the ideas.
+and that you will see that you can use your **ordinary language** to express the mathematical ideas.
 
 >>> the question of the usefulness of poetry arises only in periods of its decline, while in periods of its flowering, no one doubts its total uselessness. | Boris Pastrnak
 
@@ -108,4 +108,5 @@ Continue reading: [First Act](post.html?slug=poem_first_act)
 [2]: Serge Lang’s PhD supervisor.
 [3]: Yes, they are related. Michal is Emil’s son.
 [4]: Yes, I am quoting Hannah Montana.
+[5]: cf. e.g. Jean-Pierre Serre's interviews on youtube (they are not that many), where he explicitly states this fact, or just open any book by Bourbaki to convince yourself.
 -->

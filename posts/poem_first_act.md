@@ -9,6 +9,8 @@ excerpt: "A poem: first act"
 >
 > Oscar Wilde[ref:Wilde1891] 
 
+One thing that surprised me while doing mathematics was that contrary to the mainstream dogma, the more abstract one works, the easier things are and the more specific (i.e. more concrete) mathematics is, the harder and complicated it gets. Afterall, it should not be that surprising, since usually in any domain the dificculties arise once one starts dealling with details. We do not have the saying "The devil is in the details." for nothing right. However, the public discourse tells you the opposite... which is one of many misleading things that for some reason or another emerged over time. I hope that these poems, by exposinng these misleading perceptions, will paint you a different picture.
+
 Before we begin, I must mention that all pictures[#1] used in this particular session are not rigorous in any sense, but in my experience help stimulate thought and a perception of a certain perspective about mathematics I would like to convey. Thus, one should not take these pictures literally.
 However, it is still better for you to see some pictures than if I had told you to "imagine something," since this is very dangerous, as you and I can imagine two completely different things (citation of Friedrich Schiller, Winter School of Gravity and Light).
 
