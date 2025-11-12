@@ -4,6 +4,8 @@ date: "2025-10-31"
 categories: ["Learning", "Teaching", "Mathematics"]
 excerpt: "A poem: first act"
 ---
+> Remark: I need to revise this post some time, so be cautios for mistakes in it...
+
 
 > All art is at once surface and symbol.<br> Those who go beneath the surface do so at their peril. <br> Those who read the symbol do so at their peril.
 >
