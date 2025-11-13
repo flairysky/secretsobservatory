@@ -128,6 +128,8 @@ function detectPage() {
     currentPage = 'feedback';
   } else if (path.includes('about.html')) {
     currentPage = 'about';
+  } else if (path.includes('privacy.html')) {
+    currentPage = 'privacy';
   } else {
     currentPage = 'index';
   }
@@ -135,6 +137,13 @@ function detectPage() {
 
 // Load posts data and initialize page-specific functionality
 async function loadPosts() {
+  // About and privacy pages don't need posts data
+  if (currentPage === 'about' || currentPage === 'privacy') {
+    initAboutPage();
+    hideLoading();
+    return;
+  }
+  
   try {
     showLoading();
     const response = await fetch('posts.json');
@@ -157,9 +166,6 @@ async function loadPosts() {
         break;
       case 'feedback':
         initFeedbackPage();
-        break;
-      case 'about':
-        initAboutPage();
         break;
     }
     
@@ -1372,56 +1378,11 @@ function initShareAndCite() {
 
 // About page initialization
 function initAboutPage() {
-  populateCategoryMenu();
+  // Populate category menu for navigation only (doesn't need posts data)
+  if (postsData) {
+    populateCategoryMenu();
+  }
   hideLoading();
-  
-  // Initialize email subscription form
-  const emailForm = document.getElementById('emailSubscribeForm');
-  if (emailForm) {
-    emailForm.addEventListener('submit', handleEmailSubscription);
-  }
-}
-
-// Handle email subscription form submission
-async function handleEmailSubscription(e) {
-  e.preventDefault();
-  
-  const form = e.target;
-  const emailInput = form.querySelector('#email');
-  const privacyCheckbox = form.querySelector('#privacy-agree');
-  const submitButton = form.querySelector('button[type="submit"]');
-  
-  // Validate
-  if (!emailInput.value || !privacyCheckbox.checked) {
-    alert('Please enter your email and agree to the Privacy Policy.');
-    return;
-  }
-  
-  // Disable form during submission
-  submitButton.disabled = true;
-  submitButton.textContent = 'Subscribing...';
-  
-  try {
-    // Submit to Formspree
-    const response = await fetch('https://formspree.io/f/xzzyzwal', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ email: emailInput.value })
-    });
-    
-    if (!response.ok) {
-      throw new Error('Subscription failed');
-    }
-    
-    // Success
-    alert('Thank you for subscribing! You will receive email notifications when new posts are published.');
-    form.reset();
-    
-  } catch (error) {
-    console.error('Subscription error:', error);
-    alert('Sorry, there was an error processing your subscription. Please try again later.');
-  } finally {
-    submitButton.disabled = false;
-    submitButton.textContent = 'Subscribe';
-  }
+  // Email form now uses native HTML form submission to Formspree
+  // No need for JavaScript handling
 }
