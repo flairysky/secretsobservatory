@@ -126,6 +126,8 @@ function detectPage() {
     currentPage = 'archive';
   } else if (path.includes('feedback.html')) {
     currentPage = 'feedback';
+  } else if (path.includes('about.html')) {
+    currentPage = 'about';
   } else {
     currentPage = 'index';
   }
@@ -155,6 +157,9 @@ async function loadPosts() {
         break;
       case 'feedback':
         initFeedbackPage();
+        break;
+      case 'about':
+        initAboutPage();
         break;
     }
     
@@ -1363,4 +1368,60 @@ function initShareAndCite() {
   });
   
   console.log('Share/Cite functionality initialized successfully');
+}
+
+// About page initialization
+function initAboutPage() {
+  populateCategoryMenu();
+  hideLoading();
+  
+  // Initialize email subscription form
+  const emailForm = document.getElementById('emailSubscribeForm');
+  if (emailForm) {
+    emailForm.addEventListener('submit', handleEmailSubscription);
+  }
+}
+
+// Handle email subscription form submission
+async function handleEmailSubscription(e) {
+  e.preventDefault();
+  
+  const form = e.target;
+  const emailInput = form.querySelector('#email');
+  const privacyCheckbox = form.querySelector('#privacy-agree');
+  const submitButton = form.querySelector('button[type="submit"]');
+  
+  // Validate
+  if (!emailInput.value || !privacyCheckbox.checked) {
+    alert('Please enter your email and agree to the Privacy Policy.');
+    return;
+  }
+  
+  // Disable form during submission
+  submitButton.disabled = true;
+  submitButton.textContent = 'Subscribing...';
+  
+  try {
+    // Submit to Formspree
+    const response = await fetch('https://formspree.io/f/xzzyzwal', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ email: emailInput.value })
+    });
+    
+    if (!response.ok) {
+      throw new Error('Subscription failed');
+    }
+    
+    // Success
+    alert('Thank you for subscribing! You will receive email notifications when new posts are published.');
+    form.reset();
+    
+  } catch (error) {
+    console.error('Subscription error:', error);
+    alert('Sorry, there was an error processing your subscription. Please try again later.');
+  } finally {
+    submitButton.disabled = false;
+    submitButton.textContent = 'Subscribe';
+  }
 }

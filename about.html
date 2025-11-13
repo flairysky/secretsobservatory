@@ -82,6 +82,80 @@
       
       <p>Secrets Observatory is broadly interested in law, physics, mathematics, technology, entrepreneurship, science (communication), teaching, behavioral research and ethics.</p>
       
+      <h2>Subscribe to Updates</h2>
+      
+      <p>Want to get notified when there is a new post? You can follow on Instagram, subscribe via email, or use an RSS/Atom feed.</p>
+      
+      <h3>Option 1: Follow on Instagram</h3>
+      
+      <p>Follow <a href="https://www.instagram.com/secretsobservatory/" target="_blank" rel="noopener noreferrer" class="text-blue-600 dark:text-blue-400 hover:underline font-semibold">@secretsobservatory</a> on Instagram for post announcements and updates.</p>
+      
+      <h3>Option 2: Email Subscription</h3>
+      
+      <div class="not-prose my-4">
+        <form id="emailSubscribeForm" class="space-y-4">
+          <div>
+            <label for="email" class="block text-sm font-medium mb-2">Email Address</label>
+            <input 
+              type="email" 
+              id="email" 
+              name="email" 
+              required 
+              placeholder="your@email.com"
+              class="w-full px-4 py-2 border border-slate-300 dark:border-slate-600 rounded-md bg-white dark:bg-slate-900 text-slate-900 dark:text-slate-100 focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+            >
+          </div>
+          
+          <div class="flex items-start gap-2">
+            <input 
+              type="checkbox" 
+              id="privacy-agree" 
+              name="privacy-agree" 
+              required
+              class="mt-1 rounded border-slate-300 dark:border-slate-600"
+            >
+            <label for="privacy-agree" class="text-sm text-slate-600 dark:text-slate-400">
+              I agree to the <a href="privacy.html" target="_blank" class="text-blue-600 dark:text-blue-400 hover:underline">Privacy Policy</a>
+            </label>
+          </div>
+          
+          <button 
+            type="submit"
+            class="w-full px-4 py-2 bg-transparent border-2 border-slate-900 dark:border-white text-slate-900 dark:text-white font-medium rounded-md transition-colors hover:bg-slate-100 hover:bg-opacity-10 dark:hover:bg-white dark:hover:bg-opacity-10"
+          >
+            Subscribe
+          </button>
+          
+          <p class="text-xs text-slate-500 dark:text-slate-400">
+            You'll receive email notifications only when new posts are published. Unsubscribe anytime.
+          </p>
+        </form>
+      </div>
+      
+      <h3>Option 3: RSS/Atom Feed Reader</h3>
+      
+      <p>If you use one of the following feed readers, you can subscribe with our feed URL:</p>
+      
+      <p><strong>Feed URL:</strong> <code>https://secretsobservatory.com/feed.xml</code></p>
+      
+      <h4>How to Subscribe with a Feed Reader:</h4>
+      
+      <ol>
+        <li><strong>Choose a feed reader</strong> - Popular options include:
+          <ul>
+            <li><a href="https://feedly.com/" target="_blank" rel="noopener noreferrer" class="text-blue-600 dark:text-blue-400 hover:underline">Feedly</a> (web/mobile)</li>
+            <li><a href="https://www.inoreader.com/" target="_blank" rel="noopener noreferrer" class="text-blue-600 dark:text-blue-400 hover:underline">Inoreader</a> (web/mobile)</li>
+            <li><a href="https://netnewswire.com/" target="_blank" rel="noopener noreferrer" class="text-blue-600 dark:text-blue-400 hover:underline">NetNewsWire</a> (Mac/iOS)</li>
+            <li><a href="https://newsblur.com/" target="_blank" rel="noopener noreferrer" class="text-blue-600 dark:text-blue-400 hover:underline">NewsBlur</a> (web/mobile)</li>
+            <li>Thunderbird or Outlook (if you prefer desktop email clients)</li>
+          </ul>
+        </li>
+        <li><strong>Add the feed URL</strong> - Copy <code>https://secretsobservatory.com/feed.xml</code> and paste it into your feed reader</li>
+        <li><strong>Done!</strong> - You'll automatically receive notifications whenever new posts are published</li>
+      </ol>
+      
+      <p><em>Note: RSS feeds don't require email signup, involve no tracking, and offer clean content delivery straight to your reader.</em></p>
+      
       <h2>License</h2>
       
       <p>Content is shared under <a href="https://creativecommons.org/licenses/by-nc-nd/4.0/" class="text-blue-600 dark:text-blue-400 hover:underline">CC BY-NC-ND 4.0</a> unless otherwise noted.</p>
@@ -108,8 +182,11 @@
   </main>
 
   <footer class="border-t border-slate-200 dark:border-slate-800">
-    <div class="mx-auto max-w-3xl px-4 py-6 text-sm text-slate-500 dark:text-slate-400">
-      © <span id="year"></span> Secrets Observatory • Content under CC BY-NC-ND 4.0
+    <div class="mx-auto max-w-3xl px-4 py-6 text-sm text-slate-500 dark:text-slate-400 flex justify-between items-center">
+      <div>© <span id="year"></span> Secrets Observatory • Content under CC BY-NC-ND 4.0</div>
+      <div>
+        <a href="privacy.html" class="hover:text-slate-900 dark:hover:text-slate-100 hover:underline">Privacy Policy</a>
+      </div>
     </div>
   </footer>
 

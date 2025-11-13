@@ -8,51 +8,65 @@
   <author>
     <name>Secrets Observatory</name>
   </author>
-  <updated>2025-10-09T00:00:00Z</updated>
+  <updated>2025-11-07T00:00:00Z</updated>
 
   <entry>
-    <title>A Complete Demo: Math, Images, and Formatting</title>
-    <link href="https://secretsobservatory.com/post.html?slug=demo-complete"/>
-    <id>demo-complete</id>
-    <published>2025-10-09T00:00:00Z</published>
-    <updated>2025-10-09T00:00:00Z</updated>
-    <summary>A comprehensive demonstration of all blog features including LaTeX rendering, images, code blocks, and various formatting options.</summary>
-    <category term="Demo"/>
+    <title>Daniel's Poem: On prime ideals</title>
+    <link href="https://secretsobservatory.com/post.html?slug=poem_on_prime_ideals"/>
+    <id>poem_on_prime_ideals</id>
+    <published>2025-11-07T00:00:00Z</published>
+    <updated>2025-11-07T00:00:00Z</updated>
+    <summary>On prime ideals: On prime ideals: derivation of the definition of a prime ideal</summary>
     <category term="Mathematics"/>
-    <category term="Tutorial"/>
-  </entry>
-
-  <entry>
-    <title>Notes on Ideals and Modules</title>
-    <link href="https://secretsobservatory.com/post.html?slug=sample-algebra"/>
-    <id>sample-algebra</id>
-    <published>2025-10-09T00:00:00Z</published>
-    <updated>2025-10-09T00:00:00Z</updated>
-    <summary>Why ideals are R-modules and when modules matter.</summary>
     <category term="Algebra"/>
-    <category term="Ring Theory"/>
   </entry>
 
   <entry>
-    <title>Technocracy and Unintended Consequences</title>
-    <link href="https://secretsobservatory.com/post.html?slug=sample-ethics"/>
-    <id>sample-ethics</id>
-    <published>2025-10-05T00:00:00Z</published>
-    <updated>2025-10-05T00:00:00Z</updated>
-    <summary>Brief notes on Jasanoff's themes.</summary>
-    <category term="Ethics"/>
-    <category term="STS"/>
+    <title>Daniel's Poem: First Act</title>
+    <link href="https://secretsobservatory.com/post.html?slug=poem_first_act"/>
+    <id>poem_first_act</id>
+    <published>2025-10-31T00:00:00Z</published>
+    <updated>2025-10-31T00:00:00Z</updated>
+    <summary>A poem: first act</summary>
+    <category term="Learning"/>
+    <category term="Teaching"/>
+    <category term="Mathematics"/>
   </entry>
 
   <entry>
-    <title>Linear Algebra: Mean as Projection</title>
-    <link href="https://secretsobservatory.com/post.html?slug=sample-notes"/>
-    <id>sample-notes</id>
-    <published>2025-09-28T00:00:00Z</published>
-    <updated>2025-09-28T00:00:00Z</updated>
-    <summary>Viewing the mean via projections and kernels.</summary>
-    <category term="Linear Algebra"/>
-    <category term="Statistics"/>
+    <title>Daniel's Poem: preface</title>
+    <link href="https://secretsobservatory.com/post.html?slug=poem_preface"/>
+    <id>poem_preface</id>
+    <published>2025-10-31T00:00:00Z</published>
+    <updated>2025-10-31T00:00:00Z</updated>
+    <summary>A poem</summary>
+    <category term="Learning"/>
+    <category term="Teaching"/>
+    <category term="Mathematics"/>
+  </entry>
+
+  <entry>
+    <title>On reading books in general and in particular mathematical texts</title>
+    <link href="https://secretsobservatory.com/post.html?slug=on-reading"/>
+    <id>on-reading</id>
+    <published>2025-10-23T00:00:00Z</published>
+    <updated>2025-10-23T00:00:00Z</updated>
+    <summary>A reflection on how to read.</summary>
+    <category term="Learning"/>
+    <category term="Teaching"/>
+    <category term="Mathematics"/>
+  </entry>
+
+  <entry>
+    <title>On  learning: tricks and tips of trade</title>
+    <link href="https://secretsobservatory.com/post.html?slug=on-learning"/>
+    <id>on-learning</id>
+    <published>2025-10-23T00:00:00Z</published>
+    <updated>2025-10-23T00:00:00Z</updated>
+    <summary>A collection of some possibly useful tricks and tips on how to learn.</summary>
+    <category term="Learning"/>
+    <category term="Teaching"/>
+    <category term="Mathematics"/>
   </entry>
 
 </feed>
