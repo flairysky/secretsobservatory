@@ -5,8 +5,8 @@ categories: ["Learning", "Teaching", "Mathematics"]
 excerpt: "A poem introducing structures in mathematics: understanding order, algebraic, and geometric structures."
 ---
 
-> If there is one thing in mathematics that fascinates me more than anything else 
-> (and doubtless always has), 
+> If there is one thing in mathematics that fascinates me more than anything else<br> 
+> (and doubtless always has),<br> 
 > it is neither 'number' nor 'size,' but always form. 
 >
 > Sasha Grothendieck 
@@ -21,11 +21,11 @@ On a psychological level it is very useful because you will have three different
 
 But first, what is a structure? 
 
-We saw that the notion of a set (cf. Act 1) and now we introduce that of a structure, which is nothing else than something with which we equip this set so that it is not just a mere collection of elements or points or whatever you want to call them, but that there's something "tangible", i.e. something that makes this collection having some kind of a form. For instance if you think of sand and you add a little bit of water you can start building forms of it, i.e. giving the sand corns together a little bit structure, e.g. building sand castles. 
+We saw that the notion of a set (cf. [Act 1](post.html?slug=poem_first_act)) and now we introduce that of a structure, which is nothing else than something with which we equip this set so that it is not just a mere collection of elements or points or whatever you want to call them, but that there's something "tangible", i.e. something that makes this collection having some kind of a form. For instance if you think of sand and you add a little bit of water you can start building forms of it, i.e. giving the sand corns together a little bit structure, e.g. building sand castles. 
 
 What does it mean mathematically? 
 
-It means to just having an association on the set from itself to itself. Since this gives us a kind of a way to understand also some relationships between the different elements within the set. Of course, association is nothing else than a relation on the set which we introduced in Act 1. As you can observe, the notion of a structure is very general and understanding it via such association, does not seem to be psychologically convenient. Luckily (?) for us, we can translate associations into axioms when we learn about a structure for a first time, and end up with a set and some list of axioms giving us relations among the elements of the set. Thus, psychologically we do not even need to consider any association when learning about structures the first time and so do not need to think in terms of associations, we can just think in terms of elements and what you can do with these elements. 
+It means to just having an association on the set from itself to itself. Since this gives us a kind of a way to understand also some relationships between the different elements within the set. Of course, association is nothing else than a relation on the set which we introduced in [Act 1](post.html?slug=poem_first_act). As you can observe, the notion of a structure is very general and understanding it via such association, does not seem to be psychologically convenient. Luckily (?)[#1] for us, we can translate associations into axioms when we learn about a structure for a first time, and end up with a set and some list of axioms giving us relations among the elements of the set. Thus, psychologically we do not even need to consider any association when learning about structures the first time and so do not need to think in terms of associations, we can just think in terms of elements and what you can do with these elements. 
 
 Now this sounded all very abstract everything, but you will see now with the specific types of structures what we mean by that and without further ado, these are the three types of structures according to Bourbaki: Order, Algebraic and Geometric.
 
@@ -65,6 +65,10 @@ Here we have again a whole sub-typology of different structures within the type,
 
 These structure aim to, obviously, capture the geometric properties and the name come from geo=earth and metri=measure. The axiomatic description of these structures is somewhat unintuitive without understanding some more mathematical theory and so we will not go further in to it at this point (for those who are familiar with the axioms of topology, those are also the axioms of this type of structure)
 
-To conclude, as we mentioned in the Act 1, if we have a set with a structure, we call it a space. Also, it is worth mentioning that we also can have a certain set with some structure, but the structure can be of several of these types. It can be even all of these three types simultaneously. E.g. you can have a structure, let's say, for instance, called vector space, which we will see in the next Act, which resembles, if one wishes, all of these three kinds and each such perception via a specific type of structure gives us a different psychological understanding of it. 
+To conclude, as we mentioned in the [Act 1](post.html?slug=poem_first_act), if we have a set with a structure, we call it a space. Also, it is worth mentioning that we also can have a certain set with some structure, but the structure can be of several of these types. It can be even all of these three types simultaneously. E.g. you can have a structure, let's say, for instance, called vector space, which we will see in the next Act, which resembles, if one wishes, all of these three kinds and each such perception via a specific type of structure gives us a different psychological understanding of it. 
 
 As a pre-taste for next act, in this special case of vector spaces, the two ways one usually reasons about this structure is both geometrically and algebraically, depending on the context, purpose, and other considerations.
+
+<!-- FOOTNOTES
+[1]: This is not a mistake of rendering, I am just not sure if we are lucky or not.
+-->
