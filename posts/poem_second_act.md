@@ -70,5 +70,5 @@ To conclude, as we mentioned in the [Act 1](post.html?slug=poem_first_act), if w
 As a pre-taste for next act, in this special case of vector spaces, the two ways one usually reasons about this structure is both geometric and algebraic, depending on the context, purpose, and other considerations.
 
 <!-- FOOTNOTES
-[1]: This is not a mistake of rendering, I am just not sure if we are lucky or not.
+[1]: This is not a failure of rendering, I am just not sure if we are lucky or not.
 -->
