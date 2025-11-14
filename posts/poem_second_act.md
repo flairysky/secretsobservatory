@@ -15,7 +15,7 @@ As the title suggests, this poem introduces structures, and the plan is to fly h
 
 Thus, this poem serves to show you how switching between different perspectives gives you different understanding and how it is profitable to purposefully switch between specific and more general views on the topics in order to understand them properly.
 
-Although Bourbaki himself or somebody from Bourbaki (I cannot locate the statement in a source), claimed that the introduction of different kinds of structures was the biggest mistake Bourbaki has made and even though Bourbakis typology of structures is to a certain degree somewhat arbitrarily, since it does not form a mathematical point of view provides some kind of mathematical insight (e.g. equivalence classification or something on that note, at least to my current knowledge), it nevertheless in my opinion serves very well psychologically, as it provides a very intuitive and natural way to map out different types of structures and provide you with some degree of clarity within the jungle, which is still mathematically correct. 
+Although Bourbaki himself or somebody from Bourbaki (I cannot locate the source of the statement anymore), claimed that the introduction of different kinds of structures was the biggest mistake Bourbaki has made and even though Bourbakis typology of structures is to a certain degree somewhat arbitrary, since its typology view does not provide some kind of mathematical insight (e.g. equivalence classification or something on that note, at least to my current knowledge), it nevertheless, in my opinion, serves very well psychologically, as it gives us a very intuitive and natural way to map out different types of structures and some degree of clarity within the jungle, which is still mathematically correct. 
 
 On a psychological level it is very useful because you will have three different types of structures and whenever you encounter any structure you can immediately understand where it belongs to in this typology and have some natural intuitive understanding of that kind of structure. So that's why I will introduce it here. 
 
@@ -67,7 +67,7 @@ These structure aim to, obviously, capture the geometric properties and the name
 
 To conclude, as we mentioned in the [Act 1](post.html?slug=poem_first_act), if we have a set with a structure, we call it a space. Also, it is worth mentioning that we also can have a certain set with some structure, but the structure can be of several of these types. It can be even all of these three types simultaneously. E.g. you can have a structure, let's say, for instance, called vector space, which we will see in the next Act, which resembles, if one wishes, all of these three kinds and each such perception via a specific type of structure gives us a different psychological understanding of it. 
 
-As a pre-taste for next act, in this special case of vector spaces, the two ways one usually reasons about this structure is both geometrically and algebraically, depending on the context, purpose, and other considerations.
+As a pre-taste for next act, in this special case of vector spaces, the two ways one usually reasons about this structure is both geometric and algebraic, depending on the context, purpose, and other considerations.
 
 <!-- FOOTNOTES
 [1]: This is not a mistake of rendering, I am just not sure if we are lucky or not.
