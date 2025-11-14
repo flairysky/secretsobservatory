@@ -7,6 +7,13 @@
   },
   "posts": [
     {
+      "slug": "poem_second_act",
+      "title": "Daniel's Poem: Second Act - On Structures",
+      "date": "2025-11-14",
+      "categories": ["Learning", "Teaching", "Mathematics"],
+      "excerpt": "A poem introducing structures in mathematics: understanding order, algebraic, and geometric structures from different perspectives."
+    },
+    {
       "slug": "poem_on_prime_ideals",
       "title": "Daniel's Poem: On prime ideals",
       "date": "2025-11-07",
@@ -15,7 +22,7 @@
     },
     {
       "slug": "poem_first_act",
-      "title": "Daniel's Poem: First Act",
+      "title": "Daniel's Poem: First Act - Big Picture",
       "date": "2025-10-31",
       "categories": ["Learning", "Teaching", "Mathematics"],
       "excerpt": "A poem: first act"
