@@ -15,7 +15,7 @@ As the title suggests, this poem introduces structures, and the plan is to fly h
 
 Thus, this poem serves to show you how switching between different perspectives gives you different understanding and how it is profitable to purposefully switch between specific and more general views on the topics in order to understand them properly.
 
-Although Bourbaki himself or somebody from Bourbaki (I cannot locate the source of the statement anymore), claimed that the introduction of different kinds of structures was the biggest mistake Bourbaki has made and even though Bourbakis typology of structures is to a certain degree somewhat arbitrary, since its typology view does not provide some kind of mathematical insight (e.g. equivalence classification or something on that note, at least to my current knowledge), it nevertheless, in my opinion, serves very well psychologically, as it gives us a very intuitive and natural way to map out different types of structures and some degree of clarity within the jungle, which is still mathematically correct. 
+Even though Bourbakis typology of structures is to a certain degree somewhat arbitrary [#1], since its typology view does not provide some kind of mathematical insight (e.g. equivalence classification or something on that note, at least to my current knowledge), it nevertheless, in my opinion, serves very well psychologically, as it gives us a very intuitive and natural way to map out different types of structures and some degree of clarity within the jungle, which is still mathematically correct. 
 
 On a psychological level it is very useful because you will have three different types of structures and whenever you encounter any structure you can immediately understand where it belongs to in this typology and have some natural intuitive understanding of that kind of structure. So that's why I will introduce it here. 
 
@@ -25,7 +25,7 @@ We saw that the notion of a set (cf. [Act 1](post.html?slug=poem_first_act)) and
 
 What does it mean mathematically? 
 
-It means to just having an association on the set from itself to itself. Since this gives us a kind of a way to understand also some relationships between the different elements within the set. Of course, association is nothing else than a relation on the set which we introduced in [Act 1](post.html?slug=poem_first_act). As you can observe, the notion of a structure is very general and understanding it via such association, does not seem to be psychologically convenient. Luckily (?)[#1] for us, we can translate associations into axioms when we learn about a structure for a first time, and end up with a set and some list of axioms giving us relations among the elements of the set. Thus, psychologically we do not even need to consider any association when learning about structures the first time and so do not need to think in terms of associations, we can just think in terms of elements and what you can do with these elements. 
+It means to just having an association on the set from itself to itself. Since this gives us a kind of a way to understand also some relationships between the different elements within the set. Of course, association is nothing else than a relation on the set which we introduced in [Act 1](post.html?slug=poem_first_act). As you can observe, the notion of a structure is very general and understanding it via such association, does not seem to be psychologically convenient. Luckily (?)[#2] for us, we can translate associations into axioms when we learn about a structure for a first time, and end up with a set and some list of axioms giving us relations among the elements of the set. Thus, psychologically we do not even need to consider any association when learning about structures the first time and so do not need to think in terms of associations, we can just think in terms of elements and what you can do with these elements. 
 
 Now this sounded all very abstract everything, but you will see now with the specific types of structures what we mean by that and without further ado, these are the three types of structures according to Bourbaki: Order, Algebraic and Geometric.
 
@@ -47,17 +47,17 @@ Lastly, we want to have transitivity, since for instance, if we have 2<3 and 3<6
 
 Now, coming back to the difference between total and partial order, if we want total order, we just say that these axioms hold for all elements in our set, otherwise we have for sure partial order but not necessarily total order.
 
-So symbolically this means, that if we have a set $S$ and we equip it with an order relation, which we usually denote by $\le$, then our space $(X,\le)$ (i.e. a set with a structure) satisfies
+So symbolically this means, that if we have a set $S$ and we equip it with an order relation, which we usually denote by $\le$, then our space $(S,\le)$ (i.e. a set with a structure) satisfies
 
-1) reflexivity: $\forall x \in X, x \le x$
+1) reflexivity: $\forall x \in S, x \le x$
 
-2) antisymmetry: $\forall x,y \in X, (x \le y \text{ and } y \le x) \Rightarrow x = y$
+2) antisymmetry: $\forall x,y \in S, (x \le y \text{ and } y \le x) \Rightarrow x = y$
 
-3) transitivity: $\forall x,y,z \in X, (x \le y \text{ and } y \le z) \Rightarrow x \le z$
+3) transitivity: $\forall x,y,z \in S, (x \le y \text{ and } y \le z) \Rightarrow x \le z$
 
 ### 2) Algebraic structure
 
-These structures deserved their name from the arabic word al-jabr, meaning "the act of putting together broken parts", which then over time developed into a rather "manipulating" meaning. Thus, these structure capture the nature of how we can manipulate the elements, or as Bourbaki says, such structures allow us to compute.
+These structures deserved their name from the arabic word al-jabr, meaning "the act of putting together broken parts", which then over time developed into a rather "manipulating" meaning. Thus, these structure capture the nature of how we can manipulate the elements, or as Bourbaki says, such structures allow us to __compute__.
 
 Here we have again a whole sub-typology of different structures within the type, which have fancy names such as vector space, groups, fields, rings and others.
 
@@ -70,5 +70,7 @@ To conclude, as we mentioned in the [Act 1](post.html?slug=poem_first_act), if w
 As a pre-taste for next act, in this special case of vector spaces, the two ways one usually reasons about this structure is both geometric and algebraic, depending on the context, purpose, and other considerations.
 
 <!-- FOOTNOTES
-[1]: This is not a failure of rendering, I am just not sure if we are lucky or not.
+[1]: I have even read somewhere that Bourbaki himself or somebody from Bourbaki (I cannot locate the source of the statement anymore and would be happy if somebody might provide it), claimed that the introduction of these different kinds of mosther-structures was the biggest mistake Bourbaki has made.
+
+[2]: This is not a failure of rendering, I am just not sure if we are lucky or not.
 -->
