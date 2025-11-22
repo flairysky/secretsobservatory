@@ -7,6 +7,20 @@
   },
   "posts": [
     {
+      "slug": "poem_fourth_act",
+      "title": "Daniel's Poem: Fourth Act - On Equivalence",
+      "date": "2025-11-22",
+      "categories": ["Learning", "Teaching", "Mathematics"],
+      "excerpt": "Exploring equivalence relations and quotient structures: how we identify elements that are 'the same' in mathematics."
+    },
+    {
+      "slug": "poem_third_act",
+      "title": "Daniel's Poem: Third Act - On Associations",
+      "date": "2025-11-22",
+      "categories": ["Learning", "Teaching", "Mathematics"],
+      "excerpt": "A deeper exploration of associations: understanding functions, mappings, and their properties in mathematics."
+    },
+    {
       "slug": "poem_second_act",
       "title": "Daniel's Poem: Second Act - On Structures",
       "date": "2025-11-14",
@@ -29,7 +43,7 @@
     },
     {
       "slug": "poem_preface",
-      "title": "Daniel's Poem: preface",
+      "title": "Daniel's Poem: Preface",
       "date": "2025-10-31",
       "categories": ["Learning", "Teaching", "Mathematics"],
       "excerpt": "A poem"

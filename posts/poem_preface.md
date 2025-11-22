@@ -1,5 +1,5 @@
 ---
-title: "Daniel's Poem: preface"
+title: "Daniel's Poem: Preface"
 date: "2025-10-31"
 categories: ["Learning", "Teaching", "Mathematics"]
 excerpt: "A poem"

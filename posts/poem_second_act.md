@@ -82,8 +82,10 @@ These structure aim to, clerarly, capture the geometric properties and the name 
 
 To conclude, as we mentioned in the [Act 1](post.html?slug=poem_first_act), if we have a set with a structure, we call it a _space_. Also, it is worth mentioning that we also can have a certain set with some structure, but the structure can be of several of these types at the same time (It can be even all of these three types simultaneously). E.g. you can have a structure, let's say, for instance, called vector space (we will see this in the next Act) which resembles, if one wishes to, all of these three kinds of structures. Each such perception via a specific type of structure gives us a different psychological understanding of the whole thing (i.e. of the _space_ to be precise). 
 
-As a pre-taste for next act:
+As a pre-taste for next acts:
 in this special case called vector space, the two ways one usually reasons about this structure are geometric and algebraic, depending on the context, purpose, and other considerations.
+
+Further, what if we have two sets (not necessarily with a structure) and we want to relate these two somehow? Have a look at the Third Act.
 
 <!-- FOOTNOTES
 [1]: I have even read somewhere that Bourbaki himself or somebody from Bourbaki (I cannot locate the source of the statement anymore and would be happy if somebody might provide it), claimed that the introduction of these different kinds of mosther-structures was the biggest mistake Bourbaki has made.
