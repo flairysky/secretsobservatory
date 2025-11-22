@@ -80,15 +80,19 @@ Within the algebraic structures we have again a whole sub-typology of different 
 
 These structure aim to, clerarly, capture the geometric properties and the name come from "geo", meaning "earth" and "metri" meaning "measure". The axiomatic description of these structures is somewhat unintuitive without understanding some more mathematical theory and so we will not go further into it at this point (for those who are familiar with the axioms of topology, those are also the axioms of this type of structure)
 
-To conclude, as we mentioned in the [Act 1](post.html?slug=poem_first_act), if we have a set with a structure, we call it a _space_. Also, it is worth mentioning that we also can have a certain set with some structure, but the structure can be of several of these types at the same time (It can be even all of these three types simultaneously). E.g. you can have a structure, let's say, for instance, called vector space (we will see this in the next Act) which resembles, if one wishes to, all of these three kinds of structures. Each such perception via a specific type of structure gives us a different psychological understanding of the whole thing (i.e. of the _space_ to be precise). 
+To conclude, as we mentioned in the [Act 1](post.html?slug=poem_first_act), if we have a set with a structure, we call it a _space_. Also, it is worth mentioning that we also can have a certain set with some structure, but the structure can be of several of these types at the same time (It can be even all of these three types simultaneously). E.g. you can have a structure, let's say, for instance, called vector space (we will see this in the next [Act 2](post.html?slug=poem_second_act)) which resembles, if one wishes to, all of these three kinds of structures. Each such perception via a specific type of structure gives us a different psychological understanding of the whole thing (i.e. of the _space_ to be precise). 
 
 As a pre-taste for next acts:
 in this special case called vector space, the two ways one usually reasons about this structure are geometric and algebraic, depending on the context, purpose, and other considerations.
 
-Further, what if we have two sets (not necessarily with a structure) and we want to relate these two somehow? Have a look at the Third Act.
+Further, what if we have two sets (not necessarily with a structure) and we want to relate these two somehow? Have a look at the [Act 3](post.html?slug=poem_third_act).
 
 <!-- FOOTNOTES
-[1]: I have even read somewhere that Bourbaki himself or somebody from Bourbaki (I cannot locate the source of the statement anymore and would be happy if somebody might provide it), claimed that the introduction of these different kinds of mosther-structures was the biggest mistake Bourbaki has made.
+[1]: I have even read somewhere that Bourbaki himself or somebody from Bourbaki (I cannot locate the source of the statement anymore and would be happy if somebody might provide it), claimed that the introduction of these different kinds of mosther-structures was the biggest mistake Bourbaki has made. 
 
 [2]: This is not a failure of rendering, I am just not sure if we are lucky or not.
 -->
+
+Previous: [First Act - Big Picture](post.html?slug=poem_first_act)
+
+Back to: [Third Act - On Associations](post.html?slug=poem_second_act)

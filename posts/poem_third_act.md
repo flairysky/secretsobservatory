@@ -7,16 +7,16 @@ excerpt: "A deeper exploration of associations: understanding functions, mapping
 > Remark: I need to revise this post some time, so be cautios for mistakes in it...
 
 
-> Bastian: Why is it so dark?
+> Bastian: Why is it so dark?<br>
 > The Childlike Empress: In the beginning, it is always dark.
 >
-> - The Neverending Story
+> The Neverending Story
 
 
 We continue our discussion from the first act aiming for a precise _description_ of the whole landscape from a birdeye point of view. We realized that if we have two sets and nothing and we would like to relate two sets with each other, i.e., _associate_ two sets with each other, we need something more than what we have at our disposal.<br>
 (Again, we are now above the mountains as the eagle, i.e., we are quote general.)<br>
 
-Thus,wWe start with a definition.
+Thus, we start with a definition.
 
 > **Definition 3: Association**
 >
@@ -186,8 +186,10 @@ i.e., e.g., $f:S \to S$.
 And even more special is when this association is a bijection, since then we have a 1-to-1 correspondence between the elements of the same set; thus we can view this association as a rearrangement (but I do not like this term, since, e.g., an identity association below is also a permutation, and did such a permutation rearrange something?) of the elements within the same set, which we call permutation. Thus, for instance, the association which maps each element to the same element, i.e., $a \to a$, is a bijection, is also a permutation, and we call it the identity.
 Now, observe that I wrote the identity instead of "an" identity, and this is because there is only one association among all the associations on the set $S$ which assigns every element to itself, i.e., it is a very special case; in fact, it is so special that there is only one such association, and we say that such association is unique, and so we write the definite article the instead of an indefinite article. This discussion on uniqueness concerns all mathematical notions and objects, not just associations, but I wanted to start with a specific example.
 I.e., always when you see the definite article, you can be sure that the thing we talk about is unique.
-I would like to conclude this section by two unrelated remarks.
+I would like to conclude this section by two unrelated remarks.<br>
+
 **Remark**: For those who had a little bit of mathematics, one can think of the classification of the association in terms of dimensions of a vector space, where numbers are a vector space (over themselves and of dimension 1), and one might think of a vector space as being a vector space of dimension at least 2.<br>
+
 **Remark**: In the literature you will find many different names for various kinds of associations, such as "map," "mapping," "transformation," "function," in German "Abbildung," often used incorrectly, so the best thing to do is to look up the author's definition of the particular word to understand what the author actually means by that specific word.
 
 <!-- FOOTNOTES
