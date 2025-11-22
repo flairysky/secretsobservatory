@@ -73,6 +73,7 @@ There is one important way one may define an equivalence relation, which we will
 Given an association between two sets, say $f:S \to S'$ such that $x \mapsto f(x)$, and we denote by $\operatorname{Im}(f)$ the image of $f$, i.e., given $y \in \operatorname{Im}(f)$, we know there is at least one $x \in S$ such that $f(x)=y$. If $f$ is injective, then there is only one such $x$, but if $f$ is not injective, then there might be several such elements $x$ which $f$ maps to the same $y$.<br>
 Thus, we define the **inverse image** of an element $y \in \operatorname{Im}(f)$, which is the collection of all elements in the domain that $f$ maps to $y \in \operatorname{Im}(f)$.<br>
 Symbolically, we denote it by $f^{-1}(y)=\{x \in S \mid f(x)=y\}$.<br>
+
 **Remark**: Notice that the symbol $f^{-1}(y)$ does not mean that $f$ has an inverse!<br>
 $f$ has an inverse only if each such inverse image would consist of a single element! Then we would have $f^{-1}: \operatorname{Im}(f) \to S$.<br>
 Now, the reason we introduced this notation of an inverse image of elements in the image of an association is that it partitions the domain of the association, i.e., it gives us an equivalence relation on the domain of that association.<br>
