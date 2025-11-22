@@ -8,7 +8,7 @@ excerpt: "Exploring equivalence relations and quotient structures: how we identi
 > Remark: I need to revise this post some time, so be cautios for mistakes in it...
 
 > Now, it is soon clear that we use the word equal with different meanings and that's perfectly alright as Humpty Dumpty was saying to Alice, I would say that when you work hard, we pay extra; we just should know at each time, in which sense we are using the word.
-
+>
 > Pierre Deligne [ref:Deligne2025Equal]
 
 What does it mean for two things to be _equal_?
@@ -122,7 +122,7 @@ I learned this pedagogical method from Emil Artin, who included this decompositi
 <!-- FOOTNOTES
 [1]: The word "equivalence" comes from Latin aequus (equal) + valentia (strength, capacity), suggesting "equal value" or "equal worth."
 [2]: If we are correct is another story.
-[3]: For more details on the "proper" way of teaching algebra look up Artin's collected papers [ref:ArtinCollected2013])
+[3]: For more details on the "proper" way of teaching algebra look up Artin's collected papers [ref:ArtinCollected2013]
 -->
 
 ---

@@ -10,7 +10,7 @@ excerpt: "A deeper exploration of associations: understanding functions, mapping
 > Bastian: Why is it so dark?
 > The Childlike Empress: In the beginning, it is always dark.
 >
-> - Neverending Story
+> - The Neverending Story
 
 
 We continue our discussion from the first act aiming for a precise _description_ of the whole landscape from a birdeye point of view. We realized that if we have two sets and nothing and we would like to relate two sets with each other, i.e., _associate_ two sets with each other, we need something more than what we have at our disposal.<br>
