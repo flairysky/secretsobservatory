@@ -95,4 +95,4 @@ Further, what if we have two sets (not necessarily with a structure) and we want
 
 Previous: [First Act - Big Picture](post.html?slug=poem_first_act)
 
-Back to: [Third Act - On Associations](post.html?slug=poem_second_act)
+continue reading: [Third Act - On Associations](post.html?slug=poem_third_act)
