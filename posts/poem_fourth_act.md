@@ -122,6 +122,10 @@ Once structures on sets are involved, one then needs to only look if the structu
 
 I learned this pedagogical method from Emil Artin, who included this decomposition already in this set-theoretical manner at the first lecture of his algebra lectures[#3].
 
+> When I make a word do a lot of work like that, I always pay it extra.
+>
+> Humpty Dumpty from Alice in Wonderland
+
 <!-- FOOTNOTES
 [1]: The word "equivalence" comes from Latin aequus (equal) + valentia (strength, capacity), suggesting "equal value" or "equal worth."
 [2]: If we are correct is another story.
