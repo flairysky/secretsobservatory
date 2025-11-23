@@ -219,7 +219,7 @@ Now, observe that I wrote the identity instead of "an" identity, and this is bec
 **Final Remark**: In the literature you will find many different names for various kinds of associations, such as "map," "mapping," "transformation," "function," in German "Abbildung," in Czech "zobrazení"[#8]..., which are often used incorrectly, so the best thing to do is to look up the author's definition of the particular word to understand what the author actually means by that specific word.
 
 <!-- FOOTNOTES
-[1]: For those nitpickers out there, of course we assume that the sets are finite. Some people call such “inprecision” being “sloppy”; I call it a lack of common sense and a person interested in the discussion of how much detail and the lack thereof should be included in a text can refer to the Mordell–Lang correspondence published in Lang’s Diophantine Geometry[ref:Lang1983].
+[1]: For those nitpickers out there, of course we assume that the sets are finite. Some people call such “inprecision” being “sloppy”; I call it a lack of common sense, and a person interested in the discussion of how much detail, and the lack thereof, should be included in a text can refer to the Mordell–Lang correspondence published in Lang’s <i>Diophantine Geometry</i> [ref:Lang1983].
 [2]: (a french guy)
 [3]: I learned this mental trick from Frederic Schüller [ref:Schuller2025WEHeraeus]
 [4]: be careful when deciding from whom you'll learn!
