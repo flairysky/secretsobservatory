@@ -278,9 +278,19 @@ class ReferenceManager {
     `;
     
     sortedFootnotes.forEach(([number, text]) => {
+      // Process reference syntax [ref:key] within footnote text
+      let processedText = text.replace(/\[ref:([a-zA-Z0-9_\-]+)\]/g, (match, key) => {
+        const ref = this.references.get(key);
+        if (ref) {
+          const citationKey = this.generateCitationKey(ref);
+          return `<span class="inline-citation" data-ref="${key}">${citationKey}</span>`;
+        }
+        return match; // Return original if reference not found
+      });
+      
       html += `
         <li id="footnote-${number}" class="footnote-item text-sm leading-relaxed text-slate-700 dark:text-slate-300">
-          <span class="font-medium">${number}.</span> ${text}
+          <span class="font-medium">${number}.</span> ${processedText}
         </li>
       `;
     });
