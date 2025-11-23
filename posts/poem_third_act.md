@@ -13,33 +13,38 @@ excerpt: "A deeper exploration of associations: understanding functions, mapping
 > The Neverending Story
 
 
-We continue our discussion from the first act aiming for a precise _description_ of the whole landscape from a birdeye point of view. We realized that if we have two sets and nothing and we would like to relate two sets with each other, i.e., _associate_ two sets with each other, we need something more than what we have at our disposal.<br>
-(Again, we are now above the mountains as the eagle, i.e., we are quote general.)<br>
+We continue our discussion from the first act aiming for a precise _description_ of the whole landscape from a birdeye point of view. We realized that if we have two sets and we would like to relate two sets with each other, i.e., _associate_ two sets with each other, we need something more than what we have at our disposal.<br>
+(Again, we are now above the mountains as the eagle, i.e., we are quote general in our description.)<br>
 
-Thus, we start with a definition.
+Hence, we start with a definition.
 
 > **Definition 3: Association**
 >
 > Given two sets $S$ and $S'$,<br>
 > we say that an **association** between these two sets<br>
-> associates to every element of the set $S$ some element of the set $S'$.<br>
-> Symbolically, say we call our association $h$, we write<br>
+> associates to __every__ element of the set $S$ some element of the set $S'$.<br>
+> Symbolically, say we call our association $h$, and we write<br>
 > $h:S \to S'$<br>
 > $x \mapsto h(x)$
 
-**Remark** for the symbolic description of the association.<br>
-We have two lines and we can think of this as a recipe from a doctor,<br>
-where the first line tells us the name "$h$" of the medicament we should take and how long we should take it, i.e., from which week to which week "$S \to S'$,"<br>
+**Remark** regarding the symbolic description of the association.<br>
+We have two symbolic lines and we can think of this as a recipe from a doctor,<br>
+where the first line tells us the name "$h$" of the medicament we should take and how long we should take it, i.e., from which week to which week "$S \to S'$, if you wish,"<br>
 and the second line is called "<strong>prescription</strong>" (in mathematics),<br>
 which tells us how exactly we should take it, i.e., how many pills a day, if you wish, or whatever works for you :D.<br>
-Also, $x$ is just an arbitrary element of $S$, not some specific one, and we say that $h(x)$ is the **value** of the association $h$ at $x$. Again, it is important to realize that $h(x)$ is just some element in $S'$, but if we would write, for instance, $a \mapsto b$, instead of $x \mapsto h(x)$, we would not know by looking at $b$ to which element in $S$ we assigned it, which is the reason we choose the symbolism $h(x)$.<br>
+Also, $x$ is just an arbitrary element of $S$, not some specific one, and we say that $h(x)$ is the **value** of the association $h$ at $x$. Again, it is important to realize that $h(x)$ is just some element in $S'$. ALso if we would write, for instance, $a \mapsto b$, instead of $x \mapsto h(x)$, we would not know by looking at $b$ to which element in $S$ we assigned it, which is the reason we choose the symbolism $h(x)$.<br>
+
+__Excurion:__ In the primary school you were by teachers told to "draw a graph of $f(x)=x^2$. Now, this is nothing but an association $f:S\to S'$ defined as $x\mapsto f(x)=x^2$. Moreover, depending of what your $S$ and $S'$ are, your $f$ does not even have to make sense (in a fancy language "not be _well-defined_", which just means that it does not satisfie the definition of an association) and if it does, your graph can take many different shapes and so such question is non-sensical without further clarification.<br>__End of Excursion__
+
 For example:<br>
 Let $F:S \to S'$ such that $a \mapsto F(a)$ be our association,<br>
-where $S=\{x,y,z\}$ and $S'=\{A,B\}$ are our sets, and we describe explicitly our association by the following prescription: $x \mapsto A,\ y \mapsto B,\ z \mapsto A$. Then observe that if we would just write, instead of $a \mapsto F(a)$, $a \mapsto b$ in our description of the function, then we would have no idea, given, say, $B \in S'$, to which element it is assigned; but since we kind of rewrote $B$ by $B = F(y)$ in our explicit prescription, we see immediately that it is assigned to $y$ in our original set.<br>
-Now, we need to explain a little more what we mean by that.<br>
-We mean that to every element of our original set $S$,<br>
+where $S=\{x,y,z\}$ and $S'=\{A,B\}$ are our sets, and we describe _explicitly_ our association by the following prescription: $x \mapsto A,\ y \mapsto B,\ z \mapsto A$. Then observe that if we would just write, instead of $a \mapsto F(a)$, $a \mapsto b$ in our description of the function, then we would have no idea, given, say, $B \in S'$, to which element it is assigned; but since we kind of rewrote $B$ by $B = F(y)$ in our explicit prescription, we see immediately that it is assigned to $y$ in our original set.<br>
+
+Now, as already hinted above, we have basically two general psychological perspectives about an association. One goes in the direction of the arrows and the other against it. We need to explain a little more what we mean by that.<br>
+We mean that, as the definition dictates, that to every element of our original set $S$,<br>
 we assign (hence "<strong>association</strong>") an element of the new set $S'$,<br>
-which is psychologically an opposite direction to our symbolical description! (This may need a little time to digest.)
+which is psychologically an opposite direction to our symbolical description! (This may need a little time to digest.)<br>
+
 Visually, to remember this fact, one might, e.g., think of the original set $S$ as a set of some points, and of the new set $S'$ as a set of arrows. Thus, to every point we assign an arrow, which may look like this, for example:
 <figure>
   <img src="assets/imagespoem/visual_association.png" alt="example of a visual description of an association" class="w-full h-64 object-cover rounded-lg shadow-md">
@@ -47,8 +52,9 @@ Visually, to remember this fact, one might, e.g., think of the original set $S$ 
     example of a visual description of an association
   </figcaption>
 </figure>
-(I brought up this particular way of thinking since this example shows up later; look up "vector field" below.)
-Furthermore, what I want to stress is that for an association to be an association, we must assign a new element to every element of the original set.
+(I brought up this particular way of thinking since this example shows up later; you can look up "vector field" below.)
+Furthermore, what I want to stress is that for an association to be an association, we must assign a new element to _every_ element of the original set.<br>
+
 E.g.:
 <figure>
   <img src="assets/imagespoem/no_association.png" alt="example of what is not an association" class="w-full h-64 object-cover rounded-lg shadow-md">
@@ -56,23 +62,31 @@ E.g.:
     example of what is not an association
   </figcaption>
 </figure>
-This is very important, and we will very soon see why.
-But if we have a set, say $S$, and a set $A$, which is a subset of $S$, i.e., symbolically $A \subset S$, and an association $f$ on $S$,
+This is very important, and we will very soon see why.<br>
+
+Next, if we have a set, say $S$, and a set $A$, which is a subset of $S$, i.e., symbolically $A \subset S$, and an association $f$ on $S$,
 but we would like to construct an association only from $A$,
 then we can do so and call it a "restriction of $f$," denoted by $f|_{A}$.
-Thus, symbolically we started with $f:S \to S'$ and we constructed $f|_{A}:A \to S'$.
-Further, instead of saying all the time the first set or original set and another set, we call the first set the "<strong>domain</strong>" of an association and the second set the "<strong>co-domain</strong>" (or "<strong>target set</strong>") of an association, and we also see that not every element in the co-domain has to be assigned to some element in the domain, and so we call the collection of all the elements in the co-domain which are assigned to some element in the domain the "<strong>image</strong>" of an association (symbolically $\operatorname{Im}(f)$, if we call our association $f$). Hence, we immediately see (take domain and co-domain such that the co-domain contains more elements than the domain) that it is not always true that a co-domain is equal to the image! This fact will be important later below (look up surjection and also what can happen if we take domain and co-domain to be the same set and the association is injective).
+Thus, symbolically we started with $f:S \to S'$ and we constructed $f|_{A}:A \to S'$ from $f$.
+Further, instead of saying all the time the first set or original set and another set, we call the first set the "<strong>domain</strong>" of an association and the second set the "<strong>co-domain</strong>" (or "<strong>target set</strong>") of an association, and we also see that not every element in the co-domain has to be assigned to some element in the domain, and so we call the collection of all the elements in the co-domain which are assigned to some element in the domain the "<strong>image</strong>" of an association (symbolically $\operatorname{Im}(f)$, if we call our association $f$).<br>
+Hence, we immediately see (take domain and co-domain such that the co-domain contains more elements than the domain) that it is not always true that a co-domain is equal to the image! This fact will be important later below (look up surjection and also what can happen if we take domain and co-domain to be the same set and the association is injective[#1]).
 <figure>
   <img src="assets/imagespoem/association.png" alt="image vs co-domain" class="w-full h-64 object-cover rounded-lg shadow-md">
   <figcaption class="text-center text-sm text-gray-600 dark:text-gray-400 mt-2 italic">
     image vs co-domain
   </figcaption>
 </figure>
-Further, it is very important to always recognize the following three associations:
+
+Further, it is very important to always recognize the following three types of associations:<br>
 
 - **injective**: 1-to-1 (to every element in the domain, we assign a distinct element of the co-domain)
 - **surjective**: onto (given an element in the co-domain, there is an element in the domain to which we assigned the element)
 - **bijective**: 1-to-1 correspondence (if and only if both injective and surjective)
+
+Remark: thus we see that the only difference between being injective and bijective is the word _correspondence_.<br>
+Why? Because, in the case of bijection each element of the co-domain corresponds to an element in the domain and vise-versa.<br>
+
+Remark: We immediatelly see that each injective map is bijective when considerer its image instead of the whole target space :)
 
 
 <figure>
@@ -81,23 +95,32 @@ Further, it is very important to always recognize the following three associatio
     injection, surjection and bijection
   </figcaption>
 </figure>
-Which were all coined by Bourbaki, where "<strong>injective</strong>" can intuitively mean that we inject one set into another, the same way a nurse injects one injection into one vein in our arm and another injection into another vein in our arm. "<strong>Surjective</strong>" comes from French (since Bourbaki is a French group) and means "onto," since every element of the co-domain is assigned to some element in the domain, and finally "<strong>bi</strong>" means two and does not need further explanation.<br>
-**Remark**: observe how important it is to distinguish in English the words "into" and "onto." Further, we observe that "into" does not mean "injective," but just that the arrow goes into some set!<br>
+
+You may ask why do we use these names.<br>
+Well, they were all coined by Bourbaki[#2], where "<strong>injective</strong>" can intuitively mean that we _inject_ one set into another, the same way a nurse injects one injection into one vein in our arm and another injection into another vein in our arm. "<strong>Surjective</strong>" comes from French (for obvious reasons) and means "onto", since every element of the co-domain is assigned to some element in the domain, i.e. we can think of the the codomain being “onto’d” (i.e. "covered" is maybe a better word) by the elements of the domain via the association. Finally "<strong>bi</strong>" means two and does not need further explanation.<br>
+
+**Remark**: observe how important it is to distinguish in English the words "into" and "onto." Further, we observe that "into" does not mean automatically "injective,"but just that the arrow goes into some set!<br>
+
 **Remark on injectivity**:<br>
-Thus, to check whether an association $f$ is injective, we need to check that if $f(a)=f(b)$, then $a=b$, but not vice versa, since if $a=b$, then by the definition of association we must have $f(a)=f(b)$, since an association cannot assign two different elements to the same initial element; or in other words, an association cannot give two different values for the same input value, since then it would not be an association!
+Thus, to check whether an association $f$ is injective, we need to check that if $f(a)=f(b)$, then $a=b$, but not vice versa, since if $a=b$, then by the definition of association we must have $f(a)=f(b)$, since an association cannot assign two different elements to the same initial element; or in other words, an association cannot give two different values for the same input value, since then it would not be an association!<br>
+
 Next, given three sets, say $A,B,C$ and associations $f,g$<br>
 such that $f:A \to B$ and $g:B \to C$,<br>
-then we can form a **composite association**, denoted by the symbol $g \circ f$, where we can, for simplicity, read $\circ$ in our mind as "<strong>after</strong>" (thanks Friedrich Schüller, Winter School on Gravity and Light), since we apply $g$ after $f$, and read it aloud for the fancy audience as "$g$ <strong>composed with</strong> $f$" or "<strong>composition</strong> of $g$ with $f$," since we compose two associations together.<br>
+it folows from our very definition that we can form a **composite association**, denoted by the symbol $g \circ f$, where we can, for simplicity, read $\circ$ in our mind as "<strong>after</strong>"[#3], since we apply $g$ after $f$, and read it aloud for the fancy audience as "$g$ <strong>composed with</strong> $f$" or "<strong>composition</strong> of $g$ with $f$," since we compose two associations together.<br>
+
 Symbolically, we have also the following picture:<br>
 $A \stackrel{f}{\to} B \stackrel{g}{\to} C$ such that<br>
 $x \mapsto f(x) \mapsto g(f(x))$<br>
 Thus, we perceive the composite association as the association:<br>
 $g \circ f: A \to C$<br>
 such that $x \mapsto g \circ f(x) = g(f(x))$.<br>
-Notice that the symbol $g \circ f$ denotes a function, so if we would write $g \circ f = h$, we would have $h(x)=g \circ f(x)$.
-Now, one can convince oneself immediately that if both $f,g$ are injective, then their composition $g \circ f$ is also injective, and similarly, if they are both surjective, then their composition is also surjective.<br>
-Hence, if they are both bijective, so is their composition.<br>
-Now, here is one important instance where we immediately see how important it was in the definition of an association that we assigned to every element of the domain an element of the co-domain, since if we would not do that and had some elements in the domain without assignment, then already the above basic results would not be true in general! Convince yourself.
+Notice that the symbol $g \circ f$ denotes another association, so if we would write $g \circ f = h$, we would have $h(x)=g \circ f(x)$.<br>
+
+Now, one can convince oneself immediately that if both $f,g$ are injective, then their composition $g \circ f$ is also injective, and similarly, if they are both surjective, then their composition is also surjective (i.e. if they are both bijective then their composition is bijective).<br>
+
+Now, here we immediately see how important it was in the definition of an association that we assigned to __every__ element of the domain an element of the co-domain, since if we would not do that and had some elements in the domain without assignment, then already the above basic results would not be true![#4] 
+Convince yourself!
+
 Now, we observe that, given a bijection between two sets, say $f:S \to S'$ such that $x \mapsto f(x)$ (look at the picture of a bijection),<br>
 we can "reverse" the arrow and define a function from $S'$ to $S$ which "preserves" the "pairing" of the original function $f$,<br>
 hence we can define our new function, say $g$, in the following manner:<br>
@@ -105,12 +128,13 @@ $g:S' \to S$ such that $f(x) \mapsto x$ or, using the classical notation for ass
 we can write $f(x) \mapsto g(f(x))$, and above we saw that this must, according to our definition, mean $g(f(x))=x$.<br>
 Furthermore,<br>
 we observe that if we denote an arbitrary element of $S'$ by $y$,<br>
-we could write $g:S' \to S$ such that $y \mapsto g(y)$, but by the way we defined $g$ (i.e., as mapping, or association, $f(x)$ back to $x$)<br>
+we could write $g:S' \to S$ such that $y \mapsto g(y)$, but by the way we defined $g$ (i.e., as association, $f(x)$ back to $x$)<br>
 we observe that we also have $f(g(y))=y$.<br>
 Thus, we can write $f \circ g = \text{identity association} = g \circ f$.<br>
-So, we started with a bijection $f$ and found an association $g$, by "reversing the arrow" of $f$,<br>
+So, we started with a bijection $f$ and found that there _exists_ an association $g$, by basically "reversing the arrow" of $f$,<br>
 so that composing $f,g$ together in any order leaves us with the same element we started with.<br>
-For obvious reasons, we call such association $g$ the **inverse** of $f$ and, symbolically, denote it by $g = f^{-1}$.<br>
+
+For obvious reasons, we call such association $g$ _the_ **inverse** of $f$ and, symbolically, denote it by $g = f^{-1}$.<br>
 We state this as another definition.
 
 > **Definition 4: Inverse Association**
@@ -123,7 +147,8 @@ We could equivalently rewrite the definition in the following manner:<br>
 Given associations $f:S \to S'$ and $g:S' \to S$,<br>
 if $f \circ g = \text{identity association} = g \circ f$<br>
 then we say that $g$ is the inverse of $f$.<br>
-(We observe the connection of the word "whenever" with the "if..., then..." statement.)
+
+(Remark: observe the connection of the word "whenever" with the "if..., then..." statement.)
 
 Conversely,<br>
 given an association which has an inverse, we show that it must necessarily be a bijection.<br>
@@ -142,21 +167,24 @@ and the second statement that if $f(x)=f(y)$, then $x=y$.<br>
 **Remark**: observe that injectivity does not mean that "if $x=y$, then $f(x)=f(y)$"; this is just the definition of an association. Since we are already given an association, we assume that this statement is already satisfied.<br>
 We prove the second statement: we assume that $f(x)=f(y)$, but now just apply the inverse $g$ to the equation and get, from the definition of inverse, $x=y$. Hence $f$ is injective.<br>
 To conclude, since $f$ is both injective and surjective, it is bijective, which is what we wanted to show.<br>
-Thus, from what we saw, we can conclude that an association has an inverse only if it is a bijection and also that if an association is a bijection then it must have an inverse.<br>
-We state this important fact as our first theorem.
+Thus, from what we saw, we can conclude that an association has an inverse only if it is a bijection and also that if an association is a bijection then it must have an inverse.[#5]<br>
 
-**Anecdotal remark**:<br>
-Observe that having an inverse is nothing but considering both sides of the same coin, as we can, for instance, say "Jim bought the house from Serge," which is equivalent to saying "Serge sold the house to Jim."
+We state this important fact as our first __theorem__.
 
 > **Theorem 1: An association is a bijection iff it has an inverse**
 >
 > Let $f$ be an association.<br>
 > $f$ is a bijection $\iff$ $f$ has an inverse (often denoted by $f^{-1}$).
 
-The way we showed that this theorem is true is called **proof**, and we observe how we proved both directions of the statement $\iff$, i.e., both $\Rightarrow$ and $\Leftarrow$.<br>
-One notices how I used the definite article "<strong>the</strong>" for the inverse instead of the indefinite article "<strong>an</strong>" inverse. This is always done when we want to show that there is only one unique such element, symbolically, we also write "$\exists !$," which means "there exists unique."<br>
-Now, we show that this is actually true, i.e., that there is only one inverse.<br>
-I.e., we prove the following fact:
+Since, the composition of an association with its inverse keeps all the elements _fixed_, or if we rephrase it, it _identifies_ all the elements with them self, or if we rephrase it again, after applying such composition the image of an element is _identical_ to the element before the composition was applied, we call this particular composition association, _the identity_, which you encounter below again.
+
+The argumentation above the theorem where we showed that this fact is true is called a __proof__ in mathematics, since we proved that the fact is true just from what we already know, so we proved our first theorem just in a plain english and the usage of symbols where we deemed it psychologically suitable, however we could also just revrite it without any symbols, since the sybols all have a precise meaning.)
+
+We observe how we proved both directions of the statement $\iff$, i.e., both $\Rightarrow$ and $\Leftarrow$.<br>
+
+Further, a curious reader noticed how I used the definite article "<strong>the</strong>" for the inverse association instead of the indefinite article "<strong>an</strong>" inverse. This is always done when there is only one unique such "thing" (association, element, ...), symbolically, we also write "$\exists !$," which means "there exists unique."<br>
+Now, we show that this is actually true, i.e., that there is only one inverse of any bijective association.<br>
+I.e., we state the following fact:
 
 > **Theorem 2: Inverse association is unique**
 >
@@ -165,9 +193,10 @@ I.e., we prove the following fact:
 
 **Proof:**<br>
 Given an association $f$, assume $g,h$ are inverses of $f$.<br>
-Then, by the fact that $g$ is an inverse of $f$, we have $f g = I$ (where $I$ is the identity association), and applying $h$ to the left of this equation, we get $h f g = h \circ I$, and again by definition we get $I g = h$, thus $g=h$, as was to be shown. $\square$
-Finally, when dealing with associations, there are so many different kinds of them, and for me it was always very confusing to navigate among them. Luckily, S. L.'s rough classification provides, at least for me, a very nice psychological framework for how to orient yourself in the jungle, by distinguishing four kinds of associations depending on the domain and co-domain,<br>
-where we distinguish between "numbers" (real numbers), denoted $\mathbb{R}$, and space whose elements we will call vectors, denoted $V$ (i.e., some structure on the set, where visually you can think, for instance, of a 2D plane, or if you already encountered vector spaces, then as a vector space).<br>
+Then, by the fact that $g$ is an inverse of $f$, we have $f g = I$ (where $I$ is the identity association), and applying $h$ to the left of this equation, we get $h f g = h \circ I$, and again by definition we get $I g = h$, thus $g=h$, as was to be shown. $\square$<br>
+
+Finally, when dealing with associations, there are so many different kinds of them, and for me it was always very confusing to navigate among them. Luckily, Serge's rough and rather _psychological_ classification provides, at least for me, a very nice psychological framework for how to orient yourself in the jungle, by distinguishing four kinds of associations depending on the domain and co-domain.<br>
+We distinguish between "numbers" (real numbers), denoted $\mathbb{R}$, and space whose elements we will call vectors, denoted $V$ (i.e., some structure on the set, where visually you can think, for instance, of a 2D plane, or if you already encountered vector spaces, then as a vector space).<br>
 And if everything is nice, we can also provide the names "function," "curve," "vector field" in the following way:
 
 - numbers to numbers, i.e., $\mathbb{R} \to \mathbb{R}$, **function** (of one variable)
@@ -177,24 +206,30 @@ And if everything is nice, we can also provide the names "function," "curve," "v
 
 
 Now, we observe that we have 4 kinds of associations, i.e., special cases of the general notion we called association,
-i.e., "function," "curve," "vector field" are all an association, but not every association is a curve or a vector field or a function.
-Hence, an association is a more abstract notion than the four other notions, since we restricted their domains and co-domains.
-Thus, loosely speaking, we can perceive generality and speciality based on the number of restrictions we impose on our notions, which makes intuitively complete sense, as also in our world something is more special the more distinctions it has from other things that look similar to it (think, for instance, of diamonds or some leopard that has a completely different color and signs on her skin than all other leopards).
-Now, this is a common trend in mathematics, as when we encounter some seemingly new notion in mathematics, we always try to view it as a special or general case of something we already know! So that we basically never learn anything new :D
-Another example of a special case of an association is an association where both domain and co-domain are the same set, say $S$,
-i.e., e.g., $f:S \to S$.
-And even more special is when this association is a bijection, since then we have a 1-to-1 correspondence between the elements of the same set; thus we can view this association as a rearrangement (but I do not like this term, since, e.g., an identity association below is also a permutation, and did such a permutation rearrange something?) of the elements within the same set, which we call permutation. Thus, for instance, the association which maps each element to the same element, i.e., $a \to a$, is a bijection, is also a permutation, and we call it the identity.
-Now, observe that I wrote the identity instead of "an" identity, and this is because there is only one association among all the associations on the set $S$ which assigns every element to itself, i.e., it is a very special case; in fact, it is so special that there is only one such association, and we say that such association is unique, and so we write the definite article the instead of an indefinite article. This discussion on uniqueness concerns all mathematical notions and objects, not just associations, but I wanted to start with a specific example.
-I.e., always when you see the definite article, you can be sure that the thing we talk about is unique.
-I would like to conclude this section by two unrelated remarks.<br>
+i.e., "function", "curve", and "vector field" are all an association, but not every association is say, a curve.
+Hence, an association is a more abstract notion than the four other notions (i.e. it encompasses all of them), since we restricted their domains and co-domains.
+Thus, loosely speaking, we can perceive generality and speciality based on the number of restrictions we impose on our notions. This makes intuitively sense, as also in our world something is more special the more distinctions it has from other things that look similar to it (think, for instance, of diamonds or some leopard that has a completely different color and signs on her skin than all other leopards).<br>
+Now, this is a common thread in mathematics, as when we encounter some seemingly new notion in mathematics, we always try to view it as a special or general case of something we already know! So that we basically in some sense never learn anything new :D <br>
 
-**Remark**: For those who had a little bit of mathematics, one can think of the classification of the association in terms of dimensions of a vector space, where numbers are a vector space (over themselves and of dimension 1), and one might think of a vector space as being a vector space of dimension at least 2.<br>
+Another example of a special case of an association is an association where both domain and co-domain are the same set, say $S$ (which consists of finitely many elements),
+i.e., e.g., $f:S \to S$.<br>
+And even more special is this association when it is a bijection, since then we have a 1-to-1 _correspondence_ between the elements of the same set; thus we can view this association as a rearrangement of the elements within the same set, which we call __permutation__ (I do not like the term _rearrangement_, since, e.g., an identity association below is also a permutation (i.e. "rearrangement"), and did such a permutation rearrange something? Furthermore, psychologically for further mathematical endevours, it is definitely desirable to think of a __permuation__ as of an association and not as of some rearrangement and I am definitelly not the only one who thinks so[#6], moreover the name permutation association was chosen so that it already carries in itself the notion of rearrangement[#7], but inclines the reader to think of is as of an association at first place and rearrangement in the second.)
 
-**Remark**: In the literature you will find many different names for various kinds of associations, such as "map," "mapping," "transformation," "function," in German "Abbildung," often used incorrectly, so the best thing to do is to look up the author's definition of the particular word to understand what the author actually means by that specific word.
+Thus, for instance, the association which maps each element to the same element, i.e., $a \to a$ for all elements in $S$, is a bijection, and so is by definition of a permutation also a permutation, and we call it _the identity_.
+Now, observe that I wrote the identity instead of "an" identity, and this is because there is only one association among all the associations on the set $S$ which assigns every element to itself, i.e., it is a very special association, that is _omnipresent_ in al of mathematics.
+
+**Final Remark**: In the literature you will find many different names for various kinds of associations, such as "map," "mapping," "transformation," "function," in German "Abbildung," in Czech "zobrazení"[#8]..., which are often used incorrectly, so the best thing to do is to look up the author's definition of the particular word to understand what the author actually means by that specific word.
 
 <!-- FOOTNOTES
-[1]:
-[2]: 
+[1]: For those nitpickers out there, of course we assume that the sets are finite. Some people call such “inprecision” being “sloppy”; I call it a lack of common sense and a person interested in the discussion of how much detail and the lack thereof should be included in a text can refer to the Mordell–Lang correspondence published in Lang’s Diophantine Geometry[ref: Lang1983].
+[2]: (a french guy)
+[3]: I learned this mental trick from Frederic Schüller [ref:Schuller2025WEHeraeus]
+[4]: be careful when deciding from whom you'll learn!
+[5]: Anecdotal remark: Observe that having an inverse is nothing but considering both sides of the same coin, as we can, for instance, say "Jim bought the house from Serge," which is equivalent to saying "Serge sold the house to Jim."
+[6]: Same perspective on this topic shares for instance Michael Artin, and the reader is advised to consult the relevant chaper in his Algebra book.[ref:Artin2011]
+[7]: From Latin per- = “through,” “thoroughly,” “completely,”
+mutare = “to change,” “to move,” “to exchange.” So the literal meaning is: a thorough change or a complete rearrangement. Also, In classical Latin, permutatio meant: "exchanging one thing for another" or "rearranging items".
+[8]: In my opinion, the worst one.
 -->
 
 ---

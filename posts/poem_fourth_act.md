@@ -44,18 +44,21 @@ to be _logicaly_ precise, one should write first "for every XYZ" and then state 
 Now, assume that we have equipped our set $S$ with an equivalence relation, then we can collect the elements which are equivalent to each other and form the so-called **equivalence classes**, and each element of such a class is called a **representative** of such a class (becase it _represents_ the class...).<br>
 Symbolically, we can denote such an equivalence class in the following way: $[a] = \{x \in S \mid x \sim a\}$.<br>
 Now, we translate this into our ordinary language:<br>
-$[a]$ is a set ($\{\ \}$) that contains all $x$ in $S$ ($x \in S$) such that ($\mid$) these $x$ are equivalent to $a$ ($x \sim a$). Thus, $a$ is our representative of this equivalence class, denoted by $[a]$, and we can write, e.g., $a \in [a]$, since $a$ is clearly contained in this equivalence class; but if we would have, for instance, also $b$ in this equivalence class, we could write symbolically also $b \in [a]$ and also $[a]=[b]$, since then also $b$ is a representative of this class. (Observe that I often wrote just "class" instead of "equivalence class," since it is clear about what I am talking about.)
+$[a]$ is a set ($\{\ \}$) that contains all $x$ in $S$ ($x \in S$) such that ($\mid$) these $x$ are equivalent to $a$ ($x \sim a$). Thus, $a$ is our representative of this equivalence class, denoted by $[a]$, and we can write, e.g., $a \in [a]$, since $a$ is clearly contained in this equivalence class; but if we would have, for instance, also $b$ in this equivalence class, we could write symbolically also $b \in [a]$ and also $[a]=[b]$, since then also $b$ is a representative of this class. (Observe that I often wrote just "class" instead of "equivalence class," since it is clear about what I am talking about.)<br>
 
 **Question**: Is the equal sign $=$ an example of an equivalence relation?<br>
-**Question**: Is "being in love with a person" an equivalence relation?
+**Question**: Is "being in love with a person" an equivalence relation?<br>
 
 Let us analyse quickly the equivalence classes.<br>
-Given an arbitrary element $a$ in $S$, since $a$ is equivalent to itself (clear from the postulates of the equivalence relation), it must be contained in some equivalence class, and so no equivalence class can be an empty set. Further, given two equivalence classes, say $[a]$ and $[b]$, with an element in common, we show that they are identical. Since, say, an element $c$ is in both of them, then, given $x$ in $[a]$, we have $x \sim a \sim c \sim b$, thus it follows that $[a] \subset [b]$. But due to the symmetry property of the equivalence relation we can conclude the same argument also in the opposite direction and get $[b] \subset [a]$, hence $[a] = [b]$.<br>
-Thus, two equivalence classes are either equal or do not overlap at all, which we can also say in a fancy language by saying that they are either equal or that they are "<strong>disjunct</strong>" (in German) or "<strong>disjoint</strong>" (in English).<br>
+Given an arbitrary element $a$ in $S$, since $a$ is equivalent to itself (y reflexivity), it must be contained in some equivalence class, and so no equivalence class can be an empty set. Further, given two equivalence classes, say $[a]$ and $[b]$, with an element in common, we show that they are identical, i.e. that they are the same set. Since, say, an element $c$ is in both of them, then, given $x$ in $[a]$, we have $x \sim a \sim c \sim b$, thus it follows that $[a] \subset [b]$. But due to the symmetry property of the equivalence relation we can conclude the same argument also in the opposite direction and get $[b] \subset [a]$, hence $[a] = [b]$.<br>
+
+Hence we saw that two equivalence classes are either equal or do not overlap at all and every element is in some equivalence class.<br>
+We can also say this in a fancy language by saying that the quivalence classes are either equal or that they are <strong>disjoint</strong> (in English).<br>
+
 Thus, to recapitulate, we saw that an equivalence relation on a set means that every element of the set is contained in some equivalence class, no equivalence class is empty, and two equivalence classes are either the same equivalence class or have no elements in common.
 Now, we will prove a basic fact about equivalence relations, namely that they are logically equivalent to partitions.<br>
 
-As the name suggests, given a set, a **partition** of such a set decomposes the set into parts, and does it in such a way that each element of the original set is contained in some part of the decomposition, none of the parts are empty, and no element of the original set is contained in more than one part.<br>
+As the name suggests, given a set, a **partition** of such a set decomposes the set into _parts_, and does it in such a way that each element of the original set is contained in some part of the decomposition, none of the parts are empty, and no element of the original set is contained in more than one part.<br>
 
 **EXAMPLE**: Say we have a set containing three elements, say $S=\{a,b,c\}$. Then, e.g., the collection of the sets $\{a\}$, $\{b\}$, $\{c\}$ is an example of a partition of $S$, but so is also $\{a,b\}$, $\{c\}$; the only difference between the two partitions is that the first one decomposes $S$ into three parts and the second into two.<br>
 
@@ -65,25 +68,26 @@ Let $\sim$ be a relation on $S$ such that $a \sim b$ whenever $a,b$ are containe
 Now, all we need to check is that this relation satisfies all three axioms of the equivalence relation, which follows immediately, and I leave it to you to check this.<br>
 Conversely,<br>
 given an equivalence relation on an arbitrary set $S$, we need to show that such an equivalence relation gives rise to a partition of that set. But since we already saw that every element of the set must be contained in some equivalence class and no equivalence class is empty and does not overlap with any other equivalence class, collecting all equivalence classes gives us, by definition, a partition of $S$.<br>
+
 Hence, we proved the assertion.
 Finally, from what we just saw, given a set $S$ with an equivalence relation $\sim$,<br>
-we can collect all the classes and so construct a new set (linguistically obvious from this sentence), and we denote such a set by the symbol $S/{\sim}$,<br>
+we can collect all the classes and so construct a new set (_linguistically_, this is obvious from this sentence as it goes exactly as the definition of a set, "a collection of objects", where we just replaced the word objects with classes), and we denote such a set by the symbol $S/{\sim}$,<br>
 i.e., $S/{\sim}$ is a set containing all the equivalence classes; thus the elements of $S/{\sim}$ are $[a]$, where $[a]$ denotes an equivalence class represented by $a \in S$.<br>
+
 There is one important way one may define an equivalence relation, which we will now illustrate.<br>
 Given an association between two sets, say $f:S \to S'$ such that $x \mapsto f(x)$, and we denote by $\operatorname{Im}(f)$ the image of $f$, i.e., given $y \in \operatorname{Im}(f)$, we know there is at least one $x \in S$ such that $f(x)=y$. If $f$ is injective, then there is only one such $x$, but if $f$ is not injective, then there might be several such elements $x$ which $f$ maps to the same $y$.<br>
 Thus, we define the **inverse image** of an element $y \in \operatorname{Im}(f)$, which is the collection of all elements in the domain that $f$ maps to $y \in \operatorname{Im}(f)$.<br>
 Symbolically, we denote it by $f^{-1}(y)=\{x \in S \mid f(x)=y\}$.<br>
 
 **Remark**: Notice that the symbol $f^{-1}(y)$ does not mean that $f$ has an inverse!<br>
-$f$ has an inverse only if each such inverse image would consist of a single element! Then we would have $f^{-1}: \operatorname{Im}(f) \to S$.<br>
+$f$ has an inverse only if each such inverse image would consist of a single element for each element! Then we would have $f^{-1}: \operatorname{Im}(f) \to S$.<br>
+
 Now, the reason we introduced this notation of an inverse image of elements in the image of an association is that it partitions the domain of the association, i.e., it gives us an equivalence relation on the domain of that association.<br>
 An equivalence relation defined by an association is often called **congruence**, and one might call it **congruence modulo** $f$, since it is defined by this association $f$.<br>
-One also often calls these inverse images **fibres**.<br>
-The notion of congruence modulo something was first introduced by Gauss as he introduced integers modulo some other integer, but why it is called modulo, fibre, etc., will be shown later; at this stage I just wanted to introduce this notion and make you aware of it.
+One also often calls these inverse images (i.e. equivalence classes) **fibres**.<br>
 
-**Unrelated but useful remark**:<br>
-In mathematics the word "<strong>formal</strong>" appears a lot and can have two meanings:
-We are used to speaking about "formal" and "informal," but in mathematics it is often the case that when we say something is defined "formally" (in a symbolic manner) in some way, we mean that "it has the specific form" without showing that this form actually has any meaning or substance to it. Usually we then go on and show that it is indeed the case, which is the reason why we defined it in such a formal way first.
+__Remark regarding the names:__<br>
+The notion of congruence modulo something was first introduced by Gauss as he introduced integers modulo some other integer, but why it is called modulo, fibre, etc., will be shown later; at this stage I just wanted to introduce this notion and make you aware of it.
 
 ---
 
