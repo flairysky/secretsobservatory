@@ -4,8 +4,6 @@ date: "2025-11-22"
 categories: ["Learning", "Teaching", "Mathematics"]
 excerpt: "A deeper exploration of associations: understanding functions, mappings, and their properties in mathematics."
 ---
-> Remark: I need to revise this post some time, so be cautios for mistakes in it...
-
 
 > Bastian: Why is it so dark?<br>
 > The Childlike Empress: In the beginning, it is always dark.

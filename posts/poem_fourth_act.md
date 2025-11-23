@@ -5,8 +5,6 @@ categories: ["Learning", "Teaching", "Mathematics"]
 excerpt: "Exploring equivalence relations and quotient structures: how we identify elements that are 'the same' in mathematics."
 ---
 
-> Remark: I need to revise this post some time, so be cautios for mistakes in it...
-
 > Now, it is soon clear that we use the word equal with different meanings and that's perfectly alright as Humpty Dumpty was saying to Alice, I would say that when you work hard, we pay extra; we just should know at each time, in which sense we are using the word.
 >
 > Pierre Deligne [ref:Deligne2025Equal]
