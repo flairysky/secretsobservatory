@@ -36,7 +36,7 @@ __Excurion:__ In the primary school you were by teachers told to "draw a graph o
 
 For example:<br>
 Let $F:S \to S'$ such that $a \mapsto F(a)$ be our association,<br>
-where $S=\{x,y,z\}$ and $S'=\{A,B\}$ are our sets, and we describe _explicitly_ our association by the following prescription: $x \mapsto A,\ y \mapsto B,\ z \mapsto A$. Then observe that if we would just write, instead of $a \mapsto F(a)$, $a \mapsto b$ in our description of the function, then we would have no idea, given, say, $B \in S'$, to which element it is assigned; but since we kind of rewrote $B$ by $B = F(y)$ in our explicit prescription, we see immediately that it is assigned to $y$ in our original set.<br>
+where $S=\lbrace x,y,z \rbrace$ and $S'=\lbrace A,B \rbrace$ are our sets, and we describe _explicitly_ our association by the following prescription: $x \mapsto A,\ y \mapsto B,\ z \mapsto A$. Then observe that if we would just write, instead of $a \mapsto F(a)$, $a \mapsto b$ in our description of the function, then we would have no idea, given, say, $B \in S'$, to which element it is assigned; but since we kind of rewrote $B$ by $B = F(y)$ in our explicit prescription, we see immediately that it is assigned to $y$ in our original set.<br>
 
 Now, as already hinted above, we have basically two general psychological perspectives about an association. One goes in the direction of the arrows and the other against it. We need to explain a little more what we mean by that.<br>
 We mean that, as the definition dictates, that to every element of our original set $S$,<br>
@@ -202,6 +202,7 @@ And if everything is nice, we can also provide the names "function," "curve," "v
 - vectors to numbers, i.e., $\mathbb{R} \to V$, **curve**
 - vectors to vectors, i.e., $V \to V$, **vector field**
 
+__Remark:__ Why do we use these names does not need to bother you at the moment, and it will become clear in the later acts.
 
 Now, we observe that we have 4 kinds of associations, i.e., special cases of the general notion we called association,
 i.e., "function", "curve", and "vector field" are all an association, but not every association is say, a curve.
