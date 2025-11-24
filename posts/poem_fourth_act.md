@@ -40,9 +40,9 @@ whenever, given three elements $a,b,c$ in $S$, it satisfies the following three 
 In the above description,<br>
 to be _logicaly_ precise, one should write first "for every XYZ" and then state the property, but as long as we understand each other I wanted to show that it is often written (even though _logicaly_ falsely) also in such a way as above.<br>
 Now, assume that we have equipped our set $S$ with an equivalence relation, then we can collect the elements which are equivalent to each other and form the so-called **equivalence classes**, and each element of such a class is called a **representative** of such a class (becase it _represents_ the class...).<br>
-Symbolically, we can denote such an equivalence class in the following way: $[a] = \{x \in S \mid x \sim a\}$.<br>
+Symbolically, we can denote such an equivalence class in the following way: $[a] = \lbrace x \in S \mid x \sim a \rbrace$.<br>
 Now, we translate this into our ordinary language:<br>
-$[a]$ is a set ($\{\ \}$) that contains all $x$ in $S$ ($x \in S$) such that ($\mid$) these $x$ are equivalent to $a$ ($x \sim a$). Thus, $a$ is our representative of this equivalence class, denoted by $[a]$, and we can write, e.g., $a \in [a]$, since $a$ is clearly contained in this equivalence class; but if we would have, for instance, also $b$ in this equivalence class, we could write symbolically also $b \in [a]$ and also $[a]=[b]$, since then also $b$ is a representative of this class. (Observe that I often wrote just "class" instead of "equivalence class," since it is clear about what I am talking about.)<br>
+$[a]$ is a set (i.e. $\{\ \}$) that contains all $x$ in $S$ (i.e. $x \in S$) such that ($\mid$) these $x$ are equivalent to $a$ ($x \sim a$). Thus, $a$ is our representative of this equivalence class, denoted by $[a]$, and we can write, e.g., $a \in [a]$, since $a$ is clearly contained in this equivalence class; but if we would have, for instance, also $b$ in this equivalence class, we could write symbolically also $b \in [a]$ and also $[a]=[b]$, since then also $b$ is a representative of this class. (Observe that I often wrote just "class" instead of "equivalence class," since it is clear about what I am talking about.)<br>
 
 **Question**: Is the equal sign $=$ an example of an equivalence relation?<br>
 **Question**: Is "being in love with a person" an equivalence relation?<br>
@@ -69,8 +69,8 @@ given an equivalence relation on an arbitrary set $S$, we need to show that such
 
 Hence, we proved the assertion.
 Finally, from what we just saw, given a set $S$ with an equivalence relation $\sim$,<br>
-we can collect all the classes and so construct a new set (_linguistically_, this is obvious from this sentence as it goes exactly as the definition of a set, "a collection of objects", where we just replaced the word objects with classes), and we denote such a set by the symbol $S/\lbrace\sim\rbrace$,<br>
-i.e., $S/\lbrace\sim\rbrace$ is a set containing all the equivalence classes; thus the elements of $S/\lbrace\sim\rbrace$ are $[a]$, where $[a]$ denotes an equivalence class represented by $a \in S$.<br>
+we can collect all the classes and so construct a new set (_linguistically_, this is obvious from this sentence as it goes exactly as the definition of a set, "a collection of objects", where we just replaced the word objects with classes), and we denote such a set by the symbol $S/\sim$,<br>
+i.e., $S/\sim$ is a set containing all the equivalence classes; thus the elements of $S/\sim$ are $[a]$, where $[a]$ denotes an equivalence class represented by $a \in S$.<br>
 
 There is one important way one may define an equivalence relation, which we will now illustrate.<br>
 Given an association between two sets, say $f:S \to S'$ such that $x \mapsto f(x)$, and we denote by $\operatorname{Im}(f)$ the image of $f$, i.e., given $y \in \operatorname{Im}(f)$, we know there is at least one $x \in S$ such that $f(x)=y$. If $f$ is injective, then there is only one such $x$, but if $f$ is not injective, then there might be several such elements $x$ which $f$ maps to the same $y$.<br>
@@ -93,7 +93,7 @@ The notion of congruence modulo something was first introduced by Gauss as he in
 
 Given an association $f:S\to S'$, we can naturally decompose this association using an equivalence relation $\sim$ on $S$ in the following manner:
 
-$$S\stackrel{f_\lbrace\text{can}\rbrace}{\to}S|_\lbrace\sim\rbrace\stackrel{\bar{f}}{\to}\text{Im}(f)\stackrel{i}{\hookrightarrow} S'$$
+$$S\stackrel{f_\text{can}}{\to}S|_\sim\stackrel{\bar{f}}{\to}\text{Im}(f)\stackrel{i}{\hookrightarrow} S'$$
 
 Another pictorial description:
 
@@ -106,8 +106,8 @@ Another pictorial description:
 
 where
 
-- $f_\lbrace\text{can}\rbrace$ associate to each element in the domain the equivalence class in which it lies,<br>
-  hence $f_\lbrace\text{can}\rbrace$ is clearly.
+- $f_\text{can}$ associate to each element in the domain the equivalence class in which it lies,<br>
+  hence $f_\text{can}$ is clearly.
 
 - $\bar{f}$ is a bijection, try to prove it, and also make sure that you show that this map is well defined, which means it is independent of the choice of representative of the class.<br>
   Since if the association would associate different elements to the same class, based on different representatives, it would clearly not satisfy the definition of an association!
