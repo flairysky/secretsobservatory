@@ -84,7 +84,7 @@ given an equivalence relation on an arbitrary set $S$, we need to show that such
 Hence, we proved the assertion "equivalence relation and partitions are equivalent" and can bury this fact for eternity by putting a gravestone on it. $\square$
 
 Finally, from what we just saw, given a set $S$ with an equivalence relation $\sim$,<br>
-we can collect all the classes and so construct a new set (_linguistically_, this is obvious from this sentence as it goes exactly as the definition of a set, "a collection of objects", where we just replaced the word objects with classes), and we denote such a set by the symbol $S/\sim$.<br>
+we can collect all the classes and so construct a new set (_linguistically_, this is obvious from this sentence as it goes exactly as the definition of a set, "a collection of objects", where we just replaced the word objects with classes), and we denote such a set by the symbol $S/_{\sim}$.<br>
 I.e., $S/\sim$ is a set containing all the equivalence classes; thus the elements of $S/\sim$ are $[a]$, where $[a]$ denotes an equivalence class represented by $a \in S$, and if you prefer the symbolic description, we can write =$S/_{\sim}=\lbrace [a]_{\sim}\space \mid \space a\in S \space \text{and}\space [a]_{\sim}=\lbrace x\in S\space \mid \space x\sim a\rbrace \rbrace$.<br>
 
 Now, this was probably a lot to digest, but if you are still aeger for more, there is one important way we may define an equivalence relation, which we will now illustrate.<br>
