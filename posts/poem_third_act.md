@@ -64,8 +64,8 @@ This is very important, and we will very soon see why.<br>
 
 Next, if we have a set, say $S$, and a set $A$, which is a subset of $S$, i.e., symbolically $A \subset S$, and an association $f$ on $S$,
 but we would like to construct an association only from $A$,
-then we can do so and call it a "restriction of $f$," denoted by $f|_\A\}$.
-Thus, symbolically we started with $f:S \to S'$ and we constructed $f|_\{A\}:A \to S'$ from $f$.
+then we can do so and call it a "restriction of $f$," denoted by $f|_\lbrace A\rbrace$.
+Thus, symbolically we started with $f:S \to S'$ and we constructed $f|_\lbrace A\rbrace:A \to S'$ from $f$.
 Further, instead of saying all the time the first set or original set and another set, we call the first set the "<strong>domain</strong>" of an association and the second set the "<strong>co-domain</strong>" (or "<strong>target set</strong>") of an association, and we also see that not every element in the co-domain has to be assigned to some element in the domain, and so we call the collection of all the elements in the co-domain which are assigned to some element in the domain the "<strong>image</strong>" of an association (symbolically $\operatorname{Im}(f)$, if we call our association $f$).<br>
 Hence, we immediately see (take domain and co-domain such that the co-domain contains more elements than the domain) that it is not always true that a co-domain is equal to the image! This fact will be important later below (look up surjection and also what can happen if we take domain and co-domain to be the same set and the association is injective[#1]).
 <figure>
