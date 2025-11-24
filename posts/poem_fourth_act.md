@@ -43,14 +43,14 @@ whenever, given three elements $a,b,c$ in $S$, it satisfies the following three 
 - **symmetry**: if $a \sim b$, then $b \sim a$, for every $a$ in $S$.
 - **transitivity**: if $a \sim b$ and $b \sim c$, then $a \sim c$, for every $a,b,c$ in $S$.[#3]
 
-We have a relation $R \subset A \times A$.  
+We have a relation $R \subset S\times S$.  
 For $x, y \in A$, if $(x,y) \in R$, we say that $x, y$ satisfy our relation.
 
 Observe that we can rephrase the axioms of an equivalence relation equivalently in the terminology of a _relation_ we introduced above, by saying that for all $x, y, z \in A$, we have<br>
 
-\textbf{reflexivity:} $(x,x) \in R$,<br>
-\textbf{symmetry:} if $(x,y) \in R$, then $(y,x) \in R$, and<br>
-\textbf{transitivity} if $(x,y) \in R$ and $(y,z) \in R$, then $(x,z) \in R$.<br>
+__reflexivity:__ $(x,x) \in R$,<br>
+__symmetry:__ if $(x,y) \in R$, then $(y,x) \in R$, and<br>
+__transitivity:__ if $(x,y) \in R$ and $(y,z) \in R$, then $(x,z) \in R$.<br>
 
 Nonetheless, you have probably already perceived how the originaly stated axioms felt way easier to grasb, which is also why we will further use those. (The restatement of the axioms in terms of the _relation_ notation, served two purposes: it showed us that we can restate them only in terms of sets and that the equivalence relation is indeed just a special case of a _relation_.)
 
@@ -84,8 +84,8 @@ given an equivalence relation on an arbitrary set $S$, we need to show that such
 Hence, we proved the assertion "equivalence relation and partitions are equivalent" and can bury this fact for eternity by putting a gravestone on it. $\square$
 
 Finally, from what we just saw, given a set $S$ with an equivalence relation $\sim$,<br>
-we can collect all the classes and so construct a new set (_linguistically_, this is obvious from this sentence as it goes exactly as the definition of a set, "a collection of objects", where we just replaced the word objects with classes), and we denote such a set by the symbol $S/\sim$.<br>
-I.e., $S/\sim$ is a set containing all the equivalence classes; thus the elements of $S/\sim$ are $[a]$, where $[a]$ denotes an equivalence class represented by $a \in S$, and if you prefer the symbolic description, we can write $S/_{\sim}=\lbrace [a]\sim \space \mid \space a\in S \space \text{and}\space [a]\sim=\lbrace x\in S\space \mid \space x\sim a\rbrace \rbrace$.<br>
+we can collect all the classes and so construct a new set (_linguistically_, this is obvious from this sentence as it goes exactly as the definition of a set, "a collection of objects", where we just replaced the word objects with classes), and we denote such a set by the symbol $S/_{\sim}$.<br>
+I.e., $S/_{\sim}$ is a set containing all the equivalence classes; thus the elements of $S/_{\sim}$ are $[a]$, where $[a]$ denotes an equivalence class represented by $a \in S$, and if you prefer the symbolic description, we can write $S/_{\sim}=\lbrace [a]_{\sim} \space \mid \space a\in S \space \text{and}\space [a]_{\sim}=\lbrace x\in S\space \mid \space x\sim a\rbrace \rbrace$.<br>
 
 Now, this was probably a lot to digest, but if you are still aeger for more, there is one important way we may define an equivalence relation, which we will now illustrate.<br>
 
