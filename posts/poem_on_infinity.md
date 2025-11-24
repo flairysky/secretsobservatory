@@ -4,10 +4,10 @@ date: "2025-11-24"
 categories: ["Learning", "Teaching", "Mathematics"]
 excerpt: "A poem exploring the concept of infinity in mathematics."
 ---
-> The Childlike Empress: Bastian. Why don’t you do what you dream, Bastian?
-> Bastian: But I can't, I have to keep my feet on the ground!
-> The Childlike Empress: ... Bastian, please! Save us!
-> Bastian: All right! I'll do it! I'll save you! I will do what I dream!
+> The Childlike Empress: Bastian. Why don’t you do what you dream, Bastian?<br>
+> Bastian: But I can't, I have to keep my feet on the ground!<br>
+> The Childlike Empress: ... Bastian, please! Save us!<br>
+> Bastian: All right! I'll do it! I'll save you! I will do what I dream!<br>
 >
 >The Neverending Story
 
