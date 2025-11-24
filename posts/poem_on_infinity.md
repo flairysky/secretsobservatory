@@ -4,6 +4,13 @@ date: "2025-11-24"
 categories: ["Learning", "Teaching", "Mathematics"]
 excerpt: "A poem exploring the concept of infinity in mathematics."
 ---
+> The Childlike Empress: Bastian. Why don’t you do what you dream, Bastian?
+> Bastian: But I can't, I have to keep my feet on the ground!
+> The Childlike Empress: ... Bastian, please! Save us!
+> Bastian: All right! I'll do it! I'll save you! I will do what I dream!
+>
+>The Neverending Story
+
 
 Infinity seems to be taught as a mysterious concept one encounters already in primary school and haunts one for a long time... Here I would like to, to a certain degree, demystify infinity so that its users can feel more at ease applying this concept and somehow get a handle on it. 
 
