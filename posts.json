@@ -7,6 +7,13 @@
   },
   "posts": [
     {
+      "slug": "poem_on_infinity",
+      "title": "Daniel's Poem: On Infinity",
+      "date": "2025-11-24",
+      "categories": ["Learning", "Teaching", "Mathematics"],
+      "excerpt": "A poem exploring the concept of infinity in mathematics."
+    },
+    {
       "slug": "poem_fourth_act",
       "title": "Daniel's Poem: Fourth Act - On Equivalence",
       "date": "2025-11-22",
