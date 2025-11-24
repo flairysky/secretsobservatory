@@ -158,7 +158,7 @@ I always pay it extra.
 In the first description of the axioms,<br>
 to be _logicaly_ precise, one should write first "for every x,y,z" and then state the property (not vice versa), but as long as we understand each other I wanted to show you that it is often written (even though _logicaly_ falsely) also in such a way as above. (if this remark does not make sense now to you, just skip it, since it is not important)<br>
 [4]: Reflexivity.
-[5]: For more details on the "proper" way of teaching algebra look up Artin's collected papers [ref:ArtinCollected2013]
+[5]: For more details on the "proper" way of teaching algebra look up Artin's collected papers[ref:ArtinCollected2013].
 -->
 
 ---
