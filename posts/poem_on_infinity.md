@@ -49,6 +49,9 @@ Again, I want to emphasize that this algebraic (or if you wish "manipulative" wa
 
 Last but not least, I want to make the reader aware of the fact that the symbolic description of infinity, we saw above leads to further and deeper understandings of infinity. To set you on the track, if you take all numbers, (for those who had some mathematics, say real numbers), then we just attach this infinity symbol to the real numbers, and study what happens. However, this understanding is out of the scope of this introductory remarks about infinity, but a reader interested in this direction can consult Lang's book, _The Beauty of Doing Mathematics: Three Public Dialogues_[ref:LangBeautyOfDoingMathematics1985], where within one of the dialogues Serge brings intuitively this understanding of infinity closer to you, even with an illustrative pictorial description.
 
+> “To infinity… and beyond!
+>
+> Buzz Lightyear in Pixar’s Toy Story (1995).
 ---
 
 <!-- FOOTNOTES
