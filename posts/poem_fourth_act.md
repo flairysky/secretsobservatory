@@ -139,11 +139,11 @@ I learned this pedagogical approach from Emil Artin, who included this decomposi
 
 > Humpty Dumpty: The question is which is to be master. That's all. Words, they have a temper. Some words particularly, verbs, they're the proudest. Adjectives, you can do anything with them. But not verbs. However, I can manage a whole lot of them. Impenetrability. That's what I say.
 >
-> Alice: Would you please tell me what that words means?
+> Alice: Would you please tell me what that word means?
 >
 > Humpty Dumpty: Now, you talk like a reasonable child. I meant by impenetrability that we had enough of that subject. And it would be just as well if you'd mention what you mean to do next. As I suppose you don't mean to stop here all the rest of your life.
 >
-> Alice: That's great deal to make one word
+> Alice: That's great deal to make one word.
 >
 > Humpty Dumpty:<br> 
 > When I make a word do a lot of work like that,<br>
