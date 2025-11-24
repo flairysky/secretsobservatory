@@ -42,7 +42,7 @@ to be _logicaly_ precise, one should write first "for every XYZ" and then state 
 Now, assume that we have equipped our set $S$ with an equivalence relation, then we can collect the elements which are equivalent to each other and form the so-called **equivalence classes**, and each element of such a class is called a **representative** of such a class (becase it _represents_ the class...).<br>
 Symbolically, we can denote such an equivalence class in the following way: $[a] = \lbrace x \in S \mid x \sim a \rbrace$.<br>
 Now, we translate this into our ordinary language:<br>
-$[a]$ is a set (i.e. $\{\ \}$) that contains all $x$ in $S$ (i.e. $x \in S$) such that ($\mid$) these $x$ are equivalent to $a$ ($x \sim a$). Thus, $a$ is our representative of this equivalence class, denoted by $[a]$, and we can write, e.g., $a \in [a]$, since $a$ is clearly contained in this equivalence class; but if we would have, for instance, also $b$ in this equivalence class, we could write symbolically also $b \in [a]$ and also $[a]=[b]$, since then also $b$ is a representative of this class. (Observe that I often wrote just "class" instead of "equivalence class," since it is clear about what I am talking about.)<br>
+$[a]$ is a set (i.e. $\lbrace \space \rbrace$) that contains all $x$ in $S$ (i.e. $x \in S$) such that ($\mid$) these $x$ are equivalent to $a$ ($x \sim a$). Thus, $a$ is our representative of this equivalence class, denoted by $[a]$, and we can write, e.g., $a \in [a]$, since $a$ is clearly contained in this equivalence class; but if we would have, for instance, also $b$ in this equivalence class, we could write symbolically also $b \in [a]$ and also $[a]=[b]$, since then also $b$ is a representative of this class. (Observe that I often wrote just "class" instead of "equivalence class," since it is clear about what I am talking about.)<br>
 
 **Question**: Is the equal sign $=$ an example of an equivalence relation?<br>
 **Question**: Is "being in love with a person" an equivalence relation?<br>
@@ -58,7 +58,7 @@ Now, we will prove a basic fact about equivalence relations, namely that they ar
 
 As the name suggests, given a set, a **partition** of such a set decomposes the set into _parts_, and does it in such a way that each element of the original set is contained in some part of the decomposition, none of the parts are empty, and no element of the original set is contained in more than one part.<br>
 
-**EXAMPLE**: Say we have a set containing three elements, say $S=\{a,b,c\}$. Then, e.g., the collection of the sets $\{a\}$, $\{b\}$, $\{c\}$ is an example of a partition of $S$, but so is also $\{a,b\}$, $\{c\}$; the only difference between the two partitions is that the first one decomposes $S$ into three parts and the second into two.<br>
+**EXAMPLE**: Say we have a set containing three elements, say $S=\lbrace a,b,c \rbrace$. Then, e.g., the collection of the sets $\lbrace a \rbrace$, $\lbrace b\rbrace$, $\lbrace c \rbrace$ is an example of a partition of $S$, but so is also $\lbrace a,b \rbrace$, $\lbrace c \rbrace$; the only difference between the two partitions is that the first one decomposes $S$ into three parts and the second into two.<br>
 
 Now, we show that partitions are logically equivalent to equivalence relations.<br>
 Given a partition on some arbitrary set $S$, meaning we have a decomposition of $S$ into some non-empty and non-overlapping sets, we need to show that it gives rise to an equivalence relation on $S$.<br>
@@ -75,7 +75,7 @@ i.e., $S/\sim$ is a set containing all the equivalence classes; thus the element
 There is one important way one may define an equivalence relation, which we will now illustrate.<br>
 Given an association between two sets, say $f:S \to S'$ such that $x \mapsto f(x)$, and we denote by $\operatorname{Im}(f)$ the image of $f$, i.e., given $y \in \operatorname{Im}(f)$, we know there is at least one $x \in S$ such that $f(x)=y$. If $f$ is injective, then there is only one such $x$, but if $f$ is not injective, then there might be several such elements $x$ which $f$ maps to the same $y$.<br>
 Thus, we define the **inverse image** of an element $y \in \operatorname{Im}(f)$, which is the collection of all elements in the domain that $f$ maps to $y \in \operatorname{Im}(f)$.<br>
-Symbolically, we denote it by $f^{-1}(y)=\{x \in S \mid f(x)=y\}$.<br>
+Symbolically, we denote it by $f^{-1}(y)=\lbrace x \in S \mid f(x)=y \rbrace$.<br>
 
 **Remark**: Notice that the symbol $f^{-1}(y)$ does not mean that $f$ has an inverse!<br>
 $f$ has an inverse only if each such inverse image would consist of a single element for each element! Then we would have $f^{-1}: \operatorname{Im}(f) \to S$.<br>
