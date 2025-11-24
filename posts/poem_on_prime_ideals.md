@@ -44,9 +44,9 @@ since $p|ab$, we have $ab=kp$ for some $k\in R$ and from def. of prime $\text{GC
 
 But if $(p,a)=p$, $p|a$ and we are done, so assume $(p,a)=1$.
 
-By Fundamental theorem of arithmetic (i.e. prime factorization) $a = \prod q_i^{a_i}, b = \prod q_j^{b_j}$, where $q_i$'s are primes.
+By Fundamental theorem of arithmetic (i.e. prime factorization) $a = \prod q_i^\{a_i\}, b = \prod q_j^\{b_j\}$, where $q_i$'s are primes.
 
-But since, $\prod q_i^{a_i+b_j}=ab=kp$ and $p$ is a prime, we have $p=q_p^{a_p+b_p}$ with $a_p+b_p\ge 1$ and in particular $a_p=0$ since $(p,a)=1$. Thus, $p=q_p^{b_p}$ with $b_p\ge 1$, hence $p$ devides $q$.
+But since, $\prod q_i^\{a_i+b_j\}=ab=kp$ and $p$ is a prime, we have $p=q_p^\{a_p+b_p\}$ with $a_p+b_p\ge 1$ and in particular $a_p=0$ since $(p,a)=1$. Thus, $p=q_p^\{b_p\}$ with $b_p\ge 1$, hence $p$ devides $q$.
 
 Now, since Bezout's identity is **the** very important identity we reprove it using it.
 
@@ -80,7 +80,7 @@ So $ab = kp$ for some $k \in R$.
 
 And take $x\in(a)(b)$ and by def. of a product 
 
-$x = \Sigma^k_{i=1} r_i a s_i  b= \Sigma^k_{i=1} r_i s_i a b= \Sigma^k_{i=1} r_i a s_ikp= p(\Sigma^k_{i=1} r_i a s_ik)\in (p)$. $\square$
+$x = \Sigma^k_\{i=1\} r_i a s_i  b= \Sigma^k_\{i=1\} r_i s_i a b= \Sigma^k_\{i=1\} r_i a s_ikp= p(\Sigma^k_\{i=1\} r_i a s_ik)\in (p)$. $\square$
 
 We end with a sneaky question: 
 

@@ -57,7 +57,7 @@ So symbolically this means, that if we have a set $S$ and we equip it with an or
 
 For the total order we simplz add the following axiom:
 
-For all $x, y \in S$, we have 4x < y, y < x, \text{or} x = y$.
+For all $x, y \in S$, we have $x < y, y < x, \text{or} x = y$.
 
 Side-Remark:
 You may be familiar with the following axioms of order, which may seem slihtly different from those above.
