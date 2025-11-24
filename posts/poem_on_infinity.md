@@ -51,7 +51,7 @@ Last but not least, I want to make the reader aware of the fact that the symboli
 
 > “To infinity… and beyond!
 >
-> Buzz Lightyear in Pixar’s Toy Story (1995).
+> Buzz Lightyear in Pixar’s Toy Story (1995)
 ---
 
 <!-- FOOTNOTES
