@@ -122,7 +122,8 @@ Once structures on sets are involved, one then needs to only look if the structu
 
 I learned this pedagogical method from Emil Artin, who included this decomposition already in this set-theoretical manner at the first lecture of his algebra lectures[#3].
 
-> When I make a word do a lot of work like that, I always pay it extra.
+> When I make a word do a lot of work like that,<br>
+> I always pay it extra.
 >
 > Humpty Dumpty from Alice in Wonderland
 
