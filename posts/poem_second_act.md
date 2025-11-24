@@ -57,9 +57,9 @@ So symbolically this means, that if we have a set $S$ and we equip it with an or
 
 For the total order we simplz add the following axiom:
 
-For all $x, y \in S$, we have $x < y, y < x, \text{or} x = y$.
+For all $x, y \in S$, we have $x < y, y < x,\space \text{or}\space  x = y$.
 
-Side-Remark:
+Side-Remark:<br>
 You may be familiar with the following axioms of order, which may seem slihtly different from those above.
 
 1) trichotomy: for all $x, y \in S$, we have $x < y, x = y,$ or $y < x$.
