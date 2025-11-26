@@ -92,13 +92,13 @@ and that you will see that you can use your **ordinary language** to express the
 
 ## On the structure and types of the poems
 
-Loosly speaking I differentiate among 3 poem types below, where each poem will take ideally a fomr of one of them, however crossovers are not excluded:
+Loosly speaking I differentiate among 3 poem types below, where each poem will take ideally a form of one of them. However, crossovers are not excluded.
 
-1. Abstract perspective session (providing a big picture understanding)
-2. Detailed perspective (providing an understanding of some special topic)
-3. Durchblick perspective (going through the different abstraction layers)
+1. Abstract perspective poem (providing a big picture understanding)
+2. Detailed perspective poem (providing an understanding of some special topic)
+3. Durchblick perspective poem (going through the different abstraction layers)
 
-As you can see I have included a word Durchblick (from german meaning something like through-view, but there is not exact translation or word in english that would capture this notion in the same way.), which will happen over and over and not only with German language but with any language deemed necessarilly, in order to express ideas as accuratelly as possible. Oftentimes, once one uinderstand where the name comes from, one understands the idea behind the concept and oftentimes the name come from languages other than English.
+As you can see I have included a word Durchblick (from German, meaning something like "through-view", but there is no exact translation or word in english that would capture this notion in the same way.). This inclusion of words coming from different languages inevitably must happen over and over, as a result of historical developments of mathematics, in order to express and understand the ideas as accuratelly as possible. Oftentimes, once one understands where the name came from, one understands the idea behind the name and oftentimes the name came from languages other than English.
 
 ---
 
