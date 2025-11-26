@@ -4,9 +4,6 @@ let currentPage = '';
 let filteredPosts = [];
 let activeCategories = new Set();
 
-// Track time spent on post page
-let postPageStartTime = null;
-
 // Initialize on page load
 document.addEventListener('DOMContentLoaded', function() {
   initTheme();
@@ -14,29 +11,6 @@ document.addEventListener('DOMContentLoaded', function() {
   setFooterYear();
   detectPage();
   loadPosts();
-  
-  // Start tracking time for post pages
-  if (window.location.pathname.includes('post.html')) {
-    postPageStartTime = Date.now();
-    
-    // Track time when user leaves
-    window.addEventListener('beforeunload', function() {
-      if (postPageStartTime && window.umami) {
-        const timeSpent = Math.round((Date.now() - postPageStartTime) / 1000); // in seconds
-        const urlParams = new URLSearchParams(window.location.search);
-        const slug = urlParams.get('slug');
-        
-        if (slug && timeSpent > 0) {
-          // Send custom event with time spent
-          window.umami.track('post-time-spent', {
-            slug: slug,
-            seconds: timeSpent,
-            minutes: Math.round(timeSpent / 60)
-          });
-        }
-      }
-    });
-  }
 });
 
 // Theme management
@@ -445,20 +419,6 @@ async function initPostPage() {
     // Update page title and meta
     document.title = `${frontMatter.title} • Secrets Observatory`;
     updatePostMeta(frontMatter);
-    
-    // Track individual post view in Umami with custom path
-    if (typeof umami !== 'undefined') {
-      try {
-        // Track as a pageview with virtual path including post slug
-        umami.track(props => ({ 
-          ...props,
-          url: `/post/${slug}`,
-          title: frontMatter.title 
-        }));
-      } catch (e) {
-        console.log('Umami tracking error:', e);
-      }
-    }
     
     // Set post title and meta
     const titleElement = document.getElementById('postTitle');
