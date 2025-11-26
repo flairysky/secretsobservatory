@@ -109,5 +109,5 @@ Continue reading: [First Act](post.html?slug=poem_first_act)
 [2]: Serge Lang’s PhD supervisor.
 [3]: Yes, they are related. Michal is Emil’s son.
 [4]: Yes, I am quoting Hannah Montana.
-[5]: cf. e.g. Jean-Pierre Serre's interviews on youtube (they are not that many), where he explicitly states this fact, or just open any book by Bourbaki to convince yourself.
+[5]: Cf. e.g. Jean-Pierre Serre's interviews on youtube (they are not that many), where he explicitly states this fact, or just open any book by Bourbaki to convince yourself.
 -->
