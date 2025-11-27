@@ -4,7 +4,7 @@ date: "2025-10-31"
 categories: ["Learning", "Teaching", "Mathematics"]
 excerpt: "A poem"
 ---
->>> A life is a tragedy on close up and a comedy in longshot | Charlie Chaplin (quote made famous by Sir Rowan Atkinson)
+>>> A life is a tragedy on close up and a comedy in longshot. | Charlie Chaplin (quote made famous by Sir Rowan Atkinson)
 
 As the quote by two of my favorite geniuses shows, life is, for the most part, about our perspective on things — and it’s no different in mathematics.
 
@@ -88,7 +88,7 @@ And so one of my hopes for these poems is to a certain degree analogous to what 
 
 and that you will see that you can use your **ordinary language** to express the mathematical ideas.
 
->>> the question of the usefulness of poetry arises only in periods of its decline, while in periods of its flowering, no one doubts its total uselessness. | Boris Pastrnak
+>>> The question of the usefulness of poetry arises only in periods of its decline, while in periods of its flowering, no one doubts its total uselessness. | Boris Pastrnak
 
 ## On the structure and types of the poems
 
