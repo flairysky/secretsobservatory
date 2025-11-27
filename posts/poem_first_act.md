@@ -131,7 +131,7 @@ According to Bourbaki we can distinguish between three kinds of structures on ou
 
 But for more details, continue reading the second Act, and actually if you do not want to deal right now with the different kinds of structures an want to investigate how one can relate two sets together go straight to the Third Act after the concluding remark below.
 
-To conclude,
+To conclude,<br?>
 I hope you could start to see how the difficulty with mathematics arises purely artifically and has more to do with psychological perspective rather than with the content matter, cf. Mario below.
 
 <figure>
