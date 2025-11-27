@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Test Scroll Progress</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    
+    header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      width: 100%;
+      z-index: 1000;
+      background-color: rgba(255, 255, 255, 0.98);
+      border-bottom: 1px solid #e5e7eb;
+    }
+    
+    nav {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 1rem;
+    }
+    
+    .scroll-progress-bar {
+      position: fixed;
+      bottom: auto;
+      top: 88px; /* Mobile positioning - right below header */
+      left: 0;
+      right: 0;
+      height: 3px;
+      background: linear-gradient(90deg, #3b82f6 0%, #2563eb 100%);
+      width: 0%;
+      transition: width 0.15s ease-out;
+      z-index: 1001;
+    }
+    
+    /* Desktop positioning */
+    @media (min-width: 768px) {
+      .scroll-progress-bar {
+        top: 73px; /* Desktop positioning */
+      }
+    }
+    
+    main {
+      padding-top: 80px;
+      max-width: 800px;
+      margin: 0 auto;
+      padding-left: 1rem;
+      padding-right: 1rem;
+    }
+    
+    .content {
+      height: 3000px;
+      background: linear-gradient(to bottom, white, #f3f4f6);
+    }
+    
+    p {
+      margin-bottom: 2rem;
+      line-height: 1.6;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div id="scrollProgress" class="scroll-progress-bar"></div>
+    <nav>
+      <h1>Test Scroll Progress Bar</h1>
+    </nav>
+  </header>
+  
+  <main>
+    <div class="content">
+      <h2>Scroll down to see the progress bar fill</h2>
+      <p>The blue bar at the top should extend from left to right as you scroll.</p>
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+      <p>Scroll down...</p>
+      <p>Keep scrolling...</p>
+      <p>More content...</p>
+      <p>The progress bar should be filling up...</p>
+      <p>Almost there...</p>
+      <p>At the bottom, it should be at 100%</p>
+    </div>
+  </main>
+  
+  <script>
+    function initScrollProgress() {
+      const progressBar = document.getElementById('scrollProgress');
+      if (!progressBar) {
+        console.error('Progress bar element not found!');
+        return;
+      }
+      
+      console.log('Progress bar initialized:', progressBar);
+      
+      function updateScrollProgress() {
+        const winScroll = window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop || 0;
+        const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+        const scrolled = height > 0 ? (winScroll / height) * 100 : 0;
+        progressBar.style.width = Math.min(100, Math.max(0, scrolled)) + '%';
+        
+        console.log('Scroll update:', {
+          winScroll,
+          height,
+          scrolled: scrolled.toFixed(2) + '%',
+          barWidth: progressBar.style.width
+        });
+      }
+      
+      window.addEventListener('scroll', updateScrollProgress, { passive: true });
+      window.addEventListener('resize', updateScrollProgress, { passive: true });
+      
+      setTimeout(updateScrollProgress, 100);
+      updateScrollProgress();
+    }
+    
+    document.addEventListener('DOMContentLoaded', initScrollProgress);
+  </script>
+</body>
+</html>

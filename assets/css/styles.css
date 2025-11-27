@@ -295,21 +295,53 @@ body {
   @apply hover:text-slate-900 dark:hover:text-slate-100 hover:underline font-medium;
 }
 
-/* Navigation improvements */
-nav {
-  backdrop-filter: blur(10px);
-  background-color: rgba(255, 255, 255, 0.9);
-}
-
-.dark nav {
-  background-color: rgba(15, 23, 42, 0.9);
-}
-
-/* Make header sticky */
-header {
-  position: sticky;
+/* Make header fixed at top - always visible on post pages */
+header.post-header {
+  position: fixed;
   top: 0;
-  z-index: 50;
+  left: 0;
+  right: 0;
+  width: 100%;
+  z-index: 1000;
+  background-color: rgba(255, 255, 255, 0.98);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+}
+
+.dark header.post-header {
+  background-color: rgba(15, 23, 42, 0.98);
+}
+
+/* Add padding to body to prevent content from going under fixed header */
+body.has-fixed-header {
+  padding-top: 73px; /* Approximate header height */
+}
+
+/* Scroll progress bar (Quanta Magazine style) */
+.scroll-progress-bar {
+  position: fixed;
+  top: 88px; /* Mobile positioning - right below header */
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, #3b82f6 0%, #2563eb 100%);
+  width: 0%;
+  transition: width 0.15s ease-out;
+  z-index: 1001;
+  will-change: width;
+  box-shadow: 0 0 8px rgba(59, 130, 246, 0.4);
+}
+
+/* Desktop positioning */
+@media (min-width: 768px) {
+  .scroll-progress-bar {
+    top: 65px; /* Desktop positioning - adjust as needed */
+  }
+}
+
+.dark .scroll-progress-bar {
+  background: linear-gradient(90deg, #60a5fa 0%, #3b82f6 100%);
+  box-shadow: 0 0 8px rgba(96, 165, 250, 0.4);
 }
 
 /* Navigation dropdown */

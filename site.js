@@ -11,7 +11,45 @@ document.addEventListener('DOMContentLoaded', function() {
   setFooterYear();
   detectPage();
   loadPosts();
+  initScrollProgress();
 });
+
+// Scroll progress bar (for post pages)
+function initScrollProgress() {
+  const progressBar = document.getElementById('scrollProgress');
+  console.log('initScrollProgress called. Progress bar element:', progressBar);
+  
+  if (!progressBar) {
+    console.log('No progress bar element found - skipping scroll progress init');
+    return; // Only on pages with progress bar
+  }
+  
+  // Add padding to body to account for fixed header
+  document.body.classList.add('has-fixed-header');
+  console.log('Added has-fixed-header class to body');
+  
+  function updateScrollProgress() {
+    const winScroll = window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop || 0;
+    const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+    const scrolled = height > 0 ? (winScroll / height) * 100 : 0;
+    const finalWidth = Math.min(100, Math.max(0, scrolled));
+    progressBar.style.width = finalWidth + '%';
+    
+    // Log occasionally (every 10%)
+    if (Math.floor(finalWidth / 10) !== Math.floor((finalWidth - 1) / 10)) {
+      console.log('Scroll progress:', finalWidth.toFixed(1) + '%');
+    }
+  }
+  
+  // Use passive listeners for better scroll performance
+  window.addEventListener('scroll', updateScrollProgress, { passive: true });
+  window.addEventListener('resize', updateScrollProgress, { passive: true });
+  
+  // Initial update with slight delay to ensure page is fully loaded
+  setTimeout(updateScrollProgress, 100);
+  updateScrollProgress();
+  console.log('Scroll progress tracking initialized');
+}
 
 // Theme management
 function initTheme() {
