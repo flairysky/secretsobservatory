@@ -43,11 +43,11 @@ $c \cdot \infty = \infty$ for all numbers $c > 0$.
 We do not define the expressions
 $0 \cdot \infty$, $\infty / \infty$, $\infty / 0$, $0 / 0$, or $c / 0$ if $c$ is a number. [ref:LangUndergraduateAnalysis2ndEd1997]
 
-As already said and as you can see, these rules are nothing special and they are taken verbatim from Serge Lang's _Undergraduate Analysis_ [ref:LangUndergraduateAnalysis2ndEd1997] and his _Introduction to Algebraic Geometry_[ref:LangIntroductionAlgebraicGeometry2019]. They are stated in the exact same manner as I did here in both books. Thus, an interested reader may continue reading further according to personal taste.
+As already said and as you can see, these rules are nothing special and they are taken _verbatim_ from Serge Lang's _Undergraduate Analysis_ [ref:LangUndergraduateAnalysis2ndEd1997] and his _Introduction to Algebraic Geometry_[ref:LangIntroductionAlgebraicGeometry2019]. They are stated in the exact same manner as I did here in both books. Thus, an interested reader may continue reading further according to personal taste.
 
 Again, I want to emphasize that this algebraic (or if you wish "manipulative" way of stating things) is very common as, for instance, we can also define a symbol $\sqrt 2$, which is called the square root of $2$ and is often defined as some positive number which if squared is equal to $2$. Hence, the way we defined infinity is nothing unusual.
 
-Last but not least, I want to make the reader aware of the fact that the symbolic description of infinity, we saw above leads to further and deeper understandings of infinity. To set you on the track, if you take all numbers, (for those who had some mathematics, say real numbers), then we just attach this infinity symbol to the real numbers, and study what happens. However, this understanding is out of the scope of this introductory remarks about infinity, but a reader interested in this direction can consult Lang's book, _The Beauty of Doing Mathematics: Three Public Dialogues_[ref:LangBeautyOfDoingMathematics1985], where within one of the dialogues Serge brings intuitively this understanding of infinity closer to you, even with an illustrative pictorial description.
+Last but not least, I want to make the reader aware of the fact that the symbolic description of infinity, we saw above, leads to further and deeper understandings of infinity. To set you on the track, if you take all numbers, (for those who had some mathematics, say real numbers), then we just attach this infinity symbol to the real numbers, and study what happens. However, this understanding is out of the scope of this introductory remarks about infinity, but a reader interested in this direction can consult Lang's book, _The Beauty of Doing Mathematics: Three Public Dialogues_[ref:LangBeautyOfDoingMathematics1985], where within one of the dialogues Serge brings intuitively this understanding of infinity closer to you, even with an illustrative pictorial description.
 
 > “To infinity… and beyond!
 >
@@ -55,6 +55,6 @@ Last but not least, I want to make the reader aware of the fact that the symboli
 ---
 
 <!-- FOOTNOTES
-[1]: Why it is taught at most schools this way is a mystery to me, since the ways one can understand infinity we whowed here are not difficult to grasb by school childern.
+[1]: Why it is taught at most schools this way is a mystery to me, since the ways one can understand infinity we showed here are not difficult to grasb by school childern.
 [2]: Of course it has to match the number of strawberries in your basket ;)
 -->
