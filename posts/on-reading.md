@@ -4,7 +4,9 @@ date: "2025-10-23"
 categories: ["Learning", "Teaching", "Mathematics"]
 excerpt: "A reflection on how to read."
 ---
->>> Books are well written, or badly written.<br> That is all | Oscar Wilde[ref:Wilde1891] 
+> Books are well written, or badly written.<br> That is all.
+>
+> Oscar Wilde[ref:Wilde1891] 
 
 ## Reading Books in General
 
@@ -23,7 +25,7 @@ It was an interesting experience during a seminar at one of the universities I a
 
 ---
 
-## On Reading Mathematics Books
+## On Reading Mathematical Books
 
 Now, reading mathematics books is a little bit different.  
 Usually, if a book is _well written_, then we should be able to “see” a big picture at the end of the book displaying how all the stuff across the chapters is connected. Thus, when one is asked a question about the book, you are able to intuitively (but also rigorously) construct (from scratch) an argument to answer that question.  
