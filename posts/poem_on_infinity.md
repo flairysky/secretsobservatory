@@ -29,6 +29,11 @@ __Remark:__
 From what we have seen, one could think of infinite as being some kind of a process, which is another way you can understand infinity, although rather imaginative and if you do not like it, just forget it after reading this remark, but since some readers may be inclined this way, I decided to include it here.<br>
 Now, the way we would understand infinity is that we would associate infinity with something that we have a natural understanding of as going forever. Now the first thing that comes to mind is time. And so to make things maybe a little more imaginative, you can think of a train, which has wagons, and you stand next to the railway, and every second there appears a new wagon. And since we assume that time never ceases, there are infinitely many wagons, one new wagon each second, right? Thus, such kind of reasoning would bring infinity closer to being some kind of a process. 
 
+<div style="text-align: center; margin: 2em 0;">
+  <img src="../train_animation_reverse.gif" alt="Train animation showing wagons appearing over time" style="max-width: 100%; height: auto; border-radius: 8px; box-shadow: 0 4px 6px rgba(0,0,0,0.1);">
+  <p style="font-style: italic; color: #666; margin-top: 0.5em; font-size: 0.9em;">A visualization of the infinite train concept: wagons passing by over time.</p>
+</div>
+
 Since we have already some intuitive understanding of infinite, we will go a bit further and show how one can work with infinity in practice in a very convenient way. Moreover, such use is applied in later mathematics exactly in the way we will see below. We just denote infinity symbolically, or if you wish, algebraically, by stating that infinity is the following symbol $\infty$ and we impose certain rules for allowed manipulation of that symbol. Then you can think of it as just some kind of an element or a number for which you have precise rules, which clearly tell you what you can do with this symbol, and that's it.<br>
 
 It is very similar to the way you can manipulate numbers or you can manipulate with any other objects you already encountered in mathematics. There's nothing special about such a way of thinking, only the rules that you impose make it special.<br>
