@@ -54,7 +54,7 @@ For me, finding the right book means already half of the success.
 ---
 
 ## Rules of Thumb
-Some concluding suggestions.
+A list with some suggestions:
 
 1. **Do not be ashamed** to pick a book with a topic you “should” know.  
    (e.g. just because you attended high school does not necessarily that mean you know everything about basic calculus. To show you an instance from my own experiences, I remember one time having the *Basic Mathematics* book by Serge Lang in my hand while walking through one math department and being asked by other students what I was reading. I showed it to them. They laughed :) You can make up your mind about the whole situation. (For curious readers, I was looking up some details about group orbits and cycles this book presents in the most intuitive manner.)<br>
