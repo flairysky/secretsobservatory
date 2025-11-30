@@ -94,14 +94,47 @@ function initAnalytics() {
       const timeInMinutes = (totalTime / 60000).toFixed(2);
       
       if (typeof posthog !== 'undefined' && timeInSeconds > 5) {
+        // Get post slug and title if on post page
+        const urlParams = new URLSearchParams(window.location.search);
+        const slug = urlParams.get('slug');
+        
+        // Find post info from postsData if available
+        let postTitle = null;
+        if (slug && postsData && postsData.posts) {
+          const post = postsData.posts.find(p => p.slug === slug);
+          if (post) {
+            postTitle = post.title;
+          }
+        }
+        
+        // Build descriptive page name
+        let pageName = currentPage || 'unknown';
+        if (currentPage === 'post' && postTitle) {
+          pageName = `Post: ${postTitle}`;
+        } else if (currentPage === 'index') {
+          pageName = 'Home';
+        } else if (currentPage === 'archive') {
+          pageName = 'Archive';
+        } else if (currentPage === 'about') {
+          pageName = 'About';
+        } else if (currentPage === 'feedback') {
+          pageName = 'Feedback';
+        } else if (currentPage === 'privacy') {
+          pageName = 'Privacy';
+        }
+        
         posthog.capture('time_on_page', {
           page_type: currentPage,
+          page_name: pageName,
+          post_slug: slug || null,
+          post_title: postTitle,
           time_seconds: timeInSeconds,
           time_minutes: parseFloat(timeInMinutes),
           page_url: window.location.pathname + window.location.search,
+          $current_url: window.location.href,
           event_type: 'periodic'
         });
-        console.log(`Tracked time on page (periodic): ${timeInMinutes} minutes`);
+        console.log(`Tracked time on page (periodic): ${timeInMinutes} minutes on ${pageName}`);
       }
     }
   }, 30000); // Every 30 seconds
@@ -147,11 +180,44 @@ function trackPageLeave() {
   
   // Track time on page event
   if (typeof posthog !== 'undefined' && timeInSeconds > 0) {
+    // Get post slug and title if on post page
+    const urlParams = new URLSearchParams(window.location.search);
+    const slug = urlParams.get('slug');
+    
+    // Find post info from postsData if available
+    let postTitle = null;
+    if (slug && postsData && postsData.posts) {
+      const post = postsData.posts.find(p => p.slug === slug);
+      if (post) {
+        postTitle = post.title;
+      }
+    }
+    
+    // Build descriptive page name
+    let pageName = currentPage || 'unknown';
+    if (currentPage === 'post' && postTitle) {
+      pageName = `Post: ${postTitle}`;
+    } else if (currentPage === 'index') {
+      pageName = 'Home';
+    } else if (currentPage === 'archive') {
+      pageName = 'Archive';
+    } else if (currentPage === 'about') {
+      pageName = 'About';
+    } else if (currentPage === 'feedback') {
+      pageName = 'Feedback';
+    } else if (currentPage === 'privacy') {
+      pageName = 'Privacy';
+    }
+    
     posthog.capture('time_on_page', {
       page_type: currentPage,
+      page_name: pageName,
+      post_slug: slug || null,
+      post_title: postTitle,
       time_seconds: timeInSeconds,
       time_minutes: parseFloat(timeInMinutes),
-      page_url: window.location.pathname + window.location.search
+      page_url: window.location.pathname + window.location.search,
+      $current_url: window.location.href
     });
   }
 }
