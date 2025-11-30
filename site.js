@@ -106,12 +106,15 @@ function initAnalytics() {
     }
   }, 30000); // Every 30 seconds
   
-  // Track scroll depth for post pages
-  if (currentPage === 'post') {
-    window.addEventListener('scroll', trackScrollDepth, { passive: true });
-  }
-  
   console.log('PostHog analytics initialized');
+}
+
+// Setup scroll tracking (call this separately for post pages)
+function initScrollTracking() {
+  if (typeof posthog !== 'undefined') {
+    window.addEventListener('scroll', trackScrollDepth, { passive: true });
+    console.log('Scroll depth tracking initialized');
+  }
 }
 
 function handleVisibilityChange() {
@@ -722,6 +725,9 @@ async function initPostPage() {
       
       // Setup navigation
       setupPostNavigation(slug);
+      
+      // Initialize scroll depth tracking for post pages
+      initScrollTracking();
       
       console.log('Post loaded successfully!');
     } else {
