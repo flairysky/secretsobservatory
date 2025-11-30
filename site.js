@@ -82,6 +82,30 @@ function initAnalytics() {
   // Track time on page when user leaves
   window.addEventListener('beforeunload', trackPageLeave);
   
+  // Also send time on page periodically (every 30 seconds) as backup
+  setInterval(() => {
+    if (isPageVisible && pageStartTime) {
+      const now = Date.now();
+      let totalTime = timeOnPageAccumulator;
+      if (lastVisibilityChange) {
+        totalTime += (now - lastVisibilityChange);
+      }
+      const timeInSeconds = Math.round(totalTime / 1000);
+      const timeInMinutes = (totalTime / 60000).toFixed(2);
+      
+      if (typeof posthog !== 'undefined' && timeInSeconds > 5) {
+        posthog.capture('time_on_page', {
+          page_type: currentPage,
+          time_seconds: timeInSeconds,
+          time_minutes: parseFloat(timeInMinutes),
+          page_url: window.location.pathname + window.location.search,
+          event_type: 'periodic'
+        });
+        console.log(`Tracked time on page (periodic): ${timeInMinutes} minutes`);
+      }
+    }
+  }, 30000); // Every 30 seconds
+  
   // Track scroll depth for post pages
   if (currentPage === 'post') {
     window.addEventListener('scroll', trackScrollDepth, { passive: true });
