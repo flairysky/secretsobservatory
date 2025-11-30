@@ -60,6 +60,6 @@ Last but not least, I want to make the reader aware of the fact that the symboli
 ---
 
 <!-- FOOTNOTES
-[1]: Why it is taught at most schools this way is a mystery to me, since the ways one can understand infinity we showed here are not difficult to grasb by school childern.
+[1]: Why it is taught at most schools in this way is a mystery to me, especially since the ways of understanding infinity presnted here are definitely not difficult to grasb by school childern.
 [2]: Of course it has to match the number of strawberries in your basket ;)
 -->
