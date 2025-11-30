@@ -4,6 +4,18 @@ let currentPage = '';
 let filteredPosts = [];
 let activeCategories = new Set();
 
+// Analytics tracking variables
+let pageStartTime = null;
+let scrollDepthTracked = {
+  '25': false,
+  '50': false,
+  '75': false,
+  '100': false
+};
+let isPageVisible = true;
+let timeOnPageAccumulator = 0;
+let lastVisibilityChange = null;
+
 // Initialize on page load
 document.addEventListener('DOMContentLoaded', function() {
   initTheme();
@@ -12,6 +24,7 @@ document.addEventListener('DOMContentLoaded', function() {
   detectPage();
   loadPosts();
   initScrollProgress();
+  initAnalytics();
 });
 
 // Scroll progress bar (for post pages)
@@ -49,6 +62,127 @@ function initScrollProgress() {
   setTimeout(updateScrollProgress, 100);
   updateScrollProgress();
   console.log('Scroll progress tracking initialized');
+}
+
+// PostHog Analytics Functions
+function initAnalytics() {
+  // Wait for PostHog to be available
+  if (typeof posthog === 'undefined') {
+    console.warn('PostHog is not loaded');
+    return;
+  }
+  
+  // Initialize time tracking
+  pageStartTime = Date.now();
+  lastVisibilityChange = Date.now();
+  
+  // Track page visibility for accurate time on page
+  document.addEventListener('visibilitychange', handleVisibilityChange);
+  
+  // Track time on page when user leaves
+  window.addEventListener('beforeunload', trackPageLeave);
+  
+  // Track scroll depth for post pages
+  if (currentPage === 'post') {
+    window.addEventListener('scroll', trackScrollDepth, { passive: true });
+  }
+  
+  console.log('PostHog analytics initialized');
+}
+
+function handleVisibilityChange() {
+  const now = Date.now();
+  
+  if (document.hidden) {
+    // Page became hidden - accumulate time
+    if (isPageVisible && lastVisibilityChange) {
+      timeOnPageAccumulator += (now - lastVisibilityChange);
+    }
+    isPageVisible = false;
+  } else {
+    // Page became visible again
+    isPageVisible = true;
+    lastVisibilityChange = now;
+  }
+}
+
+function trackPageLeave() {
+  // Calculate total time on page
+  const now = Date.now();
+  let totalTime = timeOnPageAccumulator;
+  
+  if (isPageVisible && lastVisibilityChange) {
+    totalTime += (now - lastVisibilityChange);
+  }
+  
+  const timeInSeconds = Math.round(totalTime / 1000);
+  const timeInMinutes = (totalTime / 60000).toFixed(2);
+  
+  // Track time on page event
+  if (typeof posthog !== 'undefined' && timeInSeconds > 0) {
+    posthog.capture('time_on_page', {
+      page_type: currentPage,
+      time_seconds: timeInSeconds,
+      time_minutes: parseFloat(timeInMinutes),
+      page_url: window.location.pathname + window.location.search
+    });
+  }
+}
+
+function trackScrollDepth() {
+  const winScroll = window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop || 0;
+  const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+  const scrolled = height > 0 ? (winScroll / height) * 100 : 0;
+  
+  // Track milestones
+  const milestones = ['25', '50', '75', '100'];
+  milestones.forEach(milestone => {
+    const milestoneValue = parseInt(milestone);
+    if (scrolled >= milestoneValue && !scrollDepthTracked[milestone]) {
+      scrollDepthTracked[milestone] = true;
+      
+      if (typeof posthog !== 'undefined') {
+        // Get post slug if on post page
+        const urlParams = new URLSearchParams(window.location.search);
+        const slug = urlParams.get('slug');
+        
+        posthog.capture('scroll_depth', {
+          depth_percent: milestoneValue,
+          page_type: currentPage,
+          post_slug: slug || null,
+          page_url: window.location.pathname + window.location.search
+        });
+        
+        console.log(`Tracked scroll depth: ${milestoneValue}%`);
+      }
+    }
+  });
+}
+
+function trackPostView(postInfo, slug) {
+  if (typeof posthog === 'undefined') {
+    console.warn('PostHog not available for post tracking');
+    return;
+  }
+  
+  // Track individual post view with detailed properties
+  posthog.capture('post_view', {
+    post_slug: slug,
+    post_title: postInfo.title,
+    post_categories: postInfo.categories,
+    post_date: postInfo.date,
+    post_url: window.location.pathname + window.location.search,
+    page_type: 'post'
+  });
+  
+  console.log('Tracked post view:', slug);
+  
+  // Also track as a pageview with custom properties
+  posthog.capture('$pageview', {
+    post_slug: slug,
+    post_title: postInfo.title,
+    post_categories: postInfo.categories
+  });
 }
 
 // Theme management
@@ -475,6 +609,9 @@ async function initPostPage() {
         ${categories ? ` • ${categories}` : ''}
       `;
     }
+    
+    // Track post view with PostHog
+    trackPostView(postInfo, slug);
     
     // Initialize share and cite functionality after metadata is loaded
     console.log('About to call initShareAndCite...');

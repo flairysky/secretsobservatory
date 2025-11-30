@@ -82,7 +82,7 @@
     <article class="prose dark:prose-invert max-w-none">
       <h1>Privacy Policy</h1>
       
-      <p><em>Last updated: November 13, 2025</em></p>
+      <p><em>Last updated: November 30, 2025</em></p>
       
       <h2>Overview</h2>
       
@@ -94,26 +94,49 @@
       
       <p>If you choose to subscribe to our email newsletter, we collect:</p>
       <ul>
-        <li><strong>Email address:</strong> Used solely to send you notifications about news and updates and to count subscribers</li>
+        <li><strong>Email address:</strong> Used solely to send you information about news and updates and to count subscribers</li>
         <li><strong>Subscription date:</strong> To track when you joined our mailing list</li>
       </ul>
       
       <p>We do <strong>not</strong> collect:</p>
       <ul>
         <li>Your name (unless you voluntarily provide it)</li>
-        <li>Your location or IP address for email purposes</li>
-        <li>Any other personal information beyond what's necessary for the subscription</li>
+        <li>Any other personal information beyond what's necessary for the subscription (unless you voluntarily provide us with an information relevant for improvment of your experience)</li>
       </ul>
       
       <h3>Analytics</h3>
       
-      <p>We use <a href="https://umami.is/" target="_blank" rel="noopener noreferrer" class="text-blue-600 dark:text-blue-400 hover:underline">Umami Analytics</a>, a privacy-focused, open-source analytics tool that:</p>
+      <p>We use <a href="https://posthog.com/" target="_blank" rel="noopener noreferrer" class="text-blue-600 dark:text-blue-400 hover:underline">PostHog</a>, a privacy-focused analytics platform configured for cookieless tracking to comply with GDPR and other privacy regulations. Our configuration ensures:</p>
       <ul>
-        <li>Does not use cookies</li>
-        <li>Does not track personal information</li>
-        <li>Does not share data with third parties</li>
-        <li>Collects only anonymous, aggregated usage statistics (page views, referrers, browser types)</li>
-        <li>Is fully GDPR compliant</li>
+        <li><strong>No cookies or local storage:</strong> PostHog operates in cookieless mode and does not store any data in your browser</li>
+        <li><strong>No personal data collection:</strong> We cannot call identify() or track individual users across sessions</li>
+        <li><strong>Privacy-preserving user counting:</strong> Unique visitors are measured using a server-side hash that cannot be reversed to obtain personal information</li>
+        <li><strong>Anonymous aggregated data only:</strong> All analytics data is anonymized and aggregated</li>
+        <li><strong>EU data residency:</strong> All data is processed and stored on PostHog's EU servers (eu.i.posthog.com)</li>
+        <li><strong>No third-party data sharing:</strong> Analytics data is never sold or shared with third parties other than PostHog</li>
+      </ul>
+      
+      <h4>What We Track</h4>
+      <p>We collect anonymous analytics to improve our content and user experience. These analytics may include, among others, for instance the following tracking data:</p>
+      <ul>
+        <li><strong>Page views:</strong> Which pages and posts are visited (without identifying individual visitors)</li>
+        <li><strong>Scroll depth:</strong> How far users scroll through posts</li>
+        <li><strong>Time on page:</strong> How long users spend reading content</li>
+        <li><strong>Referrer information:</strong> Which websites or search engines led you here</li>
+        <li><strong>Browser and device type:</strong> General technical information (e.g., "Chrome on Windows", "Safari on iOS")</li>
+      </ul>
+      
+      <h4>Data Retention</h4>
+      <ul>
+        <li>IP addresses are not stored permanently and only for the improvments for our products.</li>
+      </ul>
+      
+      <h4>Your Privacy Rights</h4>
+      <p>Because we use cookieless tracking that does not identify individuals:</p>
+      <ul>
+        <li><strong>No opt-out required:</strong> The data collected is already anonymized and cannot be linked to you</li>
+        <li><strong>No cookie banner needed:</strong> We comply with GDPR without requiring consent for analytics</li>
+        <li><strong>Cannot access individual data:</strong> We have no way to retrieve or delete data about specific individuals since we don't collect it</li>
       </ul>
       
       <h2>How We Use Your Information</h2>
@@ -132,7 +155,7 @@
         <li>Sell your email address to third parties</li>
         <li>Share your email with advertisers or marketers</li>
         <li>Send promotional or commercial emails unrelated to our updates</li>
-        <li>Use your email for any purpose other than our notifications</li>
+        <li>Use your email for any purpose other than our notifications, newsletters and similar</li>
       </ul>
       
       <h2>Third-Party Services</h2>
@@ -165,11 +188,14 @@
       
       <h2>Cookies</h2>
       
-      <p>This website uses minimal cookies:</p>
+      <p>This website uses minimal browser storage:</p>
       <ul>
-        <li><strong>Theme preference:</strong> A single cookie stores your dark/light mode preference (stored in browser localStorage)</li>
-        <li><strong>No tracking cookies:</strong> We do not use advertising or tracking cookies</li>
+        <li><strong>Theme preference:</strong> A single item stored in browser localStorage to remember your dark/light mode preference</li>
+        <li><strong>No tracking cookies:</strong> We do not use cookies for analytics or tracking thanks to PostHog's cookieless mode</li>
+        <li><strong>No advertising cookies:</strong> We do not use any advertising or marketing cookies</li>
       </ul>
+      
+      <p><strong>No cookie banner required:</strong> Since our analytics operates in cookieless mode and we only store your theme preference (which is essential functionality), we do not need to display a cookie consent banner under GDPR.</p>
       
       <h2>Children's Privacy</h2>
       
@@ -188,10 +214,13 @@
       <p>For users in the European Union:</p>
       <ul>
         <li><strong>Email subscription:</strong> Based on your explicit consent when you subscribe</li>
-        <li><strong>Analytics:</strong> Based on legitimate interest in understanding site usage, using privacy-preserving methods</li>
+        <li><strong>Analytics:</strong> Based on legitimate interest in understanding site usage. We use privacy-preserving, cookieless analytics that does not collect Personal Data as defined by GDPR. The server-side hash used to count visitors is irreversible and cannot be used to identify individuals.</li>
+        <li><strong>Theme preference storage:</strong> Based on legitimate interest in providing essential website functionality</li>
       </ul>
       
-      <p>You may withdraw consent at any time by contacting us via the <a href="feedback.html" class="text-blue-600 dark:text-blue-400 hover:underline">Feedback page</a>.</p>
+      <p>Under GDPR Article 6(1)(f), we have a legitimate interest in understanding how our content is used to improve it, provided this is done in a privacy-preserving manner that does not adversely affect your rights. Our cookieless analytics implementation ensures compliance with this principle.</p>
+      
+      <p>You may withdraw any consent at any time by contacting us via the <a href="feedback.html" class="text-blue-600 dark:text-blue-400 hover:underline">Feedback page</a>.</p>
     </article>
   </main>
 
@@ -224,9 +253,18 @@
   </footer>
 
   <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
-  <script src="site.js"></script>
   
-  <!-- Umami Analytics -->
-  <script defer src="https://cloud.umami.is/script.js" data-website-id="6f1380e5-709c-4217-bed4-2572a873996c"></script>
+  <!-- PostHog Analytics (Cookieless) -->
+  <script>
+    !function(t,e){var o,n,p,r;e.__SV||(window.posthog && window.posthog.__loaded)||(window.posthog=e,e._i=[],e.init=function(i,s,a){function g(t,e){var o=e.split(".");2==o.length&&(t=t[o[0]],e=o[1]),t[e]=function(){t.push([e].concat(Array.prototype.slice.call(arguments,0)))}}(p=t.createElement("script")).type="text/javascript",p.crossOrigin="anonymous",p.async=!0,p.src=s.api_host.replace(".i.posthog.com","-assets.i.posthog.com")+"/static/array.js",(r=t.getElementsByTagName("script")[0]).parentNode.insertBefore(p,r);var u=e;for(void 0!==a?u=e[a]=[]:a="posthog",u.people=u.people||[],u.toString=function(t){var e="posthog";return"posthog"!==a&&(e+="."+a),t||(e+=" (stub)"),e},u.people.toString=function(){return u.toString(1)+".people (stub)"},o="init Rr Mr fi Cr Ar ci Tr Fr capture Mi calculateEventProperties Lr register register_once register_for_session unregister unregister_for_session Hr getFeatureFlag getFeatureFlagPayload isFeatureEnabled reloadFeatureFlags updateEarlyAccessFeatureEnrollment getEarlyAccessFeatures on onFeatureFlags onSurveysLoaded onSessionId getSurveys getActiveMatchingSurveys renderSurvey displaySurvey canRenderSurvey canRenderSurveyAsync identify setPersonProperties group resetGroups setPersonPropertiesForFlags resetPersonPropertiesForFlags setGroupPropertiesForFlags resetGroupPropertiesForFlags reset get_distinct_id getGroups get_session_id get_session_replay_url alias set_config startSessionRecording stopSessionRecording sessionRecordingStarted captureException loadToolbar get_property getSessionProperty Ur jr createPersonProfile zr kr Br opt_in_capturing opt_out_capturing has_opted_in_capturing has_opted_out_capturing get_explicit_consent_status is_capturing clear_opt_in_out_capturing Dr debug M Nr getPageViewId captureTraceFeedback captureTraceMetric $r".split(" "),n=0;n<o.length;n++)g(u,o[n]);e._i.push([i,s,a])},e.__SV=1)}(document,window.posthog||[]);
+    posthog.init('phc_epG7xfY1UDuEkkr0f5EXKHTpSNZHapXwmc3FJwehDwQ', {
+        api_host: 'https://eu.i.posthog.com',
+        defaults: '2025-05-24',
+        person_profiles: 'identified_only',
+        cookieless_mode: 'always'
+    })
+  </script>
+  
+  <script src="site.js"></script>
 </body>
 </html>
