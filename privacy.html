@@ -106,37 +106,39 @@
       
       <h3>Analytics</h3>
       
-      <p>We use <a href="https://posthog.com/" target="_blank" rel="noopener noreferrer" class="text-blue-600 dark:text-blue-400 hover:underline">PostHog</a>, a privacy-focused analytics platform configured for cookieless tracking to comply with GDPR and other privacy regulations. Our configuration ensures:</p>
+      <p>We use <a href="https://posthog.com/" target="_blank" rel="noopener noreferrer" class="text-blue-600 dark:text-blue-400 hover:underline">PostHog</a>, a privacy-focused analytics platform. Our configuration ensures:</p>
       <ul>
-        <li><strong>No cookies or local storage:</strong> PostHog operates in cookieless mode and does not store any data in your browser</li>
-        <li><strong>No personal data collection:</strong> We cannot call identify() or track individual users across sessions</li>
-        <li><strong>Privacy-preserving user counting:</strong> Unique visitors are measured using a server-side hash that cannot be reversed to obtain personal information</li>
-        <li><strong>Anonymous aggregated data only:</strong> All analytics data is anonymized and aggregated</li>
+        <li><strong>Cookie consent required:</strong> PostHog operates in cookieless mode by default. Cookies are only used if you explicitly accept them via our consent banner</li>
+        <li><strong>Your choice matters:</strong> If you reject cookies, we use completely cookieless tracking that cannot identify you across sessions</li>
+        <li><strong>Anonymous data:</strong> All analytics data is anonymized and aggregated for product improvement</li>
         <li><strong>EU data residency:</strong> All data is processed and stored on PostHog's EU servers (eu.i.posthog.com)</li>
-        <li><strong>No third-party data sharing:</strong> Analytics data is never sold or shared with third parties other than PostHog</li>
+        <li><strong>No third-party sharing:</strong> Analytics data is never sold or shared with third parties</li>
       </ul>
       
       <h4>What We Track</h4>
-      <p>We collect anonymous analytics to improve our content and user experience. These analytics may include, among others, for instance the following tracking data:</p>
+      <p>We collect analytics to improve our content and user experience. The analytics include for instance:</p>
       <ul>
-        <li><strong>Page views:</strong> Which pages and posts are visited (without identifying individual visitors)</li>
+        <li><strong>Page views:</strong> Which pages and posts are visited</li>
         <li><strong>Scroll depth:</strong> How far users scroll through posts</li>
         <li><strong>Time on page:</strong> How long users spend reading content</li>
         <li><strong>Referrer information:</strong> Which websites or search engines led you here</li>
         <li><strong>Browser and device type:</strong> General technical information (e.g., "Chrome on Windows", "Safari on iOS")</li>
       </ul>
       
+      <p><strong>With cookie consent:</strong> We can track you across sessions to understand returning visitors and user journeys. Session replays may be recorded (with all text and inputs masked).</p>
+      <p><strong>Without cookie consent:</strong> Tracking is completely cookieless and cannot identify you across sessions. No session replays are recorded.</p>
+      
       <h4>Data Retention</h4>
       <ul>
-        <li>IP addresses are not stored permanently and only for the improvments for our products.</li>
+        <li>Analytics data is retained according to PostHog's data retention policies</li>
+        <li>Your cookie consent preference is stored locally in your browser</li>
       </ul>
       
       <h4>Your Privacy Rights</h4>
-      <p>Because we use cookieless tracking that does not identify individuals:</p>
       <ul>
-        <li><strong>No opt-out required:</strong> The data collected is already anonymized and cannot be linked to you</li>
-        <li><strong>No cookie banner needed:</strong> We comply with GDPR without requiring consent for analytics</li>
-        <li><strong>Cannot access individual data:</strong> We have no way to retrieve or delete data about specific individuals since we don't collect it</li>
+        <li><strong>Control your cookies:</strong> Accept or reject cookies via our consent banner</li>
+        <li><strong>Change your mind:</strong> Clear your browser's localStorage to see the consent banner again</li>
+        <li><strong>Cookieless by default:</strong> If you reject cookies, we use fully anonymous, cookieless tracking</li>
       </ul>
       
       <h2>How We Use Your Information</h2>
@@ -188,14 +190,34 @@
       
       <h2>Cookies</h2>
       
-      <p>This website uses minimal browser storage:</p>
+      <p>This website uses browser storage for the following purposes:</p>
+      
+      <h3>Essential Cookies (No Consent Required)</h3>
       <ul>
-        <li><strong>Theme preference:</strong> A single item stored in browser localStorage to remember your dark/light mode preference</li>
-        <li><strong>No tracking cookies:</strong> We do not use cookies for analytics or tracking thanks to PostHog's cookieless mode</li>
-        <li><strong>No advertising cookies:</strong> We do not use any advertising or marketing cookies</li>
+        <li><strong>Theme preference:</strong> Stores your dark/light mode choice in browser localStorage</li>
+        <li><strong>Cookie consent:</strong> Remembers your cookie preference (accept/reject)</li>
       </ul>
       
-      <p><strong>No cookie banner required:</strong> Since our analytics operates in cookieless mode and we only store your theme preference (which is essential functionality), we do not need to display a cookie consent banner under GDPR.</p>
+      <h3>Analytics Cookies (Consent Required)</h3>
+      <p>If you accept cookies via our consent banner, PostHog may use cookies to:</p>
+      <ul>
+        <li>Track you across sessions to understand user behavior</li>
+        <li>Identify returning visitors</li>
+        <li>Provide more detailed analytics for product improvement</li>
+        <li><strong>Record session replays:</strong> Visual recordings of how you interact with our site (with all text and inputs masked for privacy)</li>
+      </ul>
+      
+      <p><strong>Session Replay Privacy:</strong> If enabled (only with your consent), session replays are recorded with maximum privacy settings:</p>
+      <ul>
+        <li>All text content is masked with asterisks</li>
+        <li>All input fields are masked</li>
+        <li>We can see where you click and navigate, but not what you type or read</li>
+        <li>Replays help us understand usability issues and improve the site experience</li>
+      </ul>
+      
+      <p><strong>If you reject cookies:</strong> PostHog operates in cookieless mode using anonymous, server-side tracking that cannot identify you across sessions. No session replays are recorded.</p>
+      
+      <p><strong>No advertising cookies:</strong> We never use advertising or marketing cookies.</p>
       
       <h2>Children's Privacy</h2>
       
@@ -261,10 +283,28 @@
         api_host: 'https://eu.i.posthog.com',
         defaults: '2025-05-24',
         person_profiles: 'identified_only',
-        cookieless_mode: 'always'
+        cookieless_mode: 'on_reject',
+        disable_session_recording: true, // Start disabled, enable on consent
+        session_recording: {
+            maskAllInputs: true,
+            maskTextSelector: '*' // Mask all text for maximum privacy
+        }
     })
   </script>
   
   <script src="site.js"></script>
+
+  <!-- Cookie Consent Banner -->
+  <div id="cookieConsent">
+    <div class="cookie-banner-container">
+      <div class="cookie-banner-text">
+        We use cookies to improve your experience. By accepting, you allow us to collect analytics data. <a href="privacy.html" class="underline hover:text-blue-600 dark:hover:text-blue-400">Learn more</a>
+      </div>
+      <div class="cookie-banner-actions">
+        <button id="rejectCookies" class="cookie-btn cookie-btn-reject">Reject</button>
+        <button id="acceptCookies" class="cookie-btn cookie-btn-accept">Accept</button>
+      </div>
+    </div>
+  </div>
 </body>
 </html>

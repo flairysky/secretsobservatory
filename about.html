@@ -225,10 +225,28 @@
         api_host: 'https://eu.i.posthog.com',
         defaults: '2025-05-24',
         person_profiles: 'identified_only',
-        cookieless_mode: 'always'
+        cookieless_mode: 'on_reject',
+        disable_session_recording: true, // Start disabled, enable on consent
+        session_recording: {
+            maskAllInputs: true,
+            maskTextSelector: '*' // Mask all text for maximum privacy
+        }
     })
   </script>
   
   <script src="site.js"></script>
+
+  <!-- Cookie Consent Banner -->
+  <div id="cookieConsent">
+    <div class="cookie-banner-container">
+      <div class="cookie-banner-text">
+        We use cookies to improve your experience. By accepting, you allow us to collect analytics data. <a href="privacy.html" class="underline hover:text-blue-600 dark:hover:text-blue-400">Learn more</a>
+      </div>
+      <div class="cookie-banner-actions">
+        <button id="rejectCookies" class="cookie-btn cookie-btn-reject">Reject</button>
+        <button id="acceptCookies" class="cookie-btn cookie-btn-accept">Accept</button>
+      </div>
+    </div>
+  </div>
 </body>
 </html>
