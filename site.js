@@ -19,28 +19,31 @@ let lastVisibilityChange = null;
 // Cookie Consent Management
 function initCookieConsent() {
   const consentBanner = document.getElementById('cookieConsent');
-  if (!consentBanner) return;
+  if (!consentBanner) {
+    console.log('Cookie consent banner not found');
+    return;
+  }
 
   const cookieConsent = localStorage.getItem('cookieConsent');
+  console.log('Current cookie consent:', cookieConsent);
   
   // If user already accepted, start session recording
   if (cookieConsent === 'accepted' && window.posthog) {
     window.posthog.startSessionRecording();
   }
   
-  // If no consent decision has been made, show the banner
-  if (cookieConsent === null) {
-    setTimeout(() => {
-      consentBanner.classList.add('show');
-    }, 1000);
-  }
-
   // Accept button handler
   const acceptBtn = document.getElementById('acceptCookies');
   if (acceptBtn) {
-    acceptBtn.addEventListener('click', () => {
+    acceptBtn.addEventListener('click', (e) => {
+      e.preventDefault();
+      console.log('Accept button clicked');
       localStorage.setItem('cookieConsent', 'accepted');
       consentBanner.classList.remove('show');
+      // Hide with delay to allow animation
+      setTimeout(() => {
+        consentBanner.style.display = 'none';
+      }, 300);
       // Start session recording when user accepts
       if (window.posthog) {
         window.posthog.startSessionRecording();
@@ -52,14 +55,28 @@ function initCookieConsent() {
   // Reject button handler
   const rejectBtn = document.getElementById('rejectCookies');
   if (rejectBtn) {
-    rejectBtn.addEventListener('click', () => {
+    rejectBtn.addEventListener('click', (e) => {
+      e.preventDefault();
+      console.log('Reject button clicked');
       localStorage.setItem('cookieConsent', 'rejected');
       consentBanner.classList.remove('show');
+      // Hide with delay to allow animation
+      setTimeout(() => {
+        consentBanner.style.display = 'none';
+      }, 300);
       // Session recording remains disabled
       if (window.posthog) {
         console.log('Cookies rejected - PostHog remains cookieless, no session recording');
       }
     });
+  }
+  
+  // If no consent decision has been made, show the banner
+  if (cookieConsent === null) {
+    setTimeout(() => {
+      consentBanner.classList.add('show');
+      console.log('Showing cookie consent banner');
+    }, 1000);
   }
 }
 
