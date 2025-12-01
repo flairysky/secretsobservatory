@@ -11,7 +11,7 @@ excerpt: "A poem introducing structures in mathematics: understanding order, alg
 >
 > Sasha Grothendieck 
 
-Already around 300 B.C.[#1], Aristotle stated that _"mathematics is about forms"_ [ref:AristotlePhysicsHussey1993}, which in our today's understanding one could also call structures. The intention of this poem is to intrduce these structures by flying high above the mountains to understand what structures are in general sense and what types of structures we have (at least according to Bourbaki). This build our psychological foundation of our big picture view and in the following acts we will head from the clouds closer to the valley to see some specific examples of structures within the types of structures introduced here below.
+Already around 300 B.C.[#1], Aristotle stated that _"mathematics is about forms"_ [ref:AristotlePhysicsHussey1993], which in our today's understanding one could also call structures. The intention of this poem is to intrduce these structures by flying high above the mountains to understand what structures are in general sense and what types of structures we have (at least according to Bourbaki). This build our psychological foundation of our big picture view and in the following acts we will head from the clouds closer to the valley to see some specific examples of structures within the types of structures introduced here below.
 
 Thus, this poem serves to show you how switching between different perspectives gives you different understanding and how it is profitable to purposefully switch between specific and more general views on the topics in order to understand them properly.
 
