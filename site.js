@@ -174,9 +174,9 @@ function initScrollProgress() {
 
 // PostHog Analytics Functions
 function initAnalytics() {
-  // Wait for PostHog to be available
-  if (typeof posthog === 'undefined') {
-    console.warn('PostHog is not loaded');
+  // Wait for PostHog to be available and fully loaded
+  if (typeof posthog === 'undefined' || !posthog.capture || !window.posthog?.__loaded) {
+    console.warn('PostHog is not fully loaded, skipping analytics init');
     return;
   }
   
@@ -201,7 +201,7 @@ function initAnalytics() {
       const timeInSeconds = Math.round(totalTime / 1000);
       const timeInMinutes = (totalTime / 60000).toFixed(2);
       
-      if (typeof posthog !== 'undefined' && timeInSeconds > 5) {
+      if (typeof posthog !== 'undefined' && posthog.capture && window.posthog?.__loaded && timeInSeconds > 5) {
         // Get post slug and title if on post page
         const urlParams = new URLSearchParams(window.location.search);
         const slug = urlParams.get('slug');
@@ -252,7 +252,7 @@ function initAnalytics() {
 
 // Setup scroll tracking (call this separately for post pages)
 function initScrollTracking() {
-  if (typeof posthog !== 'undefined') {
+  if (typeof posthog !== 'undefined' && posthog.capture && window.posthog?.__loaded) {
     window.addEventListener('scroll', trackScrollDepth, { passive: true });
     console.log('Scroll depth tracking initialized');
   }
@@ -287,7 +287,7 @@ function trackPageLeave() {
   const timeInMinutes = (totalTime / 60000).toFixed(2);
   
   // Track time on page event
-  if (typeof posthog !== 'undefined' && timeInSeconds > 0) {
+  if (typeof posthog !== 'undefined' && posthog.capture && window.posthog?.__loaded && timeInSeconds > 0) {
     // Get post slug and title if on post page
     const urlParams = new URLSearchParams(window.location.search);
     const slug = urlParams.get('slug');
@@ -342,7 +342,7 @@ function trackScrollDepth() {
     if (scrolled >= milestoneValue && !scrollDepthTracked[milestone]) {
       scrollDepthTracked[milestone] = true;
       
-      if (typeof posthog !== 'undefined') {
+      if (typeof posthog !== 'undefined' && posthog.capture && window.posthog?.__loaded) {
         // Get post slug and title if on post page
         const urlParams = new URLSearchParams(window.location.search);
         const slug = urlParams.get('slug');
@@ -389,8 +389,8 @@ function trackScrollDepth() {
 }
 
 function trackPostView(postInfo, slug) {
-  if (typeof posthog === 'undefined') {
-    console.warn('PostHog not available for post tracking');
+  if (typeof posthog === 'undefined' || !posthog.capture || !window.posthog?.__loaded) {
+    console.log('PostHog not initialized, skipping post tracking');
     return;
   }
   
