@@ -98,6 +98,7 @@ function initPostHog() {
   if (window.posthog && window.posthog.__loaded) {
     console.log('PostHog already initialized');
     window.posthog.startSessionRecording();
+    initAnalytics(); // Initialize analytics tracking
     return;
   }
   
@@ -111,6 +112,7 @@ function initPostHog() {
       loaded: function(posthog) {
         console.log('PostHog loaded and ready');
         posthog.startSessionRecording();
+        initAnalytics(); // Initialize analytics tracking after PostHog loads
       },
       session_recording: {
         maskAllInputs: true,
@@ -129,7 +131,7 @@ document.addEventListener('DOMContentLoaded', function() {
   detectPage();
   loadPosts();
   initScrollProgress();
-  initAnalytics();
+  // initAnalytics() will be called from initPostHog() after consent
   initCookieConsent();
 });
 
@@ -536,8 +538,11 @@ function detectPage() {
 
 // Load posts data and initialize page-specific functionality
 async function loadPosts() {
+  console.log('loadPosts() called, currentPage:', currentPage);
+  
   // About and privacy pages don't need posts data
   if (currentPage === 'about' || currentPage === 'privacy') {
+    console.log('Skipping posts load for', currentPage);
     initAboutPage();
     hideLoading();
     return;
@@ -545,6 +550,7 @@ async function loadPosts() {
   
   try {
     showLoading();
+    console.log('Fetching posts.json...');
     const response = await fetch('posts.json');
     
     if (!response.ok) {
@@ -552,18 +558,23 @@ async function loadPosts() {
     }
     
     postsData = await response.json();
+    console.log('Posts data loaded successfully:', postsData);
     
     switch (currentPage) {
       case 'index':
+        console.log('Initializing index page...');
         initIndexPage();
         break;
       case 'post':
+        console.log('Initializing post page...');
         initPostPage();
         break;
       case 'archive':
+        console.log('Initializing archive page...');
         initArchivePage();
         break;
       case 'feedback':
+        console.log('Initializing feedback page...');
         initFeedbackPage();
         break;
     }
@@ -606,6 +617,12 @@ function showError(message) {
 
 // Initialize index page
 function initIndexPage() {
+  if (!postsData || !postsData.posts) {
+    console.error('Posts data not available');
+    showError('Failed to load blog posts. Please refresh the page.');
+    return;
+  }
+  
   filteredPosts = [...postsData.posts];
   
   // Setup search with debouncing
