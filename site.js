@@ -107,8 +107,8 @@ function initPostHog() {
     posthog.init('phc_epG7xfY1UDuEkkr0f5EXKHTpSNZHapXwmc3FJwehDwQ', {
       api_host: 'https://eu.i.posthog.com',
       defaults: '2025-05-24',
-      person_profiles: 'identified_only',
-      ip: true,
+      person_profiles: 'always', // Create profiles for consenting users to enable geolocation
+      ip: true, // Enable IP tracking for geolocation (only for consenting users)
       loaded: function(posthog) {
         console.log('PostHog loaded and ready');
         posthog.startSessionRecording();
