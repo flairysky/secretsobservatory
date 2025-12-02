@@ -150,8 +150,26 @@ function initScrollProgress() {
   console.log('Added has-fixed-header class to body');
   
   function updateScrollProgress() {
-    const winScroll = window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop || 0;
-    const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+    // Get the current scroll position - use window.scrollY for better mobile support
+    const winScroll = window.scrollY || window.pageYOffset || document.documentElement.scrollTop || 0;
+    
+    // Calculate total scrollable height
+    // Use Math.max to handle edge cases on mobile where body might be taller than html
+    const docHeight = Math.max(
+      document.body.scrollHeight,
+      document.body.offsetHeight,
+      document.documentElement.clientHeight,
+      document.documentElement.scrollHeight,
+      document.documentElement.offsetHeight
+    );
+    
+    // Viewport height
+    const windowHeight = window.innerHeight || document.documentElement.clientHeight || 0;
+    
+    // Calculate scrollable distance (total height minus viewport)
+    const height = docHeight - windowHeight;
+    
+    // Calculate percentage scrolled
     const scrolled = height > 0 ? (winScroll / height) * 100 : 0;
     const finalWidth = Math.min(100, Math.max(0, scrolled));
     progressBar.style.width = finalWidth + '%';

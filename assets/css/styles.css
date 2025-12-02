@@ -3,7 +3,8 @@
 /* Ensure proper theme backgrounds */
 html {
   background-color: white;
-  height: 100%;
+  /* Use min-height instead of height for better mobile scroll behavior */
+  min-height: 100%;
 }
 
 html.dark {
@@ -13,7 +14,8 @@ html.dark {
 body {
   background-color: white;
   color: #1e293b;
-  height: 100%;
+  /* Use min-height instead of height to allow proper scroll calculation on mobile */
+  min-height: 100%;
   display: flex;
   flex-direction: column;
 }
@@ -320,7 +322,7 @@ body.has-fixed-header {
 /* Scroll progress bar (Quanta Magazine style) */
 .scroll-progress-bar {
   position: fixed;
-  top: 88px; /* Mobile positioning - right below header */
+  top: 70px; /* Mobile positioning - right below header */
   left: 0;
   right: 0;
   height: 4px;
@@ -335,7 +337,7 @@ body.has-fixed-header {
 /* Desktop positioning */
 @media (min-width: 768px) {
   .scroll-progress-bar {
-    top: 65px; /* Desktop positioning - adjust as needed */
+    top: 70px; /* Desktop positioning - adjust as needed */
   }
 }
 
