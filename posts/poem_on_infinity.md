@@ -12,9 +12,9 @@ excerpt: "A poem exploring the concept of infinity in mathematics."
 >The Neverending Story
 
 
-Infinity seems to be taught as a mysterious concept one encounters already in primary school and haunts one for a long time... Here I would like to, to a certain degree, demystify infinity so that its users can feel more at ease applying this concept and somehow get a handle on it. 
+Infinity seems to be taught as a mysterious concept one encounters already in primary school and that haunts one for a long time... Here I would like to, to a certain degree, demystify infinity, so that its users can feel more at ease applying this concept and somehow get a handle on it. 
 
-In school you were probably taught that when you think of infinity or when saying that something is infinite or that you have infinitely many things, then you should think of some very large number.[#1] However, this doesn't make any sense and let's have a look at why.<br>
+In school you were probably taught that you should think of some very large number when you think of infinity or when saying that something is infinite or that you have infinitely many things.[#1] However, this doesn't make any sense and let's have a look at why.<br>
 
 First, consider what the word infinity actually means. Starting with the word "finite", which has its roots in the Latin word "fīnītus", the past participle of the verb fīnīre, which meant "to limit", "to set bounds" or "to end".<br>
 And since when we say that something is infinite (i.e. translated "not finite"), we mean the opposite of being finite, and so meaning "not bounded". 
