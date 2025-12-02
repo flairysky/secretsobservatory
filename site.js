@@ -1822,55 +1822,97 @@ function generateSidebarContent(sidebarNav, currentSlug) {
   }
   
   // Organize posts into categories
-  const poetryPosts = [];
+  const mainPoemPosts = [];
+  const standalonePoemPosts = [];
   const miscPosts = [];
   
-  // Define the order for poetry posts
-  const poetryOrder = [
+  // Define the order for main poem posts (the series)
+  const mainPoemOrder = [
     'poem_preface',
     'poem_first_act',
     'poem_second_act',
     'poem_third_act',
-    'poem_fourth_act',
+    'poem_fourth_act'
+  ];
+  
+  // Define standalone poems
+  const standalonePoems = [
     'poem_on_infinity',
     'poem_on_prime_ideals'
   ];
   
   // Separate posts
   postsData.posts.forEach(post => {
-    if (post.slug.startsWith('poem_')) {
-      poetryPosts.push(post);
+    if (mainPoemOrder.includes(post.slug)) {
+      mainPoemPosts.push(post);
+    } else if (standalonePoems.includes(post.slug)) {
+      standalonePoemPosts.push(post);
+    } else if (post.slug.startsWith('poem_')) {
+      // Any other poems not explicitly categorized
+      standalonePoemPosts.push(post);
     } else {
       miscPosts.push(post);
     }
   });
   
-  // Sort poetry posts according to defined order
-  poetryPosts.sort((a, b) => {
-    const indexA = poetryOrder.indexOf(a.slug);
-    const indexB = poetryOrder.indexOf(b.slug);
+  // Sort main poem posts according to defined order
+  mainPoemPosts.sort((a, b) => {
+    const indexA = mainPoemOrder.indexOf(a.slug);
+    const indexB = mainPoemOrder.indexOf(b.slug);
     
-    // If both are in the order array, sort by their position
     if (indexA !== -1 && indexB !== -1) {
       return indexA - indexB;
     }
-    // If only one is in the order array, prioritize it
     if (indexA !== -1) return -1;
     if (indexB !== -1) return 1;
-    // If neither is in the order array, maintain original order
+    return 0;
+  });
+  
+  // Sort standalone poems by the defined order
+  standalonePoemPosts.sort((a, b) => {
+    const indexA = standalonePoems.indexOf(a.slug);
+    const indexB = standalonePoems.indexOf(b.slug);
+    
+    if (indexA !== -1 && indexB !== -1) {
+      return indexA - indexB;
+    }
+    if (indexA !== -1) return -1;
+    if (indexB !== -1) return 1;
     return 0;
   });
   
   // Build HTML
   let html = '';
   
-  // Poetry section
-  if (poetryPosts.length > 0) {
+  // Main Poetry section
+  if (mainPoemPosts.length > 0) {
     html += '<div class="sidebar-section">';
     html += '<h3 class="sidebar-section-title">Daniel\'s Poem</h3>';
     html += '<ul class="sidebar-nav-list">';
     
-    poetryPosts.forEach(post => {
+    mainPoemPosts.forEach(post => {
+      const isActive = post.slug === currentSlug ? 'active' : '';
+      const displayTitle = getShortTitle(post.title);
+      html += `
+        <li class="sidebar-nav-item">
+          <a href="post.html?slug=${post.slug}" class="sidebar-nav-link ${isActive}" title="${escapeHtml(post.title)}">
+            ${escapeHtml(displayTitle)}
+          </a>
+        </li>
+      `;
+    });
+    
+    html += '</ul>';
+    html += '</div>';
+  }
+  
+  // Standalone Poems section
+  if (standalonePoemPosts.length > 0) {
+    html += '<div class="sidebar-section">';
+    html += '<h3 class="sidebar-section-title">Standalone Poems</h3>';
+    html += '<ul class="sidebar-nav-list">';
+    
+    standalonePoemPosts.forEach(post => {
       const isActive = post.slug === currentSlug ? 'active' : '';
       const displayTitle = getShortTitle(post.title);
       html += `
