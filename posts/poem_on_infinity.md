@@ -27,7 +27,7 @@ Moreover, now, instead of a basket of strawberries consider a set of numbers and
 
 __Remark:__
 From what we have seen, one could think of infinite as being some kind of a process, which is another way you can understand infinity, although rather imaginative and if you do not like it, just forget it after reading this remark, but since some readers may be inclined this way, I decided to include it here.<br>
-Now, the way we would understand infinity is that we would associate infinity with something that we have a natural understanding of as going forever. Now the first thing that comes to mind is time. And so to make things maybe a little more imaginative, you can think of a train, which has wagons, and you stand next to the railway, and every second there appears a new wagon. And since we assume that time never ceases, there are infinitely many wagons, one new wagon each second, right? Thus, such kind of reasoning would bring infinity closer to being some kind of a process. 
+Now, the way we would understand infinity is that we would associate infinity with something that we have a natural understanding of as going forever. Now the first thing that comes to mind is time. And so to make things maybe a little more imaginative, you can think of a train, which has wagons, and you stand next to the railway, and every second there appears a new wagon. And since we assume that time never ceases, there are infinitely many wagons, one new wagon each second, right? Thus, such kind of reasoning would bring infinity closer to being some kind of a process.[#3] 
 
 <div style="text-align: center; margin: 2em 0;">
   <img src="../train_animation_reverse.gif" alt="Train animation showing wagons appearing over time" style="max-width: 100%; height: auto; border-radius: 8px; box-shadow: 0 4px 6px rgba(0,0,0,0.1);">
@@ -62,4 +62,5 @@ Last but not least, I want to make the reader aware of the fact that the symboli
 <!-- FOOTNOTES
 [1]: Why it is taught at most schools in this way is a mystery to me, especially since the ways of understanding infinity presnted here are definitely not difficult to grasb by school childern.
 [2]: Of course it has to match the number of strawberries in your basket ;)
+[3]: You may have heared of the "mysterious" famous <a href="https://en.wikipedia.org/wiki/Hilbert%27s_paradox_of_the_Grand_Hotel" target="_blank" rel="noopener" class="text-blue-600 dark:text-blue-400 hover:underline">Hilbert's Hotel problem</a>. Now, in this thought experiment just replace the hotel rooms with the train wagons and think of the concept of infinity just described. Do you still find it hard to understand why there is a new room waiting for each new guest that arrives? :) 
 -->
