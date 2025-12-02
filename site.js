@@ -27,9 +27,16 @@ function initCookieConsent() {
   const cookieConsent = localStorage.getItem('cookieConsent');
   console.log('Current cookie consent:', cookieConsent);
   
-  // If user already accepted, start session recording
-  if (cookieConsent === 'accepted' && window.posthog) {
-    window.posthog.startSessionRecording();
+  // Control session recording based on consent
+  if (window.posthog) {
+    if (cookieConsent === 'accepted') {
+      console.log('Consent previously accepted - starting session recording');
+      window.posthog.startSessionRecording();
+    } else {
+      // Stop recording if no consent (default state or rejected)
+      console.log('No consent or rejected - stopping session recording');
+      window.posthog.stopSessionRecording();
+    }
   }
   
   // Accept button handler
