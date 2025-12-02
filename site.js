@@ -804,6 +804,11 @@ async function initPostPage() {
     initShareAndCite();
     console.log('initShareAndCite call completed');
     
+    // Initialize sidebar navigation
+    console.log('About to call initSidebar...');
+    initSidebar(slug);
+    console.log('initSidebar call completed');
+    
     // Process references and footnotes
     let processedContent = content;
     if (window.refManager) {
@@ -1738,6 +1743,179 @@ function initShareAndCite() {
   });
   
   console.log('Share/Cite functionality initialized successfully');
+}
+
+// Sidebar navigation functionality
+function initSidebar(currentSlug) {
+  console.log('=== initSidebar function called ===');
+  
+  const sidebar = document.getElementById('sidebar');
+  const sidebarToggle = document.getElementById('sidebarToggle');
+  const closeSidebar = document.getElementById('closeSidebar');
+  const sidebarOverlay = document.getElementById('sidebarOverlay');
+  const sidebarNav = document.getElementById('sidebarNav');
+  
+  if (!sidebar || !sidebarToggle || !sidebarNav) {
+    console.log('Sidebar elements not found on this page');
+    return;
+  }
+  
+  console.log('Sidebar elements found, proceeding with setup...');
+  
+  // Generate sidebar navigation content
+  generateSidebarContent(sidebarNav, currentSlug);
+  
+  // Close sidebar function
+  const closeSidebarFunc = () => {
+    sidebar.classList.remove('sidebar-open');
+    sidebarOverlay.classList.remove('overlay-visible');
+    document.body.style.overflow = ''; // Restore scrolling
+  };
+  
+  // Toggle sidebar open/close
+  sidebarToggle.addEventListener('click', () => {
+    console.log('Sidebar toggle clicked');
+    const isOpen = sidebar.classList.contains('sidebar-open');
+    
+    if (isOpen) {
+      closeSidebarFunc();
+    } else {
+      sidebar.classList.add('sidebar-open');
+      sidebarOverlay.classList.add('overlay-visible');
+      document.body.style.overflow = 'hidden'; // Prevent background scrolling
+    }
+  });
+  
+  if (closeSidebar) {
+    closeSidebar.addEventListener('click', closeSidebarFunc);
+  }
+  
+  if (sidebarOverlay) {
+    sidebarOverlay.addEventListener('click', closeSidebarFunc);
+  }
+  
+  // Close sidebar on ESC key
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && sidebar.classList.contains('sidebar-open')) {
+      closeSidebarFunc();
+    }
+  });
+  
+  // Check if URL has a parameter to auto-open sidebar
+  const urlParams = new URLSearchParams(window.location.search);
+  if (urlParams.get('openSidebar') === 'true' || currentSlug === 'poem_preface') {
+    // Small delay to ensure page is fully loaded
+    setTimeout(() => {
+      sidebar.classList.add('sidebar-open');
+      sidebarOverlay.classList.add('overlay-visible');
+      document.body.style.overflow = 'hidden';
+    }, 100);
+  }
+  
+  console.log('Sidebar functionality initialized successfully');
+}
+
+function generateSidebarContent(sidebarNav, currentSlug) {
+  if (!postsData || !postsData.posts) {
+    console.error('Posts data not available for sidebar');
+    return;
+  }
+  
+  // Organize posts into categories
+  const poetryPosts = [];
+  const miscPosts = [];
+  
+  // Define the order for poetry posts
+  const poetryOrder = [
+    'poem_preface',
+    'poem_first_act',
+    'poem_second_act',
+    'poem_third_act',
+    'poem_fourth_act',
+    'poem_on_infinity',
+    'poem_on_prime_ideals'
+  ];
+  
+  // Separate posts
+  postsData.posts.forEach(post => {
+    if (post.slug.startsWith('poem_')) {
+      poetryPosts.push(post);
+    } else {
+      miscPosts.push(post);
+    }
+  });
+  
+  // Sort poetry posts according to defined order
+  poetryPosts.sort((a, b) => {
+    const indexA = poetryOrder.indexOf(a.slug);
+    const indexB = poetryOrder.indexOf(b.slug);
+    
+    // If both are in the order array, sort by their position
+    if (indexA !== -1 && indexB !== -1) {
+      return indexA - indexB;
+    }
+    // If only one is in the order array, prioritize it
+    if (indexA !== -1) return -1;
+    if (indexB !== -1) return 1;
+    // If neither is in the order array, maintain original order
+    return 0;
+  });
+  
+  // Build HTML
+  let html = '';
+  
+  // Poetry section
+  if (poetryPosts.length > 0) {
+    html += '<div class="sidebar-section">';
+    html += '<h3 class="sidebar-section-title">Daniel\'s Poem</h3>';
+    html += '<ul class="sidebar-nav-list">';
+    
+    poetryPosts.forEach(post => {
+      const isActive = post.slug === currentSlug ? 'active' : '';
+      const displayTitle = getShortTitle(post.title);
+      html += `
+        <li class="sidebar-nav-item">
+          <a href="post.html?slug=${post.slug}" class="sidebar-nav-link ${isActive}" title="${escapeHtml(post.title)}">
+            ${escapeHtml(displayTitle)}
+          </a>
+        </li>
+      `;
+    });
+    
+    html += '</ul>';
+    html += '</div>';
+  }
+  
+  // Miscellaneous section
+  if (miscPosts.length > 0) {
+    html += '<div class="sidebar-section">';
+    html += '<h3 class="sidebar-section-title">Miscellaneous Topics</h3>';
+    html += '<ul class="sidebar-nav-list">';
+    
+    miscPosts.forEach(post => {
+      const isActive = post.slug === currentSlug ? 'active' : '';
+      html += `
+        <li class="sidebar-nav-item">
+          <a href="post.html?slug=${post.slug}" class="sidebar-nav-link ${isActive}" title="${escapeHtml(post.excerpt || post.title)}">
+            ${escapeHtml(post.title)}
+          </a>
+        </li>
+      `;
+    });
+    
+    html += '</ul>';
+    html += '</div>';
+  }
+  
+  sidebarNav.innerHTML = html;
+}
+
+function getShortTitle(title) {
+  // Remove "Daniel's Poem:" prefix for cleaner display
+  if (title.startsWith("Daniel's Poem:")) {
+    return title.replace("Daniel's Poem:", "").trim();
+  }
+  return title;
 }
 
 // About page initialization
