@@ -16,6 +16,22 @@ let isPageVisible = true;
 let timeOnPageAccumulator = 0;
 let lastVisibilityChange = null;
 
+// Simple visitor counter (GDPR-compliant, no consent needed)
+function trackPageView() {
+  try {
+    const stats = JSON.parse(localStorage.getItem('siteStats') || '{"totalViews":0,"firstVisit":null}');
+    stats.totalViews++;
+    if (!stats.firstVisit) {
+      stats.firstVisit = new Date().toISOString();
+    }
+    stats.lastVisit = new Date().toISOString();
+    localStorage.setItem('siteStats', JSON.stringify(stats));
+    console.log('Pageview tracked (consent-free):', stats.totalViews);
+  } catch (e) {
+    console.error('Could not track pageview:', e);
+  }
+}
+
 // Cookie Consent Management
 function initCookieConsent() {
   const consentBanner = document.getElementById('cookieConsent');
@@ -27,16 +43,11 @@ function initCookieConsent() {
   const cookieConsent = localStorage.getItem('cookieConsent');
   console.log('Current cookie consent:', cookieConsent);
   
-  // Control session recording based on consent
-  if (window.posthog) {
-    if (cookieConsent === 'accepted') {
-      console.log('Consent previously accepted - starting session recording');
-      window.posthog.startSessionRecording();
-    } else {
-      // Stop recording if no consent (default state or rejected)
-      console.log('No consent or rejected - stopping session recording');
-      window.posthog.stopSessionRecording();
-    }
+  // Initialize PostHog ONLY if user previously accepted
+  if (cookieConsent === 'accepted') {
+    initPostHog();
+  } else {
+    console.log('No consent or rejected - PostHog not initialized');
   }
   
   // Accept button handler
@@ -51,11 +62,9 @@ function initCookieConsent() {
       setTimeout(() => {
         consentBanner.style.display = 'none';
       }, 300);
-      // Start session recording when user accepts
-      if (window.posthog) {
-        window.posthog.startSessionRecording();
-        console.log('Cookies accepted - PostHog will use cookies and session recording enabled');
-      }
+      // Initialize PostHog now that user accepted
+      initPostHog();
+      console.log('Cookies accepted - PostHog initialized with full tracking');
     });
   }
 
@@ -71,10 +80,7 @@ function initCookieConsent() {
       setTimeout(() => {
         consentBanner.style.display = 'none';
       }, 300);
-      // Session recording remains disabled
-      if (window.posthog) {
-        console.log('Cookies rejected - PostHog remains cookieless, no session recording');
-      }
+      console.log('Cookies rejected - No PostHog tracking');
     });
   }
   
@@ -87,8 +93,36 @@ function initCookieConsent() {
   }
 }
 
+// Initialize PostHog (only called after consent)
+function initPostHog() {
+  if (window.posthog && window.posthog.__loaded) {
+    console.log('PostHog already initialized');
+    window.posthog.startSessionRecording();
+    return;
+  }
+  
+  if (typeof posthog !== 'undefined') {
+    console.log('Initializing PostHog with consent...');
+    posthog.init('phc_epG7xfY1UDuEkkr0f5EXKHTpSNZHapXwmc3FJwehDwQ', {
+      api_host: 'https://eu.i.posthog.com',
+      defaults: '2025-05-24',
+      person_profiles: 'identified_only',
+      ip: true,
+      loaded: function(posthog) {
+        console.log('PostHog loaded and ready');
+        posthog.startSessionRecording();
+      },
+      session_recording: {
+        maskAllInputs: true,
+        maskTextSelector: '*'
+      }
+    });
+  }
+}
+
 // Initialize on page load
 document.addEventListener('DOMContentLoaded', function() {
+  trackPageView(); // Count visitor (no consent needed)
   initTheme();
   initMobileMenu();
   setFooterYear();
