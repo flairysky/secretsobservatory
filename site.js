@@ -469,6 +469,16 @@ function initMobileMenu() {
   
   // Open mobile menu
   mobileMenuBtn.addEventListener('click', function() {
+    // Close sidebar if it's open
+    const sidebar = document.getElementById('sidebar');
+    const sidebarOverlay = document.getElementById('sidebarOverlay');
+    if (sidebar && sidebar.classList.contains('sidebar-open')) {
+      sidebar.classList.remove('sidebar-open');
+      if (sidebarOverlay) {
+        sidebarOverlay.classList.remove('overlay-visible');
+      }
+    }
+    
     mobileMenuPanel.classList.remove('translate-x-full');
     mobileMenuOverlay.classList.remove('hidden');
     document.body.style.overflow = 'hidden';
