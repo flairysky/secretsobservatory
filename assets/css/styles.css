@@ -337,7 +337,7 @@ body.has-fixed-header {
 /* Desktop positioning */
 @media (min-width: 768px) {
   .scroll-progress-bar {
-    top: 70px; /* Desktop positioning - adjust as needed */
+    top: 69px; /* Desktop positioning - adjust as needed */
   }
 }
 
