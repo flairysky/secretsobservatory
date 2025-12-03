@@ -6,7 +6,7 @@ excerpt: "A poem"
 ---
 >>> A life is a tragedy on close up and a comedy in longshot. | Charlie Chaplin (quote made famous by Sir Rowan Atkinson)
 
-As the quote by two of my favorite geniuses shows, life is, for the most part, about our perspective on things — and it’s no different in mathematics.
+As the quote by two of my favorite geniuses shows, life is, for the most part, about our perspective on things, and it is no different in mathematics.
 
 But before we jump in, let me quickly describe the purpose and motivation behind this poem. They arose from my experiences with people interested in mathematics, as I found that the general perception of mathematics, and some of the fundamental basic notions I will describe, were taught in such a way that students across all levels (from undergraduate up to PhD) had such a good grasp of them that we were not able to study together, because we always had to circle back to clarify those basic notions.<br>
 Moreover, since I was usually studying mathematics on my own but liked to be among people, I realized that whenever I studied with others, I had to invest around one to two hours going over these basic notions so we could have a common ground. And since all the students I studied with enjoyed and highly valued this kind of teaching, I decided to write down these notes.
