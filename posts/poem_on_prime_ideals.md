@@ -29,7 +29,7 @@ So in particular $b = k \cdot a$, hence $a|b$. $\square$
 
 ### On characterization of prime elements
 
-Now we have that if $p \in R$ is prime (we have the classic def.) then $p \neq 0,1$ and if $d | p$ then $d = \pm 1$ or $p$, i.e. all divisors of $p$ are $1$ and $p$ itself.
+Now we have that if $p \in R$ is prime (we have the classic def.) then $p \neq 0,1$ and if $d | p$ then $d = \pm 1$ or $p$, i.e. all divisors of $p$ are $\pm 1$ and $p$ itself.
 
 We now show that this is equivalent to the following statement:
 
