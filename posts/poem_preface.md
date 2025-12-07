@@ -19,7 +19,7 @@ The word poem was chosen for two main reasons.
 
 Firstly, to me, doing mathematics is something completely different from the general perception of mathematics in the public and has nothing to do with what is being taught at schools and most universities (at least in my experience).
 
-I cannot sympathize more with the following quote from Eisenstein:
+I cannot sympathize more with the following quote from Ferdinand G. M. Eisenstein:
 
 > “I still remember the torture of completing endless multiplication examples. From this, you
 might conclude, erroneously, that I lacked mathematical ability, merely because I showed little inclination for calculating. In fact, the mechanical, always repetitive nature of the procedures annoyed me,
@@ -46,7 +46,7 @@ The reasoning behind the name also intends to take away the negative perception 
 Also, it should be mentioned that the word “mathematics” has nothing to do with numbers, as it comes from the ancient Greek mathema, meaning “that which is learned” or “what one gets to know.”
 
 Finally, as stated above, the poems potray my personal subjective perspective on mathematics, and so before we start, I should also mention that my way of doing mathematics was mainly influenced by Serge Lang, and secondly by the Artin family, in particular Emil Artin[#2] and Michael Artin[#3]. 
-Thus, being one of the lucky people who learned from Serge, I could largly profit from his algebraic mastery  and geotric intuition (probably comming from his physics background), which I hope I was able to at least partially acquire myself.
+Thus, being one of the lucky people who learned from Serge, I could largly profit from his algebraic mastery  and geometric intuition (probably comming from his physics background), which I hope I was able to at least partially acquire myself.
 
 <div class="grid grid-cols-1 md:grid-cols-2 gap-6 my-8">
   <figure>
