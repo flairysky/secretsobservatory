@@ -29,7 +29,7 @@ So in particular $b = k \cdot a$, hence $a|b$. $\square$
 
 ### On characterization of prime elements
 
-Now we have that if $p \in R$ is prime (we have the classic def.) then $p \neq 0,1$ and if $d | p$ then $d = \pm 1$ or $p$, i.e. all divisors of $p$ are $\pm 1$ and $p$ itself.
+Now we have that if $p \in R$ is prime (we have the classic def.) then $p \neq 0,1$ and if $d | p$ then $d = \pm 1$ or $p$, i.e. all divisors of $p$ are $\pm 1$ and $\pm p$[#1].
 
 We now show that this is equivalent to the following statement:
 
@@ -85,3 +85,7 @@ $x = \Sigma^k_{i=1} r_i a s_i  b= \Sigma^k_{i=1} r_i s_i a b= \Sigma^k_{i=1} r_i
 We end with a sneaky question: 
 
 Is the collection of all ideals a ring?
+
+<!-- FOOTNOTES
+[1]: You can observe here a clear pattern if you consider the ring to be integers (for simplicity), and first consider only the positive divisors of the prime. Then observe what happens when you consider divisors from the whole set of integers (i.e. from the whole ring, as we did). We observe that in both cases the divisors differ by units.
+-->
