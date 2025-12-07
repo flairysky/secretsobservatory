@@ -27,7 +27,7 @@ and indeed, I am still disgusted with calculations without any purpose, while if
 to discover, requiring thought and reasoning, I would spare no pains. I understood the form of grammar
 and languages with ease as I did everything that could be comprehended in a logical way.”
 
-For me, doing mathematics has nothing to do with numbers (honestly, I am not really a fan of them) but is all about the ideas and the psychological perception of these ideas, about their connections and their ultimate depiction in a unified way. Again, here I can cite Eisenstein:
+For me, doing mathematics has nothing to do with numbers (Honestly, I am not really a fan of them.) but is all about the ideas and the psychological perception of these ideas, about their connections and their ultimate depiction in a unified way. Again, here I can cite Eisenstein:
 
 > “Soon I became used to advancing deeper from single
 theorems into a wider context and understanding theories as a unity. Thus the idea of a mathematical beauty dawned upon me. For mathematical beauty exists in the same way that aesthetic beauty does. It is
