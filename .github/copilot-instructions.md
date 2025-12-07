@@ -171,10 +171,11 @@ Run `deploy.sh` (bash) to:
 - **Tailwind CSS 3.x** - Utility framework (configured for dark mode with `class` strategy)
 - **MathJax 3.x** - LaTeX rendering (tex-svg output)
 - **Marked.js** - Markdown parser
+- **Microsoft Clarity** - Analytics & session replay (consent-required, Project ID: uhy4jujwdi)
 - **Formspree** - Contact form backend (requires endpoint configuration in site.js)
 
 ## Integration Points
-- **Analytics**: Umami script in HTML (already configured with site ID)
+- **Analytics**: Microsoft Clarity (Project ID: uhy4jujwdi) - loaded only after cookie consent, tracks via custom tags
 - **Forms**: Formspree endpoint in `handleFeedbackSubmit()` - currently has TODO comment
 - **RSS/Atom**: `feed.xml` manually updated (not auto-generated from posts.json)
 - **SEO**: Meta tags in HTML, sitemap.xml, robots.txt all require manual domain updates

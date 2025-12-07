@@ -43,11 +43,11 @@ function initCookieConsent() {
   const cookieConsent = localStorage.getItem('cookieConsent');
   console.log('Current cookie consent:', cookieConsent);
   
-  // Initialize PostHog ONLY if user previously accepted
+  // Initialize Clarity ONLY if user previously accepted
   if (cookieConsent === 'accepted') {
-    initPostHog();
+    initClarity();
   } else {
-    console.log('No consent or rejected - PostHog not initialized');
+    console.log('No consent or rejected - Clarity not initialized');
   }
   
   // Accept button handler
@@ -62,9 +62,9 @@ function initCookieConsent() {
       setTimeout(() => {
         consentBanner.style.display = 'none';
       }, 300);
-      // Initialize PostHog now that user accepted
-      initPostHog();
-      console.log('Cookies accepted - PostHog initialized with full tracking');
+      // Initialize Clarity now that user accepted
+      initClarity();
+      console.log('Cookies accepted - Clarity initialized with full tracking');
     });
   }
 
@@ -80,7 +80,7 @@ function initCookieConsent() {
       setTimeout(() => {
         consentBanner.style.display = 'none';
       }, 300);
-      console.log('Cookies rejected - No PostHog tracking');
+      console.log('Cookies rejected - No Clarity tracking');
     });
   }
   
@@ -93,33 +93,29 @@ function initCookieConsent() {
   }
 }
 
-// Initialize PostHog (only called after consent)
-function initPostHog() {
-  if (window.posthog && window.posthog.__loaded) {
-    console.log('PostHog already initialized');
-    window.posthog.startSessionRecording();
+// Initialize Microsoft Clarity (only called after consent)
+function initClarity() {
+  if (window.clarity) {
+    console.log('Clarity already initialized');
     initAnalytics(); // Initialize analytics tracking
     return;
   }
   
-  if (typeof posthog !== 'undefined') {
-    console.log('Initializing PostHog with consent...');
-    posthog.init('phc_epG7xfY1UDuEkkr0f5EXKHTpSNZHapXwmc3FJwehDwQ', {
-      api_host: 'https://eu.i.posthog.com',
-      defaults: '2025-05-24',
-      person_profiles: 'always', // Create profiles for consenting users to enable geolocation
-      ip: true, // Enable IP tracking for geolocation (only for consenting users)
-      loaded: function(posthog) {
-        console.log('PostHog loaded and ready');
-        posthog.startSessionRecording();
-        initAnalytics(); // Initialize analytics tracking after PostHog loads
-      },
-      session_recording: {
-        maskAllInputs: true,
-        maskTextSelector: '*'
-      }
-    });
-  }
+  // Load Clarity script
+  console.log('Initializing Clarity with consent...');
+  (function(c,l,a,r,i,t,y){
+    c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+    t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+    y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+  })(window, document, "clarity", "script", "uhy4jujwdi");
+  
+  // Initialize analytics tracking after Clarity loads
+  setTimeout(() => {
+    if (window.clarity) {
+      console.log('Clarity loaded and ready');
+      initAnalytics();
+    }
+  }, 1000);
 }
 
 // Initialize on page load
@@ -131,7 +127,7 @@ document.addEventListener('DOMContentLoaded', function() {
   detectPage();
   loadPosts();
   initScrollProgress();
-  // initAnalytics() will be called from initPostHog() after consent
+  // initAnalytics() will be called from initClarity() after consent
   initCookieConsent();
 });
 
@@ -190,11 +186,11 @@ function initScrollProgress() {
   console.log('Scroll progress tracking initialized');
 }
 
-// PostHog Analytics Functions
+// Microsoft Clarity Analytics Functions
 function initAnalytics() {
-  // Wait for PostHog to be available and fully loaded
-  if (typeof posthog === 'undefined' || !posthog.capture || !window.posthog?.__loaded) {
-    console.warn('PostHog is not fully loaded, skipping analytics init');
+  // Wait for Clarity to be available
+  if (typeof clarity === 'undefined') {
+    console.warn('Clarity is not loaded, skipping analytics init');
     return;
   }
   
@@ -219,7 +215,7 @@ function initAnalytics() {
       const timeInSeconds = Math.round(totalTime / 1000);
       const timeInMinutes = (totalTime / 60000).toFixed(2);
       
-      if (typeof posthog !== 'undefined' && posthog.capture && window.posthog?.__loaded && timeInSeconds > 5) {
+      if (typeof clarity !== 'undefined' && timeInSeconds > 5) {
         // Get post slug and title if on post page
         const urlParams = new URLSearchParams(window.location.search);
         const slug = urlParams.get('slug');
@@ -249,28 +245,24 @@ function initAnalytics() {
           pageName = 'Privacy';
         }
         
-        posthog.capture('time_on_page', {
-          page_type: currentPage,
-          page_name: pageName,
-          post_slug: slug || null,
-          post_title: postTitle,
-          time_seconds: timeInSeconds,
-          time_minutes: parseFloat(timeInMinutes),
-          page_url: window.location.pathname + window.location.search,
-          $current_url: window.location.href,
-          event_type: 'periodic'
-        });
+        // Set custom tags for Clarity
+        clarity('set', 'page_type', currentPage);
+        clarity('set', 'page_name', pageName);
+        if (slug) clarity('set', 'post_slug', slug);
+        if (postTitle) clarity('set', 'post_title', postTitle);
+        clarity('set', 'time_minutes', timeInMinutes);
+        
         console.log(`Tracked time on page (periodic): ${timeInMinutes} minutes on ${pageName}`);
       }
     }
   }, 30000); // Every 30 seconds
   
-  console.log('PostHog analytics initialized');
+  console.log('Clarity analytics initialized');
 }
 
 // Setup scroll tracking (call this separately for post pages)
 function initScrollTracking() {
-  if (typeof posthog !== 'undefined' && posthog.capture && window.posthog?.__loaded) {
+  if (typeof clarity !== 'undefined') {
     window.addEventListener('scroll', trackScrollDepth, { passive: true });
     console.log('Scroll depth tracking initialized');
   }
@@ -304,8 +296,8 @@ function trackPageLeave() {
   const timeInSeconds = Math.round(totalTime / 1000);
   const timeInMinutes = (totalTime / 60000).toFixed(2);
   
-  // Track time on page event
-  if (typeof posthog !== 'undefined' && posthog.capture && window.posthog?.__loaded && timeInSeconds > 0) {
+  // Track time on page with Clarity
+  if (typeof clarity !== 'undefined' && timeInSeconds > 0) {
     // Get post slug and title if on post page
     const urlParams = new URLSearchParams(window.location.search);
     const slug = urlParams.get('slug');
@@ -335,16 +327,13 @@ function trackPageLeave() {
       pageName = 'Privacy';
     }
     
-    posthog.capture('time_on_page', {
-      page_type: currentPage,
-      page_name: pageName,
-      post_slug: slug || null,
-      post_title: postTitle,
-      time_seconds: timeInSeconds,
-      time_minutes: parseFloat(timeInMinutes),
-      page_url: window.location.pathname + window.location.search,
-      $current_url: window.location.href
-    });
+    // Set final page metrics as custom tags
+    clarity('set', 'page_type', currentPage);
+    clarity('set', 'page_name', pageName);
+    if (slug) clarity('set', 'post_slug', slug);
+    if (postTitle) clarity('set', 'post_title', postTitle);
+    clarity('set', 'time_seconds', timeInSeconds.toString());
+    clarity('set', 'time_minutes', timeInMinutes);
   }
 }
 
@@ -360,7 +349,7 @@ function trackScrollDepth() {
     if (scrolled >= milestoneValue && !scrollDepthTracked[milestone]) {
       scrollDepthTracked[milestone] = true;
       
-      if (typeof posthog !== 'undefined' && posthog.capture && window.posthog?.__loaded) {
+      if (typeof clarity !== 'undefined') {
         // Get post slug and title if on post page
         const urlParams = new URLSearchParams(window.location.search);
         const slug = urlParams.get('slug');
@@ -390,15 +379,12 @@ function trackScrollDepth() {
           pageName = 'Privacy';
         }
         
-        posthog.capture('scroll_depth', {
-          depth_percent: milestoneValue,
-          page_type: currentPage,
-          page_name: pageName,
-          post_slug: slug || null,
-          post_title: postTitle,
-          page_url: window.location.pathname + window.location.search,
-          $current_url: window.location.href
-        });
+        // Set scroll depth as custom tag
+        clarity('set', 'scroll_depth_' + milestoneValue, 'reached');
+        clarity('set', 'page_type', currentPage);
+        clarity('set', 'page_name', pageName);
+        if (slug) clarity('set', 'post_slug', slug);
+        if (postTitle) clarity('set', 'post_title', postTitle);
         
         console.log(`Tracked scroll depth: ${milestoneValue}% on ${pageName}`);
       }
@@ -407,29 +393,19 @@ function trackScrollDepth() {
 }
 
 function trackPostView(postInfo, slug) {
-  if (typeof posthog === 'undefined' || !posthog.capture || !window.posthog?.__loaded) {
-    console.log('PostHog not initialized, skipping post tracking');
+  if (typeof clarity === 'undefined') {
+    console.log('Clarity not initialized, skipping post tracking');
     return;
   }
   
-  // Track individual post view with detailed properties
-  posthog.capture('post_view', {
-    post_slug: slug,
-    post_title: postInfo.title,
-    post_categories: postInfo.categories,
-    post_date: postInfo.date,
-    post_url: window.location.pathname + window.location.search,
-    page_type: 'post'
-  });
+  // Track individual post view with custom tags
+  clarity('set', 'post_slug', slug);
+  clarity('set', 'post_title', postInfo.title);
+  clarity('set', 'post_categories', postInfo.categories.join(', '));
+  clarity('set', 'post_date', postInfo.date);
+  clarity('set', 'page_type', 'post');
   
   console.log('Tracked post view:', slug);
-  
-  // Also track as a pageview with custom properties
-  posthog.capture('$pageview', {
-    post_slug: slug,
-    post_title: postInfo.title,
-    post_categories: postInfo.categories
-  });
 }
 
 // Theme management
@@ -896,7 +872,7 @@ async function initPostPage() {
       `;
     }
     
-    // Track post view with PostHog
+    // Track post view with Clarity
     trackPostView(postInfo, slug);
     
     // Initialize share and cite functionality after metadata is loaded
