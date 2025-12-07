@@ -15,7 +15,7 @@ Already around 300 B.C.[#1], Aristotle stated that _"mathematics is about forms"
 
 Thus, this poem serves to show you how switching between different perspectives gives you different understanding and how it is profitable to purposefully switch between specific and more general views on the topics in order to understand them properly.
 
-Even though Bourbakis typology of structures is to a certain degree somewhat arbitrary[#2], since its typology view does not provide some kind of mathematical insight (e.g. equivalence classification or something on that note, at least to my current knowledge). It nevertheless, in my opinion, serves very well psychologically, as it gives us a very intuitive and natural way to map out different types of structures and equips us with some degree of clarity within the jungle, which is mathematically still correct.
+Even though Bourbaki's typology of structures is to a certain degree somewhat arbitrary[#2], since its typology view does not provide some kind of mathematical insight (e.g. equivalence classification or something on that note, at least to my current knowledge). It nevertheless, in my opinion, serves very well psychologically, as it gives us a very intuitive and natural way to map out different types of structures and equips us with some degree of clarity within the jungle, which is mathematically still correct.
 
 Furthermore, on a psychological level it is very useful, because you will have three different types of structures and whenever you encounter any structure you can immediately understand where it belongs to in this typology and have some natural and intuitive understanding of that kind of structure.
 
