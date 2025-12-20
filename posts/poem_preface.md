@@ -46,8 +46,8 @@ The reasoning behind the name also intends to take away the negative perception 
 
 Also, it should be mentioned that the word “mathematics” has nothing to do with numbers, as it comes from the ancient Greek mathema, meaning “that which is learned” or “what one gets to know.”
 
-Finally, as stated above, the poems potray my personal subjective perspective on mathematics, and so before we start, I should also mention that my way of doing mathematics was mainly influenced by Serge Lang, and secondly by the Artin family, in particular Emil Artin[#2] and Michael Artin[#3]. 
-Thus, being one of the lucky people who learned from Serge, I could largly profit from his algebraic mastery  and geometric intuition (probably comming from his physics background), which I hope I was able to at least partially acquire myself.
+Finally, as stated above, the poems potray my personal subjective perspective on mathematics, and so before we start, I should also mention that my way of doing mathematics was mainly influenced by Serge Lang (about 99% of mathematics I know is from his books), and secondly by the Artin family, in particular Emil Artin[#2] (Serge's PhD Supervisor) and Michael Artin[#3] (Emil's son). 
+Thus, being one of the lucky people who learned from Serge (For those interessted in getting a glimpse of Serge's personality outside of his books, you may read the <a href="https://math.bu.edu/individual/rohrlich/serge.pdf" target="_blank" rel="noopener" class="text-blue-600 dark:text-blue-400 hover:underline">writing</a> of one of his PhD students, David Rohrlich.), I could largly profit from his algebraic mastery and geometric intuition (probably comming from his physics background), which I hope I was able to at least partially acquire myself.
 
 <div class="grid grid-cols-1 md:grid-cols-2 gap-6 my-8">
   <figure>
