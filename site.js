@@ -643,15 +643,22 @@ function initIndexPage() {
   
   filteredPosts = [...postsData.posts];
   
-  // Setup search with debouncing
+  // Setup search with debouncing (both desktop and mobile)
   const searchInput = document.getElementById('searchInput');
-  if (searchInput) {
-    let searchTimeout;
-    searchInput.addEventListener('input', function() {
-      clearTimeout(searchTimeout);
-      searchTimeout = setTimeout(filterPosts, 300);
-    });
+  const searchInputMobile = document.getElementById('searchInputMobile');
+  
+  function setupSearchInput(input) {
+    if (input) {
+      let searchTimeout;
+      input.addEventListener('input', function() {
+        clearTimeout(searchTimeout);
+        searchTimeout = setTimeout(filterPosts, 300);
+      });
+    }
   }
+  
+  setupSearchInput(searchInput);
+  setupSearchInput(searchInputMobile);
   
   // Setup category chips
   setupCategoryChips();
@@ -663,7 +670,7 @@ function initIndexPage() {
 // Setup category filter chips
 function setupCategoryChips() {
   const categoryChips = document.getElementById('categoryChips');
-  if (!categoryChips) return;
+  const categoryChipsMobile = document.getElementById('categoryChipsMobile');
   
   // Get all unique categories
   const categories = new Set();
@@ -671,26 +678,39 @@ function setupCategoryChips() {
     post.categories.forEach(cat => categories.add(cat));
   });
   
-  // Create chips
-  categoryChips.innerHTML = '';
-  Array.from(categories).sort().forEach(category => {
-    const chip = document.createElement('span');
-    chip.className = 'chip';
-    chip.textContent = category;
-    chip.addEventListener('click', () => toggleCategory(category, chip));
-    categoryChips.appendChild(chip);
+  // Create chips for both containers
+  const containers = [categoryChips, categoryChipsMobile].filter(c => c);
+  containers.forEach(container => {
+    container.innerHTML = '';
+    Array.from(categories).sort().forEach(category => {
+      const chip = document.createElement('span');
+      chip.className = 'chip';
+      chip.textContent = category;
+      chip.addEventListener('click', () => toggleCategory(category));
+      container.appendChild(chip);
+    });
   });
 }
 
 // Toggle category filter
-function toggleCategory(category, chipElement) {
+function toggleCategory(category) {
   if (activeCategories.has(category)) {
     activeCategories.delete(category);
-    chipElement.classList.remove('active');
   } else {
     activeCategories.add(category);
-    chipElement.classList.add('active');
   }
+  
+  // Update all chips in both containers
+  const allChips = document.querySelectorAll('.chip');
+  allChips.forEach(chip => {
+    if (chip.textContent === category) {
+      if (activeCategories.has(category)) {
+        chip.classList.add('active');
+      } else {
+        chip.classList.remove('active');
+      }
+    }
+  });
   
   filterPosts();
 }
@@ -698,7 +718,8 @@ function toggleCategory(category, chipElement) {
 // Filter posts based on search and categories
 function filterPosts() {
   const searchInput = document.getElementById('searchInput');
-  const searchTerm = searchInput ? searchInput.value.toLowerCase() : '';
+  const searchInputMobile = document.getElementById('searchInputMobile');
+  const searchTerm = (searchInput ? searchInput.value : searchInputMobile ? searchInputMobile.value : '').toLowerCase();
   
   filteredPosts = postsData.posts.filter(post => {
     // Text search
