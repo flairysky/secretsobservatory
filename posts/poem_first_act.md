@@ -50,7 +50,7 @@ which we might describe as
 Or, in the best case, like this:
 
 <figure>
-  <img src="assets/imagespoem/forest2_resized.png" alt="a better jungle perspective" class="w-full h-64 object-cover rounded-lg shadow-md">
+  <img src="assets/new pictures/better jungle perspective.png" alt="a better jungle perspective" class="w-full h-64 object-cover rounded-lg shadow-md">
   <figcaption class="text-center text-sm text-gray-600 dark:text-gray-400 mt-2 italic">
     A better jungle perspective
   </figcaption>
