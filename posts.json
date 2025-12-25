@@ -46,7 +46,8 @@
       "title": "Daniel's Poem: First Act - Big Picture",
       "date": "2025-10-31",
       "categories": ["Learning", "Teaching", "Mathematics"],
-      "excerpt": "A poem: first act"
+      "excerpt": "A poem: first act",
+      "cover_image": "assets/new pictures/Bird-eye perspective.png"
     },
     {
       "slug": "poem_preface",

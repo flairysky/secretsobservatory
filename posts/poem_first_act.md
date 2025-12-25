@@ -3,6 +3,7 @@ title: "Daniel's Poem: First Act - Big Picture"
 date: "2025-10-31"
 categories: ["Learning", "Teaching", "Mathematics"]
 excerpt: "A poem: first act"
+cover_image: "assets/new pictures/Bird-eye perspective.png"
 ---
 
 > All art is at once surface and symbol.<br> Those who go beneath the surface do so at their peril. <br> Those who read the symbol do so at their peril.
