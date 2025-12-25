@@ -581,6 +581,23 @@ async function loadPosts() {
     switch (currentPage) {
       case 'index':
         console.log('Initializing index page...');
+        // Sticky navigation handler for index page
+        const nav = document.getElementById('mainNav');
+        if (nav) {
+          window.addEventListener('scroll', function() {
+            if (window.scrollY > 100) {
+              nav.classList.add('bg-slate-900', 'border-b', 'border-slate-800', 'shadow-lg');
+              nav.querySelectorAll('a, button').forEach(el => {
+                el.classList.remove('drop-shadow-lg');
+              });
+            } else {
+              nav.classList.remove('bg-slate-900', 'border-b', 'border-slate-800', 'shadow-lg');
+              nav.querySelectorAll('a, button').forEach(el => {
+                el.classList.add('drop-shadow-lg');
+              });
+            }
+          });
+        }
         initIndexPage();
         break;
       case 'post':

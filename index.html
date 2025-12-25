@@ -32,10 +32,34 @@
   <link rel="stylesheet" href="assets/css/styles.css">
 </head>
 <body class="min-h-screen bg-white text-slate-900 dark:bg-slate-900 dark:text-slate-100">
-  <!-- Banner with Header Overlay -->
+  <!-- Sticky Navigation (Desktop) -->
+  <nav id="mainNav" class="hidden md:block fixed top-0 left-0 right-0 z-50 transition-all duration-300">
+    <div class="mx-auto max-w-3xl px-4 py-4 flex items-center justify-between">
+      <a href="index.html" class="font-semibold tracking-tight flex items-center gap-2 text-white drop-shadow-lg">
+        <img src="assets/webpagelogos/Group 17.png" alt="Secrets Observatory Logo" class="h-8 w-8">
+        Secrets Observatory
+      </a>
+      <div class="flex items-center gap-4 text-sm text-white drop-shadow-lg">
+        <a href="index.html" class="hover:underline">News</a>
+        <a href="post.html?slug=poem_preface" class="hover:underline">The Poem</a>
+        <a href="about.html" class="hover:underline">About</a>
+        <div class="relative">
+          <button id="catBtn" class="hover:underline">Categories ▾</button>
+          <div id="catMenu" class="hidden absolute right-0 mt-2 w-40 rounded-md border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-800 shadow p-2 text-sm text-slate-900 dark:text-slate-100"></div>
+        </div>
+        <a href="archive.html" class="hover:underline">Archive</a>
+        <a href="feedback.html" class="hover:underline">Feedback</a>
+        <button id="themeToggle" class="p-2 rounded-md hover:bg-slate-800/50" aria-label="Toggle theme">
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 718.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"></path></svg>
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Banner with Header Overlay (Mobile) -->
   <div class="w-full overflow-hidden relative h-64 md:h-80">
     <img src="assets/covers/image.png" alt="Banner" class="w-full h-full object-cover object-top md:object-cover" style="object-position: center top;">
-    <div class="absolute top-0 left-0 right-0 z-10">
+    <div class="absolute top-0 left-0 right-0 z-10 md:hidden">
       <nav class="mx-auto max-w-3xl px-4 py-4 flex items-center justify-between">
         <a href="index.html" class="font-semibold tracking-tight flex items-center gap-2 text-white drop-shadow-lg">
           <img src="assets/webpagelogos/Group 17.png" alt="Secrets Observatory Logo" class="h-8 w-8">
