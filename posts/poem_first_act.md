@@ -15,13 +15,13 @@ Before we begin, I must mention that all pictures[#1] used in this particular se
 At the end of the day, I believe that it is still better for you to see some pictures than if I had told you to "imagine something," since this is very dangerous, as you and I can imagine two completely different things (I paraphrase here Frederic Schüller [ref:Schuller2025WEHeraeus]).
 
 <figure>
-  <img src="assets/imagespoem/eagle_landscape_left_resized.png" alt="abstract perspective (general)" class="w-full h-64 object-cover rounded-lg shadow-md">
+  <img src="assets/new pictures/Bird-eye perspective.png" alt="abstract perspective (general)" class="w-full h-64 object-cover rounded-lg shadow-md">
   <figcaption class="text-center text-sm text-gray-600 dark:text-gray-400 mt-2 italic">
     Abstract perspective (general)
   </figcaption>
 </figure>
 <figure>
-  <img src="assets/imagespoem/flower_bug_lake.png" alt="detailed perspective (special)" class="w-full h-64 object-cover rounded-lg shadow-md">
+  <img src="assets/new pictures/special perspective.png" alt="detailed perspective (special)" class="w-full h-64 object-cover rounded-lg shadow-md">
   <figcaption class="text-center text-sm text-gray-600 dark:text-gray-400 mt-2 italic">
     Detailed perspective (special)
   </figcaption>
@@ -37,7 +37,7 @@ But also in the forests there are nice pathways one can take, through which one 
 
 Sadly, my experience with lectures or bad books is that they often look like this,
 <figure>
-  <img src="assets/imagespoem/forest1_resized.png" alt="jungle perspective" class="w-full h-64 object-cover rounded-lg shadow-md">
+  <img src="assets/new pictures/jungle perspective.png" alt="jungle perspective" class="w-full h-64 object-cover rounded-lg shadow-md">
   <figcaption class="text-center text-sm text-gray-600 dark:text-gray-400 mt-2 italic">
     Jungle perspective
   </figcaption>
