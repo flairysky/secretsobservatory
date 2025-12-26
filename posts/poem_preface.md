@@ -13,7 +13,7 @@ Moreover, since I was usually studying mathematics on my own but liked to be amo
 
 You might be wondering why are these notes called a poem, which I now briefly state here and will ellaborate about the choice more in detail later. The reason is very simple. As with everything in life, we love stories and narratives, and I am no exception. Whenever I learn something or try to grasp an idea, I try to understand the narrative behind it. Luckily for us, in mathematics the narrative writes itself and in contrast to other stories, mathematics must follow logic. And so, although we still have different ways of approaching these topics, they all share a common thread: logical coherence. The way I portray the story is simply the way I like it, and so resembles my taste.
 
-Moreover, since these notes reflect my subjective my perception, it is fair to briefly state what my view of mathematics is, and why the word poem was chosen. So let’s start with the latter.
+Moreover, since these notes reflect my subjective perception, it is fair to briefly state what my view of mathematics is, and why the word poem was chosen, now in a more detail. So let’s start with the latter.
 
 The word poem was chosen for two main reasons.
 
@@ -36,7 +36,7 @@ whole system of discoveries, all following a main idea and leading to a final re
 harmony and ingenuity, to form an organic entirety, just like a painting. There is also a mathematical
 rhythm or taste, which reads the analysis and then leads the approach and the development accordingly.”
 
-Eisenstein is not alone in this perception of mathematics, since many great mathematicians describe math as an art[#1]. But calling these sessions "art sessions" feels too loose to me. Since poems can be completely logical in contrast to art in general, as far as I know. Thus, I decided to perceive these notes poems.
+Eisenstein is not alone in this perception of mathematics, since many great mathematicians describe math as an art[#1]. But calling these sessions "art sessions" feels too loose to me. Since poems can be completely logical in contrast to art in general, as far as I know. Thus, I decided to name these notes the poem.
 
 > "Pure mathematics is, in its way, the poetry of logical ideas." <br>
 >
@@ -79,11 +79,11 @@ Thus, being one of the lucky people who learned from Serge (For those interesste
   </figure>
 </div>
 
-Also, I do not take a view of any particular traditional school, such as the french one lead by Bourbaki's abstraction, nor the Russian one treating mathematics as part of experimental sciences, but rather prefer to take the best of both worlds[#4]. Also, unlike for instance Bourbaki, who does not provide you with any explenation why he did the things the way he decided to do[#5], I will try to give explenations why I decided to do things the way I did them when deemed adequate. I find it to be quite dishonest behavior towards the readers to keep from them the motivation behind __why__ I took a particular path when I could have taken another one, since mostly there is a reason (and so, also some learnings) behind the most choices we make.
+Also, I do not take a view of any particular traditional school, such as the french one lead by Bourbaki's abstraction, nor the Russian one treating mathematics as part of experimental sciences, but rather prefer to take the best of both worlds[#4]. Also, unlike for instance Bourbaki, who does not provide you with any explenation why he did the things the way he decided to do[#5], I will try to give explenations why I decided to do things the way I did them when deemed adequate. I find it to be quite dishonest behavior towards the readers to keep from them the motivation behind __why__ I took a particular path when I could have taken another one, since mostly there is a reason (and so, also some learnings) behind the most choices we make (even if the reason is "only" ourt personal taste).
 
 Consequently, althogh my perspective heavily relies on Serge's and Artins' teachings, I developed my own views and perceptions of the subject according to my personal taste. But without developing your own understanding - do you even have a soul?
 
-And so one of my hopes for these poems is to a certain degree analogous to what Serge's motivation for his textbooks was
+And so one of my hopes for these writings is to a certain degree analogous to what was Serge's motivation for writing his textbooks:
 
 > "I want to stimulate thought, and do away with the general uptight feelings, which people often have about math" [ref:Lang1988] 
 
@@ -93,7 +93,7 @@ and that you will see that you can use your **ordinary language** to express the
 
 ## On the structure and types of the poems
 
-Loosly speaking I differentiate among 3 poem types below, where each poem will take ideally a form of one of them. However, crossovers are not excluded.
+Loosly speaking I differentiate among 3 writing types stated below, where each one will take ideally a form of one of them. However, crossovers are not excluded.
 
 1. Abstract perspective poem (providing a big picture understanding)
 2. Detailed perspective poem (providing an understanding of some special topic)
