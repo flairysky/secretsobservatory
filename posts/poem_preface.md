@@ -13,7 +13,7 @@ Moreover, since I was usually studying mathematics on my own but liked to be amo
 
 You might be wondering why are these notes called a poem, which I now briefly state here and will ellaborate about the choice more in detail later. The reason is very simple. As with everything in life, we love stories and narratives, and I am no exception. Whenever I learn something or try to grasp an idea, I try to understand the narrative behind it. Luckily for us, in mathematics the narrative writes itself and in contrast to other stories, mathematics must follow logic. And so, although we still have different ways of approaching these topics, they all share a common thread: logical coherence. The way I portray the story is simply the way I like it, and so resembles my taste.
 
-Moreover, since these notes reflect my subjective perception, it is fair to briefly state what my view of mathematics is, and why the word poem was chosen, now in a more detail. So let’s start with the latter.
+Moreover, since these notes reflect my subjective perception, it is only fair to briefly state what my view of mathematics is, and why the word poem was chosen, now in a more detail. So let’s start with the latter.
 
 The word poem was chosen for two main reasons.
 
