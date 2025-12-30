@@ -15,15 +15,19 @@ One thing that surprised me while doing mathematics was that contrary to the mai
 Before we begin, I must mention that all pictures[#1] used in this particular session are not rigorous in any sense, but in my experience help stimulate thought and a perception of a certain perspective about mathematics I would like to convey. Thus, one should not take these pictures literally.<br>
 At the end of the day, I believe that it is still better for you to see some pictures than if I had told you to "imagine something," since this is very dangerous, as you and I can imagine two completely different things (I paraphrase here Frederic Schüller [ref:Schuller2025WEHeraeus]).
 
-<figure>
-  <img src="assets/new pictures/Bird-eye perspective.png" alt="abstract perspective (general)" class="w-full h-64 object-cover rounded-lg shadow-md">
-  <figcaption class="text-center text-sm text-gray-600 dark:text-gray-400 mt-2 italic">
+<figure class="mb-8">
+  <video src="assets/videos/eagle perspective video.mp4" alt="abstract perspective (general)" class="w-full h-auto rounded-lg shadow-md" controls autoplay loop muted playsinline>
+    Your browser does not support the video tag.
+  </video>
+  <figcaption class="text-center text-sm text-gray-600 dark:text-gray-400 mt-2 mb-6 italic">
     Abstract perspective (general)
   </figcaption>
 </figure>
-<figure>
-  <img src="assets/new pictures/special perspective.png" alt="detailed perspective (special)" class="w-full h-64 object-cover rounded-lg shadow-md">
-  <figcaption class="text-center text-sm text-gray-600 dark:text-gray-400 mt-2 italic">
+<figure class="mb-8">
+  <video src="assets/videos/lilybug perspective video.mp4" alt="detailed perspective (special)" class="w-full h-auto rounded-lg shadow-md" controls autoplay loop muted playsinline>
+    Your browser does not support the video tag.
+  </video>
+  <figcaption class="text-center text-sm text-gray-600 dark:text-gray-400 mt-2 mb-6 italic">
     Detailed perspective (special)
   </figcaption>
 </figure>
@@ -37,9 +41,9 @@ And we see that while flying constantly up and down we also need to go through t
 But also in the forests there are nice pathways one can take, through which one learns a lot.
 
 Sadly, my experience with lectures or bad books is that they often look like this,
-<figure>
+<figure class="mb-8">
   <img src="assets/new pictures/jungle perspective.png" alt="jungle perspective" class="w-full h-64 object-cover rounded-lg shadow-md">
-  <figcaption class="text-center text-sm text-gray-600 dark:text-gray-400 mt-2 italic">
+  <figcaption class="text-center text-sm text-gray-600 dark:text-gray-400 mt-2 mb-6 italic">
     Jungle perspective
   </figcaption>
 </figure>
@@ -50,9 +54,9 @@ which we might describe as
 
 Or, in the best case, like this:
 
-<figure>
+<figure class="mb-8">
   <img src="assets/new pictures/better jungle perspective.png" alt="a better jungle perspective" class="w-full h-64 object-cover rounded-lg shadow-md">
-  <figcaption class="text-center text-sm text-gray-600 dark:text-gray-400 mt-2 italic">
+  <figcaption class="text-center text-sm text-gray-600 dark:text-gray-400 mt-2 mb-6 italic">
     A better jungle perspective
   </figcaption>
 </figure>
@@ -135,9 +139,9 @@ But for more details, continue reading the second Act, and actually if you do no
 To conclude,<br>
 I hope you could start to see how the difficulty with mathematics arises purely artifically and has more to do with psychological perspective rather than with the content matter, cf. Mario below.
 
-<figure>
+<figure class="mb-8">
   <img src="assets/imagespoem/mario_resized.png" alt="Mario perspective" class="w-full h-64 object-cover rounded-lg shadow-md">
-  <figcaption class="text-center text-sm text-gray-600 dark:text-gray-400 mt-2 italic">
+  <figcaption class="text-center text-sm text-gray-600 dark:text-gray-400 mt-2 mb-6 italic">
     Mario perspective (taken from some meme on the internet, happy to quote the original author)
   </figcaption>
 </figure>

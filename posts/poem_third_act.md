@@ -44,9 +44,9 @@ we assign (hence "<strong>association</strong>") an element of the new set $S'$,
 which is psychologically an opposite direction to our symbolical description! (This may need a little time to digest.)<br>
 
 Visually, to remember this fact, one might, e.g., think of the original set $S$ as a set of some points, and of the new set $S'$ as a set of arrows. Thus, to every point we assign an arrow, which may look like this, for example:
-<figure>
+<figure class="mb-8">
   <img src="assets/imagespoem/visual_association.png" alt="example of a visual description of an association" class="w-full h-64 object-cover rounded-lg shadow-md">
-  <figcaption class="text-center text-sm text-gray-600 dark:text-gray-400 mt-2 italic">
+  <figcaption class="text-center text-sm text-gray-600 dark:text-gray-400 mt-2 mb-8 italic">
     example of a visual description of an association
   </figcaption>
 </figure>
@@ -54,9 +54,9 @@ Visually, to remember this fact, one might, e.g., think of the original set $S$ 
 Furthermore, what I want to stress is that for an association to be an association, we must assign a new element to _every_ element of the original set.<br>
 
 E.g.:
-<figure>
+<figure class="mb-8">
   <img src="assets/imagespoem/no_association.png" alt="example of what is not an association" class="w-full h-64 object-cover rounded-lg shadow-md">
-  <figcaption class="text-center text-sm text-gray-600 dark:text-gray-400 mt-2 italic">
+  <figcaption class="text-center text-sm text-gray-600 dark:text-gray-400 mt-2 mb-8 italic">
     example of what is not an association
   </figcaption>
 </figure>
@@ -68,9 +68,9 @@ then we can do so and call it a "restriction of $f$," denoted by $f|_\lbrace A\r
 Thus, symbolically we started with $f:S \to S'$ and we constructed $f|_\lbrace A\rbrace:A \to S'$ from $f$.
 Further, instead of saying all the time the first set or original set and another set, we call the first set the "<strong>domain</strong>" of an association and the second set the "<strong>co-domain</strong>" (or "<strong>target set</strong>") of an association, and we also see that not every element in the co-domain has to be assigned to some element in the domain, and so we call the collection of all the elements in the co-domain which are assigned to some element in the domain the "<strong>image</strong>" of an association (symbolically $\operatorname{Im}(f)$, if we call our association $f$).<br>
 Hence, we immediately see (take domain and co-domain such that the co-domain contains more elements than the domain) that it is not always true that a co-domain is equal to the image! This fact will be important later below (look up surjection and also what can happen if we take domain and co-domain to be the same set and the association is injective[#1]).
-<figure>
+<figure class="mb-8">
   <img src="assets/imagespoem/association.png" alt="image vs co-domain" class="w-full h-64 object-cover rounded-lg shadow-md">
-  <figcaption class="text-center text-sm text-gray-600 dark:text-gray-400 mt-2 italic">
+  <figcaption class="text-center text-sm text-gray-600 dark:text-gray-400 mt-2 mb-8 italic">
     image vs co-domain
   </figcaption>
 </figure>
@@ -87,9 +87,9 @@ Why? Because, in the case of bijection each element of the co-domain corresponds
 Remark: We immediatelly see that each injective map is bijective when considerer its image instead of the whole target space :)
 
 
-<figure>
+<figure class="mb-8">
   <img src="assets/imagespoem/injective_surjective_bijective.png" alt="injection, surjection and bijection" class="w-full h-64 object-cover rounded-lg shadow-md">
-  <figcaption class="text-center text-sm text-gray-600 dark:text-gray-400 mt-2 italic">
+  <figcaption class="text-center text-sm text-gray-600 dark:text-gray-400 mt-2 mb-8 italic">
     injection, surjection and bijection
   </figcaption>
 </figure>
