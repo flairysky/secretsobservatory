@@ -123,7 +123,7 @@ Another pictorial description:
 
 ,where
 
-- $f_\text{can}$ stands for canonical association, which associates to each element in the domain the equivalence class in which it lies. ("canonical" means "natural", in a sense that it is a natural (or to a certain degree obvious) way one would define such association, if one would start trying to define an association of these two sets at first place, i.e. if given these two sets and asked to define anm associaiton among them, then you would come up with this association)
+- $f_\text{can}$ stands for canonical association, which associates to each element in the domain the equivalence class in which it lies. ("canonical" means "natural", in a sense that it is a natural (or to a certain degree obvious) way one would define such association, if one would start trying to define an association of these two sets at first place, i.e. if given these two sets and asked to define an associaiton among them, then you would come up with this association.)
 
 - $\bar{f}$ is a bijection, try to prove it, and also make sure that you show that this map is well defined, which means it is independent of the choice of representative of the class.<br>
 Since if the association would associate different elements to the same class, based on different representatives, it would clearly not satisfy the definition of an association at the first place! We also say that this association is _induced_ by $f$, since we defined $\bar{f}$ in terms of $f$.
