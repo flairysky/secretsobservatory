@@ -1,6 +1,6 @@
 ---
 title: "Daniel's Poem: Fifth Act - Geometry and Algebra I: On Vector Spaces"
-date: "2025-11-23"
+date: "2026-01-27"
 categories: ["Learning", "Teaching", "Mathematics"]
 excerpt: "Exploring vector spaces: the foundational structure bridging geometry and algebra."
 ---

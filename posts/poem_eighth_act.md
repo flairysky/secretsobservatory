@@ -1,6 +1,6 @@
 ---
 title: "Daniel's Poem: Eighth Act - On Identification I: Construction of a Circle"
-date: "2025-11-23"
+date: "2026-01-27"
 categories: ["Learning", "Teaching", "Mathematics"]
 excerpt: "Understanding circles through identification: how we construct circular spaces by gluing together points."
 ---

@@ -9,14 +9,14 @@
     {
       "slug": "poem_on_construction_of_numbers",
       "title": "Daniel's Poem: On Construction of Numbers",
-      "date": "2025-11-24",
+      "date": "2026-01-27",
       "categories": ["Learning", "Teaching", "Mathematics"],
       "excerpt": "A poem exploring how we build the number systems from first principles."
     },
     {
       "slug": "poem_on_logic",
       "title": "Daniel's Poem: On Logic",
-      "date": "2025-11-24",
+      "date": "2026-01-27",
       "categories": ["Learning", "Teaching", "Mathematics"],
       "excerpt": "A poem exploring the foundations of logical reasoning in mathematics."
     },
@@ -30,35 +30,35 @@
     {
       "slug": "poem_ninth_act",
       "title": "Daniel's Poem: Ninth Act - On Identification II: Construction of a Torus",
-      "date": "2025-11-23",
+      "date": "2026-01-27",
       "categories": ["Learning", "Teaching", "Mathematics"],
       "excerpt": "Understanding the torus through identification: how we construct doughnut-shaped spaces through gluing operations."
     },
     {
       "slug": "poem_eighth_act",
       "title": "Daniel's Poem: Eighth Act - On Identification I: Construction of a Circle",
-      "date": "2025-11-23",
+      "date": "2026-01-27",
       "categories": ["Learning", "Teaching", "Mathematics"],
       "excerpt": "Understanding circles through identification: how we construct circular spaces by gluing together points."
     },
     {
       "slug": "poem_seventh_act",
       "title": "Daniel's Poem: Seventh Act - Geometry and Algebra III: Excursion - Probability as Application of Linear Algebra",
-      "date": "2025-11-23",
+      "date": "2026-01-27",
       "categories": ["Learning", "Teaching", "Mathematics"],
       "excerpt": "An excursion into probability theory through the lens of linear algebra."
     },
     {
       "slug": "poem_sixth_act",
       "title": "Daniel's Poem: Sixth Act - Geometry and Algebra II: On Differentiability",
-      "date": "2025-11-23",
+      "date": "2026-01-27",
       "categories": ["Learning", "Teaching", "Mathematics"],
       "excerpt": "Exploring differentiability: understanding smooth transformations and the calculus of change."
     },
     {
       "slug": "poem_fifth_act",
       "title": "Daniel's Poem: Fifth Act - Geometry and Algebra I: On Vector Spaces",
-      "date": "2025-11-23",
+      "date": "2026-01-27",
       "categories": ["Learning", "Teaching", "Mathematics"],
       "excerpt": "Exploring vector spaces: the foundational structure bridging geometry and algebra."
     },
