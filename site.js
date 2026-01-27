@@ -1946,13 +1946,20 @@ function generateSidebarContent(sidebarNav, currentSlug) {
     'poem_first_act',
     'poem_second_act',
     'poem_third_act',
-    'poem_fourth_act'
+    'poem_fourth_act',
+    'poem_fifth_act',
+    'poem_sixth_act',
+    'poem_seventh_act',
+    'poem_eighth_act',
+    'poem_ninth_act'
   ];
   
   // Define standalone poems
   const standalonePoems = [
     'poem_on_infinity',
-    'poem_on_prime_ideals'
+    'poem_on_prime_ideals',
+    'poem_on_logic',
+    'poem_on_construction_of_numbers'
   ];
   
   // Separate posts
