@@ -5,3 +5,4 @@ categories: ["Physics"]
 excerpt: "An exploration of the fundamental principles and methodology of physics."
 ---
 
+The content will follow at some point in the future.

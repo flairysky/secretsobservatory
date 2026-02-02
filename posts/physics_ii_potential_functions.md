@@ -5,3 +5,4 @@ categories: ["Physics"]
 excerpt: "Examining the role of potential functions where mathematics and physics converge."
 ---
 
+The content will follow at some point in the future.
