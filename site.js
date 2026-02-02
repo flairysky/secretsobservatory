@@ -2054,11 +2054,19 @@ function generateSidebarContent(sidebarNav, currentSlug) {
   
   // Physics section
   if (physicsPosts.length > 0) {
+    // Sort physics posts by their numerical order (Physics I before Physics II)
+    const sortedPhysicsPosts = physicsPosts.sort((a, b) => {
+      // Extract number from title (e.g., "Physics I" -> 1, "Physics II" -> 2)
+      const numA = a.title.match(/Physics\s+(I+)/i)?.[1]?.length || 0;
+      const numB = b.title.match(/Physics\s+(I+)/i)?.[1]?.length || 0;
+      return numA - numB;
+    });
+    
     html += '<div class="sidebar-section">';
     html += '<h3 class="sidebar-section-title">Physics</h3>';
     html += '<ul class="sidebar-nav-list">';
     
-    physicsPosts.forEach(post => {
+    sortedPhysicsPosts.forEach(post => {
       const isActive = post.slug === currentSlug ? 'active' : '';
       html += `
         <li class="sidebar-nav-item">
