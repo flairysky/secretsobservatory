@@ -7,6 +7,20 @@
   },
   "posts": [
     {
+      "slug": "physics_ii_potential_functions",
+      "title": "Physics II: Potential Functions at the Intersection of Mathematics and Physics",
+      "date": "2026-02-02",
+      "categories": ["Physics"],
+      "excerpt": "Examining the role of potential functions where mathematics and physics converge."
+    },
+    {
+      "slug": "physics_i_general_remarks",
+      "title": "Physics I: General Remarks on How Physics Works",
+      "date": "2026-02-02",
+      "categories": ["Physics"],
+      "excerpt": "An exploration of the fundamental principles and methodology of physics."
+    },
+    {
       "slug": "poem_on_construction_of_numbers",
       "title": "Daniel's Poem: On Construction of Numbers",
       "date": "2026-01-27",
