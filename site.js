@@ -1938,6 +1938,7 @@ function generateSidebarContent(sidebarNav, currentSlug) {
   // Organize posts into categories
   const mainPoemPosts = [];
   const standalonePoemPosts = [];
+  const physicsPosts = [];
   const miscPosts = [];
   
   // Define the order for main poem posts (the series)
@@ -1971,6 +1972,8 @@ function generateSidebarContent(sidebarNav, currentSlug) {
     } else if (post.slug.startsWith('poem_')) {
       // Any other poems not explicitly categorized
       standalonePoemPosts.push(post);
+    } else if (post.categories && post.categories.includes('Physics')) {
+      physicsPosts.push(post);
     } else {
       miscPosts.push(post);
     }
@@ -2040,6 +2043,27 @@ function generateSidebarContent(sidebarNav, currentSlug) {
         <li class="sidebar-nav-item">
           <a href="post.html?slug=${post.slug}" class="sidebar-nav-link ${isActive}" title="${escapeHtml(post.title)}">
             ${escapeHtml(displayTitle)}
+          </a>
+        </li>
+      `;
+    });
+    
+    html += '</ul>';
+    html += '</div>';
+  }
+  
+  // Physics section
+  if (physicsPosts.length > 0) {
+    html += '<div class="sidebar-section">';
+    html += '<h3 class="sidebar-section-title">Physics</h3>';
+    html += '<ul class="sidebar-nav-list">';
+    
+    physicsPosts.forEach(post => {
+      const isActive = post.slug === currentSlug ? 'active' : '';
+      html += `
+        <li class="sidebar-nav-item">
+          <a href="post.html?slug=${post.slug}" class="sidebar-nav-link ${isActive}" title="${escapeHtml(post.excerpt || post.title)}">
+            ${escapeHtml(post.title)}
           </a>
         </li>
       `;
