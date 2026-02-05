@@ -9,4 +9,4 @@ excerpt: "An exploration of the fundamental principles and methodology of physic
 >
 > Richard Feynman
 
-The content will follow at some point in the future.  
+The content will follow at some point in the future.
