@@ -49,3 +49,9 @@ Geometrically, These axioms mean nothing else than to preserve lines, since give
 [3]: You might think that this is a special kind of an operator, being a linear operator, and that we would have also different operators in mathematics. However, in pure mathematics it became a convention that when we say an operator, we mean this particular map, i.e. a linear map. SImilarly, with maps we call fields, we almost always mean a vector field, i.e. a map going between two vector fields of dimension of at least two.
 (of course there are many other situations where the name oprator is being used across computer science and other disciplines, but the discussion above considers pure mathematics.)
 -->
+
+---
+
+Previous: [Fifth Act - Geometry and Algebra I: On Vector Spaces](post.html?slug=poem_fifth_act)
+
+continue reading: [Seventh Act - Geometry and Algebra III: Excursion - Probability as Application of Linear Algebra](post.html?slug=poem_seventh_act)

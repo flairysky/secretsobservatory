@@ -79,3 +79,11 @@ There are many differen ways how to understand these axioms, using for instance 
 [1]: By that we mean the we do not have any specific object characterizing such quantity, in contrary a number can describe many different things, say two apples, cars etc., which is wy we say that it is abstract, and this discussion goes analogously for all mathematical objects.
 [2]: Sometimes the numbers with a minus sign infornt of them are also called negative numbers. However, calling them negative numbers can be a little bit misleading since if we think a bit more generally and say that we consider some number denoted by $a$, then it could be for instance the number $5$ or the number minus 5. Anf if we it would be the number $-5$, then $-a$ would result in a positive number, since $-(-5)$ is 5, which is positive. So it is better to think of them as minus 5 rather than negative $5$, or even in a more useful way as the additive inverses, i.e. $-a$ being the additive inverse of the number $a$.
 -->
+
+---
+
+Previous: [Fourth Act - On Equivalence](post.html?slug=poem_fourth_act)
+
+continue reading: [Sixth Act - Geometry and Algebra II: On Differentiability](post.html?slug=poem_sixth_act)
+
+Back to: [First Act - Big Picture](post.html?slug=poem_first_act)
