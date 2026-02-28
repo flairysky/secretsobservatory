@@ -7,13 +7,13 @@ excerpt: "Exploring differentiability: understanding smooth transformations and 
 
 In the previous act, we considered only one vector space in our investigations. What follows in this act is first how can we use the alberaic description of the vector space to construct them and describe them more succintly, and second the study of mappings between two such vector spaces. 
 
-In waht follows we always consider a vector space to be $\matbb{R}^n$ over the real numbers, so you can think for instance about $\matbb{R}^2$, as the discussion goes again exactly inthe same way for any integer $n$.
+In waht follows we always consider a vector space to be $\mathbb{R}^n$ over the real numbers, so you can think for instance about $\mathbb{R}^2$, as the discussion goes again exactly inthe same way for any integer $n$.
 
 Okay, now we have the description of the algebraic description of the basic geometric obects in the form of the  vector space structure.
 
-The following question arises: how can we construct the vector spaces, i.e. what are the smallest sets of vectors describing a vector space.
+The following question arises: how can we construct the vector spaces, i.e. what are the smallest sets of vectors describing a vector space.[1]
 
-We say that given arbitrarily real numbers, say $a,b$ and vectors $X,Y$, using our notions of addition and scalar multiplication we can form $aX+bY$, (which is nothing but a line) and we call such expression a **linear combination**. Of course, we can for such expression for an arbitrary number of vectors and numbers obtianing $c_1X+\cdots +c_nX_n$. [1]
+We say that given arbitrarily real numbers, say $a,b$ and vectors $X,Y$, using our notions of addition and scalar multiplication we can form $aX+bY$, (which is nothing but a line) and we call such expression a **linear combination**. Of course, we can for such expression for an arbitrary number of vectors and numbers obtianing $c_1X+\cdots +c_nX_n$.
 
 So now given some vectors, we say that they generate a space if given any vector from the space, we can rewrite it as a linear combination of these vectors. And secondly, we say that they form a basis if whenever we set this linear combination equal to zero, then all the scalars must be zero. We say that such vectors are being linearly independent, or simply just independent. If it is not the case, in other words, if we can find numbers which set the linear combination to the zero vector, but all the numbers are not zero, then we say that these vectors are linearly dependent, or just dependent. 
 
@@ -43,7 +43,7 @@ Geometrically, These axioms mean nothing else than to preserve lines, since give
 
 
 <!-- FOOTNOTES
-[1]:
+[1]: There are two basic psychological perceptions potrayed by Terrence Tao in his lecture notes on linear legebra that one can take in studing a specific vector space, These can be viewed as, say bottom-up and top-down, i.e. taking individual vectors and exploring what one can construct from them within the particular space, or starting with the whole space and continuisly dismanteling that space.
 [2]: For the above reasons, some authors describe the basis as the minimal spanning set of the vector space.
 [3]: You might think that this is a special kind of an operator, being a linear operator, and that we would have also different operators in mathematics. However, in pure mathematics it became a convention that when we say an operator, we mean this particular map, i.e. a linear map. SImilarly, with maps we call fields, we almost always mean a vector field, i.e. a map going between two vector fields of dimension of at least two.
 (of course there are many other situations where the name oprator is being used across computer science and other disciplines, but the discussion above considers pure mathematics.)
