@@ -167,4 +167,4 @@ to be _logicaly_ precise, one should write first "for every x,y,z" and then stat
 
 Previous: [Third Act - On Associations](post.html?slug=poem_third_act)
 
-Back to: [First Act - Big Picture](post.html?slug=poem_first_act)
+Continue reading: [Fifth Act - Geometry and Algebra I: On Vector Spaces](post.html?slug=poem_fifth_act)

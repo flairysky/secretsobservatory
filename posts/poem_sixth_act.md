@@ -54,4 +54,4 @@ Geometrically, These axioms mean nothing else than to preserve lines, since give
 
 Previous: [Fifth Act - Geometry and Algebra I: On Vector Spaces](post.html?slug=poem_fifth_act)
 
-continue reading: [Seventh Act - Geometry and Algebra III: Excursion - Probability as Application of Linear Algebra](post.html?slug=poem_seventh_act)
+Continue reading: [Seventh Act - Geometry and Algebra III: Excursion - Probability as Application of Linear Algebra](post.html?slug=poem_seventh_act)

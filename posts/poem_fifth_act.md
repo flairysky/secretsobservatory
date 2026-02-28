@@ -84,6 +84,4 @@ There are many differen ways how to understand these axioms, using for instance 
 
 Previous: [Fourth Act - On Equivalence](post.html?slug=poem_fourth_act)
 
-continue reading: [Sixth Act - Geometry and Algebra II: On Differentiability](post.html?slug=poem_sixth_act)
-
-Back to: [First Act - Big Picture](post.html?slug=poem_first_act)
+Continue reading: [Sixth Act - Geometry and Algebra II: On Differentiability](post.html?slug=poem_sixth_act)
