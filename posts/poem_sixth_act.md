@@ -11,14 +11,14 @@ In waht follows we always consider a vector space to be $\mathbb{R}^n$ over the 
 
 Okay, now we have the description of the algebraic description of the basic geometric obects in the form of the  vector space structure.
 
-The following question arises: how can we construct the vector spaces, i.e. what are the smallest sets of vectors describing a vector space.[1]
+The following question arises: how can we construct the vector spaces, i.e. what are the smallest sets of vectors describing a vector space.[#1]
 
 We say that given arbitrarily real numbers, say $a,b$ and vectors $X,Y$, using our notions of addition and scalar multiplication we can form $aX+bY$, (which is nothing but a line) and we call such expression a **linear combination**. Of course, we can for such expression for an arbitrary number of vectors and numbers obtianing $c_1X+\cdots +c_nX_n$.
 
 So now given some vectors, we say that they generate a space if given any vector from the space, we can rewrite it as a linear combination of these vectors. And secondly, we say that they form a basis if whenever we set this linear combination equal to zero, then all the scalars must be zero. We say that such vectors are being linearly independent, or simply just independent. If it is not the case, in other words, if we can find numbers which set the linear combination to the zero vector, but all the numbers are not zero, then we say that these vectors are linearly dependent, or just dependent. 
 
 The reasoning behind these names is very geometrical, as given two vectors which are dependent, we can always describe them geometrically as lying on the same line. In other words, they are the same vector just scaled differently, i.e. one depends on the other. 
-On the other hand, if they are independent, then they can not be geometrically viewed as lying on the same line. For instance, in the plane, two linearly independent vectors describe the whole plane as given any point we can describe it as a linea rcombination of these two vectors (i.e. they generate the plane, sometimes it is said that they **span** the space), and given only one vector ve cannot describe the whole plane, and so the two linearly independent vectors form the smallest set that can describe the whole plane. Thus, any two linealry independent vectors in the plane form a basis.[2] We call the number of the vectors in the basis, the **dimension** of the vector space.
+On the other hand, if they are independent, then they can not be geometrically viewed as lying on the same line. For instance, in the plane, two linearly independent vectors describe the whole plane as given any point we can describe it as a linea rcombination of these two vectors (i.e. they generate the plane, sometimes it is said that they **span** the space), and given only one vector ve cannot describe the whole plane, and so the two linearly independent vectors form the smallest set that can describe the whole plane. Thus, any two linealry independent vectors in the plane form a basis.[#2] We call the number of the vectors in the basis, the **dimension** of the vector space.
 
 Final remark: You can bserve that we can have many different bases for the same space, however once we fix a basis then we obtain specific coordinates for each point of the space that differ from coordinates if we would pick a different basis. This is very important for at least two reasons. First, changing coordinates amounts to changing bases, and second in physics dealing with bases and different coordinate systems can uncover many different physical insides, but one needs to be cautios as one differentiates between canonical systems etc., but the description of this topic would go to far from our main puruits and an interested reader can consult physcis textbooks or, for instance [ref:Schuller2015].
 
@@ -31,9 +31,10 @@ Such mapping must satisfy the following two axioms which, you can understand as 
 I.e. given a bijection $f$ between two vector spaces, we must have for all vectors $X,Y$ in the domain and all the numbers $c$
 
 L1: $f(X+Y)=f(X)+f(Y)$, 
+
 L2: $f(cX)=cf(X)$
 
-Such mapping is called a linear map, and if its domain is the same as its codomain, then we call $f$$ an operator.[3]
+Such mapping is called a linear map, and if its domain is the same as its codomain, then we call $f$$ an operator.[#3]
 
 We can view this in two ways: algebraically and geometrically. 
 
