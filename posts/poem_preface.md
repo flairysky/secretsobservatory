@@ -53,14 +53,14 @@ Thus, being one of the lucky people who learned from Serge (For those interesste
   <figure>
     <img src="assets/imagespoem/SL1.png" alt="Serge Lang in his first natural habitat" class="w-full h-64 object-cover rounded-lg shadow-md">
     <figcaption class="text-center text-sm text-gray-600 dark:text-gray-400 mt-2 italic">
-      Serge Lang in his first natural habitat [ref:Lang2004_photo] 
+      Serge Lang in his first natural habitat [ref:Lang1977_photo] 
     </figcaption>
   </figure>
 
   <figure>
     <img src="assets/imagespoem/SL2.png" alt="Serge Lang in his second natural habitat" class="w-full h-64 object-cover rounded-lg shadow-md">
     <figcaption class="text-center text-sm text-gray-600 dark:text-gray-400 mt-2 italic">
-      Serge Lang in his second natural habitat [ref:Lang1977_photo] 
+      Serge Lang in his second natural habitat [ref:Lang2004_photo] 
     </figcaption>
   </figure>
 
