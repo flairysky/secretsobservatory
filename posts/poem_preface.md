@@ -53,28 +53,28 @@ Thus, being one of the lucky people who learned from Serge (For those interesste
   <figure>
     <img src="assets/imagespoem/SL1.png" alt="Serge Lang in his first natural habitat" class="w-full h-64 object-cover rounded-lg shadow-md">
     <figcaption class="text-center text-sm text-gray-600 dark:text-gray-400 mt-2 italic">
-      Serge Lang in his first natural habitat
+      Serge Lang in his first natural habitat [ref:Lang2004_photo] 
     </figcaption>
   </figure>
 
   <figure>
     <img src="assets/imagespoem/SL2.png" alt="Serge Lang in his second natural habitat" class="w-full h-64 object-cover rounded-lg shadow-md">
     <figcaption class="text-center text-sm text-gray-600 dark:text-gray-400 mt-2 italic">
-      Serge Lang in his second natural habitat
+      Serge Lang in his second natural habitat [ref:Lang1977_photo] 
     </figcaption>
   </figure>
 
   <figure>
     <img src="assets/imagespoem/Emil_Artin.png" alt="Emil Artin - PhD advisor of S.L." class="w-full h-64 object-cover rounded-lg shadow-md">
     <figcaption class="text-center text-sm text-gray-600 dark:text-gray-400 mt-2 italic">
-      Emil Artin - PhD advisor of S.L.
+      Emil Artin - PhD advisor of S.L. [ref:Artin_LifeMask_UHH2013] 
     </figcaption>
   </figure>
 
   <figure>
     <img src="assets/imagespoem/Michael_Artin.png" alt="Michael Artin - son of E.A." class="w-full h-64 object-cover rounded-lg shadow-md">
     <figcaption class="text-center text-sm text-gray-600 dark:text-gray-400 mt-2 italic">
-      Michael Artin - son of E.A.
+      Michael Artin - son of E.A. [ref:MichaelArtin_NSTMF_photo] 
     </figcaption>
   </figure>
 </div>
