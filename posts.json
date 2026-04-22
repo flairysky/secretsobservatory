@@ -1,4 +1,4 @@
-{
+﻿{
   "site": {
     "title": "Secrets Observatory",
     "tagline": "Math, ethics, and notes in progress.",
@@ -97,6 +97,132 @@
       "date": "2025-10-23",
       "categories": ["Learning", "Teaching", "Mathematics"],
       "excerpt": "A collection of some possibly useful tricks and tips on how to learn."
+    },
+    {
+      "slug": "solutions-undergraduate-algebra-ch1-s1-terminology-of-sets",
+      "title": "Solutions: Chapter I - The Integers - Section 1. Terminology of Sets",
+      "date": "2026-04-22",
+      "categories": ["Solutions", "Algebra", "Mathematics"],
+      "excerpt": "Solution workspace for Chapter I, Section 1 (Terminology of Sets)."
+    },
+    {
+      "slug": "solutions-undergraduate-algebra-ch1-s2-basic-properties",
+      "title": "Solutions: Chapter I - The Integers - Section 2. Basic Properties",
+      "date": "2026-04-22",
+      "categories": ["Solutions", "Algebra", "Mathematics"],
+      "excerpt": "Solution workspace for Chapter I, Section 2 (Basic Properties)."
+    },
+    {
+      "slug": "solutions-undergraduate-algebra-ch1-s3-greatest-common-divisor",
+      "title": "Solutions: Chapter I - The Integers - Section 3. Greatest Common Divisor",
+      "date": "2026-04-22",
+      "categories": ["Solutions", "Algebra", "Mathematics"],
+      "excerpt": "Solution workspace for Chapter I, Section 3 (Greatest Common Divisor)."
+    },
+    {
+      "slug": "solutions-undergraduate-algebra-ch1-s4-unique-factorization",
+      "title": "Solutions: Chapter I - The Integers - Section 4. Unique Factorization",
+      "date": "2026-04-22",
+      "categories": ["Solutions", "Algebra", "Mathematics"],
+      "excerpt": "Solution workspace for Chapter I, Section 4 (Unique Factorization)."
+    },
+    {
+      "slug": "solutions-undergraduate-algebra-ch1-s5-equivalence-relations-and-congruences",
+      "title": "Solutions: Chapter I - The Integers - Section 5. Equivalence Relations and Congruences",
+      "date": "2026-04-22",
+      "categories": ["Solutions", "Algebra", "Mathematics"],
+      "excerpt": "Solution workspace for Chapter I, Section 5 (Equivalence Relations and Congruences)."
+    },
+    {
+      "slug": "solutions-undergraduate-algebra-ch2-s1-groups-and-examples",
+      "title": "Solutions: Chapter II - Groups - Section 1. Groups and Examples",
+      "date": "2026-04-22",
+      "categories": ["Solutions", "Algebra", "Mathematics"],
+      "excerpt": "Solution workspace for Chapter II, Section 1 (Groups and Examples)."
+    },
+    {
+      "slug": "solutions-undergraduate-algebra-ch2-s2-mappings",
+      "title": "Solutions: Chapter II - Groups - Section 2. Mappings",
+      "date": "2026-04-22",
+      "categories": ["Solutions", "Algebra", "Mathematics"],
+      "excerpt": "Solution workspace for Chapter II, Section 2 (Mappings)."
+    },
+    {
+      "slug": "solutions-undergraduate-algebra-ch2-s3-homomorphisms",
+      "title": "Solutions: Chapter II - Groups - Section 3. Homomorphisms",
+      "date": "2026-04-22",
+      "categories": ["Solutions", "Algebra", "Mathematics"],
+      "excerpt": "Solution workspace for Chapter II, Section 3 (Homomorphisms)."
+    },
+    {
+      "slug": "solutions-undergraduate-algebra-ch2-s4-cosets-and-normal-subgroups",
+      "title": "Solutions: Chapter II - Groups - Section 4. Cosets and Normal Subgroups",
+      "date": "2026-04-22",
+      "categories": ["Solutions", "Algebra", "Mathematics"],
+      "excerpt": "Solution workspace for Chapter II, Section 4 (Cosets and Normal Subgroups)."
+    },
+    {
+      "slug": "solutions-undergraduate-algebra-ch2-s5-application-to-cyclic-groups",
+      "title": "Solutions: Chapter II - Groups - Section 5. Application to Cyclic Groups",
+      "date": "2026-04-22",
+      "categories": ["Solutions", "Algebra", "Mathematics"],
+      "excerpt": "Solution workspace for Chapter II, Section 5 (Application to Cyclic Groups)."
+    },
+    {
+      "slug": "solutions-undergraduate-algebra-ch2-s6-permutation-groups",
+      "title": "Solutions: Chapter II - Groups - Section 6. Permutation Groups",
+      "date": "2026-04-22",
+      "categories": ["Solutions", "Algebra", "Mathematics"],
+      "excerpt": "Solution workspace for Chapter II, Section 6 (Permutation Groups)."
+    },
+    {
+      "slug": "solutions-undergraduate-algebra-ch2-s7-finite-abelian-groups",
+      "title": "Solutions: Chapter II - Groups - Section 7. Finite Abelian Groups",
+      "date": "2026-04-22",
+      "categories": ["Solutions", "Algebra", "Mathematics"],
+      "excerpt": "Solution workspace for Chapter II, Section 7 (Finite Abelian Groups)."
+    },
+    {
+      "slug": "solutions-undergraduate-algebra-ch2-s8-operation-of-a-group-on-a-set",
+      "title": "Solutions: Chapter II - Groups - Section 8. Operation of a Group on a Set",
+      "date": "2026-04-22",
+      "categories": ["Solutions", "Algebra", "Mathematics"],
+      "excerpt": "Solution workspace for Chapter II, Section 8 (Operation of a Group on a Set)."
+    },
+    {
+      "slug": "solutions-undergraduate-algebra-ch2-s9-sylow-subgroups",
+      "title": "Solutions: Chapter II - Groups - Section 9. Sylow Subgroups",
+      "date": "2026-04-22",
+      "categories": ["Solutions", "Algebra", "Mathematics"],
+      "excerpt": "Solution workspace for Chapter II, Section 9 (Sylow Subgroups)."
+    },
+    {
+      "slug": "solutions-undergraduate-algebra-ch3-s1-rings",
+      "title": "Solutions: Chapter III - Rings - Section 1. Rings",
+      "date": "2026-04-22",
+      "categories": ["Solutions", "Algebra", "Mathematics"],
+      "excerpt": "Solution workspace for Chapter III, Section 1 (Rings)."
+    },
+    {
+      "slug": "solutions-undergraduate-algebra-ch3-s2-ideals",
+      "title": "Solutions: Chapter III - Rings - Section 2. Ideals",
+      "date": "2026-04-22",
+      "categories": ["Solutions", "Algebra", "Mathematics"],
+      "excerpt": "Solution workspace for Chapter III, Section 2 (Ideals)."
+    },
+    {
+      "slug": "solutions-undergraduate-algebra-ch3-s3-homomorphisms",
+      "title": "Solutions: Chapter III - Rings - Section 3. Homomorphisms",
+      "date": "2026-04-22",
+      "categories": ["Solutions", "Algebra", "Mathematics"],
+      "excerpt": "Solution workspace for Chapter III, Section 3 (Homomorphisms)."
+    },
+    {
+      "slug": "solutions-undergraduate-algebra-ch3-s4-quotient-fields",
+      "title": "Solutions: Chapter III - Rings - Section 4. Quotient Fields",
+      "date": "2026-04-22",
+      "categories": ["Solutions", "Algebra", "Mathematics"],
+      "excerpt": "Solution workspace for Chapter III, Section 4 (Quotient Fields)."
     }
   ]
 }

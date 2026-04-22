@@ -1,0 +1,378 @@
+﻿<!doctype html>
+<html lang="en" class="h-full">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Solutions â€¢ Secrets Observatory</title>
+  <meta name="description" content="Structured solution notes for Chapter I (The Integers), Chapter II (Groups), and Chapter III (Rings).">
+  <meta name="author" content="Secrets Observatory">
+  <meta name="robots" content="index, follow">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="assets/webpagelogos/Blue.png">
+
+  <!-- Feeds -->
+  <link rel="alternate" type="application/atom+xml" title="Secrets Observatory Feed" href="feed.xml">
+
+  <script>(function(){const t=localStorage.getItem('theme');const s=matchMedia('(prefers-color-scheme: dark)').matches;if(t==='dark'||(!t&&s))document.documentElement.classList.add('dark');})();</script>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>tailwind.config={darkMode:'class'};</script>
+  <link rel="stylesheet" href="assets/css/styles.css">
+</head>
+<body class="min-h-screen bg-white text-slate-900 dark:bg-slate-900 dark:text-slate-100">
+  <header class="post-header border-b border-slate-200 dark:border-slate-800">
+    <div id="scrollProgress" class="scroll-progress-bar"></div>
+    <nav class="mx-auto max-w-3xl px-4 py-4 flex items-center justify-between">
+      <button id="sidebarToggle" class="p-2 hover:bg-slate-100 dark:hover:bg-slate-800 rounded-md mr-2" aria-label="Toggle sidebar" title="Solutions index">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+        </svg>
+      </button>
+
+      <a href="index.html" class="font-semibold tracking-tight flex items-center gap-2">
+        <img src="assets/webpagelogos/Group 18.png" alt="Secrets Observatory Logo" class="h-8 w-8 dark:hidden">
+        <img src="assets/webpagelogos/Group 17.png" alt="Secrets Observatory Logo" class="h-8 w-8 hidden dark:block">
+        Secrets Observatory
+      </a>
+
+      <div class="hidden md:flex items-center gap-4 text-sm">
+        <a href="index.html" class="hover:underline">News</a>
+        <a href="post.html?slug=poem_preface" class="hover:underline">The Poem</a>
+        <a href="solutions.html" class="hover:underline">Solutions</a>
+        <a href="about.html" class="hover:underline">About</a>
+        <div class="relative">
+          <button id="catBtn" class="hover:underline">Categories â–¾</button>
+          <div id="catMenu" class="hidden absolute right-0 mt-2 w-40 rounded-md border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-800 shadow p-2 text-sm"></div>
+        </div>
+        <a href="archive.html" class="hover:underline">Archive</a>
+        <a href="feedback.html" class="hover:underline">Feedback</a>
+        <button id="themeToggle" class="p-2 rounded-md hover:bg-slate-100 dark:hover:bg-slate-800" aria-label="Toggle theme">
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"></path></svg>
+        </button>
+      </div>
+
+      <div class="flex items-center gap-2 md:hidden">
+        <button id="themeToggleMobile" class="p-2 rounded-md hover:bg-slate-100 dark:hover:bg-slate-800" aria-label="Toggle theme">
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 718.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"></path></svg>
+        </button>
+        <button id="mobileMenuBtn" class="p-2 hover:bg-slate-100 dark:hover:bg-slate-800 rounded-md" aria-label="Menu">
+          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+          </svg>
+        </button>
+      </div>
+    </nav>
+  </header>
+
+  <div id="mobileMenuOverlay" class="fixed inset-0 bg-black bg-opacity-50 z-40 hidden md:hidden"></div>
+
+  <div id="sidebarOverlay" class="fixed inset-0 bg-black bg-opacity-50 z-40 hidden"></div>
+
+  <aside id="sidebar" class="fixed top-0 left-0 h-full w-80 bg-white dark:bg-slate-900 shadow-lg z-50 transform -translate-x-full transition-transform duration-300 overflow-y-auto">
+    <div class="p-4 border-b border-slate-200 dark:border-slate-800 flex justify-between items-center sticky top-0 bg-white dark:bg-slate-900 z-10">
+      <h2 class="font-semibold text-lg">Solutions Index</h2>
+      <button id="closeSidebar" class="p-2 hover:bg-slate-100 dark:hover:bg-slate-800 rounded-md" aria-label="Close sidebar">
+        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+        </svg>
+      </button>
+    </div>
+    <nav id="sidebarNav" class="p-4">
+      <div class="sidebar-section">
+        <h3 class="sidebar-section-title">Chapter I - The Integers</h3>
+        <ul class="sidebar-nav-list">
+          <li class="sidebar-nav-item"><a href="post.html?slug=solutions-undergraduate-algebra-ch1-s1-terminology-of-sets" class="sidebar-nav-link">&sect;1. Terminology of Sets</a></li>
+          <li class="sidebar-nav-item"><a href="post.html?slug=solutions-undergraduate-algebra-ch1-s2-basic-properties" class="sidebar-nav-link">&sect;2. Basic Properties</a></li>
+          <li class="sidebar-nav-item"><a href="post.html?slug=solutions-undergraduate-algebra-ch1-s3-greatest-common-divisor" class="sidebar-nav-link">&sect;3. Greatest Common Divisor</a></li>
+          <li class="sidebar-nav-item"><a href="post.html?slug=solutions-undergraduate-algebra-ch1-s4-unique-factorization" class="sidebar-nav-link">&sect;4. Unique Factorization</a></li>
+          <li class="sidebar-nav-item"><a href="post.html?slug=solutions-undergraduate-algebra-ch1-s5-equivalence-relations-and-congruences" class="sidebar-nav-link">&sect;5. Equivalence Relations and Congruences</a></li>
+        </ul>
+      </div>
+      <div class="sidebar-section">
+        <h3 class="sidebar-section-title">Chapter II - Groups</h3>
+        <ul class="sidebar-nav-list">
+          <li class="sidebar-nav-item"><a href="post.html?slug=solutions-undergraduate-algebra-ch2-s1-groups-and-examples" class="sidebar-nav-link">&sect;1. Groups and Examples</a></li>
+          <li class="sidebar-nav-item"><a href="post.html?slug=solutions-undergraduate-algebra-ch2-s2-mappings" class="sidebar-nav-link">&sect;2. Mappings</a></li>
+          <li class="sidebar-nav-item"><a href="post.html?slug=solutions-undergraduate-algebra-ch2-s3-homomorphisms" class="sidebar-nav-link">&sect;3. Homomorphisms</a></li>
+          <li class="sidebar-nav-item"><a href="post.html?slug=solutions-undergraduate-algebra-ch2-s4-cosets-and-normal-subgroups" class="sidebar-nav-link">&sect;4. Cosets and Normal Subgroups</a></li>
+          <li class="sidebar-nav-item"><a href="post.html?slug=solutions-undergraduate-algebra-ch2-s5-application-to-cyclic-groups" class="sidebar-nav-link">&sect;5. Application to Cyclic Groups</a></li>
+          <li class="sidebar-nav-item"><a href="post.html?slug=solutions-undergraduate-algebra-ch2-s6-permutation-groups" class="sidebar-nav-link">&sect;6. Permutation Groups</a></li>
+          <li class="sidebar-nav-item"><a href="post.html?slug=solutions-undergraduate-algebra-ch2-s7-finite-abelian-groups" class="sidebar-nav-link">&sect;7. Finite Abelian Groups</a></li>
+          <li class="sidebar-nav-item"><a href="post.html?slug=solutions-undergraduate-algebra-ch2-s8-operation-of-a-group-on-a-set" class="sidebar-nav-link">&sect;8. Operation of a Group on a Set</a></li>
+          <li class="sidebar-nav-item"><a href="post.html?slug=solutions-undergraduate-algebra-ch2-s9-sylow-subgroups" class="sidebar-nav-link">&sect;9. Sylow Subgroups</a></li>
+        </ul>
+      </div>
+      <div class="sidebar-section">
+        <h3 class="sidebar-section-title">Chapter III - Rings</h3>
+        <ul class="sidebar-nav-list">
+          <li class="sidebar-nav-item"><a href="post.html?slug=solutions-undergraduate-algebra-ch3-s1-rings" class="sidebar-nav-link">&sect;1. Rings</a></li>
+          <li class="sidebar-nav-item"><a href="post.html?slug=solutions-undergraduate-algebra-ch3-s2-ideals" class="sidebar-nav-link">&sect;2. Ideals</a></li>
+          <li class="sidebar-nav-item"><a href="post.html?slug=solutions-undergraduate-algebra-ch3-s3-homomorphisms" class="sidebar-nav-link">&sect;3. Homomorphisms</a></li>
+          <li class="sidebar-nav-item"><a href="post.html?slug=solutions-undergraduate-algebra-ch3-s4-quotient-fields" class="sidebar-nav-link">&sect;4. Quotient Fields</a></li>
+        </ul>
+      </div>
+    </nav>
+  </aside>
+
+  <div id="mobileMenuPanel" class="fixed top-0 right-0 h-full w-64 bg-white dark:bg-slate-900 shadow-lg z-50 transform translate-x-full transition-transform duration-300 md:hidden">
+    <div class="p-4 border-b border-slate-200 dark:border-slate-800 flex justify-between items-center">
+      <span class="font-semibold">Menu</span>
+      <button id="closeMobileMenu" class="p-2 hover:bg-slate-100 dark:hover:bg-slate-800 rounded-md" aria-label="Close menu">
+        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+        </svg>
+      </button>
+    </div>
+    <nav class="p-4 flex flex-col gap-4 text-base">
+      <a href="index.html" class="hover:text-blue-600 dark:hover:text-blue-400 py-2">News</a>
+      <a href="post.html?slug=poem_preface" class="hover:text-blue-600 dark:hover:text-blue-400 py-2">The Poem</a>
+      <a href="solutions.html" class="hover:text-blue-600 dark:hover:text-blue-400 py-2">Solutions</a>
+      <a href="about.html" class="hover:text-blue-600 dark:hover:text-blue-400 py-2">About</a>
+      <div>
+        <button id="catBtnMobile" class="hover:text-blue-600 dark:hover:text-blue-400 py-2 w-full text-left">Categories â–¾</button>
+        <div id="catMenuMobile" class="hidden pl-4 mt-2 space-y-2 text-sm"></div>
+      </div>
+      <a href="archive.html" class="hover:text-blue-600 dark:hover:text-blue-400 py-2">Archive</a>
+      <a href="feedback.html" class="hover:text-blue-600 dark:hover:text-blue-400 py-2">Feedback</a>
+    </nav>
+  </div>
+
+  <main class="mx-auto max-w-3xl px-4 py-8">
+    <article>
+      <h1 class="text-2xl font-semibold mb-2">Explore Solutions</h1>
+      <p class="text-sm text-slate-500 dark:text-slate-400 mb-4">Table of contents aligned with your screenshot.</p>
+      <p class="text-slate-600 dark:text-slate-300 mb-6">Chapters are headings only; each section opens its own dedicated solution page.</p>
+
+      <section id="chapter-i" class="mt-10">
+        <h2 class="text-xl font-semibold mb-4">Chapter I - The Integers</h2>
+        <div class="space-y-4">
+          <article data-target-url="post.html?slug=solutions-undergraduate-algebra-ch1-s1-terminology-of-sets" class="solution-block rounded-lg border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 p-5 shadow-sm hover:shadow-md transition-shadow cursor-pointer" tabindex="0" role="link" aria-label="Open section 1 terminology of sets">
+            <h3 class="text-lg font-semibold mb-2">&sect;1. Terminology of Sets</h3>
+            <p class="text-slate-600 dark:text-slate-300">Solution page for set notation and foundational terminology.</p>
+          </article>
+          <article data-target-url="post.html?slug=solutions-undergraduate-algebra-ch1-s2-basic-properties" class="solution-block rounded-lg border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 p-5 shadow-sm hover:shadow-md transition-shadow cursor-pointer" tabindex="0" role="link" aria-label="Open section 2 basic properties">
+            <h3 class="text-lg font-semibold mb-2">&sect;2. Basic Properties</h3>
+            <p class="text-slate-600 dark:text-slate-300">Solution page for first structural properties and core lemmas.</p>
+          </article>
+          <article data-target-url="post.html?slug=solutions-undergraduate-algebra-ch1-s3-greatest-common-divisor" class="solution-block rounded-lg border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 p-5 shadow-sm hover:shadow-md transition-shadow cursor-pointer" tabindex="0" role="link" aria-label="Open section 3 greatest common divisor">
+            <h3 class="text-lg font-semibold mb-2">&sect;3. Greatest Common Divisor</h3>
+            <p class="text-slate-600 dark:text-slate-300">Solution page for gcd identities, algorithms, and proofs.</p>
+          </article>
+          <article data-target-url="post.html?slug=solutions-undergraduate-algebra-ch1-s4-unique-factorization" class="solution-block rounded-lg border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 p-5 shadow-sm hover:shadow-md transition-shadow cursor-pointer" tabindex="0" role="link" aria-label="Open section 4 unique factorization">
+            <h3 class="text-lg font-semibold mb-2">&sect;4. Unique Factorization</h3>
+            <p class="text-slate-600 dark:text-slate-300">Solution page for existence and uniqueness of factorizations.</p>
+          </article>
+          <article data-target-url="post.html?slug=solutions-undergraduate-algebra-ch1-s5-equivalence-relations-and-congruences" class="solution-block rounded-lg border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 p-5 shadow-sm hover:shadow-md transition-shadow cursor-pointer" tabindex="0" role="link" aria-label="Open section 5 equivalence relations and congruences">
+            <h3 class="text-lg font-semibold mb-2">&sect;5. Equivalence Relations and Congruences</h3>
+            <p class="text-slate-600 dark:text-slate-300">Solution page for modular arithmetic and equivalence classes.</p>
+          </article>
+        </div>
+      </section>
+
+      <section id="chapter-ii" class="mt-12">
+        <h2 class="text-xl font-semibold mb-4">Chapter II - Groups</h2>
+        <div class="space-y-4">
+          <article data-target-url="post.html?slug=solutions-undergraduate-algebra-ch2-s1-groups-and-examples" class="solution-block rounded-lg border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 p-5 shadow-sm hover:shadow-md transition-shadow cursor-pointer" tabindex="0" role="link" aria-label="Open section 1 groups and examples">
+            <h3 class="text-lg font-semibold mb-2">&sect;1. Groups and Examples</h3>
+            <p class="text-slate-600 dark:text-slate-300">Solution page for core group axioms and first examples.</p>
+          </article>
+          <article data-target-url="post.html?slug=solutions-undergraduate-algebra-ch2-s2-mappings" class="solution-block rounded-lg border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 p-5 shadow-sm hover:shadow-md transition-shadow cursor-pointer" tabindex="0" role="link" aria-label="Open section 2 mappings">
+            <h3 class="text-lg font-semibold mb-2">&sect;2. Mappings</h3>
+            <p class="text-slate-600 dark:text-slate-300">Solution page for maps between algebraic structures.</p>
+          </article>
+          <article data-target-url="post.html?slug=solutions-undergraduate-algebra-ch2-s3-homomorphisms" class="solution-block rounded-lg border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 p-5 shadow-sm hover:shadow-md transition-shadow cursor-pointer" tabindex="0" role="link" aria-label="Open section 3 homomorphisms">
+            <h3 class="text-lg font-semibold mb-2">&sect;3. Homomorphisms</h3>
+            <p class="text-slate-600 dark:text-slate-300">Solution page for kernels, images, and structural preservation.</p>
+          </article>
+          <article data-target-url="post.html?slug=solutions-undergraduate-algebra-ch2-s4-cosets-and-normal-subgroups" class="solution-block rounded-lg border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 p-5 shadow-sm hover:shadow-md transition-shadow cursor-pointer" tabindex="0" role="link" aria-label="Open section 4 cosets and normal subgroups">
+            <h3 class="text-lg font-semibold mb-2">&sect;4. Cosets and Normal Subgroups</h3>
+            <p class="text-slate-600 dark:text-slate-300">Solution page for quotient constructions and normality criteria.</p>
+          </article>
+          <article data-target-url="post.html?slug=solutions-undergraduate-algebra-ch2-s5-application-to-cyclic-groups" class="solution-block rounded-lg border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 p-5 shadow-sm hover:shadow-md transition-shadow cursor-pointer" tabindex="0" role="link" aria-label="Open section 5 application to cyclic groups">
+            <h3 class="text-lg font-semibold mb-2">&sect;5. Application to Cyclic Groups</h3>
+            <p class="text-slate-600 dark:text-slate-300">Solution page for structure and classification of cyclic groups.</p>
+          </article>
+          <article data-target-url="post.html?slug=solutions-undergraduate-algebra-ch2-s6-permutation-groups" class="solution-block rounded-lg border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 p-5 shadow-sm hover:shadow-md transition-shadow cursor-pointer" tabindex="0" role="link" aria-label="Open section 6 permutation groups">
+            <h3 class="text-lg font-semibold mb-2">&sect;6. Permutation Groups</h3>
+            <p class="text-slate-600 dark:text-slate-300">Solution page for symmetric groups and permutation notation.</p>
+          </article>
+          <article data-target-url="post.html?slug=solutions-undergraduate-algebra-ch2-s7-finite-abelian-groups" class="solution-block rounded-lg border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 p-5 shadow-sm hover:shadow-md transition-shadow cursor-pointer" tabindex="0" role="link" aria-label="Open section 7 finite abelian groups">
+            <h3 class="text-lg font-semibold mb-2">&sect;7. Finite Abelian Groups</h3>
+            <p class="text-slate-600 dark:text-slate-300">Solution page for decomposition results and examples.</p>
+          </article>
+          <article data-target-url="post.html?slug=solutions-undergraduate-algebra-ch2-s8-operation-of-a-group-on-a-set" class="solution-block rounded-lg border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 p-5 shadow-sm hover:shadow-md transition-shadow cursor-pointer" tabindex="0" role="link" aria-label="Open section 8 operation of a group on a set">
+            <h3 class="text-lg font-semibold mb-2">&sect;8. Operation of a Group on a Set</h3>
+            <p class="text-slate-600 dark:text-slate-300">Solution page for actions, orbits, and stabilizers.</p>
+          </article>
+          <article data-target-url="post.html?slug=solutions-undergraduate-algebra-ch2-s9-sylow-subgroups" class="solution-block rounded-lg border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 p-5 shadow-sm hover:shadow-md transition-shadow cursor-pointer" tabindex="0" role="link" aria-label="Open section 9 sylow subgroups">
+            <h3 class="text-lg font-semibold mb-2">&sect;9. Sylow Subgroups</h3>
+            <p class="text-slate-600 dark:text-slate-300">Solution page for Sylow theorems and group-order arguments.</p>
+          </article>
+        </div>
+      </section>
+
+      <section id="chapter-iii" class="mt-12">
+        <h2 class="text-xl font-semibold mb-4">Chapter III - Rings</h2>
+        <div class="space-y-4">
+          <article data-target-url="post.html?slug=solutions-undergraduate-algebra-ch3-s1-rings" class="solution-block rounded-lg border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 p-5 shadow-sm hover:shadow-md transition-shadow cursor-pointer" tabindex="0" role="link" aria-label="Open section 1 rings">
+            <h3 class="text-lg font-semibold mb-2">&sect;1. Rings</h3>
+            <p class="text-slate-600 dark:text-slate-300">Solution page for ring definitions and first constructions.</p>
+          </article>
+          <article data-target-url="post.html?slug=solutions-undergraduate-algebra-ch3-s2-ideals" class="solution-block rounded-lg border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 p-5 shadow-sm hover:shadow-md transition-shadow cursor-pointer" tabindex="0" role="link" aria-label="Open section 2 ideals">
+            <h3 class="text-lg font-semibold mb-2">&sect;2. Ideals</h3>
+            <p class="text-slate-600 dark:text-slate-300">Solution page for ideal operations and quotient intuition.</p>
+          </article>
+          <article data-target-url="post.html?slug=solutions-undergraduate-algebra-ch3-s3-homomorphisms" class="solution-block rounded-lg border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 p-5 shadow-sm hover:shadow-md transition-shadow cursor-pointer" tabindex="0" role="link" aria-label="Open section 3 ring homomorphisms">
+            <h3 class="text-lg font-semibold mb-2">&sect;3. Homomorphisms</h3>
+            <p class="text-slate-600 dark:text-slate-300">Solution page for ring maps, kernels, and images.</p>
+          </article>
+          <article data-target-url="post.html?slug=solutions-undergraduate-algebra-ch3-s4-quotient-fields" class="solution-block rounded-lg border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 p-5 shadow-sm hover:shadow-md transition-shadow cursor-pointer" tabindex="0" role="link" aria-label="Open section 4 quotient fields">
+            <h3 class="text-lg font-semibold mb-2">&sect;4. Quotient Fields</h3>
+            <p class="text-slate-600 dark:text-slate-300">Solution page for fraction fields and localization basics.</p>
+          </article>
+        </div>
+      </section>
+    </article>
+  </main>
+
+  <footer class="border-t border-slate-200 dark:border-slate-800">
+    <div class="mx-auto max-w-3xl px-4 py-6 text-sm text-slate-500 dark:text-slate-400 flex justify-between items-center">
+      <div class="flex items-center gap-3">
+        <span>Â© <span id="year"></span> Secrets Observatory â€¢ <span class="text-white">Guided by Curiosity</span> â€¢ Content under CC BY-NC-ND 4.0</span>
+        <div class="flex items-center gap-2 ml-2">
+          <a href="https://www.linkedin.com/company/secrets-observatory/" target="_blank" rel="noopener noreferrer" class="text-blue-600 dark:text-white hover:opacity-70" aria-label="LinkedIn">
+            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+              <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+            </svg>
+          </a>
+          <a href="https://www.instagram.com/secretsobservatory/" target="_blank" rel="noopener noreferrer" class="text-blue-600 dark:text-white hover:opacity-70" aria-label="Instagram">
+            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+              <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/>
+            </svg>
+          </a>
+          <a href="https://x.com/SecretsObservat" target="_blank" rel="noopener noreferrer" class="text-blue-600 dark:text-white hover:opacity-70" aria-label="X (Twitter)">
+            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+              <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
+            </svg>
+          </a>
+          <a href="https://www.youtube.com/channel/UCe_kiag9QnEGODP07DuTbtA/" target="_blank" rel="noopener noreferrer" class="text-blue-600 dark:text-white hover:opacity-70" aria-label="YouTube">
+            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+              <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/>
+            </svg>
+          </a>
+        </div>
+      </div>
+      <div>
+        <a href="privacy.html" class="hover:text-slate-900 dark:hover:text-slate-100 hover:underline">Privacy Policy</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="site.js?v=2.0"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const sidebar = document.getElementById('sidebar');
+      const sidebarToggle = document.getElementById('sidebarToggle');
+      const closeSidebarBtn = document.getElementById('closeSidebar');
+      const sidebarOverlay = document.getElementById('sidebarOverlay');
+      const navLinks = Array.from(document.querySelectorAll('#sidebarNav .sidebar-nav-link'));
+      const chapterBlocks = Array.from(document.querySelectorAll('.solution-block'));
+
+      if (!sidebar || !sidebarToggle || !sidebarOverlay) {
+        return;
+      }
+
+      function closeSidebar() {
+        sidebar.classList.remove('sidebar-open');
+        sidebarOverlay.classList.remove('overlay-visible');
+        document.body.style.overflow = '';
+      }
+
+      function openSidebar() {
+        sidebar.classList.add('sidebar-open');
+        sidebarOverlay.classList.add('overlay-visible');
+        document.body.style.overflow = 'hidden';
+      }
+
+      function setActiveLink(hash) {
+        navLinks.forEach(function(link) {
+          link.classList.toggle('active', link.getAttribute('href') === hash);
+        });
+      }
+
+      function activateFromHash() {
+        const hash = window.location.hash;
+        if (hash) {
+          setActiveLink(hash);
+        } else if (navLinks.length > 0) {
+          navLinks[0].classList.add('active');
+        }
+      }
+
+      sidebarToggle.addEventListener('click', function() {
+        if (sidebar.classList.contains('sidebar-open')) {
+          closeSidebar();
+        } else {
+          openSidebar();
+        }
+      });
+
+      if (closeSidebarBtn) {
+        closeSidebarBtn.addEventListener('click', closeSidebar);
+      }
+
+      sidebarOverlay.addEventListener('click', closeSidebar);
+
+      document.addEventListener('keydown', function(event) {
+        if (event.key === 'Escape' && sidebar.classList.contains('sidebar-open')) {
+          closeSidebar();
+        }
+      });
+
+      navLinks.forEach(function(link) {
+        link.addEventListener('click', function() {
+          setActiveLink(link.getAttribute('href'));
+          closeSidebar();
+        });
+      });
+
+      chapterBlocks.forEach(function(block) {
+        block.addEventListener('click', function() {
+          const targetUrl = block.getAttribute('data-target-url');
+          if (targetUrl) {
+            window.location.href = targetUrl;
+            return;
+          }
+
+          const targetHash = '#' + block.id;
+          setActiveLink(targetHash);
+          window.location.hash = block.id;
+        });
+
+        block.addEventListener('keydown', function(event) {
+          if (event.key === 'Enter' || event.key === ' ') {
+            event.preventDefault();
+            block.click();
+          }
+        });
+      });
+
+      activateFromHash();
+      window.addEventListener('hashchange', activateFromHash);
+    });
+  </script>
+
+  <!-- Cookie Consent Banner -->
+  <div id="cookieConsent">
+    <div class="cookie-banner-container">
+      <div class="cookie-banner-text">
+        We use cookies to improve your experience. By accepting, you allow us to collect analytics data. <a href="privacy.html" class="underline hover:text-blue-600 dark:hover:text-blue-400">Learn more</a>
+      </div>
+      <div class="cookie-banner-actions">
+        <button id="rejectCookies" class="cookie-btn cookie-btn-reject">Reject</button>
+        <button id="acceptCookies" class="cookie-btn cookie-btn-accept">Accept</button>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
