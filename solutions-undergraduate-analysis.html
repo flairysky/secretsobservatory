@@ -1,0 +1,271 @@
+<!doctype html>
+<html lang="en" class="h-full">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Undergraduate Analysis Solutions - Secrets Observatory</title>
+  <meta name="description" content="Placeholder chapter and subchapter solution pages for Undergraduate Analysis.">
+  <meta name="author" content="Secrets Observatory">
+  <meta name="robots" content="index, follow">
+
+  <link rel="icon" type="image/png" href="assets/webpagelogos/Blue.png">
+  <link rel="alternate" type="application/atom+xml" title="Secrets Observatory Feed" href="feed.xml">
+
+  <script>(function(){const t=localStorage.getItem('theme');const s=matchMedia('(prefers-color-scheme: dark)').matches;if(t==='dark'||(!t&&s))document.documentElement.classList.add('dark');})();</script>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>tailwind.config={darkMode:'class'};</script>
+  <link rel="stylesheet" href="assets/css/styles.css">
+</head>
+<body class="min-h-screen bg-white text-slate-900 dark:bg-slate-900 dark:text-slate-100">
+  <header class="post-header border-b border-slate-200 dark:border-slate-800">
+    <div id="scrollProgress" class="scroll-progress-bar"></div>
+    <nav class="mx-auto max-w-3xl px-4 py-4 flex items-center justify-between">
+      <button id="sidebarToggle" class="p-2 hover:bg-slate-100 dark:hover:bg-slate-800 rounded-md mr-2" aria-label="Toggle sidebar" title="Analysis chapters">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+        </svg>
+      </button>
+
+      <a href="index.html" class="font-semibold tracking-tight flex items-center gap-2">
+        <img src="assets/webpagelogos/Group 18.png" alt="Secrets Observatory Logo" class="h-8 w-8 dark:hidden">
+        <img src="assets/webpagelogos/Group 17.png" alt="Secrets Observatory Logo" class="h-8 w-8 hidden dark:block">
+        Secrets Observatory
+      </a>
+
+      <div class="hidden md:flex items-center gap-4 text-sm">
+        <a href="index.html" class="hover:underline">News</a>
+        <a href="post.html?slug=poem_preface" class="hover:underline">The Poem</a>
+        <a href="solutions-books.html" class="hover:underline">Solutions</a>
+        <a href="about.html" class="hover:underline">About</a>
+        <div class="relative">
+          <button id="catBtn" class="hover:underline">Categories v</button>
+          <div id="catMenu" class="hidden absolute right-0 mt-2 w-40 rounded-md border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-800 shadow p-2 text-sm"></div>
+        </div>
+        <a href="archive.html" class="hover:underline">Archive</a>
+        <a href="feedback.html" class="hover:underline">Feedback</a>
+        <button id="themeToggle" class="p-2 rounded-md hover:bg-slate-100 dark:hover:bg-slate-800" aria-label="Toggle theme">
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"></path></svg>
+        </button>
+      </div>
+
+      <div class="flex items-center gap-2 md:hidden">
+        <button id="themeToggleMobile" class="p-2 rounded-md hover:bg-slate-100 dark:hover:bg-slate-800" aria-label="Toggle theme">
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 718.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"></path></svg>
+        </button>
+        <button id="mobileMenuBtn" class="p-2 hover:bg-slate-100 dark:hover:bg-slate-800 rounded-md" aria-label="Menu">
+          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+          </svg>
+        </button>
+      </div>
+    </nav>
+  </header>
+
+  <div id="mobileMenuOverlay" class="fixed inset-0 bg-black bg-opacity-50 z-40 hidden md:hidden"></div>
+  <div id="sidebarOverlay" class="fixed inset-0 bg-black bg-opacity-50 z-40 hidden"></div>
+
+  <aside id="sidebar" class="fixed top-0 left-0 h-full w-80 bg-white dark:bg-slate-900 shadow-lg z-50 transform -translate-x-full transition-transform duration-300 overflow-y-auto">
+    <div class="p-4 border-b border-slate-200 dark:border-slate-800 flex justify-between items-center sticky top-0 bg-white dark:bg-slate-900 z-10">
+      <h2 class="font-semibold text-lg">Analysis Index</h2>
+      <button id="closeSidebar" class="p-2 hover:bg-slate-100 dark:hover:bg-slate-800 rounded-md" aria-label="Close sidebar">
+        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+        </svg>
+      </button>
+    </div>
+    <nav id="sidebarNav" class="p-4">
+      <div class="sidebar-section">
+        <h3 class="sidebar-section-title">Chapter I - Placeholder Chapter Name 1</h3>
+        <ul class="sidebar-nav-list">
+          <li class="sidebar-nav-item"><a href="post.html?slug=solutions-undergraduate-analysis-ch1-s1-placeholder-subchapter-11" class="sidebar-nav-link">Section 1. Placeholder Subchapter Name 1.1</a></li>
+          <li class="sidebar-nav-item"><a href="post.html?slug=solutions-undergraduate-analysis-ch1-s2-placeholder-subchapter-12" class="sidebar-nav-link">Section 2. Placeholder Subchapter Name 1.2</a></li>
+          <li class="sidebar-nav-item"><a href="post.html?slug=solutions-undergraduate-analysis-ch1-s3-placeholder-subchapter-13" class="sidebar-nav-link">Section 3. Placeholder Subchapter Name 1.3</a></li>
+        </ul>
+      </div>
+      <div class="sidebar-section">
+        <h3 class="sidebar-section-title">Chapter II - Placeholder Chapter Name 2</h3>
+        <ul class="sidebar-nav-list">
+          <li class="sidebar-nav-item"><a href="post.html?slug=solutions-undergraduate-analysis-ch2-s1-placeholder-subchapter-21" class="sidebar-nav-link">Section 1. Placeholder Subchapter Name 2.1</a></li>
+          <li class="sidebar-nav-item"><a href="post.html?slug=solutions-undergraduate-analysis-ch2-s2-placeholder-subchapter-22" class="sidebar-nav-link">Section 2. Placeholder Subchapter Name 2.2</a></li>
+          <li class="sidebar-nav-item"><a href="post.html?slug=solutions-undergraduate-analysis-ch2-s3-placeholder-subchapter-23" class="sidebar-nav-link">Section 3. Placeholder Subchapter Name 2.3</a></li>
+        </ul>
+      </div>
+      <div class="sidebar-section">
+        <h3 class="sidebar-section-title">Chapter III - Placeholder Chapter Name 3</h3>
+        <ul class="sidebar-nav-list">
+          <li class="sidebar-nav-item"><a href="post.html?slug=solutions-undergraduate-analysis-ch3-s1-placeholder-subchapter-31" class="sidebar-nav-link">Section 1. Placeholder Subchapter Name 3.1</a></li>
+          <li class="sidebar-nav-item"><a href="post.html?slug=solutions-undergraduate-analysis-ch3-s2-placeholder-subchapter-32" class="sidebar-nav-link">Section 2. Placeholder Subchapter Name 3.2</a></li>
+          <li class="sidebar-nav-item"><a href="post.html?slug=solutions-undergraduate-analysis-ch3-s3-placeholder-subchapter-33" class="sidebar-nav-link">Section 3. Placeholder Subchapter Name 3.3</a></li>
+        </ul>
+      </div>
+    </nav>
+  </aside>
+
+  <div id="mobileMenuPanel" class="fixed top-0 right-0 h-full w-64 bg-white dark:bg-slate-900 shadow-lg z-50 transform translate-x-full transition-transform duration-300 md:hidden">
+    <div class="p-4 border-b border-slate-200 dark:border-slate-800 flex justify-between items-center">
+      <span class="font-semibold">Menu</span>
+      <button id="closeMobileMenu" class="p-2 hover:bg-slate-100 dark:hover:bg-slate-800 rounded-md" aria-label="Close menu">
+        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+        </svg>
+      </button>
+    </div>
+    <nav class="p-4 flex flex-col gap-4 text-base">
+      <a href="index.html" class="hover:text-blue-600 dark:hover:text-blue-400 py-2">News</a>
+      <a href="post.html?slug=poem_preface" class="hover:text-blue-600 dark:hover:text-blue-400 py-2">The Poem</a>
+      <a href="solutions-books.html" class="hover:text-blue-600 dark:hover:text-blue-400 py-2">Solutions</a>
+      <a href="about.html" class="hover:text-blue-600 dark:hover:text-blue-400 py-2">About</a>
+      <div>
+        <button id="catBtnMobile" class="hover:text-blue-600 dark:hover:text-blue-400 py-2 w-full text-left">Categories v</button>
+        <div id="catMenuMobile" class="hidden pl-4 mt-2 space-y-2 text-sm"></div>
+      </div>
+      <a href="archive.html" class="hover:text-blue-600 dark:hover:text-blue-400 py-2">Archive</a>
+      <a href="feedback.html" class="hover:text-blue-600 dark:hover:text-blue-400 py-2">Feedback</a>
+    </nav>
+  </div>
+
+  <main class="mx-auto max-w-3xl px-4 py-8">
+    <article>
+      <h1 class="text-2xl font-semibold mb-2">Undergraduate Analysis</h1>
+      <p class="text-sm text-slate-500 dark:text-slate-400 mb-4">Written by Serge Lang and published by Springer.</p>
+      <p class="text-slate-600 dark:text-slate-300 mb-6">This page mirrors the algebra setup and uses placeholder chapter and subchapter names for now.</p>
+
+      <section id="analysis-chapter-i" class="mt-10">
+        <h2 class="text-xl font-semibold mb-4">Chapter I - Placeholder Chapter Name 1</h2>
+        <div class="space-y-4">
+          <article data-target-url="post.html?slug=solutions-undergraduate-analysis-ch1-s1-placeholder-subchapter-11" class="solution-block rounded-lg border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 p-5 shadow-sm hover:shadow-md transition-shadow cursor-pointer" tabindex="0" role="link" aria-label="Open section 1 placeholder chapter 1">
+            <h3 class="text-lg font-semibold mb-2">Section 1. Placeholder Subchapter Name 1.1</h3>
+            <p class="text-slate-600 dark:text-slate-300">Placeholder solution page for future analysis content.</p>
+          </article>
+          <article data-target-url="post.html?slug=solutions-undergraduate-analysis-ch1-s2-placeholder-subchapter-12" class="solution-block rounded-lg border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 p-5 shadow-sm hover:shadow-md transition-shadow cursor-pointer" tabindex="0" role="link" aria-label="Open section 2 placeholder chapter 1">
+            <h3 class="text-lg font-semibold mb-2">Section 2. Placeholder Subchapter Name 1.2</h3>
+            <p class="text-slate-600 dark:text-slate-300">Placeholder solution page for future analysis content.</p>
+          </article>
+          <article data-target-url="post.html?slug=solutions-undergraduate-analysis-ch1-s3-placeholder-subchapter-13" class="solution-block rounded-lg border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 p-5 shadow-sm hover:shadow-md transition-shadow cursor-pointer" tabindex="0" role="link" aria-label="Open section 3 placeholder chapter 1">
+            <h3 class="text-lg font-semibold mb-2">Section 3. Placeholder Subchapter Name 1.3</h3>
+            <p class="text-slate-600 dark:text-slate-300">Placeholder solution page for future analysis content.</p>
+          </article>
+        </div>
+      </section>
+
+      <section id="analysis-chapter-ii" class="mt-12">
+        <h2 class="text-xl font-semibold mb-4">Chapter II - Placeholder Chapter Name 2</h2>
+        <div class="space-y-4">
+          <article data-target-url="post.html?slug=solutions-undergraduate-analysis-ch2-s1-placeholder-subchapter-21" class="solution-block rounded-lg border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 p-5 shadow-sm hover:shadow-md transition-shadow cursor-pointer" tabindex="0" role="link" aria-label="Open section 1 placeholder chapter 2">
+            <h3 class="text-lg font-semibold mb-2">Section 1. Placeholder Subchapter Name 2.1</h3>
+            <p class="text-slate-600 dark:text-slate-300">Placeholder solution page for future analysis content.</p>
+          </article>
+          <article data-target-url="post.html?slug=solutions-undergraduate-analysis-ch2-s2-placeholder-subchapter-22" class="solution-block rounded-lg border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 p-5 shadow-sm hover:shadow-md transition-shadow cursor-pointer" tabindex="0" role="link" aria-label="Open section 2 placeholder chapter 2">
+            <h3 class="text-lg font-semibold mb-2">Section 2. Placeholder Subchapter Name 2.2</h3>
+            <p class="text-slate-600 dark:text-slate-300">Placeholder solution page for future analysis content.</p>
+          </article>
+          <article data-target-url="post.html?slug=solutions-undergraduate-analysis-ch2-s3-placeholder-subchapter-23" class="solution-block rounded-lg border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 p-5 shadow-sm hover:shadow-md transition-shadow cursor-pointer" tabindex="0" role="link" aria-label="Open section 3 placeholder chapter 2">
+            <h3 class="text-lg font-semibold mb-2">Section 3. Placeholder Subchapter Name 2.3</h3>
+            <p class="text-slate-600 dark:text-slate-300">Placeholder solution page for future analysis content.</p>
+          </article>
+        </div>
+      </section>
+
+      <section id="analysis-chapter-iii" class="mt-12">
+        <h2 class="text-xl font-semibold mb-4">Chapter III - Placeholder Chapter Name 3</h2>
+        <div class="space-y-4">
+          <article data-target-url="post.html?slug=solutions-undergraduate-analysis-ch3-s1-placeholder-subchapter-31" class="solution-block rounded-lg border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 p-5 shadow-sm hover:shadow-md transition-shadow cursor-pointer" tabindex="0" role="link" aria-label="Open section 1 placeholder chapter 3">
+            <h3 class="text-lg font-semibold mb-2">Section 1. Placeholder Subchapter Name 3.1</h3>
+            <p class="text-slate-600 dark:text-slate-300">Placeholder solution page for future analysis content.</p>
+          </article>
+          <article data-target-url="post.html?slug=solutions-undergraduate-analysis-ch3-s2-placeholder-subchapter-32" class="solution-block rounded-lg border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 p-5 shadow-sm hover:shadow-md transition-shadow cursor-pointer" tabindex="0" role="link" aria-label="Open section 2 placeholder chapter 3">
+            <h3 class="text-lg font-semibold mb-2">Section 2. Placeholder Subchapter Name 3.2</h3>
+            <p class="text-slate-600 dark:text-slate-300">Placeholder solution page for future analysis content.</p>
+          </article>
+          <article data-target-url="post.html?slug=solutions-undergraduate-analysis-ch3-s3-placeholder-subchapter-33" class="solution-block rounded-lg border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 p-5 shadow-sm hover:shadow-md transition-shadow cursor-pointer" tabindex="0" role="link" aria-label="Open section 3 placeholder chapter 3">
+            <h3 class="text-lg font-semibold mb-2">Section 3. Placeholder Subchapter Name 3.3</h3>
+            <p class="text-slate-600 dark:text-slate-300">Placeholder solution page for future analysis content.</p>
+          </article>
+        </div>
+      </section>
+    </article>
+  </main>
+
+  <footer class="border-t border-slate-200 dark:border-slate-800">
+    <div class="mx-auto max-w-3xl px-4 py-6 text-sm text-slate-500 dark:text-slate-400 flex flex-col sm:flex-row sm:justify-between gap-2">
+      <span>(c) <span id="year"></span> Secrets Observatory</span>
+      <a href="privacy.html" class="hover:text-slate-900 dark:hover:text-slate-100 hover:underline">Privacy Policy</a>
+    </div>
+  </footer>
+
+  <script src="site.js?v=2.0"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const sidebar = document.getElementById('sidebar');
+      const sidebarToggle = document.getElementById('sidebarToggle');
+      const closeSidebarBtn = document.getElementById('closeSidebar');
+      const sidebarOverlay = document.getElementById('sidebarOverlay');
+      const chapterBlocks = Array.from(document.querySelectorAll('.solution-block'));
+
+      if (!sidebar || !sidebarToggle || !sidebarOverlay) {
+        return;
+      }
+
+      function closeSidebar() {
+        sidebar.classList.remove('sidebar-open');
+        sidebarOverlay.classList.remove('overlay-visible');
+        document.body.style.overflow = '';
+      }
+
+      function openSidebar() {
+        sidebar.classList.add('sidebar-open');
+        sidebarOverlay.classList.add('overlay-visible');
+        document.body.style.overflow = 'hidden';
+      }
+
+      sidebarToggle.addEventListener('click', function() {
+        if (sidebar.classList.contains('sidebar-open')) {
+          closeSidebar();
+        } else {
+          openSidebar();
+        }
+      });
+
+      if (closeSidebarBtn) {
+        closeSidebarBtn.addEventListener('click', closeSidebar);
+      }
+
+      sidebarOverlay.addEventListener('click', closeSidebar);
+
+      document.addEventListener('keydown', function(event) {
+        if (event.key === 'Escape' && sidebar.classList.contains('sidebar-open')) {
+          closeSidebar();
+        }
+      });
+
+      chapterBlocks.forEach(function(block) {
+        block.addEventListener('click', function() {
+          const targetUrl = block.getAttribute('data-target-url');
+          if (targetUrl) {
+            window.location.href = targetUrl;
+          }
+        });
+
+        block.addEventListener('keydown', function(event) {
+          if (event.key === 'Enter' || event.key === ' ') {
+            event.preventDefault();
+            block.click();
+          }
+        });
+      });
+    });
+  </script>
+
+  <div id="cookieConsent">
+    <div class="cookie-banner-container">
+      <div class="cookie-banner-text">
+        We use cookies to improve your experience. By accepting, you allow us to collect analytics data. <a href="privacy.html" class="underline hover:text-blue-600 dark:hover:text-blue-400">Learn more</a>
+      </div>
+      <div class="cookie-banner-actions">
+        <button id="rejectCookies" class="cookie-btn cookie-btn-reject">Reject</button>
+        <button id="acceptCookies" class="cookie-btn cookie-btn-accept">Accept</button>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

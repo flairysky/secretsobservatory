@@ -1,0 +1,126 @@
+<!doctype html>
+<html lang="en" class="h-full">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Solutions - Secrets Observatory</title>
+  <meta name="description" content="Browse solution books available in Secrets Observatory.">
+  <meta name="author" content="Secrets Observatory">
+  <meta name="robots" content="index, follow">
+
+  <link rel="icon" type="image/png" href="assets/webpagelogos/Blue.png">
+  <link rel="alternate" type="application/atom+xml" title="Secrets Observatory Feed" href="feed.xml">
+
+  <script>(function(){const t=localStorage.getItem('theme');const s=matchMedia('(prefers-color-scheme: dark)').matches;if(t==='dark'||(!t&&s))document.documentElement.classList.add('dark');})();</script>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>tailwind.config={darkMode:'class'};</script>
+  <link rel="stylesheet" href="assets/css/styles.css">
+</head>
+<body class="min-h-screen bg-white text-slate-900 dark:bg-slate-900 dark:text-slate-100">
+  <header class="border-b border-slate-200 dark:border-slate-800">
+    <nav class="mx-auto max-w-3xl px-4 py-4 flex items-center justify-between">
+      <a href="index.html" class="font-semibold tracking-tight flex items-center gap-2">
+        <img src="assets/webpagelogos/Group 18.png" alt="Secrets Observatory Logo" class="h-8 w-8 dark:hidden">
+        <img src="assets/webpagelogos/Group 17.png" alt="Secrets Observatory Logo" class="h-8 w-8 hidden dark:block">
+        Secrets Observatory
+      </a>
+
+      <div class="hidden md:flex items-center gap-4 text-sm">
+        <a href="index.html" class="hover:underline">News</a>
+        <a href="post.html?slug=poem_preface" class="hover:underline">The Poem</a>
+        <a href="solutions-books.html" class="hover:underline">Solutions</a>
+        <a href="about.html" class="hover:underline">About</a>
+        <div class="relative">
+          <button id="catBtn" class="hover:underline">Categories v</button>
+          <div id="catMenu" class="hidden absolute right-0 mt-2 w-40 rounded-md border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-800 shadow p-2 text-sm"></div>
+        </div>
+        <a href="archive.html" class="hover:underline">Archive</a>
+        <a href="feedback.html" class="hover:underline">Feedback</a>
+        <button id="themeToggle" class="p-2 rounded-md hover:bg-slate-100 dark:hover:bg-slate-800" aria-label="Toggle theme">
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"></path></svg>
+        </button>
+      </div>
+
+      <div class="flex items-center gap-2 md:hidden">
+        <button id="themeToggleMobile" class="p-2 rounded-md hover:bg-slate-100 dark:hover:bg-slate-800" aria-label="Toggle theme">
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 718.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"></path></svg>
+        </button>
+        <button id="mobileMenuBtn" class="p-2 hover:bg-slate-100 dark:hover:bg-slate-800 rounded-md" aria-label="Menu">
+          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+          </svg>
+        </button>
+      </div>
+    </nav>
+  </header>
+
+  <div id="mobileMenuOverlay" class="fixed inset-0 bg-black bg-opacity-50 z-40 hidden md:hidden"></div>
+
+  <div id="mobileMenuPanel" class="fixed top-0 right-0 h-full w-64 bg-white dark:bg-slate-900 shadow-lg z-50 transform translate-x-full transition-transform duration-300 md:hidden">
+    <div class="p-4 border-b border-slate-200 dark:border-slate-800 flex justify-between items-center">
+      <span class="font-semibold">Menu</span>
+      <button id="closeMobileMenu" class="p-2 hover:bg-slate-100 dark:hover:bg-slate-800 rounded-md" aria-label="Close menu">
+        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+        </svg>
+      </button>
+    </div>
+    <nav class="p-4 flex flex-col gap-4 text-base">
+      <a href="index.html" class="hover:text-blue-600 dark:hover:text-blue-400 py-2">News</a>
+      <a href="post.html?slug=poem_preface" class="hover:text-blue-600 dark:hover:text-blue-400 py-2">The Poem</a>
+      <a href="solutions-books.html" class="hover:text-blue-600 dark:hover:text-blue-400 py-2">Solutions</a>
+      <a href="about.html" class="hover:text-blue-600 dark:hover:text-blue-400 py-2">About</a>
+      <div>
+        <button id="catBtnMobile" class="hover:text-blue-600 dark:hover:text-blue-400 py-2 w-full text-left">Categories v</button>
+        <div id="catMenuMobile" class="hidden pl-4 mt-2 space-y-2 text-sm"></div>
+      </div>
+      <a href="archive.html" class="hover:text-blue-600 dark:hover:text-blue-400 py-2">Archive</a>
+      <a href="feedback.html" class="hover:text-blue-600 dark:hover:text-blue-400 py-2">Feedback</a>
+    </nav>
+  </div>
+
+  <main class="mx-auto max-w-4xl px-4 py-10">
+    <section class="rounded-2xl border border-slate-200 dark:border-slate-800 bg-gradient-to-br from-slate-50 to-white dark:from-slate-900 dark:to-slate-800 p-6 sm:p-8">
+      <h1 class="text-3xl sm:text-4xl font-semibold tracking-tight">Solutions Library</h1>
+      <p class="mt-3 text-slate-600 dark:text-slate-300">Choose a book to open its chapter and subchapter solution pages.</p>
+
+      <div class="mt-8 grid gap-4 sm:grid-cols-2">
+        <a href="solutions.html" class="group rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 p-5 shadow-sm hover:shadow-md transition-shadow">
+          <h2 class="text-xl font-semibold">Undergraduate Algebra</h2>
+          <p class="mt-2 text-sm text-slate-600 dark:text-slate-300">Serge Lang, Springer</p>
+          <p class="mt-3 text-sm text-slate-600 dark:text-slate-300">Contains Chapter I, Chapter II, and Chapter III with dedicated subchapter solution pages.</p>
+          <p class="mt-4 text-sm font-medium text-blue-600 dark:text-blue-400">Open book page</p>
+        </a>
+
+        <a href="solutions-undergraduate-analysis.html" class="group rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 p-5 shadow-sm hover:shadow-md transition-shadow">
+          <h2 class="text-xl font-semibold">Undergraduate Analysis</h2>
+          <p class="mt-2 text-sm text-slate-600 dark:text-slate-300">Serge Lang, Springer</p>
+          <p class="mt-3 text-sm text-slate-600 dark:text-slate-300">Structured with placeholder chapter and subchapter names, ready for full content.</p>
+          <p class="mt-4 text-sm font-medium text-blue-600 dark:text-blue-400">Open book page</p>
+        </a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="border-t border-slate-200 dark:border-slate-800">
+    <div class="mx-auto max-w-4xl px-4 py-6 text-sm text-slate-500 dark:text-slate-400 flex flex-col sm:flex-row sm:justify-between gap-2">
+      <span>(c) <span id="year"></span> Secrets Observatory</span>
+      <a href="privacy.html" class="hover:text-slate-900 dark:hover:text-slate-100 hover:underline">Privacy Policy</a>
+    </div>
+  </footer>
+
+  <script src="site.js?v=2.0"></script>
+
+  <div id="cookieConsent">
+    <div class="cookie-banner-container">
+      <div class="cookie-banner-text">
+        We use cookies to improve your experience. By accepting, you allow us to collect analytics data. <a href="privacy.html" class="underline hover:text-blue-600 dark:hover:text-blue-400">Learn more</a>
+      </div>
+      <div class="cookie-banner-actions">
+        <button id="rejectCookies" class="cookie-btn cookie-btn-reject">Reject</button>
+        <button id="acceptCookies" class="cookie-btn cookie-btn-accept">Accept</button>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
