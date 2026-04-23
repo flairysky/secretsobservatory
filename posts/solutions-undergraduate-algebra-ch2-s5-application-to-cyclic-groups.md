@@ -10,6 +10,6 @@ This page is reserved for worked solutions for:
 - Chapter II - Groups
 - Section 5. Application to Cyclic Groups
 
-You can add complete solutions, remarks, and alternative methods here.
+
 
 Back to: [Solutions](solutions.html)

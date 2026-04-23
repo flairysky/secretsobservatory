@@ -10,6 +10,6 @@ This page is reserved for worked solutions for:
 - Chapter III - Rings
 - Section 4. Quotient Fields
 
-You can add complete solutions, remarks, and alternative methods here.
+
 
 Back to: [Solutions](solutions.html)

@@ -10,6 +10,6 @@ This page is reserved for worked solutions for:
 - Chapter III - Rings
 - Section 2. Ideals
 
-You can add complete solutions, remarks, and alternative methods here.
+
 
 Back to: [Solutions](solutions.html)

@@ -10,6 +10,6 @@ This page is reserved for worked solutions for:
 - Chapter II - Groups
 - Section 3. Homomorphisms
 
-You can add complete solutions, remarks, and alternative methods here.
+
 
 Back to: [Solutions](solutions.html)

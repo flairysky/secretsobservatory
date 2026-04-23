@@ -10,6 +10,6 @@ This page is reserved for worked solutions for:
 - Chapter I - The Integers
 - Section 5. Equivalence Relations and Congruences
 
-You can add complete solutions, remarks, and alternative methods here.
+
 
 Back to: [Solutions](solutions.html)

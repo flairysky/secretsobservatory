@@ -10,6 +10,6 @@ This page is reserved for worked solutions for:
 - Chapter III - Rings
 - Section 1. Rings
 
-You can add complete solutions, remarks, and alternative methods here.
+
 
 Back to: [Solutions](solutions.html)

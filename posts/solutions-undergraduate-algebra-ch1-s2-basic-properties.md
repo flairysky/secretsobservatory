@@ -10,6 +10,5 @@ This page is reserved for worked solutions for:
 - Chapter I - The Integers
 - Section 2. Basic Properties
 
-You can add complete solutions, remarks, and alternative methods here.
 
 Back to: [Solutions](solutions.html)

@@ -10,6 +10,6 @@ This page is reserved for worked solutions for:
 - Chapter II - Groups
 - Section 6. Permutation Groups
 
-You can add complete solutions, remarks, and alternative methods here.
+
 
 Back to: [Solutions](solutions.html)

@@ -10,6 +10,6 @@ This page is reserved for worked solutions for:
 - Chapter I - The Integers
 - Section 3. Greatest Common Divisor
 
-You can add complete solutions, remarks, and alternative methods here.
+
 
 Back to: [Solutions](solutions.html)

@@ -10,6 +10,6 @@ This page is reserved for worked solutions for:
 - Chapter II - Groups
 - Section 8. Operation of a Group on a Set
 
-You can add complete solutions, remarks, and alternative methods here.
+
 
 Back to: [Solutions](solutions.html)
