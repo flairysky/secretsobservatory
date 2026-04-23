@@ -1875,6 +1875,21 @@ function initSidebar(currentSlug) {
   }
   
   console.log('Sidebar elements found, proceeding with setup...');
+
+  const sidebarTitle = sidebar.querySelector('h2');
+  const solutionsBookType = getSolutionsBookType(currentSlug);
+  if (sidebarTitle) {
+    if (solutionsBookType === 'algebra') {
+      sidebarTitle.textContent = 'Solutions Index';
+      sidebarToggle.title = 'Solutions index';
+    } else if (solutionsBookType === 'analysis') {
+      sidebarTitle.textContent = 'Analysis Index';
+      sidebarToggle.title = 'Analysis chapters';
+    } else {
+      sidebarTitle.textContent = 'Table of Contents';
+      sidebarToggle.title = 'Table of contents';
+    }
+  }
   
   // Generate sidebar navigation content
   generateSidebarContent(sidebarNav, currentSlug);
@@ -1929,7 +1944,123 @@ function initSidebar(currentSlug) {
   console.log('Sidebar functionality initialized successfully');
 }
 
+function getSolutionsBookType(slug) {
+  if (!slug) {
+    return null;
+  }
+  if (slug.startsWith('solutions-undergraduate-algebra-')) {
+    return 'algebra';
+  }
+  if (slug.startsWith('solutions-undergraduate-analysis-')) {
+    return 'analysis';
+  }
+  return null;
+}
+
+function getAlgebraSidebarSections() {
+  return [
+    {
+      title: 'Chapter I - The Integers',
+      links: [
+        { slug: 'solutions-undergraduate-algebra-ch1-s1-terminology-of-sets', label: '&sect;1. Terminology of Sets' },
+        { slug: 'solutions-undergraduate-algebra-ch1-s2-basic-properties', label: '&sect;2. Basic Properties' },
+        { slug: 'solutions-undergraduate-algebra-ch1-s3-greatest-common-divisor', label: '&sect;3. Greatest Common Divisor' },
+        { slug: 'solutions-undergraduate-algebra-ch1-s4-unique-factorization', label: '&sect;4. Unique Factorization' },
+        { slug: 'solutions-undergraduate-algebra-ch1-s5-equivalence-relations-and-congruences', label: '&sect;5. Equivalence Relations and Congruences' }
+      ]
+    },
+    {
+      title: 'Chapter II - Groups',
+      links: [
+        { slug: 'solutions-undergraduate-algebra-ch2-s1-groups-and-examples', label: '&sect;1. Groups and Examples' },
+        { slug: 'solutions-undergraduate-algebra-ch2-s2-mappings', label: '&sect;2. Mappings' },
+        { slug: 'solutions-undergraduate-algebra-ch2-s3-homomorphisms', label: '&sect;3. Homomorphisms' },
+        { slug: 'solutions-undergraduate-algebra-ch2-s4-cosets-and-normal-subgroups', label: '&sect;4. Cosets and Normal Subgroups' },
+        { slug: 'solutions-undergraduate-algebra-ch2-s5-application-to-cyclic-groups', label: '&sect;5. Application to Cyclic Groups' },
+        { slug: 'solutions-undergraduate-algebra-ch2-s6-permutation-groups', label: '&sect;6. Permutation Groups' },
+        { slug: 'solutions-undergraduate-algebra-ch2-s7-finite-abelian-groups', label: '&sect;7. Finite Abelian Groups' },
+        { slug: 'solutions-undergraduate-algebra-ch2-s8-operation-of-a-group-on-a-set', label: '&sect;8. Operation of a Group on a Set' },
+        { slug: 'solutions-undergraduate-algebra-ch2-s9-sylow-subgroups', label: '&sect;9. Sylow Subgroups' }
+      ]
+    },
+    {
+      title: 'Chapter III - Rings',
+      links: [
+        { slug: 'solutions-undergraduate-algebra-ch3-s1-rings', label: '&sect;1. Rings' },
+        { slug: 'solutions-undergraduate-algebra-ch3-s2-ideals', label: '&sect;2. Ideals' },
+        { slug: 'solutions-undergraduate-algebra-ch3-s3-homomorphisms', label: '&sect;3. Homomorphisms' },
+        { slug: 'solutions-undergraduate-algebra-ch3-s4-quotient-fields', label: '&sect;4. Quotient Fields' }
+      ]
+    }
+  ];
+}
+
+function getAnalysisSidebarSections() {
+  return [
+    {
+      title: 'Chapter I - Placeholder Chapter Name 1',
+      links: [
+        { slug: 'solutions-undergraduate-analysis-ch1-s1-placeholder-subchapter-11', label: 'Section 1. Placeholder Subchapter Name 1.1' },
+        { slug: 'solutions-undergraduate-analysis-ch1-s2-placeholder-subchapter-12', label: 'Section 2. Placeholder Subchapter Name 1.2' },
+        { slug: 'solutions-undergraduate-analysis-ch1-s3-placeholder-subchapter-13', label: 'Section 3. Placeholder Subchapter Name 1.3' }
+      ]
+    },
+    {
+      title: 'Chapter II - Placeholder Chapter Name 2',
+      links: [
+        { slug: 'solutions-undergraduate-analysis-ch2-s1-placeholder-subchapter-21', label: 'Section 1. Placeholder Subchapter Name 2.1' },
+        { slug: 'solutions-undergraduate-analysis-ch2-s2-placeholder-subchapter-22', label: 'Section 2. Placeholder Subchapter Name 2.2' },
+        { slug: 'solutions-undergraduate-analysis-ch2-s3-placeholder-subchapter-23', label: 'Section 3. Placeholder Subchapter Name 2.3' }
+      ]
+    },
+    {
+      title: 'Chapter III - Placeholder Chapter Name 3',
+      links: [
+        { slug: 'solutions-undergraduate-analysis-ch3-s1-placeholder-subchapter-31', label: 'Section 1. Placeholder Subchapter Name 3.1' },
+        { slug: 'solutions-undergraduate-analysis-ch3-s2-placeholder-subchapter-32', label: 'Section 2. Placeholder Subchapter Name 3.2' },
+        { slug: 'solutions-undergraduate-analysis-ch3-s3-placeholder-subchapter-33', label: 'Section 3. Placeholder Subchapter Name 3.3' }
+      ]
+    }
+  ];
+}
+
+function renderBookSidebarSections(sections, currentSlug) {
+  let html = '';
+
+  sections.forEach(section => {
+    html += '<div class="sidebar-section">';
+    html += `<h3 class="sidebar-section-title">${escapeHtml(section.title)}</h3>`;
+    html += '<ul class="sidebar-nav-list">';
+
+    section.links.forEach(link => {
+      const isActive = link.slug === currentSlug ? 'active' : '';
+      html += `
+        <li class="sidebar-nav-item">
+          <a href="post.html?slug=${link.slug}" class="sidebar-nav-link ${isActive}">
+            ${link.label}
+          </a>
+        </li>
+      `;
+    });
+
+    html += '</ul>';
+    html += '</div>';
+  });
+
+  return html;
+}
+
 function generateSidebarContent(sidebarNav, currentSlug) {
+  const solutionsBookType = getSolutionsBookType(currentSlug);
+  if (solutionsBookType === 'algebra') {
+    sidebarNav.innerHTML = renderBookSidebarSections(getAlgebraSidebarSections(), currentSlug);
+    return;
+  }
+  if (solutionsBookType === 'analysis') {
+    sidebarNav.innerHTML = renderBookSidebarSections(getAnalysisSidebarSections(), currentSlug);
+    return;
+  }
+
   if (!postsData || !postsData.posts) {
     console.error('Posts data not available for sidebar');
     return;
