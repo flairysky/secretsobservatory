@@ -3,6 +3,7 @@ let postsData = null;
 let currentPage = '';
 let filteredPosts = [];
 let activeCategories = new Set();
+let indexBasePosts = null;
 
 // Analytics tracking variables
 let pageStartTime = null;
@@ -658,7 +659,8 @@ function initIndexPage() {
     return;
   }
   
-  filteredPosts = [...postsData.posts];
+  indexBasePosts = getIndexBasePosts();
+  filteredPosts = [...indexBasePosts];
   
   // Setup search with debouncing (both desktop and mobile)
   const searchInput = document.getElementById('searchInput');
@@ -678,20 +680,20 @@ function initIndexPage() {
   setupSearchInput(searchInputMobile);
   
   // Setup category chips
-  setupCategoryChips();
+  setupCategoryChips(indexBasePosts);
   
   // Render posts
   renderPosts();
 }
 
 // Setup category filter chips
-function setupCategoryChips() {
+function setupCategoryChips(basePosts = postsData?.posts || []) {
   const categoryChips = document.getElementById('categoryChips');
   const categoryChipsMobile = document.getElementById('categoryChipsMobile');
   
   // Get all unique categories
   const categories = new Set();
-  postsData.posts.forEach(post => {
+  basePosts.forEach(post => {
     post.categories.forEach(cat => categories.add(cat));
   });
   
@@ -732,13 +734,28 @@ function toggleCategory(category) {
   filterPosts();
 }
 
+function isSolutionPost(post) {
+  if (!post) return false;
+  const categories = Array.isArray(post.categories) ? post.categories : [];
+
+  return post.slug?.startsWith('solutions-') || categories.includes('Solutions');
+}
+
+function getIndexBasePosts() {
+  if (!postsData || !postsData.posts) return [];
+
+  return postsData.posts.filter(post => !isSolutionPost(post));
+}
+
 // Filter posts based on search and categories
 function filterPosts() {
   const searchInput = document.getElementById('searchInput');
   const searchInputMobile = document.getElementById('searchInputMobile');
   const searchTerm = (searchInput ? searchInput.value : searchInputMobile ? searchInputMobile.value : '').toLowerCase();
   
-  filteredPosts = postsData.posts.filter(post => {
+  const basePosts = currentPage === 'index' && indexBasePosts ? indexBasePosts : postsData.posts;
+
+  filteredPosts = basePosts.filter(post => {
     // Text search
     const matchesSearch = !searchTerm || 
       post.title.toLowerCase().includes(searchTerm) ||
