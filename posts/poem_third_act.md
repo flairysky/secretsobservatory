@@ -1,5 +1,5 @@
 ---
-title: "Daniel's Poem: Third Act - On Associations"
+title: "Third Act - On Associations"
 date: "2025-11-22"
 categories: ["Learning", "Teaching", "Mathematics"]
 excerpt: "A deeper exploration of associations: understanding functions, mappings, and their properties in mathematics."

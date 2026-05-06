@@ -1,5 +1,5 @@
 ---
-title: "Daniel's Poem: First Act - Big Picture"
+title: "First Act - Big Picture"
 date: "2025-10-31"
 categories: ["Learning", "Teaching", "Mathematics"]
 excerpt: "A poem: first act"
@@ -157,4 +157,4 @@ I hope you could start to see how the difficulty with mathematics arises purely 
 
 Continue reading: [Second Act - On Structures](post.html?slug=poem_second_act) or [Third Act - On Associations](post.html?slug=poem_third_act)
 
-Previous: [Daniel's Poem: preface](post.html?slug=poem_preface)
+Previous: [Preface](post.html?slug=poem_preface)

@@ -1,5 +1,5 @@
 ---
-title: "Daniel's Poem: On Logic"
+title: "On Logic"
 date: "2026-01-27"
 categories: ["Learning", "Teaching", "Mathematics"]
 excerpt: "A poem exploring the foundations of logical reasoning in mathematics."

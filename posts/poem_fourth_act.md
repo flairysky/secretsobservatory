@@ -1,5 +1,5 @@
 ---
-title: "Daniel's Poem: Fourth Act - On Equivalence"
+title: "Fourth Act - On Equivalence"
 date: "2025-11-22"
 categories: ["Learning", "Teaching", "Mathematics"]
 excerpt: "Exploring equivalence relations and quotient structures: how we identify elements that are 'the same' in mathematics."

@@ -1,5 +1,5 @@
 ---
-title: "Daniel's Poem: On Infinity"
+title: "On Infinity"
 date: "2025-11-24"
 categories: ["Learning", "Teaching", "Mathematics"]
 excerpt: "A poem exploring the concept of infinity in mathematics."

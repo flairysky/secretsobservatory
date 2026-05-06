@@ -1,5 +1,5 @@
 ---
-title: "Daniel's Poem: Second Act - On Structures"
+title: "Second Act - On Structures"
 date: "2025-11-14"
 categories: ["Learning", "Teaching", "Mathematics"]
 excerpt: "A poem introducing structures in mathematics: understanding order, algebraic, and geometric structures."
