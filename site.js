@@ -2113,6 +2113,9 @@ function generateSidebarContent(sidebarNav, currentSlug) {
   
   // Separate posts
   postsData.posts.forEach(post => {
+    if (isSolutionPost(post)) {
+      return;
+    }
     if (mainPoemOrder.includes(post.slug)) {
       mainPoemPosts.push(post);
     } else if (standalonePoems.includes(post.slug)) {
