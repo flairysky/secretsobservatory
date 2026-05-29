@@ -41,7 +41,7 @@ So just from the discussion above, we can start deducing the ordering axioms.
 
 First, we have _reflexiity_, which means that you can order one element with itself. 
 
-Second, clearly we do not want to have symmetry because if one number is smaller than the other, we do not want it to be true that the number is now bigger than the other one (e.g. if 2<3, then 3<2?). So we impose _antisymmetry_ axiom.
+Second, clearly we do not want to have symmetry because if one number is smaller than the other, we do not want it to be true that the number is now bigger than the other one (e.g. if 2<3, then 3<2?, that does not look correct right?). So we impose _antisymmetry_ axiom.
 
 Lastly, we want to have _transitivity_, since for instance, if we have 2<3 and 3<6, then it should follow that 2<6, right? And this is it, these are the ordering axioms.
 
