@@ -13,8 +13,6 @@ excerpt: "A standalone poem introducing the notion of an action on a conceptual 
 Action reinterprets elements of our algebraic structure, e.g. a group, as structure preserving maps of some set. We do this, in order to gain insight into our original algebraic structure, e.g. a group.
 :::
 
-This post is now under construction.
-
 The concept of an action (also often times called “an operation” in mathematics) can seem quite mysterious and difficult to grasp intuitively when one encounters it in an algebra course for the first time. This is due to the fact that usually it is portrayed in two equivalent ways and one does not necessarily know what to do out of it. One way being expressed via manipulation of elements while the other one via mappings and despite these descriptions of an action are equivalent, one is left questioning why we are even doing this. Particularly, because the notion is usually explained “only” in the context of groups, despite the fact that it appears all over the place. So in what follows we will first explain why we are even considering actions, then start with a rather general description of an action in the context of monoids, which we then rephrase in specific contexts of groups, vector spaces and modules. Thus, from the specific instances of an action you will see that this notion is very natural and that you know it basically already very concretely from high school, but also even from primary school. For example, scaling vectors by numbers is an action.
 
 <div class="vector-demo" data-vector-demo>
@@ -134,7 +132,7 @@ Above we saw that basically the only thing that has changed when transfering fro
 
 Let's no carefuly look at what happened here, since our notion of an action in the general monoid setting must encapsle also the one in a group setting.
 
-But endomorphisms (i.e. structure preserving maps from a set into the same set) on a set $S$ without any structure are just all maps, so that if we follow the general definition we get a group homomorphism $G \to \operatorname{End}_{\mathrm{Set}}(X) = \{f: X \to X\}$ associating a map $f$ to a $g \in G$ denoted by $f_g$. However, since we deal with a group where each element has an inverse, we observe that given a map $f_g$, there exists a map $f_{g^{-1}}$, and composing these maps gives us an identity. Thus, each map we associate to any element $g \in G$ must have an inverse and we know that these maps are bijections (also called permutations). Thus, we can rewrite our original homomorphism $G \to \operatorname{End}_{\mathrm{Set}}(X)$ as $G \to \operatorname{Perm}_{\mathrm{Set}}(X) \subseteq \operatorname{End}_{\mathrm{Set}}(X)$
+But endomorphisms (i.e. structure preserving maps from a set into the same set) on a set $S$ without any structure are just all maps, so that if we follow the general definition we get a group homomorphism $G \to \operatorname{End}_{\mathrm{Set}}(X) = \{f: X \to X\}$ associating a map $f$ to a $g \in G$ denoted by $f_g$. However, since we deal with a group where each element has an inverse, we observe that given a map $f_g$, there exists a map $f_{g^{-1}}$, and composing these maps gives us an identity. Thus, each map we associate to any element $g \in G$ must have an inverse and we know that these maps are bijections (also called permutations). Thus, we can rewrite our original homomorphism $G\to \operatorname{End}_{\mathrm{Set}}(X)$ as $G\to \operatorname{Perm}_{\mathrm{Set}}(X)$ (subset of $\operatorname{End}_{\mathrm{Set}}(X)$).
 
 __Even more specific examples__
 
@@ -155,7 +153,7 @@ $$
 
 where $\pi_x$ is the automorphism of the group $H$ associated with the element $x \in G$.
 
-Now, why do we have now a group of automorphisms instead of the group of permutations we had before? As mentioned above this does not automatically follow from the fact that we now deal with a group $H$ instead of a set $S$, but because we __additionally__ require our group homomorphism to respect the group structure of $H$, which means that each \pi_x is a group homomorphism, i.e. given $h,k\in H$, we have $\pi_x(hk)=\pi_x(h)\pi_x(k)$ and since we know from the previous example that $\pi_x$ is a bijection, it must be an automorphism.
+Now, why do we have now a group of automorphisms instead of the group of permutations we had before? As mentioned above this does not automatically follow from the fact that we now deal with a group $H$ instead of a set $S$, but because we __additionally__ require our group homomorphism to respect the group structure of $H$, which means that each $\pi_x$ is a group homomorphism, i.e. given $h,k\in H$, we have $\pi_x(hk)=\pi_x(h)\pi_x(k)$ and since we know from the previous example that $\pi_x$ is a bijection, it must be an automorphism.
 
 __Next Example__
 
@@ -187,7 +185,7 @@ $R \to \operatorname{End}_{\mathbb{Z}}(M)$.
 
 __Thought process behind the choice of an underlying set__
 
-Okey we now know that actions allow us to see elements of our original algebraic structure, e.g. a group, as a mapping and we are letting act our strucuture in order to better understand its properties. Since now, it should be apparent that the choice of a set on which we act p[lays a role in our investigations, in what follow, we consider the different basic choices of an underlying set we can think of, so that our actions can lead turn into fruitful endeavors, i.e. so that we can expect to observe some new insights within our original algebraic structure.
+Okey we now know that actions allow us to see elements of our original algebraic structure, e.g. a group, as a mapping and we are letting act our strucuture in order to better understand its properties. Since now, it should be apparent that the choice of a set on which we act plays a role in our investigations, in what follow, we consider the different basic choices of an underlying set we can think of, so that our actions can lead turn into fruitful endeavors, i.e. so that we can expect to observe some new insights within our original algebraic structure.
 
 1.	__Injectivity of the homomorphism__
 
