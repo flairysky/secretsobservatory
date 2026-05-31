@@ -13,6 +13,8 @@ excerpt: "A standalone poem introducing the notion of an action on a conceptual 
 Takeaway: Here comes a summary.
 :::
 
+This post is now under construction.
+
 The concept of an action (also often times called “an operation” in mathematics) can seem quite mysterious and difficult to grasp intuitively when one encounters it in an algebra course for the first time. This is due to the fact that usually it is portrayed in two equivalent ways. One being expressed via manipulation of elements while the other one via mappings and despite these descriptions of an action are equivalent one is left, possibly with a feeling of why we are even doing this. Particularly, because the notion is usually explained “only” in the context of groups, despite the fact that it appears all over the place. So in what follows we will first explain why we are even considering actions, then start with the standard description of an action in the context of vector space/modules/rings, so that we notice a general pattern, from which we then derive a general notion of an action. Thus, from the specific instances of an action you will see that this notion is very natural and that you know it basically already very concretely from high school, but also even from primary school. For example, scaling vectors by numbers is an action.
 
 <div class="vector-demo" data-vector-demo>
