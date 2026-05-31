@@ -515,7 +515,7 @@ input, select, textarea {
   padding: 1.25rem;
   border-radius: 0.85rem;
   border: none;
-  background: linear-gradient(135deg, #0f172a 0%, #111827 100%);
+  background: transparent;
   color: #e2e8f0;
   box-shadow: 0 12px 35px rgba(15, 23, 42, 0.3);
 }
@@ -578,7 +578,7 @@ input, select, textarea {
 .vector-demo-stage {
   position: relative;
   border-radius: 0.75rem;
-  background: radial-gradient(circle at 50% 35%, rgba(56, 189, 248, 0.08), rgba(15, 23, 42, 0.92));
+  background: transparent;
   border: none;
   overflow: hidden;
 }
