@@ -5,7 +5,7 @@ categories: ["Standalone Poems"]
 excerpt: "A standalone poem introducing the notion of an action on a conceptual level."
 ---
 
-> It’s what you do that defines you.
+> It's ... what I do that defines me.
 >
 > Batman Begins 
 
