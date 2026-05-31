@@ -176,7 +176,9 @@ Such a linear action of a group $G$ on a vector space $V$ is called a representa
 
 Thus, a representation is nothing mysterious: it is simply an action of a group on a vector space, where the group elements wieved as maps respect the vector space structure, i,e, act by invertible linear maps on the vector space, which just means that for given $v,w\in V$ and $c\in K$ we require $\pi_x(v+w)= \pi_x(v) + \pi_x(w)$ and $\pi_x(cv)=c\pi_x(v)$.
 
-Again, we know that these maps must be bijections and from linear algebra, we know that linear bijective maps are invertible matrices also called General Linear Group $GL(V)$. Thus, the target of our homomorphism action turns from $\operatorname{End}_{\mathbb{K}}(V)$ into $\operatorname{GL}_{\mathbb{K}}(V)$.
+Again, we know that these maps must be bijections and from linear algebra, we know that linear bijective maps are invertible matrices also called General Linear Group $GL(V)$. Thus, the target of our homomorphism action turns from into $\operatorname{GL}_{\mathbb{K}}(V)$. 
+
+(While in the general case it was described as $\operatorname{End}_{\mathbb{K}}(V)$.)
 
 __Reinterpretation of the notion of scalar multiplication of Vector space and a Module__
 
