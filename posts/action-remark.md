@@ -336,6 +336,6 @@ $$
 
 Finally, since the intetion of this remark was not to bring up a lot of examples of an action but rather to illustrate that the notion of an action is not anything complicated allowing you to grasp the notion conceptionally, in order to see many examples of standard group actions you can for instance cf. again Langs _Undergraduate algebra_ [ref:Lang2005UndergraduateAlgebra] or basically any other text on algebra.
 
-> [A little less conversation, a little more action, please.](https://www.youtube.com/watch?v=rZLQpUxYkas&list=RDrZLQpUxYkas&start_radio=1)
+> A little less conversation, a little more action, please.
 >
 > <a href="https://www.youtube.com/watch?v=rZLQpUxYkas&list=RDrZLQpUxYkas&start_radio=1" target="_blank" rel="noopener noreferrer">Elvis Presley, A Little Less Conversation</a>
