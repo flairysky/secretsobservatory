@@ -132,7 +132,13 @@ Above we saw that basically the only thing that has changed when transfering fro
 
 Let's no carefuly look at what happened here, since our notion of an action in the general monoid setting must encapsle also the one in a group setting.
 
-But endomorphisms (i.e. structure preserving maps from a set into the same set) on a set $S$ without any structure are just all maps, so that if we follow the general definition we get a group homomorphism $G \to \operatorname{End}_{\mathrm{Set}}(X)$ $\equal \{f: X \to X\}$ associating a map $f$ to a $g \in G$ denoted by $f_g$. However, since we deal with a group where each element has an inverse, we observe that given a map $f_g$, there exists a map $f_{g^{-1}}$, and composing these maps gives us an identity. Thus, each map we associate to any element $g \in G$ must have an inverse and we know that these maps are bijections (also called permutations). Thus, we can rewrite our original homomorphism $G\to \operatorname{End}_{\mathrm{Set}}(X)$ as $G\to \operatorname{Perm}_{\mathrm{Set}}(X)$ (subset of $\operatorname{End}_{\mathrm{Set}}(X)$).
+But endomorphisms (i.e. structure preserving maps from a set into the same set) on a set $S$ without any structure are just all maps, so that if we follow the general definition we get a group homomorphism $G \to \text{End}_\text{Set}(X) = \\{f: X \to X\\}$.
+
+This homomorphism thus associats a map $f$ to a $g \in G$ denoted by $f_g$. However, since we deal with a group where each element has an inverse, we observe that given a map $f_g$, there exists a map $f_{g^{-1}}$, and composing these maps gives us an identity. Thus, each map we associate to any element $g \in G$ must have an inverse and we know that these maps are bijections (also called permutations). Thus, we can rewrite our original homomorphism $G\to \text{End}_{\text{Set}}(X)$. 
+
+We can write $G\to \text{Perm}_{\text{Set}}(X)$ instead.
+
+Notice that this is a subset of $\operatorname{End}_{\mathrm{Set}}(X)$).
 
 __Even more specific examples__
 
@@ -200,9 +206,9 @@ Well suited underlying sets should also reveal interesting patterns with respect
 
 Since, 
 
--	an orbit of an element $\operatorname{Orb}(x)=\{g \cdot x : g \in G\}$ tells us what can be moved where, as for instance if we have obtain only a single orbit from our action, then we say that our action is transitive, since we can transition from any element of the set to any other element (like in a chain).
+-	an orbit of an element $\operatorname{Orb}(x)=\\{g \cdot x : g \in G\\}$ tells us what can be moved where, as for instance if we have obtain only a single orbit from our action, then we say that our action is transitive, since we can transition from any element of the set to any other element (like in a chain).
 
--	Stabilizer of an element $\operatorname{Stab}(x)=\{g \in G : g \cdot x = x\}$
+-	Stabilizer of an element $\operatorname{Stab}(x)=\\{g \in G : g \cdot x = x\\}$
 tells as which of our elements viewed as mappings act as an identity for this particular element.
 However, since the stabilizer is a subgroup, we can form a quotient $X \cong G/\operatorname{Stab}(x)$., and we get the following three nasic cases:
 
