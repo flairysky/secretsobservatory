@@ -517,11 +517,11 @@ input, select, textarea {
   border: none;
   background: transparent;
   color: #e2e8f0;
-  box-shadow: 0 12px 35px rgba(15, 23, 42, 0.3);
+  box-shadow: none;
 }
 
 .dark .vector-demo {
-  box-shadow: 0 12px 40px rgba(2, 6, 23, 0.55);
+  box-shadow: none;
 }
 
 .vector-demo-header {

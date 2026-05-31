@@ -54,7 +54,7 @@ If you prefer a more specific context, read first the definition of a group acti
 
 To define an action all we need in terms of an algebraic structure in order to be able to act on something is an identity element and the associativity. An algebraic structure, that satisfies precisely these two properties is called a monoid (for example natural numbers viewed additively including zero are a monoid, so that you immediately see that _“monoids exist in nature”_ to cite (Serge Lang  p. 7 in his _Algebra_ [ref:Lang2002Algebra]).
 
-1. Definition: Given a monoid $A$ and a set $S$, we define an action of $A$ on $S$ to be a monoid-homomorphism
+1. __Definition:__ Given a monoid $A$ and a set $S$, we define an action of $A$ on $S$ to be a monoid-homomorphism
 
 $$
 \begin{aligned}
@@ -67,7 +67,7 @@ where $\operatorname{End}(S)$ denotes the monoid of all maps $S \to S$.
 
 Thus, given an element $a$ in our monoid $A$, we denote by $\pi_a$ the map from $S$ to $S$ which we associate with $a$.
 
-2. Definition: Equivalently, we can construct the product $A \times S$ and define a map
+2. __Definition:__ Equivalently, we can construct the product $A \times S$ and define a map
 
 $$
 \begin{aligned}
@@ -129,6 +129,7 @@ Here comes the proof.
 :::
 
 __A homomorphism into what?__
+
 Above we saw that basically the only thing that has changed when transfering from an action of a monoid to that of a group is that the homomorphism was a group-homomorphism instead of a monoid-homomorphism and more importantely that it mapped into a group of permutations instead into a monoid of endomorphisms.
 
 Let's no carefuly look at what happened here, since our notion of an action in the general monoid setting must encapsle also the one in a group setting.
@@ -136,6 +137,7 @@ Let's no carefuly look at what happened here, since our notion of an action in t
 But endomorphisms (i.e. structure preserving maps from a set into the same set) on a set $S$ without any structure are just all maps, so that if we follow the general definition we get a group homomorphism $G \to \operatorname{End}_{\mathrm{Set}}(X) = \{\, f : X \to X \,\}$ associating a map $f$ to a $g \in G$ denoted by $f_g$. However, since we deal with a group where each element has an inverse, we observe that given a map $f_g$, there exists a map $f_{g^{-1}}$, and composing these maps gives us an identity. Thus, each map we associate to any element $g\in G$ must have an inverse and we know that these maps are bijections (also called permutations). Thus, we can rewrite our original homomorphism $G \to \operatorname{End}_{\mathrm{Set}}(X)$ as $G \to \operatorname{Perm}_{\mathrm{Set}}(X)\space (\sub \operatorname{End}_{\mathrm{Set}}(X))$.
 
 __Even more specific examples__
+
 We have seen how changing the structure from a more general structure monoid to a more specific structure of a group that does the action changed our image of the action homomorphism.
 
 Now, instead of changing the structure that does the action, we change the underlying set and consider instead of a set $S$, a group $H$, i.e. we consider even more specific example.
