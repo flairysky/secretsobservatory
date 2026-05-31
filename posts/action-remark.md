@@ -76,7 +76,7 @@ $$
 
 Since $\pi_a$ is a map from $S$ to $S$, the element $\pi_a(s)$ is again an element of $S$, say $s'$. Thus, this definition makes mathematical sense.
 
-Now, for manipulative reasons, we rewrite $\pi_a(s)$ in a different notation, namely $as$.
+Now, for manipulative reasons, we rewrite $\pi_a(s)$ in a different notation, namely $a\cdot s$ or simply $as$.
 
 For this mapping to be called an action, it must satisfy the following two properties:
 
@@ -132,7 +132,7 @@ Above we saw that basically the only thing that has changed when transfering fro
 
 Let's no carefuly look at what happened here, since our notion of an action in the general monoid setting must encapsle also the one in a group setting.
 
-But endomorphisms (i.e. structure preserving maps from a set into the same set) on a set $S$ without any structure are just all maps, so that if we follow the general definition we get a group homomorphism $G \to \operatorname{End}_{\mathrm{Set}}(X) = \{f: X \to X\}$ associating a map $f$ to a $g \in G$ denoted by $f_g$. However, since we deal with a group where each element has an inverse, we observe that given a map $f_g$, there exists a map $f_{g^{-1}}$, and composing these maps gives us an identity. Thus, each map we associate to any element $g \in G$ must have an inverse and we know that these maps are bijections (also called permutations). Thus, we can rewrite our original homomorphism $G\to \operatorname{End}_{\mathrm{Set}}(X)$ as $G\to \operatorname{Perm}_{\mathrm{Set}}(X)$ (subset of $\operatorname{End}_{\mathrm{Set}}(X)$).
+But endomorphisms (i.e. structure preserving maps from a set into the same set) on a set $S$ without any structure are just all maps, so that if we follow the general definition we get a group homomorphism $G \to \operatorname{End}_{\mathrm{Set}}(X)$ $\equal \{f: X \to X\}$ associating a map $f$ to a $g \in G$ denoted by $f_g$. However, since we deal with a group where each element has an inverse, we observe that given a map $f_g$, there exists a map $f_{g^{-1}}$, and composing these maps gives us an identity. Thus, each map we associate to any element $g \in G$ must have an inverse and we know that these maps are bijections (also called permutations). Thus, we can rewrite our original homomorphism $G\to \operatorname{End}_{\mathrm{Set}}(X)$ as $G\to \operatorname{Perm}_{\mathrm{Set}}(X)$ (subset of $\operatorname{End}_{\mathrm{Set}}(X)$).
 
 __Even more specific examples__
 
@@ -153,7 +153,7 @@ $$
 
 where $\pi_x$ is the automorphism of the group $H$ associated with the element $x \in G$.
 
-Now, why do we have now a group of automorphisms instead of the group of permutations we had before? As mentioned above this does not automatically follow from the fact that we now deal with a group $H$ instead of a set $S$, but because we __additionally__ require our group homomorphism to respect the group structure of $H$, which means that each $\pi_x$ is a group homomorphism, i.e. given $h,k\in H$, we have $\pi_x(hk)=\pi_x(h)\pi_x(k)$ and since we know from the previous example that $\pi_x$ is a bijection, it must be an automorphism.
+Now, why do we have now a group of automorphisms instead of the group of permutations we had before? As mentioned above this does not automatically follow from the fact that we now deal with a group $H$ instead of a set $S$, but because we __additionally__ require our group homomorphism to respect the group structure of $H$, which means that each $\pi_x$ is a group homomorphism, i.e. given $h,k\in H$, we have $\pi_x(hk)=\pi_x(h)\pi_x(k)$ and since we know from the previous example that $\pi_x$ is a bijection, $\pi_x$ must be an automorphism.
 
 __Next Example__
 
