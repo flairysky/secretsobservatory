@@ -15,7 +15,7 @@ Takeaway: Here comes a summary.
 
 This post is now under construction.
 
-The concept of an action (also often times called “an operation” in mathematics) can seem quite mysterious and difficult to grasp intuitively when one encounters it in an algebra course for the first time. This is due to the fact that usually it is portrayed in two equivalent ways and one does not necessarily know what to do out of it. One way being expressed via manipulation of elements while the other one via mappings and despite these descriptions of an action are equivalent, one is left questioning why we are even doing this. Particularly, because the notion is usually explained “only” in the context of groups, despite the fact that it appears all over the place. So in what follows we will first explain why we are even considering actions, then start with the standard description of an action in the context of vector space/modules/rings, so that we notice a general pattern, from which we then derive a general notion of an action. Thus, from the specific instances of an action you will see that this notion is very natural and that you know it basically already very concretely from high school, but also even from primary school. For example, scaling vectors by numbers is an action.
+The concept of an action (also often times called “an operation” in mathematics) can seem quite mysterious and difficult to grasp intuitively when one encounters it in an algebra course for the first time. This is due to the fact that usually it is portrayed in two equivalent ways and one does not necessarily know what to do out of it. One way being expressed via manipulation of elements while the other one via mappings and despite these descriptions of an action are equivalent, one is left questioning why we are even doing this. Particularly, because the notion is usually explained “only” in the context of groups, despite the fact that it appears all over the place. So in what follows we will first explain why we are even considering actions, then start with a rather general description of an action in the context of monoids, which we then rephrase in specific contexts of groups, vector spaces and modules. Thus, from the specific instances of an action you will see that this notion is very natural and that you know it basically already very concretely from high school, but also even from primary school. For example, scaling vectors by numbers is an action.
 
 <div class="vector-demo" data-vector-demo>
 	<div class="vector-demo-header">
@@ -58,7 +58,7 @@ To define an action all we need in terms of an algebraic structure in order to b
 
 $$
 \begin{aligned}
-\pi : A &\to \operatorname{End}(S) \
+\pi : A &\to \operatorname{End}(S) \\\\
 a &\mapsto \pi_a ,
 \end{aligned}
 $$
@@ -71,7 +71,7 @@ Thus, given an element $a$ in our monoid $A$, we denote by $\pi_a$ the map from 
 
 $$
 \begin{aligned}
-A \times S &\to S \
+A \times S &\to S \\\\
 (a,s) &\mapsto \pi_a(s).
 \end{aligned}
 $$
@@ -134,7 +134,7 @@ Above we saw that basically the only thing that has changed when transfering fro
 
 Let's no carefuly look at what happened here, since our notion of an action in the general monoid setting must encapsle also the one in a group setting.
 
-But endomorphisms (i.e. structure preserving maps from a set into the same set) on a set $S$ without any structure are just all maps, so that if we follow the general definition we get a group homomorphism $G \to \operatorname{End}_{\mathrm{Set}}(X) = \{\, f : X \to X \,\}$ associating a map $f$ to a $g \in G$ denoted by $f_g$. However, since we deal with a group where each element has an inverse, we observe that given a map $f_g$, there exists a map $f_{g^{-1}}$, and composing these maps gives us an identity. Thus, each map we associate to any element $g\in G$ must have an inverse and we know that these maps are bijections (also called permutations). Thus, we can rewrite our original homomorphism $G \to \operatorname{End}_{\mathrm{Set}}(X)$ as $G \to \operatorname{Perm}_{\mathrm{Set}}(X)\space (\subset \operatorname{End}_{\mathrm{Set}}(X))$.
+But endomorphisms (i.e. structure preserving maps from a set into the same set) on a set $S$ without any structure are just all maps, so that if we follow the general definition we get a group homomorphism $G \to \operatorname{End}_{\mathrm{Set}}(X) = \{\, f : X \to X \,\}$ associating a map $f$ to a $g \in G$ denoted by $f_g$. However, since we deal with a group where each element has an inverse, we observe that given a map $f_g$, there exists a map $f_{g^{-1}}$, and composing these maps gives us an identity. Thus, each map we associate to any element $g \in G$ must have an inverse and we know that these maps are bijections (also called permutations). Thus, we can rewrite our original homomorphism $G \to \operatorname{End}_{\mathrm{Set}}(X)$ as $G \to \operatorname{Perm}_{\mathrm{Set}}(X) \subseteq \operatorname{End}_{\mathrm{Set}}(X)$
 
 __Even more specific examples__
 
@@ -148,8 +148,8 @@ such an action is given by a group-homomorphism
 
 $$
 \begin{aligned}
-\pi : G &\to \operatorname{Aut}(H) \\
-x &\lmapsto \pi_x ,
+\pi : G &\to \operatorname{Aut}(H) \\\\
+x &\mapsto \pi_x ,
 \end{aligned}
 $$
 
@@ -163,8 +163,8 @@ Even more specifically, let's consider now instead of a group a vector space $V$
 
 $$
 \begin{aligned}
-\pi : G &\to \operatorname{GL}_K(V) \\
-x &\lmapsto \pi_x .
+\pi : G &\to \operatorname{GL}_K(V) \\\\
+x &\mapsto \pi_x .
 \end{aligned}
 $$
 
@@ -208,32 +208,27 @@ Since,
 tells as which of our elements viewed as mappings act as an identity for this particular element.
 However, since the stabilizer is a subgroup, we can form a quotient $X \cong G/\operatorname{Stab}(x)$., and we get the following three nasic cases:
 
-1. One orbit + trivial stabilizer
+1. __One orbit and trivial stabilizer__
 Then the action is free and transitive, and
 $$
 X \cong G
 $$
 Every group element moves $x$ to a unique point. This is the cleanest possible action.
 
-2. One orbit + nontrivial stabilizer
+2. __One orbit and nontrivial stabilizer__
 Then
 $$
 X \cong G/H
 $$
-for some subgroup $H$. This is also very useful: you understand $X$ through cosets.
+for some subgroup $H$. This is also very useful since we can understand $X$ via cosets.
 
-Example: rotations of a sphere act transitively on the sphere, but the stabilizer of one point is all rotations around that axis.
-
-3. Many orbits
-Then the action decomposes $X$ into separate pieces:
+3. __Many orbits__
+Then the action decomposes $X$ into disjoint subsets:
 $$
 X = \bigsqcup_i \operatorname{Orb}(x_i)
 $$
-This is useful for classification: two elements are “the same type” if they lie in the same orbit.
-So the slogan is:
-$$
-\text{orbits tell you the types of objects; stabilizers tell you their internal symmetries.}
-$$
+leading to a classification of elements.
+
 
 Finally, since the intetion of this remark was not to bring up a lot of examples of an action but rather to illustrate that the notion of an action is not anything complicated allowing you to grasp the notion conceptionally, in order to see many examples of standard group actions you can for instance cf. again Langs _Undergraduate algebra_ [ref:Lang2005UndergraduateAlgebra] or basically any other text on algebra.
 
