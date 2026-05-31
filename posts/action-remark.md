@@ -15,7 +15,7 @@ Takeaway: Here comes a summary.
 
 This post is now under construction.
 
-The concept of an action (also often times called “an operation” in mathematics) can seem quite mysterious and difficult to grasp intuitively when one encounters it in an algebra course for the first time. This is due to the fact that usually it is portrayed in two equivalent ways. One being expressed via manipulation of elements while the other one via mappings and despite these descriptions of an action are equivalent one is left, possibly with a feeling of why we are even doing this. Particularly, because the notion is usually explained “only” in the context of groups, despite the fact that it appears all over the place. So in what follows we will first explain why we are even considering actions, then start with the standard description of an action in the context of vector space/modules/rings, so that we notice a general pattern, from which we then derive a general notion of an action. Thus, from the specific instances of an action you will see that this notion is very natural and that you know it basically already very concretely from high school, but also even from primary school. For example, scaling vectors by numbers is an action.
+The concept of an action (also often times called “an operation” in mathematics) can seem quite mysterious and difficult to grasp intuitively when one encounters it in an algebra course for the first time. This is due to the fact that usually it is portrayed in two equivalent ways and one does not necessarily know what to do out of it. One way being expressed via manipulation of elements while the other one via mappings and despite these descriptions of an action are equivalent, one is left questioning why we are even doing this. Particularly, because the notion is usually explained “only” in the context of groups, despite the fact that it appears all over the place. So in what follows we will first explain why we are even considering actions, then start with the standard description of an action in the context of vector space/modules/rings, so that we notice a general pattern, from which we then derive a general notion of an action. Thus, from the specific instances of an action you will see that this notion is very natural and that you know it basically already very concretely from high school, but also even from primary school. For example, scaling vectors by numbers is an action.
 
 <div class="vector-demo" data-vector-demo>
 	<div class="vector-demo-header">
@@ -39,13 +39,54 @@ The concept of an action (also often times called “an operation” in mathemat
 
 __Why do we study the notion of an action__
 
-The main idea is that we often times have some algebraic structures, say a ring or a group, and we want to understand it better. And so we take some suitable set and let our ring or a group act on it such set. Tthis transforms the elements of our original ring or group into mappings, which we then hopefully can better understand due to the nature of the underlying set we have chosen. Thus, already from this description you can see that when studying actions, the most important thing is to choose the right underlying set, on which our algebraic structure (e.g. ring, group etc.) will act.
+The main idea is that we have some algebraic structure, say a ring or a group, and we want to understand it better. And so we take some suitable set and let our ring or a group act on that set. This transforms the elements of our original ring or group into mappings, which we then hopefully can better understand due to the nature of the underlying set we have chosen. Thus, already from this description you can see that when studying actions, the most important thing is to choose the right underlying set, on which our algebraic structure (e.g. ring, group etc.) will act.
 
 __What is an action?__
 
-A)	Lets start with action of a group $G$ on an arbitrary set $S$ without any structure on it.
-We start with our first definition of an action in terms of mappings, which is mathematically more sound, as mathematically we immediately see that such definition is correct. This is not immediately obvious from the second definition, however the second definition is on the other hand more intuitive. In another words, the first definition may seem at a first glance to come out of nowhere yet being clearly mathematically, while the second definition will be very intuitive however, without the first definition it would not be immediately whether it is mathematically correct.
-We follow very closely Lang’s descriptions of actions from his Undergraduate Algebra book
+As for usual swe start with a rather general description of an action and later provide specific examples. If yu want to start with specifc examples first and then obtain the general notion you can scroll down and read those first. (As it is the case in mathematics wether one starts with a general picture and then study specific examples or derive the general notion from the specific examples is a personal taste.)
+
+We start with our first definition of an action in terms of mappings, which is mathematically more sound, as mathematically we immediately see that such definition is correct. This is not immediately obvious from the second definition, however the second definition is on the other hand sometimes more practical and so possibly more intuitive. In another words, the first definition may seem at a first glance to come out of nowhere yet being clearly correct mathematically, while the second definition will be very intuitive however, without the first definition it would not be immediately be obvious whether such de3finition is mathematically correct.
+We follow very closely Lang’s descriptions of actions from his Undergraduate Algebra book [ref:Lang2005UndergraduateAlgebra]. 
+
+__A rather general notion of an action__
+
+If you prefer a more specific context, read first the definition of a group action immediatelly following the general definition below.
+
+To define an action all we need in terms of an algebraic structure in order to be able to act on something is an identity element and the associativity. An algebraic structure, that satisfies precisely these two properties is called a monoid (for example natural numbers viewed additively including zero are a monoid, so that you immediately see that _“monoids exist in nature”_ to cite (Serge Lang  p. 7 in his _Algebra_ [ref:Lang2002Algebra]).
+
+1. Definition: Given a monoid $A$ and a set $S$, we define an action of $A$ on $S$ to be a monoid-homomorphism
+
+$$
+\begin{aligned}
+\pi : A &\longrightarrow \operatorname{End}(S) \
+a &\longmapsto \pi_a ,
+\end{aligned}
+$$
+
+where $\operatorname{End}(S)$ denotes the monoid of all maps $S \to S$.
+
+Thus, given an element $a$ in our monoid $A$, we denote by $\pi_a$ the map from $S$ to $S$ which we associate with $a$.
+
+2. Definition: Equivalently, we can construct the product $A \times S$ and define a map
+
+$$
+\begin{aligned}
+A \times S &\longrightarrow S \
+(a,s) &\longmapsto \pi_a(s).
+\end{aligned}
+$$
+
+Since $\pi_a$ is a map from $S$ to $S$, the element $\pi_a(s)$ is again an element of $S$, say $s'$. Thus, this definition makes mathematical sense.
+
+Now, for manipulative reasons, we rewrite $\pi_a(s)$ in a different notation, namely $as$.
+
+For this mapping to be called an action, it must satisfy the following two properties:
+
+- __Associativity:__ For all $a,b \in A$ and $s \in S$, we have $a(bs)=(ab)s$.
+
+- __Identity:__ If we denote by $e$ the identity element of our monoid $A$, then for all $s \in S$, we have $es=s$.
+
+Now, let's consider an action of a group $G$ on a set $S$. To do so we can just rephrase verbatim the above definitions for an action of a monoid. Below are included also some remarks regarding the definitions
 
 1. __Definition:__
 Given a group $G$ and a set $S$,
@@ -60,6 +101,8 @@ $$
 
 where given an lement $x$ in opur group $G$, we denoted $\pi_x$ to be a permutation, which we associate with our $x$ in $G$.
 
+Remark: Notice that everything makes sense here since on both sides of the association we have a group.
+
 2. __Definition:__
 We construct a product $G \times S$ and define a map 
 $$
@@ -69,73 +112,52 @@ G \times S &\to S \\\\
 \end{aligned}
 $$
 
-Now, since we said that $\pi_x$ is a permutation of $S$, $\pi_x(s)$ is again some element of $S$, say $s'$, thus it makes mathematically sense.
-
-Now, for manipulative reasons, we rewrite $\pi_x(s)$ in a different notaiton, namely $xs$.
+Now, since we said that $\pi_x$ is a permutation of $S$, $\pi_x(s)$ is again some element of $S$, say $s'$, thus our definition makes mathematically sense.
+But for manipulative reasons, we rewrite $\pi_x(s)$ in a different notaiton, namely $xs$, so that our mapping becomes $(x,s) \mapsto xs$.
 
 :::fold Remark: on the importance of understanding the action in terms of permutations
-Some textbooks present directly the second notation without even mentioning the permutation part which as you see is crutial for understanding, as without seeing it the first thing that immediatelly pops up to your mind is probably why wa can compose an element $x$ of $G$ with an element $s$ of $S$ within $S$, since we deal possibly with elements of different sets and we do not have any structure on $S$ to start with. This makes you question weather this definition is even mathematically correct.
+Some textbooks present directly the second notation $xs$ without even mentioning the permutation part which as you see is crutial for understanding, as without seeing it, the first thing that immediatelly pops up to your mind is probably why wa can compose an element $x$ of $G$ with an element $s$ of $S$ within $S$, since we deal possibly with elements of different sets $G$ and $S$, and we do not have any structure on $S$ to start with so how on earth is it possible to put $x$ and $s$ together. This makes you question weather this definition is even mathematically correct.
 :::
-
 
 For the mapping to be called an action we say that it must satisfy the following two properties:
 
-__Associativity:__ For all $x,y \in G$ and $s \in S$ we have $x(ys) = (xy)s$.
-
-__Identity:__ If we denote by $e$ the unit element of our group $G$, then for all $s \in S$, we have $es = s$.
+- __Associativity:__ For all $x,y \in G$ and $s \in S$ we have $x(ys) = (xy)s$.
+- __Identity:__ If we denote by $e$ the unit element of our group $G$, then for all $s \in S$, we have $es = s$.
 
 :::fold Proof that the two definitions are equaivalent
-Here comes the proof
+Here comes the proof.
 :::
 
-B)	Next, we consider an action of a group $G$ on an additive group $V$ (i.e. if $G$ has for instance an additional structure of a field such as the real numbers, this is a vector space $V$ over the real numbers). Btw, such actions are called Representations!
+__A homomorphism into what?__
+Above we saw that basically the only thing that has changed when transfering from an action of a monoid to that of a group is that the homomorphism was a group-homomorphism instead of a monoid-homomorphism and more importantely that it mapped into a group of permutations instead into a monoid of endomorphisms.
 
-In other words, such an action is given by a group-homomorphism
+Let's no carefuly look at what happened here, since our notion of an action in the general monoid setting must encapsle also the one in a group setting.
+
+But endomorphisms (i.e. structure preserving maps from a set into the same set) on a set $S$ without any structure are just all maps, so that if we follow the general definition we get a group homomorphism $G \to \operatorname{End}_{\mathrm{Set}}(X) = \{\, f : X \to X \,\}$ associating a map $f$ to a $g \in G$ denoted by $f_g$. However, since we deal with a group where each element has an inverse, we observe that given a map $f_g$, there exists a map $f_{g^{-1}}$, and composing these maps gives us an identity. Thus, each map we associate to any element $g\in G$ must have an inverse and we know that these maps are bijections (also called permutations). Thus, we can rewrite our original homomorphism $G \to \operatorname{End}_{\mathrm{Set}}(X)$ as $G \to \operatorname{Perm}_{\mathrm{Set}}(X)\space (\sub \operatorname{End}_{\mathrm{Set}}(X))$.
+
+__Even more specific examples__
+We have seen how changing the structure from a more general structure monoid to a more specific structure of a group that does the action changed our image of the action homomorphism.
+
+Now, instead of changing the structure that does the action, we change the underlying set and consider instead of a set $S$, a group $H$, i.e. we consider even more specific example.
+
+Furthermore, we can require (i.e. this does not follow from the fact that we now deal with a group $H$ instead of a set $S$!) that the action respects group operation on H
+
+such an action is given by a group-homomorphism
 
 $$
 \begin{aligned}
-\pi : G &\longrightarrow \operatorname{Aut}(V) \\
+\pi : G &\longrightarrow \operatorname{Aut}(H) \\
 x &\longmapsto \pi_x ,
 \end{aligned}
 $$
 
-where $\pi_x$ is the automorphism of the additive group $V$ associated with the element $x \in G$.
+where $\pi_x$ is the automorphism of the group $H$ associated with the element $x \in G$.
 
-Equivalently, each $x \in G$ acts on elements $v \in V$ by
+Now, why do we have now a group of automorphisms instead of the group of permutations we had before? As mentioned above this does not automatically follow from the fact that we now deal with a group $H$ instead of a set $S$, but because we __additionally__ require our group homomorphism to respect the group structure of $H$, which means that each \pi_x is a group homomorphism, i.e. given $h,k\in H$, we have $\pi_x(hk)=\pi_x(h)\pi_x(k)$ and since we know from the previous example that $\pi_x$ is a bijection, it must be an automorphism.
 
-$$
-v \longmapsto \pi_x(v),
-$$
+__Next Example__
 
-and we usually write this simply as
-
-$$
-xv
-$$
-
-instead of $\pi_x(v)$. Since $\pi$ is a group-homomorphism, we have
-
-$$
-x(yv)=(xy)v
-$$
-
-for all $x,y \in G$ and $v \in V$, and if $e$ is the identity element of $G$, then
-
-$$
-ev=v
-$$
-
-for all $v \in V$.
-
-Moreover, because every $\pi_x$ is an automorphism of the additive group $V$, we also have
-
-$$
-x(v+w)=xv+xw
-$$
-
-for all $x \in G$ and $v,w \in V$.
-
-If $V$ is not only an additive group, but a vector space over a field $K$, and if every $\pi_x$ is $K$-linear, then the action is given by a group-homomorphism
+Even more specifically, let's consider now instead of a group a vector space $V$ over a field $K$, and require that every $\pi_x$ is $K$-linear map (i.e. it respects the vector space structure), then we get the following action
 
 $$
 \begin{aligned}
@@ -144,145 +166,22 @@ x &\longmapsto \pi_x .
 \end{aligned}
 $$
 
-Such a linear action of a group $G$ on a vector space $V$ is called a representation of $G$.
+Such a linear action of a group $G$ on a vector space $V$ is called a representation of $G$!
 
-Thus, a representation is nothing mysterious: it is simply an action of a group on a vector space, where the group elements act by invertible linear maps.
+Thus, a representation is nothing mysterious: it is simply an action of a group on a vector space, where the group elements wieved as maps respect the vector space structure, i,e, act by invertible linear maps on the vector space, which just means that for given $v,w\in V$ and $c\in K$ we require $\pi_x(v+w)= \pi_x(v) + \pi_x(w)$ and $\pi_x(cv)=c\pi_x(v)$.
 
+Again, we know that these maps must be bijections and from linear algebra, we know that linear bijective maps are invertible matrices also called General Linear Group $GL(V)$. Thus, the target of our homomorphism action turns from $\operatorname{End}_{\mathrm{K}}(V)$ into $\operatorname{GL}_{\mathrm{K}}(V)$.
 
-C)	Last but not least, we now let a ring $R$ act on an additive group $M$, (i.e. we have an $R$-Module, which is nothing but a generalization of a Vector space, where instead of a field there is a ring acting on our group $M$)
+__Reinterpretation of the notion of scalar multiplication of Vector space and a Module__
 
-Since a ring has both addition and multiplication, the action has to respect both structures. This can be expressed by saying that we have a ring-homomorphism
+From our second defnition of an action and the definition of a vector space as a map $K\times V \to V$ ($V$ is an additive group) as well as its generalization called module defined as $R\times M \to M$ ($M$ is an additive group), where instead of a field $K$ (which is a specific ring) we deal with an arbitrary ring $R$, we see that  the scalar multiplication is an action in both vector spaces and modules.
 
-$$
-\begin{aligned}
-\rho : R &\longrightarrow \operatorname{End}_{\mathbb{Z}}(M) \\
-a &\longmapsto \rho_a ,
-\end{aligned}
-$$
+In terms of our first definition, these actions are as expected
 
-where $\rho_a$ is the endomorphism of the additive group $M$ associated with the element $a \in R$.
+$K \to \operatorname{End}_{\mathbb{Z}}(V)$
 
-Equivalently, each $a \in R$ acts on elements $m \in M$ by
+$R \to \operatorname{End}_{\mathbb{Z}}(M)$.
 
-$$
-m \longmapsto \rho_a(m),
-$$
-
-and we usually write this simply as
-
-$$
-am
-$$
-
-instead of $\rho_a(m)$.
-
-Because multiplication in $R$ has to agree with composition of endomorphisms, we get
-
-$$
-a(bm)=(ab)m
-$$
-
-for all $a,b \in R$ and $m \in M$.
-
-Because the identity element $1_R$ acts as the identity map on $M$, we get
-
-$$
-1_Rm=m
-$$
-
-for all $m \in M$.
-
-Because every $\rho_a$ is an endomorphism of the additive group $M$, we also get
-
-$$
-a(m+n)=am+an
-$$
-
-for all $a \in R$ and $m,n \in M$.
-
-Finally, because $\rho$ is additive as a ring-homomorphism, we get
-
-$$
-(a+b)m=am+bm
-$$
-
-for all $a,b \in R$ and $m \in M$.
-
-Thus, an $R$-module is precisely an additive abelian group $M$ on which the ring $R$ acts in a way compatible with addition and multiplication.
-
-In particular, a vector space is a special case of this construction: if $K$ is a field, then a vector space over $K$ is the same thing as a $K$-module. So vector spaces and modules can both be understood as actions: a vector space is a field acting on an additive group, while a module is a ring acting on an additive group.
-
-__A rather general notion of an action__
-
-From the examples above we see that all we need in terms of an algebraic structure on order to be able to act on something is an identity element and the associativity. An algebraic structure, that satisfies precisely these two properties Is called a monoid (for example natural numbers viewed additively including zero are a monoid, so that you immediately see that “monoids exist in nature” to cite Serge Lang  p. 7 in his _Algebra_ [ref:Lang2002Algebra]).
-And so to define an action in general, we can just rephrase verbatim the equivalent definitions we had above for the action of a group (or any other algebraic structure we considered so far.)
-For repetition, we restate the two definitions of an action, now in the context of a monoid.
-
-1. Definition: Given a monoid $A$ and a set $S$, we define an action of $A$ on $S$ to be a monoid-homomorphism
-
-$$
-\begin{aligned}
-\pi : A &\longrightarrow \operatorname{End}(S) \
-a &\longmapsto \pi_a ,
-\end{aligned}
-$$
-
-where $\operatorname{End}(S)$ denotes the monoid of all maps $S \to S$ under composition.
-
-Thus, given an element $a$ in our monoid $A$, we denote by $\pi_a$ the map from $S$ to $S$ which we associate with $a$.
-
-This is the direct analogue of the group-action definition
-
-$$
-G \longrightarrow \operatorname{Perm}(S),
-$$
-
-except that for monoids we use $\operatorname{End}(S)$ instead of $\operatorname{Perm}(S)$, because the maps $\pi_a$ do not have to be invertible.
-
-2. Definition: Equivalently, we can construct the product $A \times S$ and define a map
-
-$$
-\begin{aligned}
-A \times S &\longrightarrow S \
-(a,s) &\longmapsto \pi_a(s).
-\end{aligned}
-$$
-
-Since $\pi_a$ is a map from $S$ to $S$, the element $\pi_a(s)$ is again an element of $S$. Thus, this definition makes mathematical sense.
-
-Now, for manipulative reasons, we rewrite $\pi_a(s)$ in a different notation, namely
-
-$$
-as.
-$$
-
-For this mapping to be called an action, it must satisfy the following two properties:
-
-Associativity: For all $a,b \in A$ and $s \in S$, we have
-
-$$
-a(bs)=(ab)s.
-$$
-
-Identity: If we denote by $1_A$ the identity element of our monoid $A$, then for all $s \in S$, we have
-
-$$
-1_A s=s.
-$$
-
-So, just as for groups, we have two equivalent ways of understanding an action. Either we define it abstractly as a homomorphism
-
-$$
-A \longrightarrow \operatorname{End}(S),
-$$
-
-or we define it directly as a map
-
-$$
-A \times S \longrightarrow S
-$$
-
-satisfying associativity and identity.
 
 __Thought process behind the choice of an underlying set__
 
