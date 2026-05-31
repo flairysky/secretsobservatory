@@ -956,10 +956,6 @@ async function initPostPage() {
       console.log('Footnotes loaded:', window.refManager.footnotes.size);
     }
 
-    const spoilerResult = extractSpoilerBlock(processedContent);
-    const spoilerContent = spoilerResult.spoiler;
-    processedContent = spoilerResult.content;
-    
     // Render markdown content
     const postBody = document.getElementById('postBody');
     if (postBody) {
@@ -979,6 +975,7 @@ async function initPostPage() {
       });
       
       processedContent = processFoldBlocks(processedContent);
+      processedContent = processSpoilerBlocks(processedContent);
 
       let htmlContent = marked.parse(processedContent);
       
@@ -989,14 +986,6 @@ async function initPostPage() {
         htmlContent = window.refManager.processReferenceSyntax(htmlContent);
       }
 
-      if (spoilerContent) {
-        let spoilerHtml = renderSpoilerBlock(spoilerContent);
-        if (window.refManager) {
-          spoilerHtml = window.refManager.processReferenceSyntax(spoilerHtml);
-        }
-        htmlContent = spoilerHtml + htmlContent;
-      }
-      
       postBody.innerHTML = htmlContent;
       console.log('Markdown rendered successfully');
 
@@ -1521,18 +1510,16 @@ function processEpigraphSyntax(content) {
   });
 }
 
-function extractSpoilerBlock(content) {
-  const spoilerRegex = /(^|\n):::spoiler\s*\n([\s\S]*?)\n:::(?=\n|$)/i;
-  const match = content.match(spoilerRegex);
+function processSpoilerBlocks(content) {
+  const spoilerRegex = /(^|\n):::spoiler\s*\n([\s\S]*?)\n:::(?=\n|$)/gi;
 
-  if (!match) {
-    return { spoiler: '', content };
-  }
+  return content.replace(spoilerRegex, (match, leading, body) => {
+    const spoilerBody = (body || '').trim();
+    const leadingText = leading || '';
+    const spoilerHtml = renderSpoilerBlock(spoilerBody);
 
-  const spoiler = (match[2] || '').trim();
-  const cleanedContent = content.replace(spoilerRegex, '\n');
-
-  return { spoiler, content: cleanedContent };
+    return `${leadingText}\n\n${spoilerHtml}\n\n`;
+  });
 }
 
 function renderSpoilerBlock(markdown) {
@@ -1543,15 +1530,13 @@ function renderSpoilerBlock(markdown) {
     </svg>
   `;
 
-  return `
-    <details class="spoiler-card">
-      <summary class="spoiler-summary">
-        <span class="spoiler-icon">${spoilerIcon}</span>
-        <span>Spoiler (Takeaway Summary)</span>
-      </summary>
-      <div class="spoiler-content">${spoilerBody}</div>
-    </details>
-  `;
+  return `<details class="spoiler-card">
+  <summary class="spoiler-summary">
+    <span class="spoiler-icon">${spoilerIcon}</span>
+    <span>Spoiler (Takeaway Summary)</span>
+  </summary>
+  <div class="spoiler-content">${spoilerBody}</div>
+</details>`;
 }
 
 function processFoldBlocks(content) {
