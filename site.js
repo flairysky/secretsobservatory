@@ -955,6 +955,10 @@ async function initPostPage() {
       console.log('References loaded:', window.refManager.references.size);
       console.log('Footnotes loaded:', window.refManager.footnotes.size);
     }
+
+    const spoilerResult = extractSpoilerBlock(processedContent);
+    const spoilerContent = spoilerResult.spoiler;
+    processedContent = spoilerResult.content;
     
     // Render markdown content
     const postBody = document.getElementById('postBody');
@@ -974,6 +978,8 @@ async function initPostPage() {
         sanitize: false
       });
       
+      processedContent = processFoldBlocks(processedContent);
+
       let htmlContent = marked.parse(processedContent);
       
       console.log('HTML content sample:', htmlContent.substring(0, 500));
@@ -982,9 +988,19 @@ async function initPostPage() {
       if (window.refManager) {
         htmlContent = window.refManager.processReferenceSyntax(htmlContent);
       }
+
+      if (spoilerContent) {
+        let spoilerHtml = renderSpoilerBlock(spoilerContent);
+        if (window.refManager) {
+          spoilerHtml = window.refManager.processReferenceSyntax(spoilerHtml);
+        }
+        htmlContent = spoilerHtml + htmlContent;
+      }
       
       postBody.innerHTML = htmlContent;
       console.log('Markdown rendered successfully');
+
+      initVectorDemos();
       
       // Add references and footnotes sections
       if (window.refManager) {
@@ -1503,6 +1519,379 @@ function processEpigraphSyntax(content) {
   <div class="epigraph-attribution">${attribution}</div>
 </div>`;
   });
+}
+
+function extractSpoilerBlock(content) {
+  const spoilerRegex = /(^|\n):::spoiler\s*\n([\s\S]*?)\n:::(?=\n|$)/i;
+  const match = content.match(spoilerRegex);
+
+  if (!match) {
+    return { spoiler: '', content };
+  }
+
+  const spoiler = (match[2] || '').trim();
+  const cleanedContent = content.replace(spoilerRegex, '\n');
+
+  return { spoiler, content: cleanedContent };
+}
+
+function renderSpoilerBlock(markdown) {
+  const spoilerBody = marked.parse(markdown.trim());
+  const spoilerIcon = `
+    <svg class="spoiler-icon-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+      <path stroke-linecap="round" stroke-linejoin="round" d="M12 3l1.8 4.2L18 9l-4.2 1.8L12 15l-1.8-4.2L6 9l4.2-1.8L12 3z" />
+    </svg>
+  `;
+
+  return `
+    <details class="spoiler-card">
+      <summary class="spoiler-summary">
+        <span class="spoiler-icon">${spoilerIcon}</span>
+        <span>Spoiler (Takeaway Summary)</span>
+      </summary>
+      <div class="spoiler-content">${spoilerBody}</div>
+    </details>
+  `;
+}
+
+function processFoldBlocks(content) {
+  const foldRegex = /(^|\n):::fold\s+([^\n]+)\n([\s\S]*?)\n:::(?=\n|$)/g;
+
+  return content.replace(foldRegex, (match, leading, title, body) => {
+    const safeTitle = escapeHtml((title || '').trim());
+    const safeBody = (body || '').trim();
+    const bodyHtml = safeBody ? marked.parse(safeBody) : '';
+    const leadingText = leading || '';
+
+    return `${leadingText}<details class="fold-section"><summary class="fold-summary">${safeTitle}</summary><div class="fold-content">${bodyHtml}</div></details>`;
+  });
+}
+
+function initVectorDemos() {
+  const demos = document.querySelectorAll('[data-vector-demo]');
+  if (!demos.length) {
+    return;
+  }
+
+  demos.forEach(demo => initVectorDemo(demo));
+}
+
+function initVectorDemo(root) {
+  const canvas = root.querySelector('[data-vector-canvas]');
+  const slider = root.querySelector('[data-scale-slider]');
+  const input = root.querySelector('[data-scale-input]');
+  const readout = root.querySelector('[data-vector-readout]');
+  const labelsContainer = root.querySelector('[data-vector-labels]');
+  const fallback = root.querySelector('[data-vector-fallback]');
+
+  if (!canvas || !slider || !input) {
+    return;
+  }
+
+  const gl = canvas.getContext('webgl', { antialias: true, alpha: true });
+  if (!gl) {
+    if (fallback) fallback.classList.remove('hidden');
+    return;
+  }
+
+  const vertexSource = `
+    attribute vec2 a_position;
+    attribute vec4 a_color;
+    varying vec4 v_color;
+    void main() {
+      gl_Position = vec4(a_position, 0.0, 1.0);
+      v_color = a_color;
+    }
+  `;
+
+  const fragmentSource = `
+    precision mediump float;
+    varying vec4 v_color;
+    void main() {
+      gl_FragColor = v_color;
+    }
+  `;
+
+  const program = createGlProgram(gl, vertexSource, fragmentSource);
+  if (!program) {
+    if (fallback) fallback.classList.remove('hidden');
+    return;
+  }
+
+  const positionLocation = gl.getAttribLocation(program, 'a_position');
+  const colorLocation = gl.getAttribLocation(program, 'a_color');
+  const lineBuffer = gl.createBuffer();
+  const triangleBuffer = gl.createBuffer();
+
+  gl.useProgram(program);
+  gl.enable(gl.BLEND);
+  gl.blendFunc(gl.SRC_ALPHA, gl.ONE_MINUS_SRC_ALPHA);
+
+  const axisRange = 3;
+  const worldRange = 3.6;
+  const minScale = parseFloat(slider.min || '-3');
+  const maxScale = parseFloat(slider.max || '3');
+  let currentScale = parseFloat(slider.value || '1');
+
+  const labelElements = createAxisLabels(labelsContainer, axisRange);
+  const tipLabel = createTipLabel(labelsContainer);
+
+  function setScale(value) {
+    const parsed = Number(value);
+    if (Number.isNaN(parsed)) {
+      return;
+    }
+    const clamped = Math.max(minScale, Math.min(maxScale, parsed));
+    currentScale = clamped;
+    slider.value = clamped;
+    input.value = clamped;
+    updateReadout();
+    drawScene();
+  }
+
+  function updateReadout() {
+    if (!readout) return;
+    const scalarText = currentScale.toFixed(2);
+    const vectorText = `(${scalarText}, ${scalarText})`;
+    readout.textContent = `Scalar: ${scalarText} | Vector: ${vectorText}`;
+  }
+
+  function resizeCanvas() {
+    const rect = canvas.getBoundingClientRect();
+    if (!rect.width || !rect.height) return;
+    const dpr = window.devicePixelRatio || 1;
+    canvas.width = Math.max(1, Math.round(rect.width * dpr));
+    canvas.height = Math.max(1, Math.round(rect.height * dpr));
+    gl.viewport(0, 0, canvas.width, canvas.height);
+    updateAxisLabelPositions(labelElements, rect.width, rect.height, axisRange, worldRange);
+    drawScene();
+  }
+
+  function toClip(x, y, aspect) {
+    return [
+      (x / worldRange) / aspect,
+      y / worldRange
+    ];
+  }
+
+  function pushVertex(target, x, y, color, aspect) {
+    const [clipX, clipY] = toClip(x, y, aspect);
+    target.push(clipX, clipY, color[0], color[1], color[2], color[3]);
+  }
+
+  function addLine(target, x1, y1, x2, y2, color, aspect) {
+    pushVertex(target, x1, y1, color, aspect);
+    pushVertex(target, x2, y2, color, aspect);
+  }
+
+  function drawBuffer(buffer, data, mode) {
+    if (!data.length) return;
+    gl.bindBuffer(gl.ARRAY_BUFFER, buffer);
+    gl.bufferData(gl.ARRAY_BUFFER, new Float32Array(data), gl.DYNAMIC_DRAW);
+    const stride = 6 * 4;
+    gl.enableVertexAttribArray(positionLocation);
+    gl.vertexAttribPointer(positionLocation, 2, gl.FLOAT, false, stride, 0);
+    gl.enableVertexAttribArray(colorLocation);
+    gl.vertexAttribPointer(colorLocation, 4, gl.FLOAT, false, stride, 2 * 4);
+    gl.drawArrays(mode, 0, data.length / 6);
+  }
+
+  function drawScene() {
+    if (!canvas.width || !canvas.height) return;
+    gl.clearColor(0, 0, 0, 0);
+    gl.clear(gl.COLOR_BUFFER_BIT);
+
+    const aspect = canvas.width / canvas.height;
+    const lines = [];
+    const triangles = [];
+
+    const gridColor = [0.29, 0.36, 0.52, 0.25];
+    const axisColor = [0.98, 0.64, 0.64, 0.9];
+    const tickColor = [0.98, 0.64, 0.64, 0.7];
+    const vectorColor = [0.39, 0.72, 1.0, 1.0];
+
+    for (let i = -axisRange; i <= axisRange; i += 1) {
+      if (i !== 0) {
+        addLine(lines, i, -axisRange, i, axisRange, gridColor, aspect);
+        addLine(lines, -axisRange, i, axisRange, i, gridColor, aspect);
+      }
+    }
+
+    addLine(lines, -axisRange, 0, axisRange, 0, axisColor, aspect);
+    addLine(lines, 0, -axisRange, 0, axisRange, axisColor, aspect);
+
+    const tickSize = 0.12;
+    for (let i = -axisRange; i <= axisRange; i += 1) {
+      if (i === 0) continue;
+      addLine(lines, i, -tickSize, i, tickSize, tickColor, aspect);
+      addLine(lines, -tickSize, i, tickSize, i, tickColor, aspect);
+    }
+
+    const vector = { x: currentScale, y: currentScale };
+    const length = Math.hypot(vector.x, vector.y);
+    if (length > 0.001) {
+      const dir = { x: vector.x / length, y: vector.y / length };
+      const headLength = Math.min(0.45, 0.2 + length * 0.05);
+      const headWidth = headLength * 0.55;
+      const base = {
+        x: vector.x - dir.x * headLength,
+        y: vector.y - dir.y * headLength
+      };
+      const perp = { x: -dir.y, y: dir.x };
+      const left = {
+        x: base.x + perp.x * headWidth,
+        y: base.y + perp.y * headWidth
+      };
+      const right = {
+        x: base.x - perp.x * headWidth,
+        y: base.y - perp.y * headWidth
+      };
+
+      addLine(lines, 0, 0, base.x, base.y, vectorColor, aspect);
+
+      pushVertex(triangles, vector.x, vector.y, vectorColor, aspect);
+      pushVertex(triangles, left.x, left.y, vectorColor, aspect);
+      pushVertex(triangles, right.x, right.y, vectorColor, aspect);
+    }
+
+    updateTipLabel(tipLabel, vector, canvas, aspect, worldRange, length);
+
+    drawBuffer(lineBuffer, lines, gl.LINES);
+    drawBuffer(triangleBuffer, triangles, gl.TRIANGLES);
+  }
+
+  slider.addEventListener('input', () => setScale(slider.value));
+  input.addEventListener('input', () => setScale(input.value));
+  input.addEventListener('change', () => setScale(input.value));
+
+  const resizeObserver = new ResizeObserver(resizeCanvas);
+  resizeObserver.observe(root);
+
+  updateReadout();
+  resizeCanvas();
+}
+
+function createAxisLabels(container, range) {
+  if (!container) return [];
+  container.innerHTML = '';
+  const labels = [];
+
+  for (let i = -range; i <= range; i += 1) {
+    const xLabel = document.createElement('span');
+    xLabel.className = 'vector-demo-axis-label vector-demo-axis-label-x';
+    xLabel.textContent = i.toString();
+    container.appendChild(xLabel);
+    labels.push({ element: xLabel, axis: 'x', value: i });
+
+    const yLabel = document.createElement('span');
+    yLabel.className = 'vector-demo-axis-label vector-demo-axis-label-y';
+    yLabel.textContent = i.toString();
+    container.appendChild(yLabel);
+    labels.push({ element: yLabel, axis: 'y', value: i });
+  }
+
+  return labels;
+}
+
+function createTipLabel(container) {
+  if (!container) return null;
+  const label = document.createElement('span');
+  label.className = 'vector-demo-tip-label';
+  label.textContent = '1v';
+  container.appendChild(label);
+  return label;
+}
+
+function updateAxisLabelPositions(labels, width, height, range, worldRange) {
+  if (!labels || !labels.length) return;
+  const centerX = width / 2;
+  const centerY = height / 2;
+  const effectiveRange = worldRange || range;
+  const scale = height / (2 * effectiveRange);
+  const padding = 8;
+
+  const clamp = (value, min, max) => Math.min(Math.max(value, min), max);
+
+  labels.forEach(label => {
+    const labelWidth = label.element.offsetWidth || 0;
+    const labelHeight = label.element.offsetHeight || 0;
+
+    if (label.axis === 'x') {
+      const rawLeft = centerX + label.value * scale;
+      const left = clamp(rawLeft, padding + labelWidth / 2, width - padding - labelWidth / 2);
+      const rawTop = centerY + 6;
+      const top = clamp(rawTop, padding + labelHeight / 2, height - padding - labelHeight / 2);
+      label.element.style.left = `${left}px`;
+      label.element.style.top = `${top}px`;
+    } else {
+      const rawTop = centerY - label.value * scale;
+      const top = clamp(rawTop, padding + labelHeight / 2, height - padding - labelHeight / 2);
+      const rawLeft = centerX - 6;
+      const minLeft = padding + labelWidth;
+      const maxLeft = width - padding;
+      const left = clamp(rawLeft, minLeft, maxLeft);
+      label.element.style.left = `${left}px`;
+      label.element.style.top = `${top}px`;
+    }
+  });
+}
+
+function updateTipLabel(label, vector, canvas, aspect, worldRange, length) {
+  if (!label) return;
+  if (length <= 0.001) {
+    label.style.opacity = '0';
+    return;
+  }
+
+  const rect = canvas.getBoundingClientRect();
+  const width = rect.width || canvas.width;
+  const height = rect.height || canvas.height;
+  const clipX = (vector.x / worldRange) / aspect;
+  const clipY = vector.y / worldRange;
+  const px = (clipX * 0.5 + 0.5) * width;
+  const py = (1 - (clipY * 0.5 + 0.5)) * height;
+  const numericScale = Math.abs(vector.x) < 0.05 ? 0 : vector.x;
+  const scaleText = Number(numericScale).toFixed(1);
+
+  label.innerHTML = `<span class="vector-demo-tip-label-number">${scaleText}</span><span class="vector-demo-tip-label-suffix">v</span>`;
+  label.style.opacity = '1';
+  label.style.left = `${px + 12}px`;
+  label.style.top = `${py - 12}px`;
+}
+
+function createGlProgram(gl, vertexSource, fragmentSource) {
+  const vertexShader = compileGlShader(gl, gl.VERTEX_SHADER, vertexSource);
+  const fragmentShader = compileGlShader(gl, gl.FRAGMENT_SHADER, fragmentSource);
+  if (!vertexShader || !fragmentShader) {
+    return null;
+  }
+
+  const program = gl.createProgram();
+  gl.attachShader(program, vertexShader);
+  gl.attachShader(program, fragmentShader);
+  gl.linkProgram(program);
+
+  if (!gl.getProgramParameter(program, gl.LINK_STATUS)) {
+    console.warn('WebGL program link failed:', gl.getProgramInfoLog(program));
+    gl.deleteProgram(program);
+    return null;
+  }
+
+  return program;
+}
+
+function compileGlShader(gl, type, source) {
+  const shader = gl.createShader(type);
+  gl.shaderSource(shader, source);
+  gl.compileShader(shader);
+
+  if (!gl.getShaderParameter(shader, gl.COMPILE_STATUS)) {
+    console.warn('WebGL shader compile failed:', gl.getShaderInfoLog(shader));
+    gl.deleteShader(shader);
+    return null;
+  }
+
+  return shader;
 }
 
 function isValidEmail(email) {
@@ -2105,6 +2494,7 @@ function generateSidebarContent(sidebarNav, currentSlug) {
   
   // Define standalone poems
   const standalonePoems = [
+    'action-remark',
     'poem_on_infinity',
     'poem_on_prime_ideals',
     'poem_on_logic',
@@ -2118,7 +2508,7 @@ function generateSidebarContent(sidebarNav, currentSlug) {
     }
     if (mainPoemOrder.includes(post.slug)) {
       mainPoemPosts.push(post);
-    } else if (standalonePoems.includes(post.slug)) {
+    } else if (standalonePoems.includes(post.slug) || (post.categories && post.categories.includes('Standalone Poems'))) {
       standalonePoemPosts.push(post);
     } else if (post.slug.startsWith('poem_')) {
       // Any other poems not explicitly categorized

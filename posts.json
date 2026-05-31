@@ -7,6 +7,13 @@
   },
   "posts": [
     {
+      "slug": "action-remark",
+      "title": "Action Remark",
+      "date": "2026-05-30",
+      "categories": ["Standalone Poems"],
+      "excerpt": "A standalone poem about the moment where thought turns into motion."
+    },
+    {
       "slug": "poem_eighth_act",
       "title": "Daniel's Poem: Eighth Act - On Identification I: Construction of a Circle",
       "date": "2026-01-27",
