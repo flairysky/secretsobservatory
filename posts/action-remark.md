@@ -58,8 +58,8 @@ To define an action all we need in terms of an algebraic structure in order to b
 
 $$
 \begin{aligned}
-\pi : A &\longrightarrow \operatorname{End}(S) \
-a &\longmapsto \pi_a ,
+\pi : A &\to \operatorname{End}(S) \
+a &\mapsto \pi_a ,
 \end{aligned}
 $$
 
@@ -71,8 +71,8 @@ Thus, given an element $a$ in our monoid $A$, we denote by $\pi_a$ the map from 
 
 $$
 \begin{aligned}
-A \times S &\longrightarrow S \
-(a,s) &\longmapsto \pi_a(s).
+A \times S &\to S \
+(a,s) &\mapsto \pi_a(s).
 \end{aligned}
 $$
 
@@ -134,7 +134,7 @@ Above we saw that basically the only thing that has changed when transfering fro
 
 Let's no carefuly look at what happened here, since our notion of an action in the general monoid setting must encapsle also the one in a group setting.
 
-But endomorphisms (i.e. structure preserving maps from a set into the same set) on a set $S$ without any structure are just all maps, so that if we follow the general definition we get a group homomorphism $G \to \operatorname{End}_{\mathrm{Set}}(X) = \{\, f : X \to X \,\}$ associating a map $f$ to a $g \in G$ denoted by $f_g$. However, since we deal with a group where each element has an inverse, we observe that given a map $f_g$, there exists a map $f_{g^{-1}}$, and composing these maps gives us an identity. Thus, each map we associate to any element $g\in G$ must have an inverse and we know that these maps are bijections (also called permutations). Thus, we can rewrite our original homomorphism $G \to \operatorname{End}_{\mathrm{Set}}(X)$ as $G \to \operatorname{Perm}_{\mathrm{Set}}(X)\space (\sub \operatorname{End}_{\mathrm{Set}}(X))$.
+But endomorphisms (i.e. structure preserving maps from a set into the same set) on a set $S$ without any structure are just all maps, so that if we follow the general definition we get a group homomorphism $G \to \operatorname{End}_{\mathrm{Set}}(X) = \{\, f : X \to X \,\}$ associating a map $f$ to a $g \in G$ denoted by $f_g$. However, since we deal with a group where each element has an inverse, we observe that given a map $f_g$, there exists a map $f_{g^{-1}}$, and composing these maps gives us an identity. Thus, each map we associate to any element $g\in G$ must have an inverse and we know that these maps are bijections (also called permutations). Thus, we can rewrite our original homomorphism $G \to \operatorname{End}_{\mathrm{Set}}(X)$ as $G \to \operatorname{Perm}_{\mathrm{Set}}(X)\space (\subset \operatorname{End}_{\mathrm{Set}}(X))$.
 
 __Even more specific examples__
 
@@ -148,8 +148,8 @@ such an action is given by a group-homomorphism
 
 $$
 \begin{aligned}
-\pi : G &\longrightarrow \operatorname{Aut}(H) \\
-x &\longmapsto \pi_x ,
+\pi : G &\to \operatorname{Aut}(H) \\
+x &\lmapsto \pi_x ,
 \end{aligned}
 $$
 
@@ -163,8 +163,8 @@ Even more specifically, let's consider now instead of a group a vector space $V$
 
 $$
 \begin{aligned}
-\pi : G &\longrightarrow \operatorname{GL}_K(V) \\
-x &\longmapsto \pi_x .
+\pi : G &\to \operatorname{GL}_K(V) \\
+x &\lmapsto \pi_x .
 \end{aligned}
 $$
 
@@ -172,7 +172,7 @@ Such a linear action of a group $G$ on a vector space $V$ is called a representa
 
 Thus, a representation is nothing mysterious: it is simply an action of a group on a vector space, where the group elements wieved as maps respect the vector space structure, i,e, act by invertible linear maps on the vector space, which just means that for given $v,w\in V$ and $c\in K$ we require $\pi_x(v+w)= \pi_x(v) + \pi_x(w)$ and $\pi_x(cv)=c\pi_x(v)$.
 
-Again, we know that these maps must be bijections and from linear algebra, we know that linear bijective maps are invertible matrices also called General Linear Group $GL(V)$. Thus, the target of our homomorphism action turns from $\operatorname{End}_{\mathrm{K}}(V)$ into $\operatorname{GL}_{\mathrm{K}}(V)$.
+Again, we know that these maps must be bijections and from linear algebra, we know that linear bijective maps are invertible matrices also called General Linear Group $GL(V)$. Thus, the target of our homomorphism action turns from $\text{End}_{\mathrm{K}}(V)$ into $\text{GL}_{\mathrm{K}}(V)$.
 
 __Reinterpretation of the notion of scalar multiplication of Vector space and a Module__
 
