@@ -35,6 +35,8 @@ The concept of an action (also often times called “an operation” in mathemat
 	<div class="vector-demo-fallback hidden" data-vector-fallback>WebGL is not supported in this browser. Try a modern browser to view the interactive demo.</div>
 </div>
 
+Before diving into it, be prepared, that in contrast to the main poem where the flow of ideas should not be disturbed by missing details, here in what follows there may be some details omited here and there, since once one gets the big idea, filling in __and understanding__ the details is then much easier.
+
 __Why do we study the notion of an action__
 
 The main idea is that we have some algebraic structure, say a ring or a group, and we want to understand it better. And so we take some suitable set and let our ring or a group act on that set. This transforms the elements of our original ring or group into mappings, which we then hopefully can better understand due to the nature of the underlying set we have chosen. Thus, already from this description you can see that when studying actions, the most important thing is to choose the right underlying set, on which our algebraic structure (e.g. ring, group etc.) will act.
