@@ -219,13 +219,15 @@ $R \to \operatorname{End}_{\mathbb{Z}}(M)$.
 
 __Thought process behind the choice of an underlying set__
 
-Okey we now know that actions allow us to see elements of our original algebraic structure, e.g. a group, as a mapping and we are letting act our strucuture in order to better understand its properties. Since now, it should be apparent that the choice of a set on which we act plays a role in our investigations, in what follow, we consider the different basic choices of an underlying set we can think of, so that our actions can lead turn into fruitful endeavors, i.e. so that we can expect to observe some new insights within our original algebraic structure.
+(This part my seem a bit fuzzy as it serves rather to illustrate where it all may go.)
+
+Okey we now know that actions allow us to see elements of our original algebraic structure, e.g. a group, as a mapping and we are letting act our strucuture in order to better understand its properties. It should be now apparent that the choice of a set on which we act plays a role in our investigations, and so in what follows, we consider the different basic choices of an underlying set we can think of, so that our actions can lead turn into fruitful endeavors, i.e. so that we can expect to observe some new insights within our original algebraic structure.
 
 1.	__Injectivity of the homomorphism__
 
 If the homomorphism is injective then we say that the action is __faithfull__, since the action represents the group without losing information. I.e. the action is “faithful” to the original group by not identifying any two different elements as if they were the same element, i.e. each element of the group is a distinct transformation.
 
-2.	__Subjectivity of the homomorphism__
+2.	__Surjectivity of the homomorphism__
 
 It is very nice, when we achieve surjectivity since then this means that we can describe all transformations by our original algebraic structure, yet in practice it is usually not possible to achieve (although there are such instances, e.g. )
 
@@ -267,3 +269,5 @@ Finally, since the intetion of this remark was not to bring up a lot of examples
 > A little less conversation, a little more action, please.
 >
 > <a href="https://www.youtube.com/watch?v=rZLQpUxYkas&list=RDrZLQpUxYkas&start_radio=1" target="_blank" rel="noopener noreferrer">Elvis Presley, A Little Less Conversation</a>
+
+(You deserve a break now, so klick on the link above and start dancin' !)
