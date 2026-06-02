@@ -219,7 +219,7 @@ $R \to \operatorname{End}_{\mathbb{Z}}(M)$.
 
 __Thought process behind the choice of an underlying set__
 
-(This part my seem a bit fuzzy as it serves rather to illustrate where it all may go.)
+(This last part of the Action Remark may seem a bit fuzzy, since its purpose is more to illustrate where all this may lead than to provide details and examples.)
 
 Okey we now know that actions allow us to see elements of our original algebraic structure, e.g. a group, as a mapping and we are letting act our strucuture in order to better understand its properties. It should be now apparent that the choice of a set on which we act plays a role in our investigations, and so in what follows, we consider the different basic choices of an underlying set we can think of, so that our actions can lead turn into fruitful endeavors, i.e. so that we can expect to observe some new insights within our original algebraic structure.
 
