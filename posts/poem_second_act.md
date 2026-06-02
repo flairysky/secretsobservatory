@@ -97,7 +97,10 @@ We are used to speaking about "formal" and "informal," but in mathematics it is 
 
 [3]: This is not a failure of rendering, I am just not sure if we are lucky or not.
 -->
+---
+
+Continue reading: [Third Act - On Associations](post.html?slug=poem_third_act)
 
 Previous: [First Act - Big Picture](post.html?slug=poem_first_act)
 
-continue reading: [Third Act - On Associations](post.html?slug=poem_third_act)
+---

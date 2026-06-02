@@ -1,5 +1,5 @@
 ---
-title: "Fifth Act - Geometry and Algebra I: On Vector Spaces"
+title: "Fifth Act - Geometry and Algebra I: On Vector Spaces (Part I)"
 date: "2026-01-27"
 categories: ["Learning", "Teaching", "Mathematics"]
 excerpt: "Exploring vector spaces: the foundational structure bridging geometry and algebra."
@@ -7,7 +7,7 @@ excerpt: "Exploring vector spaces: the foundational structure bridging geometry 
 
 > "Should you just be an algebraist or a geometer?" is like saying, "Would you rather be deaf or blind?"
 >
-> — M. Atiyah[ref:Atiyah2001]
+> — Sir M. Atiyah[ref:Atiyah2001]
 
 Analogously to economics where we should be able to predict the behavior of markets according to Adam Smith's invisible hand, in mathematics our predictions and intuition are guided by a very visible hand of geometry.
 
@@ -82,6 +82,8 @@ There are many differen ways how to understand these axioms, using for instance 
 
 ---
 
+Continue reading: [Sixth Act - Geometry and Algebra II: On Vector Spaces (Part II)](post.html?slug=poem_sixth_act)
+
 Previous: [Fourth Act - On Equivalence](post.html?slug=poem_fourth_act)
 
-Continue reading: [Sixth Act - Geometry and Algebra II: On Differentiability](post.html?slug=poem_sixth_act)
+---

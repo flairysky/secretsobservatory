@@ -29,14 +29,14 @@
     },
     {
       "slug": "poem_sixth_act",
-      "title": "Daniel's Poem: Sixth Act - Geometry and Algebra II: On Differentiability",
+      "title": "Daniel's Poem: Sixth Act - Geometry and Algebra II: On Vector Spaces (Part II)",
       "date": "2026-01-27",
       "categories": ["Learning", "Teaching", "Mathematics"],
-      "excerpt": "Exploring differentiability: understanding smooth transformations and the calculus of change."
+      "excerpt": "Continuing vector spaces: bases, linear maps, and isomorphisms."
     },
     {
       "slug": "poem_fifth_act",
-      "title": "Daniel's Poem: Fifth Act - Geometry and Algebra I: On Vector Spaces",
+      "title": "Daniel's Poem: Fifth Act - Geometry and Algebra I: On Vector Spaces (Part I)",
       "date": "2026-01-27",
       "categories": ["Learning", "Teaching", "Mathematics"],
       "excerpt": "Exploring vector spaces: the foundational structure bridging geometry and algebra."

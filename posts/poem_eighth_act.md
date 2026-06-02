@@ -26,3 +26,5 @@ The content will follow at some point in the future.
 ---
 
 Previous: [Seventh Act - Geometry and Algebra III: Excursion - Probability as Application of Linear Algebra](post.html?slug=poem_seventh_act)
+
+---

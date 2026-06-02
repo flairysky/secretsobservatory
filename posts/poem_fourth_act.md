@@ -165,6 +165,8 @@ to be _logicaly_ precise, one should write first "for every x,y,z" and then stat
 
 ---
 
+Continue reading: [Fifth Act - Geometry and Algebra I: On Vector Spaces (Part I)](post.html?slug=poem_fifth_act)
+
 Previous: [Third Act - On Associations](post.html?slug=poem_third_act)
 
-Continue reading: [Fifth Act - Geometry and Algebra I: On Vector Spaces](post.html?slug=poem_fifth_act)
+---

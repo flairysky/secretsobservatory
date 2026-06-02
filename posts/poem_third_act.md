@@ -236,3 +236,5 @@ mutare = “to change,” “to move,” “to exchange.” So the literal meani
 Continue reading: [Fourth Act - On Equivalence](post.html?slug=poem_fourth_act)
 
 Previous: [Second Act - On Structures](post.html?slug=poem_second_act)
+
+---

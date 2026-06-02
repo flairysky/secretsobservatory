@@ -1,8 +1,8 @@
 ---
-title: "Sixth Act - Geometry and Algebra II: On Differentiability"
+title: "Sixth Act - Geometry and Algebra II: On Vector Spaces (Part II)"
 date: "2026-01-27"
 categories: ["Learning", "Teaching", "Mathematics"]
-excerpt: "Exploring differentiability: understanding smooth transformations and the calculus of change."
+excerpt: "Continuing vector spaces: bases, linear maps, and isomorphisms."
 ---
 
 In the previous act, we considered only one vector space in our investigations. What follows in this act is first how can we use the alberaic description of the vector space to construct them and describe them more succintly, and second the study of mappings between two such vector spaces. 
@@ -52,6 +52,8 @@ Geometrically, These axioms mean nothing else than to preserve lines, since give
 
 ---
 
-Previous: [Fifth Act - Geometry and Algebra I: On Vector Spaces](post.html?slug=poem_fifth_act)
-
 Continue reading: [Seventh Act - Geometry and Algebra III: Excursion - Probability as Application of Linear Algebra](post.html?slug=poem_seventh_act)
+
+Previous: [Fifth Act - Geometry and Algebra I: On Vector Spaces (Part I)](post.html?slug=poem_fifth_act)
+
+---

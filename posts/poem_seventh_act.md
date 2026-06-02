@@ -9,7 +9,9 @@ The content will follow at some point in the future.
 
 --- 
 
-Previous: [Sixth Act - Geometry and Algebra II: On Differentiability](post.html?slug=poem_sixth_act)
-
 Continue reading: [Eighth Act - On Identification I: Construction of a Circle](post.html?slug=poem_eighth_act)
+
+Previous: [Sixth Act - Geometry and Algebra II: On Vector Spaces (Part II)](post.html?slug=poem_sixth_act)
+
+--- 
 

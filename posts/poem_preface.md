@@ -105,6 +105,8 @@ As you can see I have included a word Durchblick (from German, meaning something
 
 Continue reading: [First Act](post.html?slug=poem_first_act)
 
+---
+
 <!-- FOOTNOTES
 [1]: One of them being Emil Artin, one of the main protagonists of modern algebra and also a person who will show up again later.
 [2]: Serge Lang’s PhD supervisor.
