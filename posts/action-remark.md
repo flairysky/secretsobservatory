@@ -86,7 +86,8 @@ For this mapping to be called an action, it must satisfy the following two prope
 
 - __Identity:__ If we denote by $e$ the identity element of our monoid $A$, then for all $s \in S$, we have $es=s$.
 
-Now, let's consider an action of a group $G$ on a set $S$. To do so we can just rephrase verbatim the above definitions for an action of a monoid. Below are included also some remarks regarding the definitions
+__Group Context:__
+Instead of a Monoid, let's consider an action of a group $G$ on a set $S$. To do so we can just rephrase verbatim the above definitions for an action of a monoid. Below are included also some remarks regarding the definitions
 
 1. __Definition:__
 Given a group $G$ and a set $S$,
