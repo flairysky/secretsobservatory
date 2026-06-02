@@ -135,7 +135,7 @@ In another words what the definition tells us is that given any $x\in G$ and $s\
 
 Now, all we need to show is that this association satisfies the two properties: associativity and identity.
 
-But since $\pi: G\to \text{Perm}(S)$ is a homomorphism, which means $\pi_{xy}=\pi(xy)=\pi(x)\pi(y)=\pi_x\pi_y$ (or with an $s$ inserted $\pi_{xy}(s)=\pi(xy)(s)=\pi(x)\pi(y)(s)=\pi_x\pi_y(s)$). From this, we get the two properties by direct manipulation and using the other notation we see that 
+But since $\pi: G\to \text{Perm}(S)$ is a homomorphism, which means $\pi_{xy}=\pi(xy)=\pi(x)\pi(y)=\pi_x\pi_y$ (or with an $s$ inserted, we have $\pi_{xy}(s)=\pi(xy)(s)=\pi(x)\pi(y)(s)=\pi_x\pi_y(s)$). From this, we get the two properties by direct manipulation and using the other notation we see that 
 
 $xy(s)=\pi_{xy}(s)=\pi_x(\pi_y(s))=x(ys)$
 

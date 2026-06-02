@@ -4,6 +4,9 @@ let currentPage = '';
 let filteredPosts = [];
 let activeCategories = new Set();
 let indexBasePosts = null;
+let postRevealObserver = null;
+let heroPulseTriggered = false;
+let heroSequenceDone = false;
 
 // Analytics tracking variables
 let pageStartTime = null;
@@ -684,6 +687,8 @@ function initIndexPage() {
   
   // Render posts
   renderPosts();
+
+  initHeroTyping();
 }
 
 // Setup category filter chips
@@ -787,10 +792,15 @@ function renderPosts() {
     return;
   }
   
+  const latestSource = currentPage === 'index' && indexBasePosts ? indexBasePosts : postsData.posts;
+  const latestPostSlug = latestSource
+    .slice()
+    .sort((a, b) => new Date(b.date) - new Date(a.date))[0]?.slug;
+
   // Sort by date descending
   const sortedPosts = filteredPosts.sort((a, b) => new Date(b.date) - new Date(a.date));
   
-  postList.innerHTML = sortedPosts.map(post => {
+  postList.innerHTML = sortedPosts.map((post, index) => {
     const coverImage = post.cover_image ? 
       `<img src="${post.cover_image}" alt="${post.title}" class="cover-image" 
            onerror="this.style.display='none'" loading="lazy">` : '';
@@ -799,14 +809,22 @@ function renderPosts() {
       `<span class="chip">${escapeHtml(cat)}</span>`
     ).join(' ');
     
+    const isLatest = post.slug === latestPostSlug;
+    const latestBadge = isLatest ? '<div class="latest-post-badge">Just Released!</div>' : '';
+    const cardClass = isLatest ? 'card latest-post' : 'card';
+    const revealClass = index % 2 === 0 ? 'from-left' : 'from-right';
+    
     return `
-      <article class="card">
+      <article class="${cardClass} post-reveal ${revealClass}">
         ${coverImage}
-        <h2 class="text-lg font-semibold mb-2">
-          <a href="post.html?slug=${post.slug}" class="hover:text-blue-600 dark:hover:text-blue-400 transition-colors">
-            ${escapeHtml(post.title)}
-          </a>
-        </h2>
+        <div class="post-title-row">
+          <h2 class="text-lg font-semibold">
+            <a href="post.html?slug=${post.slug}" class="hover:text-blue-600 dark:hover:text-blue-400 transition-colors">
+              ${escapeHtml(post.title)}
+            </a>
+          </h2>
+          ${latestBadge}
+        </div>
         <div class="text-sm text-slate-500 dark:text-slate-400 mb-3 flex flex-wrap items-center gap-2">
           <time datetime="${post.date}">${formatDate(post.date)}</time>
           <span>•</span>
@@ -820,6 +838,107 @@ function renderPosts() {
       </article>
     `;
   }).join('');
+
+  initPostReveal();
+}
+
+function initHeroTyping() {
+  const targets = document.querySelectorAll('[data-typing-text]');
+  if (!targets.length) return;
+
+  const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if (prefersReduced) return;
+
+  targets.forEach((target, index) => {
+    if (target.dataset.typed === 'true') return;
+
+    const fullText = target.getAttribute('data-typing-text') || target.textContent.trim();
+    target.textContent = '';
+    target.classList.add('is-typing');
+    target.dataset.typed = 'true';
+
+    let cursor = 0;
+    const startDelay = 200 + index * 120;
+    const typeSpeed = 28;
+
+    const typeNext = () => {
+      cursor += 1;
+      target.textContent = fullText.slice(0, cursor);
+      if (cursor < fullText.length) {
+        setTimeout(typeNext, typeSpeed);
+      } else {
+        target.classList.remove('is-typing');
+        triggerHeroLinkPulse();
+      }
+    };
+
+    setTimeout(typeNext, startDelay);
+  });
+}
+
+function triggerHeroLinkPulse() {
+  if (heroPulseTriggered) return;
+
+  const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if (prefersReduced) {
+    markHeroSequenceDone();
+    return;
+  }
+
+  const links = document.querySelectorAll('[data-hero-pulse]');
+  if (!links.length) {
+    markHeroSequenceDone();
+    return;
+  }
+
+  heroPulseTriggered = true;
+  const pulseDuration = 700;
+  const startDelay = 150;
+  const staggerDelay = 140;
+
+  links.forEach((link, index) => {
+    setTimeout(() => {
+      link.classList.add('is-pulsing');
+      link.addEventListener('animationend', () => {
+        link.classList.remove('is-pulsing');
+      }, { once: true });
+    }, startDelay + index * staggerDelay);
+  });
+
+  const finalDelay = startDelay + (links.length - 1) * staggerDelay + pulseDuration + 120;
+  setTimeout(markHeroSequenceDone, finalDelay);
+}
+
+function markHeroSequenceDone() {
+  if (heroSequenceDone) return;
+  heroSequenceDone = true;
+  document.body.classList.add('hero-sequence-done');
+}
+
+function initPostReveal() {
+  const cards = document.querySelectorAll('.post-reveal');
+  if (!cards.length) return;
+
+  const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if (prefersReduced) {
+    cards.forEach(card => card.classList.add('is-visible'));
+    return;
+  }
+
+  if (postRevealObserver) {
+    postRevealObserver.disconnect();
+  }
+
+  postRevealObserver = new IntersectionObserver((entries, observer) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('is-visible');
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.15, rootMargin: '0px 0px -10% 0px' });
+
+  cards.forEach(card => postRevealObserver.observe(card));
 }
 
 // Initialize post page
