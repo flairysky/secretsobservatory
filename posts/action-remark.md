@@ -125,7 +125,31 @@ For the mapping to be called an action we say that it must satisfy the following
 - __Identity:__ If we denote by $e$ the unit element of our group $G$, then for all $s \in S$, we have $es = s$.
 
 :::fold Proof that the two definitions are equaivalent
-Here comes the proof.
+
+We start with the first definition and obtain from it the second.
+
+Observe that the first definition tells us that given $x\in G$, we get a permutation $\pi_x$ which again maps an element $s\in S$ to another elemnt of $S$, namely $\pi_x(s)=s'$.
+In another words what the definition tells us is that given any $x\in G$ and $s\in S$, we get some element $s'\in S$. But what we just described is literally just a defnition of an association fromm $X\times S$ to $S$, given by the perscription $(x,s)\mapsto s'$.
+
+(For psychological reasons a possibly useful notation is also $(x,s)\mapsto \pi(x)(s)=\pi_x(s)=s'$.) 
+
+Now, all we need to show is that this association satisfies the two properties: associativity and identity.
+
+But since $\pi: G\to \text{Perm}(S)$ is a homomorphism, which means $\pi_{xy}=\pi(xy)=\pi(x)\pi(y)=\pi_x\pi_y$ (or with an $s$ inserted $\pi_{xy}(s)=\pi(xy)(s)=\pi(x)\pi(y)(s)=\pi_x\pi_y(s)$). From this, we get the two properties by direct manipulation and using the other notation we see that 
+
+$xy(s)=\pi_{xy}(s)=\pi_x(\pi_y(s))=x(ys)$
+
+And defyning $\pi_e$ as the identity permutation, we have $x=\pi_e(x)=ex$.
+
+Conversaly, we now start with the second definition and obtain the first one.
+We start with the association $G\times S\to S$ satisfying the two properties. Now fix any $x\in G$ and we observe that for any such fixed $x$ the map $s\mapsto xs\in S$, is a bijection (i.e. permutation) since there is also the inverse map $s\mapsto x^{-1}s$ (since any element of the group $G$ has an inverse). Consequently we may denote $xs$ by $\pi_x(s)$ and write $\pi_x: S\to S$ being our permuation.
+
+Now, instead of keeping the $x$ fixed we allow it to vary again, and since we observed that every $x$ gives us a permutation $\pi_x$, we define the map $\pi: G\to \text{Perm}(S)$ given by $x\mapsto \pi(x)=\pi_x$, wehere $\pi_x(s)=xs$. Thus, all that remains to be showed is that this map is a homomorphism, i.e. $\pi_{xy}=\pi_x\pi_y$.
+
+But we know that two functions are equal if the give the same value for any $s\in S$, and from our associativity propertyy and original notaiton of the second definition we get for an arbitrary $s\in S, \pi_{xy}(s)=xy(s)=x(ys)=\pi_x(ys)=\pi_x(\pi_y(s))$, as desired. $\square$ 
+
+Remark: Observe that if we would deal with a more general setting of a monoid instead of a group, the proof would be even easier, because we would not even need to show that each map $\pi_x$ is a bijection, since that is a result of the fact that groups have inverses which is not the case for monoids (in general).
+
 :::
 
 __A homomorphism into what?__
