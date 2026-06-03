@@ -5,6 +5,12 @@ categories: ["Solutions", "Algebra", "Mathematics"]
 excerpt: "Solution workspace for Chapter I, Section 1 (Terminology of Sets)."
 ---
 
+:::fold Exercise 1
+
+Proof
+:::
+
+
 \label{sec:1.1}
 -
 
