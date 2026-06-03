@@ -54,7 +54,7 @@
 
   <!-- Banner with Header Overlay (Mobile) -->
   <div class="hero-banner w-full overflow-hidden relative h-64 md:h-80">
-    <img src="assets/covers/observatory.png" alt="Banner" class="w-full h-full object-cover object-top md:object-cover" style="object-position: center top;">
+    <img src="assets/covers/observatory.png?v=2" alt="Banner" class="w-full h-full object-cover object-top md:object-cover" style="object-position: center top;" loading="eager" decoding="async" fetchpriority="high" onerror="if (this.dataset.fallback === '1') { this.dataset.fallback = '2'; this.src = 'assets/covers/image.png'; } else if (!this.dataset.fallback) { this.dataset.fallback = '1'; this.src = 'assets/covers/Observatory.png'; }">
     <div class="absolute top-0 left-0 right-0 z-10 md:hidden">
       <nav class="mx-auto max-w-3xl px-4 py-4 flex items-center justify-between">
         <a href="index.html" class="font-semibold tracking-tight flex items-center gap-2 text-white drop-shadow-lg">
