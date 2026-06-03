@@ -147,7 +147,8 @@ We start with the association $G\times S\to S$ satisfying the two properties. No
 
 Now, instead of keeping the $x$ fixed we allow it to vary again, and since we observed that every $x$ gives us a permutation $\pi_x$, we define the map $\pi: G\to \text{Perm}(S)$ given by $x\mapsto \pi(x)=\pi_x$, wehere $\pi_x(s)=xs$. Thus, all that remains to be showed is that this map is a homomorphism, i.e. $\pi_{xy}=\pi_x\pi_y$.
 
-But we know that two functions are equal if the give the same value for any $s\in S$, and from our associativity propertyy and original notaiton of the second definition we get for an arbitrary $s\in S, \pi_{xy}(s)=xy(s)=x(ys)=\pi_x(ys)=\pi_x(\pi_y(s))$, as desired. $\square$ 
+But we know that two functions are equal if the give the same value for any $s\in S$, and from our associativity propertyy and original notaiton of the second definition we get for an arbitrary $s\in S$, 
+$\pi_{xy}(s)=xy(s)=x(ys)=\pi_x(ys)=\pi_x(\pi_y(s))$, as desired. $\square$ 
 
 Remark: Observe that if we would deal with a more general setting of a monoid instead of a group, the proof would be even easier, because we would not even need to show that each map $\pi_x$ is a bijection, since that is a result of the fact that groups have inverses which is not the case for monoids (in general).
 
