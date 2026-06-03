@@ -130,7 +130,7 @@ For the mapping to be called an action we say that it must satisfy the following
 We start with the first definition and obtain from it the second.
 
 Observe that the first definition tells us that given $x\in G$, we get a permutation $\pi_x$ which again maps an element $s\in S$ to another elemnt of $S$, namely $\pi_x(s)=s'$.
-In another words what the definition tells us is that given any $x\in G$ and $s\in S$, we get some element $s'\in S$. But what we just described is literally just a defnition of an association fromm $X\times S$ to $S$, given by the perscription $(x,s)\mapsto s'$.
+In another words what the definition tells us is that given any $x\in G$ and $s\in S$, we get some element $s'\in S$. But what we just described is literally just a defnition of an association fromm $G\times S$ to $S$, given by the perscription $(x,s)\mapsto s'$.
 
 (For psychological reasons a possibly useful notation is also $(x,s)\mapsto \pi(x)(s)=\pi_x(s)=s'$.) 
 
@@ -211,7 +211,7 @@ __Reinterpretation of the notion of scalar multiplication of Vector space and a 
 
 From our second defnition of an action and the definition of a vector space as a map $K\times V \to V$ ($V$ is an additive group) as well as its generalization called module defined as $R\times M \to M$ ($M$ is an additive group), where instead of a field $K$ (which is a specific ring) we deal with an arbitrary ring $R$, we see that  the scalar multiplication is an action in both vector spaces and modules.
 
-In terms of our first definition, these actions are as expected
+In terms of our first definition, these actions are as expected described by the following homomorphisms:
 
 $K \to \operatorname{End}_{\mathbb{Z}}(V)$
 
@@ -226,7 +226,7 @@ Okey we now know that actions allow us to see elements of our original algebraic
 
 1.	__Injectivity of the homomorphism__
 
-If the homomorphism is injective then we say that the action is __faithfull__, since the action represents the group without losing information. I.e. the action is “faithful” to the original group by not identifying any two different elements as if they were the same element, i.e. each element of the group is a distinct transformation.
+If the homomorphism is injective then we say that the action is __faithful__, since the action represents the group without losing information. I.e. the action is “faithful” to the original group by not identifying any two different elements as if they were the same element, i.e. each element of the group is a distinct transformation.
 
 2.	__Surjectivity of the homomorphism__
 
