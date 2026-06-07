@@ -146,7 +146,7 @@ I hope you could start to see how the difficulty with mathematics arises purely 
   </figcaption>
 </figure>
 
-__Desclaimer:__ The pictures and animations are AI generated due to the fact that they suffice to illustrate the ideas of the poem allowing the reader to see what the author has in mind, since (as already mentioned above) as Frederic Schüller cleverly pointed out, telling somebody to imagine something is dangerous because the two people can imagine completaly different things [ref:Schuller2025WEHeraeus]. Thus, the pictures and illustration are there mainly to mitigate this dangerous thing as much as possible and to make the text more alive.
+__Desclaimer:__ The pictures and animations in this act are AI generated due to the fact that they suffice to illustrate the ideas of the poem allowing the reader to see what the author has in mind, since (as already mentioned above) as Frederic Schüller cleverly pointed out, telling somebody to imagine something is dangerous because the two people can imagine completaly different things [ref:Schuller2025WEHeraeus]. Thus, the pictures and illustration are there mainly to mitigate this dangerous thing as much as possible and to make the text more alive.
 
 
 <!-- FOOTNOTES
