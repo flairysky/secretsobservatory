@@ -53,7 +53,7 @@
   </nav>
 
   <!-- Banner with Header Overlay (Mobile) -->
-  <div class="hero-banner w-full overflow-hidden relative h-64 md:h-80">
+  <div class="hero-banner w-full overflow-hidden relative h-64 md:h-[28rem]">
     <img src="assets/covers/observatory_starry_sky_animation.gif" alt="Banner" class="w-full h-full object-cover object-top md:object-cover" style="object-position: center top;" loading="eager" decoding="async" fetchpriority="high" onerror="if (this.dataset.fallback === '1') { this.dataset.fallback = '2'; this.src = 'assets/covers/image.png'; } else if (!this.dataset.fallback) { this.dataset.fallback = '1'; this.src = 'assets/covers/observatory.png'; }">
     <div class="absolute top-0 left-0 right-0 z-10 md:hidden">
       <nav class="mx-auto max-w-3xl px-4 py-4 flex items-center justify-between">
@@ -97,8 +97,6 @@
         If you're here on a regular basis, you might consider <a href="about.html#subscribe" class="hero-link-pulse text-blue-300 hover:text-blue-200 hover:underline" data-hero-pulse>subscribing</a> to the newsletter.
       </p>
       
-      <input id="searchInput" class="w-full px-4 py-3 rounded-md border border-slate-300 dark:border-slate-600 bg-white dark:bg-slate-800 text-slate-900 dark:text-slate-100 mx-auto max-w-lg block shadow-lg" placeholder="Search posts..." />
-      <div id="categoryChips" class="flex flex-wrap gap-2 justify-center mt-4"></div>
     </div>
   </div>
 
@@ -115,8 +113,6 @@
       If you're here on a regular basis, you might consider <a href="about.html#subscribe" class="hero-link-pulse text-blue-600 dark:text-blue-400 hover:underline" data-hero-pulse>subscribing</a> to the newsletter.
     </p>
     
-    <input id="searchInputMobile" class="w-full px-4 py-3 rounded-md border border-slate-300 dark:border-slate-600 bg-white dark:bg-slate-800 text-slate-900 dark:text-slate-100 mx-auto max-w-lg block shadow-lg" placeholder="Search posts..." />
-    <div id="categoryChipsMobile" class="flex flex-wrap gap-2 justify-center mt-4"></div>
   </div>
   <header class="border-b border-slate-200 dark:border-slate-800" style="display: none;">
     <nav class="mx-auto max-w-3xl px-4 py-4 flex items-center justify-between">
