@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html>
 <head>
     <title>Deployment Test</title>
@@ -18,11 +18,12 @@
                 throw new Error('Failed to fetch');
             })
             .then(text => {
-                document.body.innerHTML += `<p>✅ Successfully loaded first-post.md (${text.length} bytes)</p>`;
+                document.body.innerHTML += `<p>âœ… Successfully loaded first-post.md (${text.length} bytes)</p>`;
             })
             .catch(error => {
-                document.body.innerHTML += `<p>❌ Failed to load first-post.md: ${error.message}</p>`;
+                document.body.innerHTML += `<p>âŒ Failed to load first-post.md: ${error.message}</p>`;
             });
     </script>
 </body>
 </html>
+

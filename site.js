@@ -688,6 +688,13 @@ function initIndexPage() {
   // Render posts
   renderPosts();
 
+  // If the page was loaded with #postList hash (e.g. from another page),
+  // re-scroll after posts are in the DOM so scroll-margin-top takes effect.
+  if (window.location.hash === '#postList') {
+    const postList = document.getElementById('postList');
+    if (postList) postList.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  }
+
   initHeroTyping();
 }
 

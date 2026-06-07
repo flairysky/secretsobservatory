@@ -611,6 +611,10 @@ input, select, textarea {
   background-color: rgba(15, 23, 42, 0.55);
 }
 
+#postList {
+  scroll-margin-top: 72px;
+}
+
 /* Home hero fade */
 .hero-banner::after {
   content: "";
