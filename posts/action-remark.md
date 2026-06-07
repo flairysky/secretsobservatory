@@ -59,7 +59,7 @@ To define an action all we need in terms of an algebraic structure in order to b
 $$
 \begin{aligned}
 \pi : A &\to \operatorname{End}(S) \\\\
-a &\mapsto \pi_a ,
+a &\mapsto \pi(a)=\pi_a ,
 \end{aligned}
 $$
 
