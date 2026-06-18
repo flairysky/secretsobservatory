@@ -889,7 +889,7 @@ mjx-container[jax="SVG"] > svg {
 }
 
 /* Ensure paragraphs with inline math don't break unnecessarily */
-.prose p mjx-container {
+.prose p mjx-container:not([display="true"]) {
   display: inline !important;
   vertical-align: middle;
 }
