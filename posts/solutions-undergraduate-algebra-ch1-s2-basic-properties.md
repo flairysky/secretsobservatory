@@ -40,7 +40,7 @@ Then, we have
 
 $$\begin{align}
 (x+y)^{n+1}&=(x+y)(x+y)^n=(x+y)\bigg[\sum_{i=0}^n\binom{n}{i}x^iy^{n-i}\bigg] \; (\text{use distributive law})\\\\
-&=\sum_{i=0}^n\binom{n}{i}x^{i+1}y^{n-i}+\sum_{i=0}^n\binom{n}{i}x^{i}y^{n-i+1}\; (\text{change i=0 to i=1 in 1. sum})\\\\
+&=\sum_{i=0}^n\binom{n}{i}x^{i+1}y^{n-i}+\sum_{i=0}^n\binom{n}{i}x^{i}y^{n-i+1}\; (\text{change i=0 to i=1 in 1. sum via reindexing j=i+1, i.e. i=j-1 and insert.})\\\\
     &=\sum_{i=1}^{n+1}\binom{n}{i-1}x^{i}y^{n+1-i}+\sum_{i=0}^n\binom{n}{i}x^{i}y^{n+1-i}\; (\text{separate the )n+1)th} term from 1.sum and 0th term from 2. sum)\\\\
 &=\sum_{i=1}^n\binom{n}{i-1}x^{i}y^{n+1-i}+\binom{n}{n+1-1}x^{n+1}y^{n+1-(n+1)}+\binom{n}{0}x^0y^{n+1}+\sum_{i=1}^n\binom{n}{i}x^{i}y^{n+1-i}\\\\
 &=\sum_{i=1}^n\binom{n}{i-1}x^{i}y^{n+1-i}+1x^{n+1}1+11y^{n+1}+\sum_{i=1}^n\binom{n}{i}x^{i}y^{n+1-i}\\\\
