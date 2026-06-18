@@ -57,12 +57,70 @@ $\square$
 
 :::fold Exercise 3
 
-Proof
+(a) For $n=1$, 1=1^2, so the expression is true.
+Assume it is true for all integers $n\ge 1$.
+We show that it holds for $n+1$, i.e., that $1+3+5+...+(2n-1)+(2(n+1)-1)=(n+1)^2$.
+
+Indeed, $1+3+5+...+(2n-1)+(2(n+1)-1)=n^2+(2(n+1)-1)=n^2+(2n+2)-1)=n^2+2n+1=(n+1)^2$.
+$\square$
+
+
+(b) For $n=1$, $1(1+1)(2\times 1+1)/6=6/6=1=1^2$, so the expression is true.
+Assume it is true for all integers $n\ge 1$.
+We show that it holds for $n+1$, i.e., that $1^2+2^2+...+n^2+(n+1)^2=\frac{(n+1)((n+1)+1)(2(n+1)+1)}{6}$.
+
+Indeed, we have
+$\begin{align}
+ 1^2+2^2+...+n^2+(n+1)^2
+    &=\frac{n(n+1)(2n+1)}{6}+(n+1)^2\\\\
+    &=\frac{n(n+1)(2n+1)}{6}+\frac{6(n+1)^2}{6}\\\\
+    &=\frac{n(n+1)(2n+1)+6(n+1)^2}{6}\\\\
+    &=\frac{(n+1)(n(2n+1+6(n+1)))}{6}\\\\
+    &=\frac{(n+1)(2n^2+7n+6)}{6}\\\\
+\end{align}$
+
+On the pother hand,
+$\begin{align}
+\frac{(n+1)((n+1)+1)(2(n+1)+1)}{6} &=\frac{(n+1)((n+2)(2n+3)}{6}\\\\
+&=\frac{(n+1)(2n^2+3n+4n+6)}{6}\\\\
+&=\frac{(n+1)(2n^2+7n+6)}{6}\\\\
+\end{align}$.
+
+$\square$
+
+(c) For $n=1$, $(1(1+1)/2)^2=(2/2)^2=1^2=1=1^3$, so the expression is true.
+Assume it is true for all integers $n\ge 1$.
+We show that it holds for $n+1$, i.e., that $1^3+2^3+3^3+...+n^3+(n+1)^3=\bigg[\frac{(n+1)(n+2)}{2}\bigg]^2$.
+
+Indeed we have,
+ $\begin{align}
+        1^3+2^3+3^3+...+n^3+(n+1)^3&=\frac{n^2(n+1)^2}{4}+(n+1)^3\\\\
+        &=\frac{n^2(n+1)^2}{4}+\frac{4(n+1)^3}{4}\\\\
+        &=\frac{n^2(n+1)^2+ 4(n+1)^3}{4}\\\\
+        &=\frac{(n+1)^2(n^2+ 4(n+1))}{4}\\\\
+        &=\frac{(n+1)^2(n^2+ 4n+4)}{4}\\\\
+        &=\frac{(n+1)^2(n+2)^2}{4}\\\\
+        &=\bigg[\frac{(n+1)(n+2)}{2}\bigg]^2
+\end{align}$.
+$\square$
+
+REMARK: observe also that we have tyhe following nice equality as a result of combining the results we have obtained in this exercise.
+
+$1^3+2^3+3^3+...+n^3+(n+1)^3=\bigg[\frac{(n+1)(n+2)}{2}\bigg]^2=(1+2+3+\cdots +n)^2$.
 :::
 
 :::fold Exercise 4
 
-Proof
+For $n=1$, $\frac{1^{1-1}}{(1-1)!}=1/1=1=(1+\frac{1}{1})^2$, so the expression is true.
+Assume it is true for all integers $n\ge 1$.
+We show that it holds for $n+1$, i.e., that $\bigg(1+\frac{1}{1}\bigg)^1\cdots\bigg(1+\frac{1}{n-1}\bigg)^{n-1}\bigg(1+\frac{1}{n}\bigg)^n=\frac{(n+1)^n}{n!}$.
+
+Indeed we have,
+$\begin{align}
+\bigg(1+\frac{1}{1}\bigg)^1\cdots\bigg(1+\frac{1}{n-1}\bigg)^{n-1}\bigg(1+\frac{1}{n}\bigg)^n=\frac{n^{n-1}}{(n-1)!}\bigg(1+\frac{1}{n}\bigg)^n=\frac{n^{n-1}}{(n-1)!}\bigg(\frac{n+1}{n}\bigg)^n=\frac{n^{n-1}(n+1)^n}{(n-1)!n^n}=\frac{(n+1)^n}{(n-1)!n}=\frac{(n+1)^n}{n!}
+\end{align}$.
+
+$\square$
 :::
 
 :::fold Exercise 5
