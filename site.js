@@ -894,12 +894,17 @@ function typesetMathJax(element) {
   if (window.MathJax && window.MathJax.typesetPromise) {
     return window.MathJax.typesetPromise([element]).catch(err => console.warn('MathJax:', err));
   }
-  if (window.MathJax && window.MathJax.startup && window.MathJax.startup.promise) {
-    return window.MathJax.startup.promise.then(() =>
-      window.MathJax.typesetPromise([element])
-    ).catch(err => console.warn('MathJax:', err));
-  }
-  return Promise.resolve();
+  // MathJax script still loading — poll until typesetPromise appears
+  return new Promise(resolve => {
+    const timer = setInterval(() => {
+      if (window.MathJax && window.MathJax.typesetPromise) {
+        clearInterval(timer);
+        window.MathJax.typesetPromise([element])
+          .then(resolve)
+          .catch(err => { console.warn('MathJax:', err); resolve(); });
+      }
+    }, 100);
+  });
 }
 
 // Setup category filter chips
