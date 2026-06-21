@@ -661,14 +661,23 @@ function initIndexPage() {
     showError('Failed to load blog posts. Please refresh the page.');
     return;
   }
-  
-  indexBasePosts = getIndexBasePosts();
+
+  // Sort all non-solution posts by date descending
+  const allBasePosts = getIndexBasePosts().sort((a, b) => new Date(b.date) - new Date(a.date));
+  const latestPost = allBasePosts[0] || null;
+
+  // The browse list excludes the latest post (it has its own featured widget)
+  indexBasePosts = latestPost ? allBasePosts.slice(1) : allBasePosts;
   filteredPosts = [...indexBasePosts];
-  
+
+  // Render featured widgets
+  renderLatestPostWidget(latestPost);
+  initExerciseOfDay();
+
   // Setup search with debouncing (both desktop and mobile)
   const searchInput = document.getElementById('searchInput');
   const searchInputMobile = document.getElementById('searchInputMobile');
-  
+
   function setupSearchInput(input) {
     if (input) {
       let searchTimeout;
@@ -678,14 +687,14 @@ function initIndexPage() {
       });
     }
   }
-  
+
   setupSearchInput(searchInput);
   setupSearchInput(searchInputMobile);
-  
+
   // Setup category chips
   setupCategoryChips(indexBasePosts);
-  
-  // Render posts
+
+  // Render browse posts
   renderPosts();
 
   // If the page was loaded with #postList hash (e.g. from another page),
@@ -696,6 +705,201 @@ function initIndexPage() {
   }
 
   initHeroTyping();
+  initSolutionModal();
+}
+
+// Render the latest post in the featured widget (right column)
+function renderLatestPostWidget(post) {
+  const container = document.getElementById('latestPostContainer');
+  if (!container || !post) return;
+
+  const coverImage = post.cover_image
+    ? `<img src="${post.cover_image}" alt="${escapeHtml(post.title)}" class="cover-image" onerror="this.style.display='none'" loading="eager">`
+    : '';
+
+  const categories = post.categories.map(cat =>
+    `<span class="chip">${escapeHtml(cat)}</span>`
+  ).join(' ');
+
+  container.innerHTML = `
+    <article class="card latest-post post-reveal from-right h-full flex flex-col">
+      <div class="exercise-widget-header">
+        <span class="exercise-widget-label">Latest Post</span>
+      </div>
+      ${coverImage}
+      <div class="post-title-row">
+        <h2 class="text-lg font-semibold">
+          <a href="post.html?slug=${post.slug}" class="hover:text-blue-600 dark:hover:text-blue-400 transition-colors">
+            ${escapeHtml(post.title)}
+          </a>
+        </h2>
+        <div class="latest-post-badge">Just Released!</div>
+      </div>
+      <div class="text-sm text-slate-500 dark:text-slate-400 mb-3 flex flex-wrap items-center gap-2">
+        <time datetime="${post.date}">${formatDate(post.date)}</time>
+        <span>•</span>
+        <div class="flex flex-wrap gap-1">${categories}</div>
+      </div>
+      <p class="text-slate-600 dark:text-slate-300 mb-4 leading-relaxed flex-1">${escapeHtml(post.excerpt)}</p>
+      <a href="post.html?slug=${post.slug}"
+         class="inline-flex items-center text-sm font-medium text-blue-600 dark:text-blue-400 hover:text-blue-800 dark:hover:text-blue-300 transition-colors">
+        Read more →
+      </a>
+    </article>
+  `;
+
+  initPostReveal();
+}
+
+// Load exercises.json and render the daily exercise widget
+async function initExerciseOfDay() {
+  const container = document.getElementById('exerciseOfDayContainer');
+  if (!container) return;
+
+  try {
+    const response = await fetch('exercises.json');
+    if (!response.ok) throw new Error('Could not load exercises.json');
+    const data = await response.json();
+
+    const readyExercises = (data.exercises || []).filter(e => e.ready);
+    if (readyExercises.length === 0) {
+      container.innerHTML = '';
+      return;
+    }
+
+    // Pick or recall today's exercise using localStorage
+    const today = new Date().toISOString().split('T')[0];
+    let stored = {};
+    try { stored = JSON.parse(localStorage.getItem('exerciseOfDay') || '{}'); } catch (_) {}
+
+    let selected = stored.date === today
+      ? readyExercises.find(e => e.id === stored.exerciseId)
+      : null;
+
+    if (!selected) {
+      selected = readyExercises[Math.floor(Math.random() * readyExercises.length)];
+      try {
+        localStorage.setItem('exerciseOfDay', JSON.stringify({ date: today, exerciseId: selected.id }));
+      } catch (_) {}
+    }
+
+    renderExerciseWidget(selected);
+  } catch (err) {
+    console.error('Exercise of the Day failed to load:', err);
+    container.innerHTML = '';
+  }
+}
+
+// Render the exercise widget HTML and wire up the Show Solution button
+function renderExerciseWidget(exercise) {
+  const container = document.getElementById('exerciseOfDayContainer');
+  if (!container) return;
+
+  marked.setOptions({ breaks: false, gfm: true, mangle: false, sanitize: false });
+  const questionHtml = marked.parse(exercise.question);
+
+  container.innerHTML = `
+    <div class="exercise-widget card h-full flex flex-col">
+      <div class="exercise-widget-header">
+        <span class="exercise-widget-label">Exercise of the Day</span>
+        ${exercise.book ? `<span class="exercise-widget-book">${escapeHtml(exercise.book)}</span>` : ''}
+        <span class="exercise-widget-source">${escapeHtml(exercise.source)}</span>
+      </div>
+      <div class="exercise-widget-number">Exercise ${exercise.number}</div>
+      <div class="exercise-widget-question" id="exerciseDayQuestion">${questionHtml}</div>
+      <button
+        class="show-solution-btn"
+        id="showSolutionBtn"
+        data-slug="${escapeHtml(exercise.solution_slug)}"
+        data-number="${exercise.solution_exercise_number}"
+        data-source="${escapeHtml(exercise.source)}"
+        data-display-number="${exercise.number}">
+        Show Solution
+      </button>
+    </div>
+  `;
+
+  typesetMathJax(container);
+
+  document.getElementById('showSolutionBtn')?.addEventListener('click', function () {
+    openSolutionModal(
+      this.dataset.slug,
+      parseInt(this.dataset.number),
+      this.dataset.source,
+      parseInt(this.dataset.displayNumber)
+    );
+  });
+}
+
+// Open the solution modal, fetch and render the solution from the markdown file
+async function openSolutionModal(slug, exerciseNumber, source, displayNumber) {
+  const modal = document.getElementById('solutionModal');
+  const titleEl = document.getElementById('solutionModalTitle');
+  const contentEl = document.getElementById('solutionModalContent');
+  if (!modal || !contentEl) return;
+
+  titleEl.textContent = `Solution — Exercise ${displayNumber}`;
+  contentEl.innerHTML = '<p class="text-slate-400 dark:text-slate-500 text-sm">Loading…</p>';
+  modal.classList.remove('hidden');
+  modal.setAttribute('aria-hidden', 'false');
+  document.body.style.overflow = 'hidden';
+
+  try {
+    const response = await fetch(`posts/${slug}.md`);
+    if (!response.ok) throw new Error('File not found');
+    const markdown = await response.text();
+
+    // Strip front matter, then extract the fold block for this exercise
+    const { content } = parseFrontMatter(markdown);
+    const regex = new RegExp(
+      `:::fold\\s+Exercise\\s+${exerciseNumber}\\r?\\n([\\s\\S]*?)\\r?\\n:::(?=\\r?\\n|$)`
+    );
+    const match = content.match(regex);
+
+    if (!match) {
+      contentEl.innerHTML = '<p class="text-slate-500">Solution text not found.</p>';
+      return;
+    }
+
+    marked.setOptions({ breaks: false, gfm: true, mangle: false, sanitize: false });
+    contentEl.innerHTML = marked.parse(match[1].trim());
+    await typesetMathJax(contentEl);
+  } catch (err) {
+    console.error('openSolutionModal error:', err);
+    contentEl.innerHTML = '<p class="text-red-500 dark:text-red-400">Failed to load solution. Please try again.</p>';
+  }
+}
+
+// Close the solution modal
+function closeSolutionModal() {
+  const modal = document.getElementById('solutionModal');
+  if (!modal) return;
+  modal.classList.add('hidden');
+  modal.setAttribute('aria-hidden', 'true');
+  document.body.style.overflow = '';
+}
+
+// Wire up modal close events (called once during initIndexPage)
+function initSolutionModal() {
+  document.getElementById('closeSolutionModal')?.addEventListener('click', closeSolutionModal);
+  document.getElementById('solutionModalOverlay')?.addEventListener('click', closeSolutionModal);
+  document.addEventListener('keydown', function (e) {
+    if (e.key === 'Escape') closeSolutionModal();
+  });
+}
+
+// Helper: typeset a DOM element with MathJax (safe to call before MathJax is ready)
+function typesetMathJax(element) {
+  if (!element) return Promise.resolve();
+  if (window.MathJax && window.MathJax.typesetPromise) {
+    return window.MathJax.typesetPromise([element]).catch(err => console.warn('MathJax:', err));
+  }
+  if (window.MathJax && window.MathJax.startup && window.MathJax.startup.promise) {
+    return window.MathJax.startup.promise.then(() =>
+      window.MathJax.typesetPromise([element])
+    ).catch(err => console.warn('MathJax:', err));
+  }
+  return Promise.resolve();
 }
 
 // Setup category filter chips
@@ -799,23 +1003,24 @@ function renderPosts() {
     return;
   }
   
-  const latestSource = currentPage === 'index' && indexBasePosts ? indexBasePosts : postsData.posts;
-  const latestPostSlug = latestSource
-    .slice()
-    .sort((a, b) => new Date(b.date) - new Date(a.date))[0]?.slug;
+  // On the index page the latest post lives in its own widget; no badge in the browse list
+  const latestSource = (currentPage === 'index') ? [] : (postsData?.posts || []);
+  const latestPostSlug = latestSource.length
+    ? latestSource.slice().sort((a, b) => new Date(b.date) - new Date(a.date))[0]?.slug
+    : null;
 
   // Sort by date descending
   const sortedPosts = filteredPosts.sort((a, b) => new Date(b.date) - new Date(a.date));
-  
+
   postList.innerHTML = sortedPosts.map((post, index) => {
-    const coverImage = post.cover_image ? 
-      `<img src="${post.cover_image}" alt="${post.title}" class="cover-image" 
+    const coverImage = post.cover_image ?
+      `<img src="${post.cover_image}" alt="${post.title}" class="cover-image"
            onerror="this.style.display='none'" loading="lazy">` : '';
-    
-    const categories = post.categories.map(cat => 
+
+    const categories = post.categories.map(cat =>
       `<span class="chip">${escapeHtml(cat)}</span>`
     ).join(' ');
-    
+
     const isLatest = post.slug === latestPostSlug;
     const latestBadge = isLatest ? '<div class="latest-post-badge">Just Released!</div>' : '';
     const cardClass = isLatest ? 'card latest-post' : 'card';

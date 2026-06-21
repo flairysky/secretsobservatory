@@ -11,7 +11,8 @@
       "title": "Action Remark",
       "date": "2026-05-30",
       "categories": ["Standalone Poems"],
-      "excerpt": "A standalone poem introducing the notion of an action on a conceptual level."
+      "excerpt": "A standalone poem introducing the notion of an action on a conceptual level.",
+      "cover_image": "assets/covers/c3_triangle_rotating_whole_triangle_small.gif"
     },
     {
       "slug": "poem_eighth_act",
