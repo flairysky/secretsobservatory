@@ -209,16 +209,9 @@ need not be divisible by $p^r$ for $1 \leq k \leq p^r-1$.
 (b) Prove that it is divisible by $9$ if and only if the sum of its digits is divisible by $9$.
 
 (c) Prove that it is divisible by $11$ if and only if the alternating sum of its digits is divisible by $11$. In other words, let the integer be
-$$
-n=a_k a_{k-1}\cdots a_0
-=
-a_0+a_1 10+a_2 10^2+\cdots+a_k 10^k,
-\quad 0 \leq a_i \leq 9.
-$$
-Then $n$ is divisible by $11$ if and only if
-$$
-a_0-a_1+a_2-a_3+\cdots+(-1)^k a_k
-$$
+$n=a_k a_{k-1}\cdots a_0=a_0+a_1 10+a_2 10^2+\cdots+a_k 10^k,
+\quad 0 \leq a_i \leq 9$.
+Then $n$ is divisible by $11$ if and only if $a_0-a_1+a_2-a_3+\cdots+(-1)^k a_k$
 is divisible by $11$.
 
 
