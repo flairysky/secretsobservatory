@@ -7,13 +7,17 @@ excerpt: "Solution workspace for Chapter I, Section 4 (Unique Factorization)."
 
 :::fold Exercise 1
 
-**Question.** Prove that there are infinitely m,any prime numbers. [Hint from Euclid: Let $2,3,5,...,P$ be the set of primes up to $P$. Show that there is another prime as follows. Let\\
-$$N=2\cdot 3\cdot 5\cdot 7\cdots P+1$$\\
-the product being taken over all primes $\le P$. Show that any prime dividing $N$ is not among the primes up to $P$.]\\
+**Question.** 
+
+Prove that there are infinitely m,any prime numbers. (Hint from Euclid: Let $2,3,5,...,P$ be the set of primes up to $P$. Show that there is another prime as follows. Let
+$$N=2\cdot 3\cdot 5\cdot 7\cdots P+1$$
+the product being taken over all primes $\le P$. Show that any prime dividing $N$ is not among the primes up to $P$.)
 
 ---
 
-**Solution.** Assume by contradiction that the set\\
+**Solution.** 
+
+Assume by contradiction that the set\\
 $$\{2,3,5,...,p\}$$ contains all the primes, where $p$ stands for the greatest prime.\\
 Now, let $P=2\cdot 3\cdot 5\cdot 7\cdots p$ be the product being taken over all primes $\le p$.\\
 Then, if $N=P+1$ is prime it is not in the list and we are done, so we may assume that $N$ is not a prime.//
@@ -31,36 +35,51 @@ Thus, there must be at least one more prime number.\\
 
 :::fold Exercise 2
 
-**Question.** Define a \textbf{twin prime} to be a prime $p$ such that $p+2$ is also a prime. For instance $(3,5),(5,7),(1,13)$ are twin primes.\\
+**Question.** 
+
+Define a \textbf{twin prime} to be a prime $p$ such that $p+2$ is also a prime. For instance $(3,5),(5,7),(1,13)$ are twin primes.
+
 (a) Write down all the twin primes less than 100.
-(b) Are there infinitely many twin primes? Use a computer to compute more twin primes and see if there is any regularity in their occurrence.\\
+
+(b) Are there infinitely many twin primes? Use a computer to compute more twin primes and see if there is any regularity in their occurrence.
 
 ---
 
-**Solution.** (a) $(3, 5), (5, 7), (11, 13), (17, 19), (29, 31), (41, 43), (59, 61), (71, 73)$\\
-(b) And what do you think? In case you solved it, look up the Twin Prime Conjecture.\\
+**Solution.** 
+
+(a) $(3, 5), (5, 7), (11, 13), (17, 19), (29, 31), (41, 43), (59, 61), (71, 73)$
+
+(b) And what do you think? In case you solved it, look up the Twin Prime Conjecture.
 
 :::
 
 :::fold Exercise 3
 
-**Question.** Observe that $5 = 2^2 + 1, 17 = 4^2 + 1, 37 = 6^2 + 1$ are primes. Are there infin-
+**Question.** 
+
+Observe that $5 = 2^2 + 1, 17 = 4^2 + 1, 37 = 6^2 + 1$ are primes. Are there infin-
 itely many primes of the form $n^2 + 1$ where $n$ is a positive integer? Compute
 all the primes less than $100$ which are of the form $n^2+1$. Use a computer to
 compute further primes and see if there is any regularity of occurrence for
-these primes.\\
+these primes.
 
 ---
 
-**Solution.** Primes of the form $n^2+1$ less than $100$:\\
+**Solution.** 
+
+Primes of the form $n^2+1$ less than $100$:
+
 $2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37, 41, 43, 47, 53, 59, 61, 67, 71, 73, 79, 83, 89, 97.$
+
 What do you think?
 
 :::
 
 :::fold Exercise 4
 
-**Question.** Start with a positive odd integer $n$. Then $3n+ 1$ is even. Divide by the
+**Question.** 
+
+Start with a positive odd integer $n$. Then $3n+ 1$ is even. Divide by the
 largest power of $2$ which is a factor of $3n + 1$. You obtain an odd integer $n_1$.
 Iterate these operations. In other words, form $3n_1 + 1$, divide by the maximal
 power of $2$ which is a factor of $3n_1 + 1$, and iterate again. What do you think
