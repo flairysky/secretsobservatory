@@ -5,10 +5,7 @@ categories: ["Solutions", "Algebra", "Mathematics"]
 excerpt: "Solution workspace for Chapter I, Section 3 (Greatest Common Divisor)."
 ---
 
-This page is reserved for worked solutions for:
-
-- Chapter I - The Integers
-- Section 3. Greatest Common Divisor
+There are no exercises in this section.
 
 
 
