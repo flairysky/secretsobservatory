@@ -12,7 +12,7 @@ excerpt: "Solution workspace for Chapter I, Section 5 (Equivalence Relations and
 Let $n, d$ be positive integers and assume $1 < d < n$. Show that $n$ can be
 written in the form
 $$M = c_0 + c_1d + \cdots + c_kd^k$$
-with integers $c_i$ such that $0 \le C_i < d$, and that these integers $c_i$, are uniquely
+with integers $c_i$ such that $0 \le c_i < d$, and that these integers $c_i$, are uniquely
 determined. [Hint: For the existence, write $n = qd + c_0$ by the Euclidean
 algorithm, and then use induction. For the uniqueness, use induction,
 assuming $c_0,...,c_r$ are uniquely determined; show that $c_{r+1}$ is then uniquely
