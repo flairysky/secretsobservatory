@@ -17,19 +17,19 @@ the product being taken over all primes $\le P$. Show that any prime dividing $N
 
 **Solution.** 
 
-Assume by contradiction that the set\\
-$$\{2,3,5,...,p\}$$ contains all the primes, where $p$ stands for the greatest prime.\\
-Now, let $P=2\cdot 3\cdot 5\cdot 7\cdots p$ be the product being taken over all primes $\le p$.\\
+Assume by contradiction that the set
+$$\{2,3,5,...,p\}$$ contains all the primes, where $p$ stands for the greatest prime.
+Now, let $P=2\cdot 3\cdot 5\cdot 7\cdots p$ be the product being taken over all primes $\le p$.
 Then, if $N=P+1$ is prime it is not in the list and we are done, so we may assume that $N$ is not a prime.//
-But then by the Fundamental Theorem of Arithmetic,\\
-we can represent $N$ as a product of primes,\\
+But then by the Fundamental Theorem of Arithmetic,
+we can represent $N$ as a product of primes,
 let $q$ be one of the primes dividing $N$, which is in our list,
-so $q$ must divide also $P$.\\
+so $q$ must divide also $P$.
 
-But then also $q|-N$\\
-and so $1=(P+1)-P=kq+lq=(k+l)q$ for some $k,l\in\mathbb{Z}$\\
-and so $q|1\implies q_i=1$, a contradiction.\\
-Thus, there must be at least one more prime number.\\
+But then also $q|-N$
+and so $1=(P+1)-P=kq+lq=(k+l)q$ for some $k,l\in\mathbb{Z}$
+and so $q|1\implies q_i=1$, a contradiction.
+Thus, there must be at least one more prime number.
 
 :::
 
@@ -94,7 +94,7 @@ Collatz, dating back to the 1930's. The problem has a reputation for getting
 people to think unsuccessfully about it, to the point where someone once made
 the joke that "this problem was part of a conspiracy to slow down
 mathematical research in the U.S.". Lagarias gives an extensive bibhography
-of papers dealing with the problem and some of its offshoots.\\
+of papers dealing with the problem and some of its offshoots.
 
 ---
 

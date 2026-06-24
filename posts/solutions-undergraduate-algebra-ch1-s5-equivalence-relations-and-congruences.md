@@ -243,7 +243,7 @@ is divisible by $11$.
 
 **Solution.**
 
-(a) e.g.: $1001$ and $1111$, but there are many more.\\
+(a) e.g.: $1001$ and $1111$, but there are many more.
 
 (b) What do you think? 
 
