@@ -2873,7 +2873,7 @@ function generateSidebarContent(sidebarNav, currentSlug) {
   // Main Poetry section
   if (mainPoemPosts.length > 0) {
     html += '<div class="sidebar-section">';
-    html += '<h3 class="sidebar-section-title">Daniel\'s Poem</h3>';
+    html += '<h3 class="sidebar-section-title">The Poem</h3>';
     html += '<ul class="sidebar-nav-list">';
     
     mainPoemPosts.forEach(post => {
@@ -2968,9 +2968,9 @@ function generateSidebarContent(sidebarNav, currentSlug) {
 }
 
 function getShortTitle(title) {
-  // Remove "Daniel's Poem:" prefix for cleaner display
-  if (title.startsWith("Daniel's Poem:")) {
-    return title.replace("Daniel's Poem:", "").trim();
+  // Remove "The Poem:" prefix for cleaner display
+  if (title.startsWith("The Poem:")) {
+    return title.replace("The Poem:", "").trim();
   }
   return title;
 }
